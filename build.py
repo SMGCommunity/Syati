@@ -9,6 +9,9 @@ def err(str):
     print(f"Error: {str}")
     sys.exit(1)
 
+if not os.path.exists("build"):
+    os.mkdir("build")
+
 if not os.path.exists("CodeWarrior/mwcceppc.exe"):
     err("CodeWarrior compiler not found.")
 
