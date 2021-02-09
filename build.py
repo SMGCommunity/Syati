@@ -9,6 +9,8 @@ def err(str):
     print(f"Error: {str}")
     sys.exit(1)
 
+region = sys.argv[1]
+
 if not os.path.exists("build"):
     os.mkdir("build")
 
@@ -23,7 +25,7 @@ cpp_files = glob.glob("source/*.cpp")
 if len(cpp_files) <= 0:
     err("No C++ files to compile!") 
 
-cmd = f"CodeWarrior\mwcceppc.exe -i . -I- -i include -nodefaults -proc gekko -Cpp_exceptions off -enum int -O4,s -fp hard -sdata 0 -sdata2 0 -DGEKKO -DMTX_USE_PS -MMD -rtti off -c -o"
+cmd = f"CodeWarrior\mwcceppc.exe -i . -I- -i include -nodefaults -proc gekko -Cpp_exceptions off -enum int -O4,s -fp hard -sdata 0 -sdata2 0 -D{region} -DGEKKO -DMTX_USE_PS -MMD -rtti off -c -o"
 
 for cpp_file in cpp_files:
     name = Path(cpp_file).stem
