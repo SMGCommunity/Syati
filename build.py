@@ -39,7 +39,7 @@ print("Linking...")
 o_files = glob.glob("build/*.o")
 o_str = ' '.join([str(e) for e in o_files])
 
-kamek_cmd = f"Kamek\Kamek.exe {o_str} -externals=symbols/USA.txt -output-kamek=CustomCode.bin"
+kamek_cmd = f"Kamek\Kamek.exe {o_str} -externals=symbols/{region}.txt -output-kamek=CustomCode_{region}.bin"
 if subprocess.call(kamek_cmd, shell=True) != 0:
     err("Linking failed.")
 
