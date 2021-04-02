@@ -69,7 +69,7 @@ public:
     void initModelManagerWithAnm(const char *, const char *);
     void initEffectKeeper(s32, const char *, bool);
     void initSound(s32, const char *, bool, const JGeometry::TVec3<f32> &);
-    void initNerve(const Nerve *, const Nerve *);
+    void initNerve(const Nerve *, s32);
     void initShadowControllerList(u32);
     void initBinder(f32, f32, u32);
 

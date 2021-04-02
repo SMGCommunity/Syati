@@ -1,5 +1,8 @@
 #pragma once
 
+#include "kamek.h"
+#include "JGeometry/TVec3.h"
+
 class LiveActor;
 class HitSensor;
 
@@ -15,6 +18,8 @@ namespace MR
 
     bool isSensorPlayer(const HitSensor *);
     void sendMsgPush(HitSensor *, HitSensor *);
+
+    bool isMsgPlayerUpperPunch(u32);
 
     bool isMsgPlayerHipDropFloor(u32);
 
