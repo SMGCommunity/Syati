@@ -12,10 +12,10 @@
 #include "Actor/Shadow/ShadowController.h"
 #include "Actor/Sound/AudAnmSoundObject.h"
 #include "Actor/StarPointer/StarPointerTarget.h"
-#include "Actor/Switch/StageSwitch.h"
 #include "Collision/Binder.h"
 #include "JGeometry/TVec3.h"
 #include "Actor/Model/ModelManager.h"
+#include "Map/Switch/StageSwitch.h"
 
 class LiveActorFlag
 {
