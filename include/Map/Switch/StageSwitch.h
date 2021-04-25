@@ -9,6 +9,22 @@ class StageSwitchCtrl
 public:
     StageSwitchCtrl(const JMapInfoIter &);
 
+    void onSwitchA();
+    void offSwitchA();
+    bool isOnSwitchA() const;
+    bool isValidSwitchA() const;
+    void onSwitchB();
+    void offSwitchB();
+    bool isOnSwitchB() const;
+    bool isValidSwitchB() const;
+    bool isOnSwitchAppear() const;
+    bool isValidSwitchAppear() const;
+    void onSwitchDead();
+    void offSwitchDead();
+    bool isValidSwitchDead() const;
+    bool isOnAllSwitchAfterB(s32) const;
+    bool isOnAnyOneSwitchAfterB(s32) const;
+
     SwitchIdInfo* mSW_A; // _0
     SwitchIdInfo* mSW_B; // _4
     SwitchIdInfo* mSW_Appear; // _8

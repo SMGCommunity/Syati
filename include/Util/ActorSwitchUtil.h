@@ -6,7 +6,14 @@ class LiveActor;
 
 namespace MR
 {
-    bool useStageSwitchReadAppear(LiveActor *, const JMapInfoIter &iter);
+    bool useStageSwitchReadA(LiveActor *, const JMapInfoIter &);
+    bool useStageSwitchReadB(LiveActor *, const JMapInfoIter &);
+    bool useStageSwitchReadAppear(LiveActor *, const JMapInfoIter &);
+    bool useStageSwitchWriteA(LiveActor *, const JMapInfoIter &);
+    bool useStageSwitchWriteB(LiveActor *, const JMapInfoIter &);
+    bool useStageSwitchAwake(LiveActor *, const JMapInfoIter &);
+
+    bool useStageSwitchReadDead(LiveActor *, const JMapInfoIter &);
 
     void syncStageSwitchAppear(LiveActor *);
 };
