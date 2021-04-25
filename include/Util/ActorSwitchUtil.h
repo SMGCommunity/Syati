@@ -16,4 +16,9 @@ namespace MR
     bool useStageSwitchReadDead(LiveActor *, const JMapInfoIter &);
 
     void syncStageSwitchAppear(LiveActor *);
+
+	bool isValidSwitchA(const LiveActor *);
+	bool isValidSwitchB(const LiveActor *);
+	bool isValidSwitchAppear(const LiveActor *);
+	bool isValidSwitchDead(const LiveActor *);
 };
