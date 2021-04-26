@@ -4,6 +4,8 @@
 #include "Util/JMapIdInfo.h"
 #include "JMap/JMapInfoIter.h"
 
+class SwitchIdInfo;
+
 class StageSwitchCtrl
 {
 public:
