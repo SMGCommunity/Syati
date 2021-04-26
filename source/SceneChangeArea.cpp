@@ -29,5 +29,5 @@ kmWritePointer(0x8066AE4C, SceneChangeAreaControl);
 #endif
 
 #ifdef PAL
-kmWRitePointer(0x8067054C, SceneChangeAreaControl);
+kmWritePointer(0x8067054C, SceneChangeAreaControl);
 #endif
