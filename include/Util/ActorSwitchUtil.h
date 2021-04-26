@@ -6,19 +6,29 @@ class LiveActor;
 
 namespace MR
 {
-    bool useStageSwitchReadA(LiveActor *, const JMapInfoIter &);
-    bool useStageSwitchReadB(LiveActor *, const JMapInfoIter &);
-    bool useStageSwitchReadAppear(LiveActor *, const JMapInfoIter &);
-    bool useStageSwitchWriteA(LiveActor *, const JMapInfoIter &);
-    bool useStageSwitchWriteB(LiveActor *, const JMapInfoIter &);
-    bool useStageSwitchAwake(LiveActor *, const JMapInfoIter &);
-
-    bool useStageSwitchReadDead(LiveActor *, const JMapInfoIter &);
-
-    void syncStageSwitchAppear(LiveActor *);
+	bool useStageSwitchReadAppear(LiveActor *, const JMapInfoIter &);
+	bool useStageSwitchReadA(LiveActor *, const JMapInfoIter &);
+	bool useStageSwitchReadB(LiveActor *, const JMapInfoIter &);
+	bool useStageSwitchAwake(LiveActor *, const JMapInfoIter &);
+	bool useStageSwitchWriteA(LiveActor *, const JMapInfoIter &);
+	bool useStageSwitchWriteB(LiveActor *, const JMapInfoIter &);
+	bool useStageSwitchWriteDead(LiveActor *, const JMapInfoIter &);
+	bool useStageSwitchWriteAutoDead(LiveActor *, const JMapInfoIter &);
 
 	bool isValidSwitchA(const LiveActor *);
 	bool isValidSwitchB(const LiveActor *);
 	bool isValidSwitchAppear(const LiveActor *);
 	bool isValidSwitchDead(const LiveActor *);
+	bool isOnSwitchA(const LiveActor *); //Located at 0x8001A850 USA
+	bool isOnSwitchB(const LiveActor *);
+	bool isOnSwitchAppear(const LiveActor *);
+	bool onSwitchA(LiveActor *);
+	bool onSwitchB(LiveActor *);
+	bool onSwitchDead(LiveActor *);
+	bool offSwitchA(LiveActor *);
+	bool offSwitchB(LiveActor *);
+	bool offSwitchDead(LiveActor *);
+	void syncStageSwitchAppear(LiveActor *);
+	bool useStageSwitchSyncAppear(LiveActor *, const JMapInfoIter &); //Located at 0x8001AA10 USA
+	void syncStageSwitchAppear(LiveActor *, const JMapInfoIter &); //Located at 0x8001AAB0 USA
 };
