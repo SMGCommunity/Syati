@@ -23,18 +23,22 @@ namespace MR
 	// I believe this one is for when the player stomps on something
 	bool isMsgPlayerTrample(u32);
 	bool isMsgPlayerHipDrop(u32);
+	bool isMsgPlayerHipDropFloor(u32);
 	bool isMsgPlayerUpperPunch(u32);
 	bool isMsgPlayerKick(u32);
-	bool isMsgPlayerHipDropFloor(u32);
+
 	bool isMsgJetTurtleAttack(u32);
+
 	bool isMsgFireBallAttack(u32);
-	bool isMsgSearchlightAttack(u32);
+	bool isMsgSearchlightAttack(u32); //Located at 0x80016C40 USA.
 	bool isMsgFreezeAttack(u32);
 	bool isMsgInvincibleAttack(u32);
+
 	bool isMsgAutoRushBegin(u32);
 	bool isMsgUpdateBaseMtx(u32);
 	bool isMsgRushCancel(u32);
 	bool isMsgIsRushTakeOver(u32);
+
 	bool isMsgFloorTouch(u32);
 	bool isMsgWallTouch(u32);
 	bool isMsgCeilTouch(u32);
