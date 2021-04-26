@@ -5,7 +5,7 @@
 struct ActorEntry
 {
     const char* pActorName; // _0
-    NameObj* (*mCreationFunc)(void); // _4
+    NameObj* (*mCreationFunc)(const char *); // _4
 };
 
 class NameObjFactory

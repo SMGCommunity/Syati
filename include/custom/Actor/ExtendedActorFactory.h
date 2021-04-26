@@ -11,11 +11,11 @@
 namespace ExtendedActorFactory
 {
     template<typename T>
-    NameObj* createExtActor();
+    NameObj* createExtActor(const char *pActorName);
 
 	// change me to your custom actor!
     template<>
-    NameObj* createExtActor<MyFirstActor>()
+    NameObj* createExtActor<MyFirstActor>(const char *pActorName)
     {
         return new MyFirstActor("MyFirstActor");
     }
