@@ -13,5 +13,5 @@ class AreaForm;
 
 namespace MR
 {
-	AreaForm* createAreaForm(AreaFormType);
+	AreaForm* createAreaForm(int);
 };

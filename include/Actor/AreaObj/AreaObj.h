@@ -9,7 +9,7 @@ class AreaObj : public NameObj
 {
 public:
     AreaObj(const char *);
-    AreaObj(AreaFormType, const char *);
+    AreaObj(int, const char *);
 
     virtual ~AreaObj();
     virtual void init(const JMapInfoIter &);
@@ -31,7 +31,7 @@ public:
     // getFollowMtx
 
     AreaForm* mAreaForm; // _14
-    AreaFormType mAreaFormType; // 18
+    int mAreaFormType; // 18
     bool mValidate; // _1C
     bool mFollowActorAlive; // _1D
     s32 mObjArg0; // 20

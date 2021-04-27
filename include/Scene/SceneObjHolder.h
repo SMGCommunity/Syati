@@ -164,17 +164,17 @@ class SceneObjHolder
 public:
 	SceneObjHolder();
 
-	NameObj* create(SceneObjType);
-	NameObj* getObj(SceneObjType) const;
-	bool isExist(SceneObjType) const;
-	NameObj* newEachObj(SceneObjType);
+	NameObj* create(int);
+	NameObj* getObj(int) const;
+	bool isExist(int) const;
+	NameObj* newEachObj(int);
 
 	NameObj* mSceneObjs[153];
 };
 
 namespace MR
 {
-	NameObj* createSceneObj(SceneObjType);
+	NameObj* createSceneObj(int);
 	SceneObjHolder* getSceneObjHolder();
-	bool isExistSceneObj(SceneObjType);
+	bool isExistSceneObj(int);
 };
