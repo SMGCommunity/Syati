@@ -34,9 +34,15 @@ for line in data:
 	newLine = line.split(" ")
 	
 	# now we get the line that has our address
+	if len(newLine) < 2:
+		continue
+	
 	newerLine = newLine[1]
 
 	# now we get our address
+	if line.startswith("Program entry point at"):
+		continue
+	
 	addressList = newerLine.split(":")
 
 	# now we get our actual address from the gotten data
