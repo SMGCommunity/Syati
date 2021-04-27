@@ -46,7 +46,8 @@ public:
     StageSwitchCtrl* mStageSwitchCtrl; // 44
 };
 
-class AreaObjMgr : public NameObj {
+class AreaObjMgr : public NameObj
+{
 public:
     AreaObjMgr(s32, const char *);
 

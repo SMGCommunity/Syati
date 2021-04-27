@@ -1,6 +1,7 @@
 #pragma once
 
-enum AreaFormType {
+enum AreaFormType
+{
 	AreaForm_Cube,
 	AreaForm_CenteredCube,
 	AreaForm_Sphere,
@@ -10,6 +11,7 @@ enum AreaFormType {
 
 class AreaForm;
 
-namespace MR {
+namespace MR
+{
 	AreaForm* createAreaForm(AreaFormType);
 };

@@ -2,7 +2,8 @@
 
 #include "Actor/LiveActor/LiveActor.h"
 
-class MorphItemCollection : public LiveActor {
+class MorphItemCollection : public LiveActor
+{
 public:
 	MorphItemCollection(const char*);
 
