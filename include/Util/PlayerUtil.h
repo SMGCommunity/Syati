@@ -9,13 +9,13 @@ namespace MR
 {
     bool isOnGroundPlayer();
 
-    JGeometry::TVec3<f32>* getPlayerPos();
+    TVec3f* getPlayerPos();
 
-    JGeometry::TVec3<f32>* getPlayerRotate();
+    TVec3f* getPlayerRotate();
 
-    void setPlayerJumpVec(const JGeometry::TVec3<f32> &);
+    void setPlayerJumpVec(const TVec3f &);
 
-    void forceJumpPlayer(const JGeometry::TVec3<f32> &);
+    void forceJumpPlayer(const TVec3f &);
 
     bool isOnPlayer(const HitSensor *);
 
@@ -30,7 +30,7 @@ namespace MR
     bool isPlayerSleeping();
     bool isPlayerJumpRising();
 
-    void endBindAndPlayerJump(LiveActor *, const JGeometry::TVec3<f32> &, u32);
+    void endBindAndPlayerJump(LiveActor *, const TVec3f &, u32);
 
     void startBckPlayer(const char *, const char *);
 

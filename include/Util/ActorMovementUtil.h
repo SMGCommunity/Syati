@@ -9,14 +9,14 @@ namespace MR
 {
     void initDefaultPos(LiveActor *, const JMapInfoIter &);
 
-    bool isNear(const LiveActor *, const JGeometry::TVec3<f32> &, f32);
+    bool isNear(const LiveActor *, const TVec3f &, f32);
     bool isNearPlayer(const LiveActor *, f32);
     bool isNearPlayerAnyTime(const LiveActor *, f32);
 
-    void calcFrontVec(JGeometry::TVec3<f32> *, const LiveActor *);
-    void calcUpVec(JGeometry::TVec3<f32> *, const LiveActor *);
+    void calcFrontVec(TVec3f *, const LiveActor *);
+    void calcUpVec(TVec3f *, const LiveActor *);
 
-    bool isInWater(const LiveActor *, const JGeometry::TVec3<f32> &);
+    bool isInWater(const LiveActor *, const TVec3f &);
 
     void makeMtxTR(Mtx, const LiveActor *);
 };

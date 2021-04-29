@@ -27,15 +27,15 @@ public:
 
 	s32 _D8, _DC, _E0, _E4;
 	s32 _E8, _EC, _F0, _F4;
-	JGeometry::TVec3<f32> _F8;
-	JGeometry::TVec3<f32> _104;
-	JGeometry::TVec3<f32> _110;
-	JGeometry::TVec3<f32> _11C;
-	JGeometry::TVec3<f32> _128;
-	JGeometry::TVec3<f32> _134;
-	JGeometry::TVec3<f32> _140;
-	JGeometry::TVec3<f32> _14C;
-	JGeometry::TVec3<f32> _158;
+	TVec3f _F8;
+	TVec3f _104;
+	TVec3f _110;
+	TVec3f _11C;
+	TVec3f _128;
+	TVec3f _134;
+	TVec3f _140;
+	TVec3f _14C;
+	TVec3f _158;
 	s32 _164;
 	f32 _168;
 	f32 _16C;

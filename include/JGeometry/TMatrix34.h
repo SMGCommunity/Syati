@@ -10,7 +10,7 @@ namespace JGeometry
     {
     public:
         void identity();
-        void mult(const JGeometry::TVec3<f32> &, JGeometry::TVec3<f32> &);
+        void mult(const TVec3f &, TVec3f &);
         void concat(const T &);
     
         T val[3][4];

@@ -68,7 +68,7 @@ public:
     void initHitSensor(s32);
     void initModelManagerWithAnm(const char *, const char *);
     void initEffectKeeper(s32, const char *, bool);
-    void initSound(s32, const char *, bool, const JGeometry::TVec3<f32> &);
+    void initSound(s32, const char *, bool, const TVec3f &);
     void initNerve(const Nerve *, s32);
     void initShadowControllerList(u32);
     void initBinder(f32, f32, u32);
@@ -81,11 +81,11 @@ public:
 
     HitSensor* getSensor(const char *) const;
 
-    JGeometry::TVec3<f32> mTranslation; // _14
-    JGeometry::TVec3<f32> mRotation; // _20
-    JGeometry::TVec3<f32> mScale; // _2C
-    JGeometry::TVec3<f32> mVelocity; // _38
-    JGeometry::TVec3<f32> mGravity; // _44
+    TVec3f mTranslation; // _14
+    TVec3f mRotation; // _20
+    TVec3f mScale; // _2C
+    TVec3f mVelocity; // _38
+    TVec3f mGravity; // _44
     ModelManager* mModelManager; // _50
     ActorAnimKeeper* mAnimKeeper; // _54
     Spine* mSpine; // _58

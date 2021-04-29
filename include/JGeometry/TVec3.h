@@ -48,3 +48,5 @@ namespace JGeometry
         T z; // _8
     };
 };
+
+typedef JGeometry::TVec3<f32> TVec3f;

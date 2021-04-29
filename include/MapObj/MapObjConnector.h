@@ -9,7 +9,7 @@ public:
 
 	bool attachToUnder();
 	bool attachToBack();
-	bool attach(const JGeometry::TVec3<f32> &);
+	bool attach(const TVec3f &);
 	// unknown function at 802CC510
 
 	LiveActor* mActor;

@@ -29,7 +29,7 @@ public:
 
 	ChipStruct mChips[5];
 	StageSwitchCtrl* mStageSwitchCtrl;
-	JGeometry::TVec3<f32> mTranslate;
+	TVec3f mTranslate;
 	s32 _4C;
 	s32 _50;
 	s32 mArg0;
