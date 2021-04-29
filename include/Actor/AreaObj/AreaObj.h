@@ -1,12 +1,15 @@
 #pragma once
 
+#include "Actor/AreaObj/AreaForm.h"
 #include "Actor/NameObj/NameObj.h"
+#include "Map/Switch/StageSwitch.h"
 #include "JGeometry/TVec3.h"
 
 class AreaObj : public NameObj
 {
 public:
-    AreaObj(s32, const char *);
+    AreaObj(const char *);
+    AreaObj(int, const char *);
 
     virtual ~AreaObj();
     virtual void init(const JMapInfoIter &);
@@ -15,11 +18,22 @@ public:
     virtual s32 getAreaPriority() const;
     virtual const char* getManagerName() const;
 
-    s32 mType; // _14
-    u32 _18;
-    u8 mValidate; // _1C
-    u8 mFollowActorAlive; // _1D
-    u16 _1E;
+    void initForm(const JMapInfoIter &);
+    void onSwitchA();
+    void offSwitchA();
+    bool isOnSwitchA() const;
+    bool isOnSwitchB() const;
+    bool isValidSwitchA() const;
+    bool isValidSwitchB() const;
+
+    // unknown function at 80070BB0
+    // setFollowMtx
+    // getFollowMtx
+
+    AreaForm* mAreaForm; // _14
+    int mAreaFormType; // 18
+    bool mValidate; // _1C
+    bool mFollowActorAlive; // _1D
     s32 mObjArg0; // 20
     s32 mObjArg1; // _24
     s32 mObjArg2; // _28
@@ -29,5 +43,22 @@ public:
     s32 mObjArg6; // _38
     s32 mObjArg7; // _3C
     s32 mPriority; // _40
-    u32* mSwitchCtrl; // _44 (StageSwitchCtrl*)
+    StageSwitchCtrl* mStageSwitchCtrl; // 44
+};
+
+class AreaObjMgr : public NameObj
+{
+public:
+    AreaObjMgr(s32, const char *);
+
+    virtual ~AreaObjMgr();
+    
+    void entry(AreaObj *);
+    bool find_in(const JGeometry::TVec3<f32> &) const;
+    // unknown function at 80070E30
+
+    AreaObj** mAreas; // 14
+    s32 mNumMaxAreas; // 18
+    s32 mNumAreas; // 1C
+    s32 mMaxAreasArg; // 20
 };

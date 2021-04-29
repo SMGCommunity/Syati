@@ -7,8 +7,18 @@ class LiveActor;
 
 namespace MR
 {
-    void setShadowVolumeStartDropOffset(LiveActor *, const char *, f32);
-    void setShadowDropLength(LiveActor *, const char *, f32);
+    void initShadowFromCSV(LiveActor *, const char *, bool);
 
     void addShadowVolumeBox(LiveActor *, const char *, const JGeometry::TVec3<f32> &, Mtx);
+
+    void initShadowVolumeSphere(LiveActor *, f32);
+
+    void initShadowVolumeCylinder(LiveActor *, f32);
+
+    void setShadowDropLength(LiveActor *, const char *, f32);
+
+    void setShadowVolumeSphereRadius(LiveActor *, const char *, f32);
+
+    void setShadowVolumeStartDropOffset(LiveActor *, const char *, f32);
+    void setShadowVolumeEndDropOffset(LiveActor *, const char *, f32);
 };

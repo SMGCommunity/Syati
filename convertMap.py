@@ -34,9 +34,15 @@ for line in data:
 	newLine = line.split(" ")
 	
 	# now we get the line that has our address
+	if len(newLine) < 2:
+		continue
+	
 	newerLine = newLine[1]
 
 	# now we get our address
+	if line.startswith("Program entry point at"):
+		continue
+	
 	addressList = newerLine.split(":")
 
 	# now we get our actual address from the gotten data
@@ -45,7 +51,7 @@ for line in data:
 	symbol = newLine[-1].strip("\r\n")
 
 	# do not include nullsubs and def_addr symbols as well as j_ stubs
-	if symbol.find("nullsub") != -1 or symbol.find("def_") != -1 or symbol.find("j_") != -1:
+	if symbol.find("nullsub") != -1 or symbol.find("def_") != -1 or symbol.find("j_") == 0:
 		discardedSymbols += 1
 		continue
 
@@ -75,7 +81,7 @@ for line in data:
 	
 	# This symbol is the last function that we will have.
 	# after this function, we will seek out static variables and vtables
-	if symbol == "__destroy_global_chain_reference":
+	if symbol == "__DBEXIWriteRam":
 		isReadingVars = 1
 		continue
 

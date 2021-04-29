@@ -49,6 +49,11 @@ typedef struct
 	f32 x, y, z;
 } Vec;
 
+typedef struct
+{
+	f32 x, y, z, w;
+} Quaternion;
+
 #include "base/hooks.h"
 
 #endif
