@@ -34,9 +34,9 @@ namespace MR
 	HitSensor* addHitSensorAtJointEnemy(LiveActor *, const char *, const char *, u16, f32, const TVec3f &);
 	HitSensor* addHitSensorAtJointEnemyAttack(LiveActor *, const char *, const char *, u16, f32, const TVec3f &);
 
-	void addBodyMessageSensor(LiveActor *, u32);
+	HitSensor* addBodyMessageSensor(LiveActor *, u32);
 
-	void addBodyMessageSensorMapObj(LiveActor *);
+	HitSensor* addBodyMessageSensorMapObj(LiveActor *);
 
 	void invalidateHitSensors(LiveActor *);
 
