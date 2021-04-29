@@ -14,6 +14,8 @@ public:
 
     static void* getCreator(const char *);
 
+    static NameObj* initChildObj(const JMapInfoIter &, int);
+
     static ActorEntry cCreateTable[0x3EB];
 
     // custom functions

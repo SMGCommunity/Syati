@@ -69,3 +69,7 @@ public:
 
     BitFlag128 mFlags;
 };
+
+namespace MR {
+    StageSwitchCtrl* createStageSwitchCtrl(NameObj *, const JMapInfoIter &);
+};

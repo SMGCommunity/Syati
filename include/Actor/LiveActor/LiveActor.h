@@ -73,8 +73,9 @@ public:
     void initShadowControllerList(u32);
     void initBinder(f32, f32, u32);
 
-    bool isNerve(const Nerve *) const;
     void setNerve(const Nerve *);
+    bool isNerve(const Nerve*) const;
+    s32 getNerveStep() const;
 
     void func_8000C170(const JMapInfoIter &, const char *, bool);
 

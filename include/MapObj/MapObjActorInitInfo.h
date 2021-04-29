@@ -1,7 +1,5 @@
 #pragma once
 
-#include "MapObj/MapObjActor.h"
-
 class MapObjActorInitInfo
 {
 public:

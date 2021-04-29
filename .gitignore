@@ -15,4 +15,6 @@ Kamek/*
 *.bin
 *.kamek
 *.bat
+*.elf
+helper/*
 /.vs

@@ -11,4 +11,4 @@ namespace MR
     bool hasStringSpace(const char *);
     bool isDigitStringTail(const char *, int);
     bool isExistString(const char *, const char *, u32);
-}
+};

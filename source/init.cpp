@@ -13,4 +13,4 @@ void doCtors()
     }
 }
 
-kmBranch(0x805C02E4, doCtors);
+kmBranch(0x804B66E8, doCtors);

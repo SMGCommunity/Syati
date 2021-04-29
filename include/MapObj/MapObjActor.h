@@ -2,9 +2,11 @@
 
 #include "Actor/LiveActor/LiveActor.h"
 #include "Actor/LOD/LodCtrl.h"
+#include "MapObj/MapObjActorInitInfo.h"
 
 class MapObjActor : public LiveActor
 {
+public:
 	MapObjActor(const char *);
 	MapObjActor(const char *, const char *);
 
@@ -24,13 +26,13 @@ class MapObjActor : public LiveActor
 	virtual void initCaseUseSwitchB(const MapObjActorInitInfo &);
 	virtual void initCaseNoUseSwitchB(const MapObjActorInitInfo &);
 	virtual void makeSubModels(const JMapInfoIter &, const MapObjActorInitInfo &);
-	virtual void updateProjmaxMtx();
+	virtual void updateProjmapMtx();
 	virtual bool tryEmitWaitEffect();
 	virtual bool tryDeleteWaitEffect();
 
 	void initialize(const JMapInfoIter &, const MapObjActorInitInfo &);
 	void isObjectName(const char *) const;
-	bool tryCreateBreakModel(const MapObjActorInitInfo&);
+	bool tryCreateBreakModel(const MapObjActorInitInfo &);
 	bool initStageEffectCamera();
 	bool initStageEffectPad();
 

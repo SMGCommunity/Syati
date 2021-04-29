@@ -21,10 +21,10 @@ public:
     void initForm(const JMapInfoIter &);
     void onSwitchA();
     void offSwitchA();
-    void isOnSwitchA() const;
-    void isOnSwitchB() const;
-    void isValidSwitchA() const;
-    void isValidSwitchB() const;
+    bool isOnSwitchA() const;
+    bool isOnSwitchB() const;
+    bool isValidSwitchA() const;
+    bool isValidSwitchB() const;
 
     // unknown function at 80070BB0
     // setFollowMtx
