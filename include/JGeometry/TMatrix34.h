@@ -23,3 +23,6 @@ namespace JGeometry
         /* empty */
     };
 };
+
+typedef JGeometry::SMatrix34C<f32> SMatrix34Cf;
+typedef JGeometry::TMatrix34<SMatrix34Cf> TMatrix34Cf;

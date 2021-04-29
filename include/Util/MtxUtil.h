@@ -10,7 +10,7 @@ namespace MR
 {
     void makeMtxTRS(Mtx, const JGeometry::TVec3<f32> &, const JGeometry::TVec3<f32> &, const JGeometry::TVec3<f32> &);
 
-    void makeMtxFrontUpPos(JGeometry::TPosition3<JGeometry::TMatrix34<JGeometry::SMatrix34C<f32> > > *, const JGeometry::TVec3<f32> &, const JGeometry::TVec3<f32> &, const JGeometry::TVec3<f32> &);
+    void makeMtxFrontUpPos(TPositionMtx *, const JGeometry::TVec3<f32> &, const JGeometry::TVec3<f32> &, const JGeometry::TVec3<f32> &);
 
     void extractMtxXDir(Mtx, JGeometry::TVec3<f32> *);
     void extractMtxYDir(Mtx, JGeometry::TVec3<f32> *);

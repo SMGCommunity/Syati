@@ -33,7 +33,7 @@ namespace MR
     void invalidateClipping(LiveActor *);
 
     void setBaseTRMtx(LiveActor *, Mtx4 *);
-    void setBaseTRMtx(LiveActor *, const JGeometry::TPosition3<JGeometry::TMatrix34<JGeometry::SMatrix34C<f32> > > &);
+    void setBaseTRMtx(LiveActor *, const TPositionMtx &);
 
     void setBaseScale(LiveActor *, const JGeometry::TVec3<f32> &);
 
