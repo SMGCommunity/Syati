@@ -83,7 +83,7 @@ namespace MR
     bool isEndPowerStarAppearDemo(const NameObj *);
     NameObj* createPowerStarDemoModel(const NameObj *, const char *, Mtx);
 
-    void declareCoin(const NameObj*, s32);
+    void declareCoin(const NameObj *, s32);
     s32 getDeclareRemnantCoinCount(const NameObj *);
 
     bool hopCoin(const NameObj *, const JGeometry::TVec3<f32> &, const JGeometry::TVec3<f32> &);

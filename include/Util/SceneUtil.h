@@ -4,7 +4,7 @@
 
 namespace MR
 {
-	const char * getCurrentStageName();
+	const char* getCurrentStageName();
 	bool isEqualSceneName(const char *);
 	bool isEqualStageName(const char *);
 

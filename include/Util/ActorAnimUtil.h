@@ -42,21 +42,21 @@ namespace MR
 	bool setBckFrameEndAndStop(const LiveActor *);
 	bool setBrkFrameEndAndStop(const LiveActor *);
 
-	void startBtkAndSetFrameAndStop(const LiveActor *, const char*, f32);
-	void startBrkAndSetFrameAndStop(const LiveActor *, const char*, f32);
-	void startBtpAndSetFrameAndStop(const LiveActor *, const char*, f32);
-	void startBvaAndSetFrameAndStop(const LiveActor *, const char*, f32);
-	void startBtk(const LiveActor *, const char*);
-	void startBrk(const LiveActor *, const char*);
-	void startBtp(const LiveActor *, const char*);
-	void startBpk(const LiveActor *, const char*);
-	void startBva(const LiveActor *, const char*);
-	bool startBckIfExist(const LiveActor *, const char*);
-	bool startBtkIfExist(const LiveActor *, const char*);
-	bool startBrkIfExist(const LiveActor *, const char*);
-	bool startBtpIfExist(const LiveActor *, const char*);
-	bool startBpkIfExist(const LiveActor *, const char*);
-	bool startBvaIfExist(const LiveActor *, const char*);
+	void startBtkAndSetFrameAndStop(const LiveActor *, const char *, f32);
+	void startBrkAndSetFrameAndStop(const LiveActor *, const char *, f32);
+	void startBtpAndSetFrameAndStop(const LiveActor *, const char *, f32);
+	void startBvaAndSetFrameAndStop(const LiveActor *, const char *, f32);
+	void startBtk(const LiveActor *, const char *);
+	void startBrk(const LiveActor *, const char *);
+	void startBtp(const LiveActor *, const char *);
+	void startBpk(const LiveActor *, const char *);
+	void startBva(const LiveActor *, const char *);
+	bool startBckIfExist(const LiveActor *, const char *);
+	bool startBtkIfExist(const LiveActor *, const char *);
+	bool startBrkIfExist(const LiveActor *, const char *);
+	bool startBtpIfExist(const LiveActor *, const char *);
+	bool startBpkIfExist(const LiveActor *, const char *);
+	bool startBvaIfExist(const LiveActor *, const char *);
 
 	void stopBck(const LiveActor *);
 	void stopBtk(const LiveActor *);
