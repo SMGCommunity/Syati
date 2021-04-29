@@ -10,7 +10,7 @@ namespace JGeometry
     {
     public:
         void identity();
-        void mult(const JGeometry::TVec3<f32> &, JGeometry::TVec3<f32> &);
+        void mult(const TVec3f &, TVec3f &);
         void concat(const T &);
     
         T val[3][4];
@@ -23,3 +23,6 @@ namespace JGeometry
         /* empty */
     };
 };
+
+typedef JGeometry::SMatrix34C<f32> SMatrix34Cf;
+typedef JGeometry::TMatrix34<SMatrix34Cf> TMatrix34Cf;

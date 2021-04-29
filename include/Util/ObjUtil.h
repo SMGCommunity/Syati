@@ -72,11 +72,11 @@ namespace MR
     void declarePowerStar(const NameObj *);
     void declarePowerStar(const NameObj *, s32);
     void declarePowerStarCoin100();
-    void appearPowerStarContinueCurrentDemo(const NameObj *, const JGeometry::TVec3<f32> &);
+    void appearPowerStarContinueCurrentDemo(const NameObj *, const TVec3f &);
     void appearPowerStarWithoutDemo(const NameObj *);
 
-    void requestAppearPowerStar(const NameObj *, const JGeometry::TVec3<f32> &);
-    void requestAppearPowerStar(const NameObj *, s32, const JGeometry::TVec3<f32> &);
+    void requestAppearPowerStar(const NameObj *, const TVec3f &);
+    void requestAppearPowerStar(const NameObj *, s32, const TVec3f &);
     void requestAppearPowerStar(const NameObj *, const LiveActor *, f32);
 
     void requestAppearPowerStarCoin100();
@@ -86,20 +86,20 @@ namespace MR
     void declareCoin(const NameObj *, s32);
     s32 getDeclareRemnantCoinCount(const NameObj *);
 
-    bool hopCoin(const NameObj *, const JGeometry::TVec3<f32> &, const JGeometry::TVec3<f32> &);
-    bool appearCoinPop(const NameObj *, const JGeometry::TVec3<f32> &, s32);
-    bool appearCoinPopToDirection(const NameObj *, const JGeometry::TVec3<f32> &, const JGeometry::TVec3<f32> &, s32);
+    bool hopCoin(const NameObj *, const TVec3f &, const TVec3f &);
+    bool appearCoinPop(const NameObj *, const TVec3f &, s32);
+    bool appearCoinPopToDirection(const NameObj *, const TVec3f &, const TVec3f &, s32);
 
-    bool appearCoinToVelocity(const NameObj *, const JGeometry::TVec3<f32> &, const JGeometry::TVec3<f32> &, s32);
-    bool appearCoinCircle(const NameObj *, const JGeometry::TVec3<f32> &, const JGeometry::TVec3<f32> &, s32);
+    bool appearCoinToVelocity(const NameObj *, const TVec3f &, const TVec3f &, s32);
+    bool appearCoinCircle(const NameObj *, const TVec3f &, const TVec3f &, s32);
     void declareStarPiece(const NameObj *, s32);
     s32 getDeclareRemnantStarPieceCount(const NameObj *);
     s32 getDeclareRemnantStarPieceCountNotExist(const NameObj *);
     void declareStarPieceReceiver(const NameObj *, s32);
     void clearGotCountStarPieceReceiver(const NameObj *);
-    bool hopStarPiece(const NameObj *, const JGeometry::TVec3<f32> &, const JGeometry::TVec3<f32> &);
-    bool appearStarPiece(const NameObj *, const JGeometry::TVec3<f32> &, s32, f32, f32, bool);
-    bool appearStarPieceToDirection(const NameObj *, const JGeometry::TVec3<f32> &, const JGeometry::TVec3<f32> &, s32, f32, f32, bool);
+    bool hopStarPiece(const NameObj *, const TVec3f &, const TVec3f &);
+    bool appearStarPiece(const NameObj *, const TVec3f &, s32, f32, f32, bool);
+    bool appearStarPieceToDirection(const NameObj *, const TVec3f &, const TVec3f &, s32, f32, f32, bool);
 
     void initStarPieceGetCSSound();
 

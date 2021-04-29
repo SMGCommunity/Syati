@@ -13,9 +13,9 @@ class PartsModel;
 
 namespace MR
 {
-    void setPosition(LiveActor *, const JGeometry::TVec3<f32> &);
+    void setPosition(LiveActor *, const TVec3f &);
     void setPosition(LiveActor *, f32, f32, f32);
-    void setRotation(LiveActor *, const JGeometry::TVec3<f32> &);
+    void setRotation(LiveActor *, const TVec3f &);
     void setRotation(LiveActor *, f32, f32, f32);
     void setRotation(LiveActor *, f32);
 
@@ -33,9 +33,9 @@ namespace MR
     void invalidateClipping(LiveActor *);
 
     void setBaseTRMtx(LiveActor *, Mtx4 *);
-    void setBaseTRMtx(LiveActor *, const JGeometry::TPosition3<JGeometry::TMatrix34<JGeometry::SMatrix34C<f32> > > &);
+    void setBaseTRMtx(LiveActor *, const TPositionMtx &);
 
-    void setBaseScale(LiveActor *, const JGeometry::TVec3<f32> &);
+    void setBaseScale(LiveActor *, const TVec3f &);
 
     f32 getBckFrame(const LiveActor *);
     f32 getBtkFrame(const LiveActor *);
@@ -78,10 +78,10 @@ namespace MR
 
     bool isBindedGround(const LiveActor *);
 
-    JGeometry::TVec3<f32>* getGroundNormal(const LiveActor *);
-    JGeometry::TVec3<f32>* getWallNormal(const LiveActor *);
-    JGeometry::TVec3<f32>* getRoofNormal(const LiveActor *);
-    JGeometry::TVec3<f32>* getBindedNormal(const LiveActor *);
+    TVec3f* getGroundNormal(const LiveActor *);
+    TVec3f* getWallNormal(const LiveActor *);
+    TVec3f* getRoofNormal(const LiveActor *);
+    TVec3f* getBindedNormal(const LiveActor *);
 
     bool isDead(const LiveActor *);
 
@@ -102,7 +102,7 @@ namespace MR
     void addToAttributeGroupSearchTurtle(const LiveActor *);
 
     void calcGravity(LiveActor *);
-    void calcGravity(LiveActor *, const JGeometry::TVec3<f32> &);
+    void calcGravity(LiveActor *, const TVec3f &);
 
     void initCollisionParts(LiveActor *, const char *, HitSensor *, Mtx4 *);
 

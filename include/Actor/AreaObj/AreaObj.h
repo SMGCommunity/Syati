@@ -14,7 +14,7 @@ public:
     virtual ~AreaObj();
     virtual void init(const JMapInfoIter &);
 
-    virtual bool isInVolume(const JGeometry::TVec3<f32> &) const;
+    virtual bool isInVolume(const TVec3f &) const;
     virtual s32 getAreaPriority() const;
     virtual const char* getManagerName() const;
 
@@ -54,7 +54,7 @@ public:
     virtual ~AreaObjMgr();
     
     void entry(AreaObj *);
-    bool find_in(const JGeometry::TVec3<f32> &) const;
+    bool find_in(const TVec3f &) const;
     // unknown function at 80070E30
 
     AreaObj** mAreas; // 14

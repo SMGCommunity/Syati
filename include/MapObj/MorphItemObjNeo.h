@@ -48,7 +48,7 @@ public:
 	f32 _A4;
 	f32 _A8;
 	f32 _AC;
-	JGeometry::TVec3<f32> _B0;
+	TVec3f _B0;
 	u32 _BC;
 	u32 _C0;
 	u32 _C4;

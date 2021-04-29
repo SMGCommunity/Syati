@@ -4,5 +4,5 @@
 
 namespace MR
 {
-    void rotateVecDegree(JGeometry::TVec3<f32> *, const JGeometry::TVec3<f32> &, f32);
+    void rotateVecDegree(TVec3f *, const TVec3f &, f32);
 };

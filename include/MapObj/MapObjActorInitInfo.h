@@ -12,9 +12,9 @@ public:
 	void setupBinder(f32, f32);
 	void setupEffect(const char *, s32);
 	void setupSound(s32, s32);
-	void setupSoundPos(JGeometry::TVec3<f32> *);
+	void setupSoundPos(TVec3f *);
 	void setupHitSensor();
-	void setupHitSensorParam(u16, f32, const JGeometry::TVec3<f32> &);
+	void setupHitSensorParam(u16, f32, const TVec3f &);
 	void setupNerve(const Nerve *);
 	// unknown function at 802CBDA0, takes s32 and stores it in mNerveArg
 	void setupShadow(const char *);
@@ -56,7 +56,7 @@ public:
 	const char* mHioNode; // 18
 	s16 mHitSensorMessage; // 1C
 	f32 mHitSensorRadius; // 20
-	JGeometry::TVec3<f32> mHitSensorOffset; // 24
+	TVec3f mHitSensorOffset; // 24
 	bool mInitHitSensorCallback; // 30
 	f32 mBinderArg1; // 34
 	f32 mBinderArg2; // 38
@@ -64,7 +64,7 @@ public:
 	s32 mNumEffects; // 40
 	s32 mNumSounds; // 44
 	const char* mSoundObjName; // 48
-	JGeometry::TVec3<f32>* mSoundPos; // 4C
+	TVec3f* mSoundPos; // 4C
 	bool mProjmapMtxArg2; // 50
 	bool mProjmapMtxArg1; // 51
 	Nerve* mNerve; // 54

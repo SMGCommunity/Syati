@@ -8,17 +8,17 @@
 
 namespace MR
 {
-    void makeMtxTRS(Mtx, const JGeometry::TVec3<f32> &, const JGeometry::TVec3<f32> &, const JGeometry::TVec3<f32> &);
+    void makeMtxTRS(Mtx, const TVec3f &, const TVec3f &, const TVec3f &);
 
-    void makeMtxFrontUpPos(JGeometry::TPosition3<JGeometry::TMatrix34<JGeometry::SMatrix34C<f32> > > *, const JGeometry::TVec3<f32> &, const JGeometry::TVec3<f32> &, const JGeometry::TVec3<f32> &);
+    void makeMtxFrontUpPos(TPositionMtx *, const TVec3f &, const TVec3f &, const TVec3f &);
 
-    void extractMtxXDir(Mtx, JGeometry::TVec3<f32> *);
-    void extractMtxYDir(Mtx, JGeometry::TVec3<f32> *);
-    void extractMtxZDir(Mtx, JGeometry::TVec3<f32> *);
-    void extractMtxXYZDir(Mtx, JGeometry::TVec3<f32> *, JGeometry::TVec3<f32> *, JGeometry::TVec3<f32> *);
-    void extractMtxTrans(Mtx, JGeometry::TVec3<f32> *);
+    void extractMtxXDir(Mtx, TVec3f *);
+    void extractMtxYDir(Mtx, TVec3f *);
+    void extractMtxZDir(Mtx, TVec3f *);
+    void extractMtxXYZDir(Mtx, TVec3f *, TVec3f *, TVec3f *);
+    void extractMtxTrans(Mtx, TVec3f *);
 
-    Mtx* tmpMtxTrans(JGeometry::TVec3<f32> *);
+    Mtx* tmpMtxTrans(TVec3f *);
     Mtx* tmpMtxScale(f32, f32, f32);
     Mtx* tmpMtxRotXRad(f32);
     Mtx* tmpMtxRotYRad(f32);

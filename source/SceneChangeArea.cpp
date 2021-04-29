@@ -9,7 +9,7 @@ const char* pStages[2] = { "IslandFleetGalaxy", "RedBlueExGalaxy" };
 
 void SceneChangeAreaControl(AreaObj *pArea)
 {
-    JGeometry::TVec3<f32>* pos = MR::getPlayerPos();
+    TVec3f* pos = MR::getPlayerPos();
 
     if (pArea->isInVolume(*pos))
     {

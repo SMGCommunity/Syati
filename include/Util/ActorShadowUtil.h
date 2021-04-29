@@ -9,7 +9,7 @@ namespace MR
 {
     void initShadowFromCSV(LiveActor *, const char *, bool);
 
-    void addShadowVolumeBox(LiveActor *, const char *, const JGeometry::TVec3<f32> &, Mtx);
+    void addShadowVolumeBox(LiveActor *, const char *, const TVec3f &, Mtx);
 
     void initShadowVolumeSphere(LiveActor *, f32);
 
