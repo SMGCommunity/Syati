@@ -5,7 +5,7 @@
 class JetTurtle : public LiveActor
 {
 public:
-	JetTurtle(const char*);
+	JetTurtle(const char *);
 
 	virtual void init(const JMapInfoIter &);
 	virtual void initAfterPlacement();
@@ -19,30 +19,42 @@ public:
 	virtual void resetPosition();
 	virtual void reset(u32);
 
-	u32 _90;
-	u32 _94;
-	u32 _98;
-	u32 _9C;
-	u32 _A0;
-	u32 _A4;
-	u32 _A8;
-	u32 _AC;
-	u32 _B0;
-	u32 _B4;
-	u32 _B8;
-	u32 _BC;
-	u32 _C0;
-	u32 _C4;
-	u32 _C8;
-	u32 _CC;
-	u32 _D0;
-	u32 _D4;
-	u32 _D8;
-	u32 _DC;
-	u32 _E0;
-	u32 _E4;
-	u32 _E8;
-	u32 _EC;
+	void init2(const JMapInfoIter &);
+	void appearAndTryTaken();
+	// three unknown functions between this
+	bool isWait() const;
+	bool isRestart() const;
+	void becomeSlowType();
+	void becomeFastType();
+	void exeWait();
+	void exeThrowWait();
+	void exeTakenReserve();
+	void exeTakenStart();
+	void exeRestart();
+	void exeDrop();
+	void resetPositionAndVanish();
+	void bound();
+	void boundDrop();
+	// one unknown function here
+
+	f32 _90;
+	s16 _94;
+	s16 _96;
+	s32 _98;
+	s32 _9C;
+	TVec3f _A0;
+	TVec3f _AC;
+	TVec3f _B8;
+	TVec3f _C4;
+	TVec3f _D0;
+	s16 _DC;
+	s32 _E0; // unused
+	u8 _E4;
+	u8 _E5;
+	u8 _E6;
+	u8 _E7;
+	u32* _E8;
+	u8 _EC;
 };
 
 class GoldenTurtle : public JetTurtle
@@ -50,6 +62,7 @@ class GoldenTurtle : public JetTurtle
 public:
 	inline GoldenTurtle(const char * pName) : JetTurtle(pName) {}
 
+	virtual void init(const JMapInfoIter &);
 	virtual void exeThrowing();
 	virtual void resetPosition();
 	virtual void reset(u32);

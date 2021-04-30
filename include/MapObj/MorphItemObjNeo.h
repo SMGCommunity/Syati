@@ -32,6 +32,8 @@ public:
 	virtual void appearTransformation();
 	virtual void killTransformation();
 
+	// class functions?
+
 	u16 _90;
 	u16 _92;
 	u8 _94;

@@ -1,19 +1,39 @@
 #pragma once
 
 #include "Actor/LiveActor/LiveActor.h"
+#include "Actor/Enemy/AnimScaleController.h"
+#include "Actor/Enemy/WalkerStateBindStarPointer.h"
 
 class Shellfish : public LiveActor
 {
 public:
 	Shellfish(const char *);
 
+	virtual void ~Shellfish();
+	virtual void init(const JMapInfoIter &);
+	virtual void initAfterPlacement();
+	virtual void control();
+	virtual void calcAndSetBaseMtx();
+	virtual void attackSensor(HitSensor *, HitSensor *);
+	virtual u32 receiveMsgPlayerAttack(u32, HitSensor *, HitSensor *);
+
+	void exeWait();
+	void exeOpen();
+	void exeCloseSignal();
+	void exeClose();
+	void exeShock();
 	void initItem(const JMapInfoIter &);
+	void initCoin(const JMapInfoIter &);
+	void initYellowChip(const JMapInfoIter &);
+	void initKinokoOneUp(const JMapInfoIter &);
+	void startBindItem();
+	void endBindItem();
 	void putItem();
 
-	s32 _90;
-	s32 _94;
+	AnimScaleController* mAnimScaleController;
+	WalkerStateBindStarPointer* mBindStarPointer;
 	LiveActor* mItem;
 	s32 mItemType;
-	u8 _A0;
-	s32 _A4;
+	bool mBindItem;
+	u32* mBodyCollision;
 };
