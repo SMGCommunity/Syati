@@ -7,6 +7,7 @@ class JetTurtle : public LiveActor
 public:
 	JetTurtle(const char *);
 
+	virtual ~JetTurtle();
 	virtual void init(const JMapInfoIter &);
 	virtual void initAfterPlacement();
 	virtual void appear();
@@ -62,6 +63,7 @@ class GoldenTurtle : public JetTurtle
 public:
 	inline GoldenTurtle(const char * pName) : JetTurtle(pName) {}
 
+	virtual ~GoldenTurtle();
 	virtual void init(const JMapInfoIter &);
 	virtual void exeThrowing();
 	virtual void resetPosition();

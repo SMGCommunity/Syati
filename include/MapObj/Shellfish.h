@@ -9,7 +9,7 @@ class Shellfish : public LiveActor
 public:
 	Shellfish(const char *);
 
-	virtual void ~Shellfish();
+	virtual ~Shellfish();
 	virtual void init(const JMapInfoIter &);
 	virtual void initAfterPlacement();
 	virtual void control();

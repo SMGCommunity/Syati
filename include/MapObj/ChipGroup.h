@@ -15,6 +15,7 @@ class ChipGroup : public NameObj
 public:
 	ChipGroup(const char *, s32);
 
+	virtual ~ChipGroup();
 	virtual void init(const JMapInfoIter &);
 	virtual void movement();
 
