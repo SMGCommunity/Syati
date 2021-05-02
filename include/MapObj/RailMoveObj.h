@@ -33,8 +33,8 @@ public:
 	void exeWait();
 	void exeMove();
 
-	TVec3f _D0;
-	bool _DC;
+	TVec3f _D0; //Clipping related, used by the Init function for the MR::initAndSetRailClipping function call
+	bool isRailMoverWorking; //Only used in exeMove, it is always set to the result of MapObjActorUtil::isRailMoverWorking. Probably used to see if the rail mover hasn't started yet
 };
 
 namespace NrvRailMoveObj {
