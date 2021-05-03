@@ -40,41 +40,41 @@ public:
 namespace NrvRailMoveObj {
 	class NrvWait : public Nerve
 	{
-		NrvWait() {}
-		virtual void execute(Spine*) const;
+	public:
+		virtual void execute(Spine *) const;
 
 		static NrvWait sInstance;
 	};
 
 	class NrvWaitForPlayerOn : public Nerve
 	{
-		NrvWaitForPlayerOn() {}
-		virtual void execute(Spine*) const;
+	public:
+		virtual void execute(Spine *) const;
 
 		static NrvWaitForPlayerOn sInstance;
 	};
 
 	class NrvMove : public Nerve
 	{
-		NrvMove() {}
-		virtual void execute(Spine*) const;
+	public:
+		virtual void execute(Spine *) const;
 
 		static NrvMove sInstance;
 	};
 
 	class NrvDone : public Nerve
 	{
-		NrvDone() {}
-		virtual void execute(Spine*) const;
+	public:
+		virtual void execute(Spine *) const;
 
 		static NrvDone sInstance;
 	};
 
 	class NrvDemoPlay : public Nerve
 	{
-		NrvDemoPla() {}
-		virtual void execute(Spine*) const;
+	public:
+		virtual void execute(Spine *) const;
 
-		static NrvDemoPla sInstance;
+		static NrvDemoPlay sInstance;
 	};
 }

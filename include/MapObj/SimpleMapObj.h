@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Actor/LiveActor/LiveActor.h"
 #include "MapObj/MapObjActor.h"
 
 class SimpleMapObj : public MapObjActor

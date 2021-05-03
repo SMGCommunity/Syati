@@ -1,12 +1,11 @@
 #pragma once
 
-#include "Actor/LiveActor/LiveActor.h"
-#include "Actor/LiveActor/ActorCameraInfo.h"
 #include "MapObj/MapObjActor.h"
 #include "MapObj/MapObjActorInitInfo.h"
 #include "JGeometry/TVec3.h"
 
 class BenefitItemObj;
+class ActorCameraInfo;
 
 class SimpleBreakableObj : public MapObjActor
 {
@@ -55,24 +54,24 @@ namespace NrvSimpleBreakableObj
 {
 	class NrvWait : public Nerve
 	{
-		NrvWait() {}
-		virtual void execute(Spine*) const;
+	public:
+		virtual void execute(Spine *) const;
 
 		static NrvWait sInstance;
 	};
 
 	class NrvTryStartDemo : public Nerve
 	{
-		NrvTryStartDemo() {}
-		virtual void execute(Spine*) const;
+	public:
+		virtual void execute(Spine *) const;
 
 		static NrvTryStartDemo sInstance;
 	};
 
 	class NrvDemo : public Nerve
 	{
-		NrvDemo() {}
-		virtual void execute(Spine*) const;
+	public:
+		virtual void execute(Spine *) const;
 
 		static NrvDemo sInstance;
 	};
