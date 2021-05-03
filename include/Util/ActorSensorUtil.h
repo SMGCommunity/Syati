@@ -58,13 +58,13 @@ namespace MR
 
 	HitSensor* getSensor(LiveActor *, const char *);
 
-	void sendMsgPush(HitSensor *, HitSensor *);
+	bool sendMsgPush(HitSensor *, HitSensor *);
 
-	void sendMsgEnemyAttack(HitSensor *, HitSensor *);
+	bool sendMsgEnemyAttack(HitSensor *, HitSensor *);
 
-	void sendMsgEnemyAttackElectric(HitSensor *, HitSensor *);
-	void sendMsgEnemyAttackFreeze(HitSensor *, HitSensor *);
-	void sendMsgEnemyAttackExplosion(HitSensor *, HitSensor *);
+	bool sendMsgEnemyAttackElectric(HitSensor *, HitSensor *);
+	bool sendMsgEnemyAttackFreeze(HitSensor *, HitSensor *);
+	bool sendMsgEnemyAttackExplosion(HitSensor *, HitSensor *);
 
 	void sendMsgToGroupMember(u32, LiveActor *, HitSensor *, const char *);
 	
