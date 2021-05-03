@@ -2,8 +2,9 @@
 
 #include "kamek.h"
 
-#include "Actor/LiveActor/LiveActor.h"
 #include "JMap/JMapInfoIter.h"
+
+class LiveActor;
 
 namespace MR
 {
