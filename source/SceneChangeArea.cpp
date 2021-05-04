@@ -31,3 +31,7 @@ kmWritePointer(0x8066AE4C, SceneChangeAreaControl);
 #ifdef PAL
 kmWritePointer(0x8067054C, SceneChangeAreaControl);
 #endif
+
+#ifdef JAP
+kmWritePointer(0x8066A62C, SceneChangeAreaControl);
+#endif
