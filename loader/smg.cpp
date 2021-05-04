@@ -74,8 +74,8 @@ const loaderFunctionsEx functions = {
 	freeAdapter},
 	(JKRHeap_Alloc_t) 0x80501310,
 	(JKRHeap_Free_t) 0x80501360,
-	(void **) 0x807D58F0, // JKRHeap::sSystemHeap
-	(void **) 0x807D58F0 // JKRHeap::sRootHeap
+	(void **) 0x807D58D0, // JKRHeap::sSystemHeap
+	(void **) 0x807D58D0 // JKRHeap::sRootHeap
 };
 #endif
 
