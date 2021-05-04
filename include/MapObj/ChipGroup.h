@@ -2,13 +2,12 @@
 
 #include "Actor/NameObj/NameObj.h"
 #include "Map/Switch/StageSwitch.h"
-#include "JGeometry/TVec3.h"
 #include "MapObj/ChipBase.h"
 
 struct ChipStruct
 {
-	ChipBase* mChip;
-	u8 _4;
+	ChipBase* mChip; // 0
+	bool mIsCollected; // 4
 };
 
 class ChipGroup : public NameObj
@@ -16,6 +15,7 @@ class ChipGroup : public NameObj
 public:
 	ChipGroup(const char *, s32);
 
+	virtual ~ChipGroup();
 	virtual void init(const JMapInfoIter &);
 	virtual void movement();
 
@@ -27,19 +27,27 @@ public:
 	s32 getGotCount();
 	bool isComplete();
 
-	ChipStruct mChips[5];
-	StageSwitchCtrl* mStageSwitchCtrl;
-	TVec3f mTranslate;
-	s32 _4C;
-	s32 _50;
-	s32 mArg0;
-	s32 mArg1;
-	s32 _5C;
+	ChipStruct mChips[5]; // 14
+	StageSwitchCtrl* mStageSwitchCtrl; // 3C
+	TVec3f mTranslate; // 40
+	s32 mCollectedChips; // 4C
+	s32 mNumChips; // 50
+	s32 mArg0; // 54
+	s32 mType; // 58
+	s32 mArg1; // 5C
 	s32 _60;
 	f32 _64;
-	f32 mArg2;
-	u8 _6C;
+	f32 mArg2; // 68
+	bool _6C;
 	s32 _70;
-	u8 _74;
-	u8 _75;
+	bool mUseSwAppear; // 74
+	bool mAppeared; // 75
+};
+
+class YellowChipGroup : public ChipGroup
+{
+public:
+	YellowChipGroup(const char *);
+
+	virtual ~YellowChipGroup();
 };

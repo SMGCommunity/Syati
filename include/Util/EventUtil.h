@@ -10,6 +10,8 @@ namespace MR
 	s32 getStarPieceNum();
 	void addStarPiece(int);
 
+	void incCoin(int);
+
 	s32 getCoinNum();
 
 	s32 getPurpleCoinNum();

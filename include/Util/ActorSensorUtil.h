@@ -34,9 +34,9 @@ namespace MR
 	HitSensor* addHitSensorAtJointEnemy(LiveActor *, const char *, const char *, u16, f32, const TVec3f &);
 	HitSensor* addHitSensorAtJointEnemyAttack(LiveActor *, const char *, const char *, u16, f32, const TVec3f &);
 
-	void addBodyMessageSensor(LiveActor *, u32);
+	HitSensor* addBodyMessageSensor(LiveActor *, u32);
 
-	void addBodyMessageSensorMapObj(LiveActor *);
+	HitSensor* addBodyMessageSensorMapObj(LiveActor *);
 
 	void invalidateHitSensors(LiveActor *);
 
@@ -58,13 +58,13 @@ namespace MR
 
 	HitSensor* getSensor(LiveActor *, const char *);
 
-	void sendMsgPush(HitSensor *, HitSensor *);
+	bool sendMsgPush(HitSensor *, HitSensor *);
 
-	void sendMsgEnemyAttack(HitSensor *, HitSensor *);
+	bool sendMsgEnemyAttack(HitSensor *, HitSensor *);
 
-	void sendMsgEnemyAttackElectric(HitSensor *, HitSensor *);
-	void sendMsgEnemyAttackFreeze(HitSensor *, HitSensor *);
-	void sendMsgEnemyAttackExplosion(HitSensor *, HitSensor *);
+	bool sendMsgEnemyAttackElectric(HitSensor *, HitSensor *);
+	bool sendMsgEnemyAttackFreeze(HitSensor *, HitSensor *);
+	bool sendMsgEnemyAttackExplosion(HitSensor *, HitSensor *);
 
 	void sendMsgToGroupMember(u32, LiveActor *, HitSensor *, const char *);
 	
