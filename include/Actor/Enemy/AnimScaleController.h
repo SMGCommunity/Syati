@@ -11,5 +11,9 @@ public:
 
     virtual ~AnimScaleController();
 
-    u8 _8[0x1C-0x8];
+    void startHitReaction();
+
+    s32 _8;
+    TVec3f mScale;
+    f32 _18;
 };
