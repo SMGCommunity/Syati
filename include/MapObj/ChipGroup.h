@@ -6,8 +6,8 @@
 
 struct ChipStruct
 {
-	ChipBase* mChip;
-	bool mIsCollected;
+	ChipBase* mChip; // 0
+	bool mIsCollected; // 4
 };
 
 class ChipGroup : public NameObj
@@ -37,11 +37,11 @@ public:
 	s32 mArg1; // 5C
 	s32 _60;
 	f32 _64;
-	f32 mArg2;
+	f32 mArg2; // 68
 	bool _6C;
 	s32 _70;
-	bool mUseSwAppear;
-	bool mAppeared;
+	bool mUseSwAppear; // 74
+	bool mAppeared; // 75
 };
 
 class YellowChipGroup : public ChipGroup

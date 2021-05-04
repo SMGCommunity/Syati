@@ -57,7 +57,7 @@ public:
 	void startWallHitSound();
 	void startNeedleSound();
 
-	s32 mType;
+	s32 mType; // 90
 	f32 _94[4]; // TVec4f
 	Mtx _A4;
 	Mtx _D4;
@@ -66,7 +66,7 @@ public:
 	u32 _10C;
 	u32 _110;
 	f32 _114;
-	ModelObj* mBreakModel;
+	ModelObj* mBreakModel; // 118
 	u32 _11C;
 	u32 _120;
 	u32 _124;
