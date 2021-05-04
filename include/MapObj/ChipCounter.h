@@ -23,9 +23,9 @@ public:
 	void exeComplete();
 	void exeCompleteOut();
 
-	u32* mCollectCounter;
+	u32* mCollectCounter // 2C;
 	s32 _30;
-	s32 mType;
+	s32 mType; // _34
 	s32 _38;
 	f32 _3C;
 };

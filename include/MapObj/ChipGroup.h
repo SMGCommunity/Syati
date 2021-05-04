@@ -27,14 +27,14 @@ public:
 	s32 getGotCount();
 	bool isComplete();
 
-	ChipStruct mChips[5];
-	StageSwitchCtrl* mStageSwitchCtrl;
-	TVec3f mTranslate;
-	s32 mCollectedChips;
-	s32 mNumChips;
-	s32 mArg0;
-	s32 mType;
-	s32 mArg1;
+	ChipStruct mChips[5]; // 14
+	StageSwitchCtrl* mStageSwitchCtrl; // 3C
+	TVec3f mTranslate; // 40
+	s32 mCollectedChips; // 4C
+	s32 mNumChips; // 50
+	s32 mArg0; // 54
+	s32 mType; // 58
+	s32 mArg1; // 5C
 	s32 _60;
 	f32 _64;
 	f32 mArg2;

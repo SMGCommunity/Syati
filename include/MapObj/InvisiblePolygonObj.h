@@ -14,5 +14,5 @@ public:
 	void initBaseMtx();
 	void initCollision(const JMapInfoIter &);
 
-	Mtx mMatrix;
+	Mtx mMatrix; // 90
 };

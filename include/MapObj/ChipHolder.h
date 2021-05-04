@@ -15,10 +15,10 @@ public:
 	void registerChipGroup(ChipGroup *);
 	ChipGroup* findChipGroup(s32) const;
 
-	ChipCounter* mChipCounter;
-	ChipGroup** mChipGroups;
-	s32 mNumChipGroups;
-	s32 mType;
+	ChipCounter* mChipCounter; // 14
+	ChipGroup** mChipGroups; // 18
+	s32 mNumChipGroups; // 1C
+	s32 mType; // 20
 };
 
 namespace MR

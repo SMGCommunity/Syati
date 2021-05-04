@@ -51,5 +51,5 @@ public:
 	s32 mType; // B4
 	s32 _B8;
 	u8 _BC;
-	bool mArg2;
+	bool mArg2; // BD
 };

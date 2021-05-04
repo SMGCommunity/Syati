@@ -30,10 +30,10 @@ public:
 	void endBindItem();
 	void putItem();
 
-	AnimScaleController* mAnimScaleController;
-	WalkerStateBindStarPointer* mBindStarPointer;
-	LiveActor* mItem;
-	s32 mItemType;
-	bool mBindItem;
-	u32* mBodyCollision;
+	AnimScaleController* mAnimScaleController; // 90
+	WalkerStateBindStarPointer* mBindStarPointer; // 94
+	LiveActor* mItem; // 98
+	s32 mItemType; // 9C
+	bool mBindItem; // A0
+	u32* mBodyCollision; // A4
 };
