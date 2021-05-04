@@ -45,7 +45,7 @@ public:
     void updateScale(f32, f32);
 
     s32 _8;
-    TVec3f mScale;
+    TVec3f mScale; // _C;
     f32 _18;
 };
 
