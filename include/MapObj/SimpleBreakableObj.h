@@ -43,7 +43,6 @@ public:
 	u16 _E0;
 	u32 _E4;
 	u32 _E8;
-
 	BenefitItemObj* mOneUpKinokio; //_EC
 	u8 _F0;
 	u8 _F1;
