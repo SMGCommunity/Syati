@@ -4,6 +4,8 @@
 #include "JGeometry/TVec3.h"
 #include "JMap/JMapInfoIter.h"
 
+bool getJMapInfoRailArg(const JMapInfoIter &, const char *, s32 *);
+
 namespace MR
 {
     bool isValidInfo(const JMapInfoIter &);
@@ -82,9 +84,9 @@ namespace MR
     bool isExistStageSwitchDead(const JMapInfoIter &);
     bool isExistStageSwitchAwake(const JMapInfoIter &);
     bool isExistStageSwitchParam(const JMapInfoIter &);
-
     bool isExistMessageId(const JMapInfoIter &);
     bool isEqualObjectName(const JMapInfoIter &, const char *);
+
     bool getJMapInfoCameraSetID(const JMapInfoIter &, s32 *);
     bool getJMapInfoViewGroupID(const JMapInfoIter &, s32 *);
     bool getJMapInfoMessageID(const JMapInfoIter &, s32 *);
@@ -101,11 +103,11 @@ namespace MR
     bool getRailId(const JMapInfoIter &, s32 *);
     bool getNextLinkRailId(const JMapInfoIter &, s32 *);
     bool isEqualRailUsage(const JMapInfoIter &, const char *);
-
     void getRailPointPos0(const JMapInfoIter &, TVec3f *);
     void getRailPointPos1(const JMapInfoIter &, TVec3f *);
     void getRailPointPos2(const JMapInfoIter &, TVec3f *);
     bool isLoopRailPathIter(const JMapInfoIter &);
+
     void getLinkObjID(const JMapInfoIter &, s32 *);
     void getMapPartsID(const JMapInfoIter &, s32 *);
     void getGeneratorID(const JMapInfoIter &, s32 *);
