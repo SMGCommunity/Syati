@@ -53,7 +53,9 @@ namespace MR
 	bool isSensorType(HitSensor *, u32);
 
 	// ??? getTaken(const LiveActor *);
+	void setSensorPos(HitSensor *, const TVec3f &);
 
+	f32 getSensorRadius(HitSensor *);
 	HitSensor* getSensor(LiveActor *, const char *);
 
 	void validateHitSensors(LiveActor *);
