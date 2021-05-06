@@ -66,7 +66,7 @@ namespace MR
 	void clearHitSensors(LiveActor *);
 
 	HitSensor* getSensor(LiveActor *, int);
-	LiveActor* getSensorHost(HitSensor const *);
+	LiveActor* getSensorHost(const HitSensor *);
 	bool isSensor(HitSensor const *, const char *);
 	bool isSensorPlayer(HitSensor const *);
 

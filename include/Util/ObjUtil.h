@@ -8,6 +8,15 @@ class LiveActor;
 
 namespace MR
 {
+    bool isJudgedToClipFrustum(const TVec3f &, f32);
+
+    bool isJudgedToClipFrustum300m(const TVec3f &, f32);
+    bool isJudgedToNearClip(const TVec3f &, f32);
+
+    bool isInWater(const TVec3f &);
+    bool isInDeath(const TVec3f &);
+    bool isInDarkMatter(const TVec3f &);
+
     void connectToScene(NameObj *, int, int, int, int);
     void connectToSceneCollisionMapObj(LiveActor *);
     void connectToSceneCollisionMapObjWeakLight(LiveActor *);
