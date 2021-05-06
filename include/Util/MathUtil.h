@@ -138,6 +138,7 @@ namespace MR
 	bool isNormalize(const TVec3f &, f32);
 	void setNan(TVec3f &);
 	bool isNan(const TVec3f &);
+	f32 calcRotateY(f32, f32);
 
 	void vecKillElement(const TVec3f &, const TVec3f &, TVec3f *);
 
