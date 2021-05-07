@@ -23,10 +23,11 @@ namespace MR
 
     void calcAnimDirect(LiveActor *);
     void setClippingTypeSphere(LiveActor *, f32);
-
-    void setClippingFarMax(LiveActor *);
+    void setClippingTypeSphere(LiveActor *, f32, const TVec3f *);
 
     void setClippingTypeSphereContainsModelBoundingBox(LiveActor *, f32);
+
+    void setClippingFarMax(LiveActor *);
 
     void setGroupClipping(LiveActor *, const JMapInfoIter &, int);
     void validateClipping(LiveActor *);

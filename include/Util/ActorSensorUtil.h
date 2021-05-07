@@ -158,7 +158,7 @@ namespace MR
 	bool isMsgPlayerHitAll(u32);
 
 	bool isMsgPlayerSpinAttack(u32);
-
+	bool isMsgPlayerSpinAttackOrSupportTico(u32);
 	bool isMsgPlayerTrample(u32);
 	bool isMsgPlayerHipDrop(u32);
 	bool isMsgPlayerHipDropFloor(u32);
@@ -173,6 +173,7 @@ namespace MR
 	bool isMsgFreezeAttack(u32);
 	bool isMsgInvincibleAttack(u32);
 
+	bool isMsgSupportTicoSpin(u32);
 	bool isMsgAutoRushBegin(u32);
 
 	bool isMsgUpdateBaseMtx(u32);

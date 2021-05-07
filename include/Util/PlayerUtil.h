@@ -13,6 +13,7 @@ namespace MR
 
     TVec3f* getPlayerRotate();
 
+    TVec3f* getPlayerVelocity();
     TVec3f* getPlayerLastMove();
     void setPlayerJumpVec(const TVec3f &);
 

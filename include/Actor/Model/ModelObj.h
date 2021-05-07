@@ -5,7 +5,7 @@
 class ModelObj : public LiveActor
 {
 public:
-    ModelObj(const char *, const char *, Mtx *, s32, s32, s32, bool);
+    ModelObj(const char *, const char *, Mtx4 *, s32, s32, s32, bool);
 
     virtual ~ModelObj();
     virtual void init(const JMapInfoIter &);
