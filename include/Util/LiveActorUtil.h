@@ -90,11 +90,11 @@ namespace MR
     void hideModel(LiveActor *);
 
     bool isNoBind(const LiveActor *);
-    void onBind(const LiveActor *);
-    void offBind(const LiveActor *);
+    void onBind(LiveActor *);
+    void offBind(LiveActor *);
     bool isCalcGravity(const LiveActor *);
-    void onCalcGravity(const LiveActor *);
-    void offCalcGravity(const LiveActor *);
+    void onCalcGravity(LiveActor *);
+    void offCalcGravity(LiveActor *);
 
     void joinToGroup(LiveActor *, const char *);
     void joinToGroupArray(LiveActor *, const JMapInfoIter &, const char *, s32);

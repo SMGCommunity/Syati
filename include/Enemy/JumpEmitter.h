@@ -9,6 +9,7 @@ class JumpEmitter : public LiveActor
 public:
 	JumpEmitter(const char *);
 
+	virtual ~JumpEmitter();
 	virtual void init(const JMapInfoIter &);
 	virtual void movement();
 	virtual void kill();

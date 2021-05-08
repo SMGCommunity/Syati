@@ -18,4 +18,8 @@ namespace MR
     // unknown function at 8002D5C0
     s16 getJointIndex(const LiveActor *, const char *);
     const char* getJointName(const LiveActor *, s32);
+    s16 getJointNum(const LiveActor *);
+    bool isExistJoint(const LiveActor *, const char *);
+
+    void copyJointPos(const LiveActor *, const char *, TVec3f *);
 };
