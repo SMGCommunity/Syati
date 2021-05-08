@@ -25,6 +25,8 @@ namespace MR
 
     bool isPlayerInBind();
 
+    bool isPlayerElementModeIce();
+
     bool isPlayerStaggering();
     bool isPlayerSwimming();
     bool isPlayerSleeping();

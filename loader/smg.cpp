@@ -61,6 +61,24 @@ const loaderFunctionsEx functions = {
 };
 #endif
 
+#ifdef JAP
+const loaderFunctionsEx functions = {
+	{(OSReport_t) 0x805B6210,
+	(OSFatal_t) 0x805B8500,
+	(DVDConvertPathToEntrynum_t) 0x805D1370,
+	(DVDFastOpen_t) 0x805D1680,
+	(DVDReadPrio_t) 0x805D1A50,
+	(DVDClose_t) 0x805D1810,
+	(sprintf_t) 0x80633CBC,
+	allocAdapter,
+	freeAdapter},
+	(JKRHeap_Alloc_t) 0x80501310,
+	(JKRHeap_Free_t) 0x80501360,
+	(void **) 0x807D58D0, // JKRHeap::sSystemHeap
+	(void **) 0x807D58D0 // JKRHeap::sRootHeap
+};
+#endif
+
 void unknownVersion()
 {
 	// can't do much here!

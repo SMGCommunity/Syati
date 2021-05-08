@@ -64,6 +64,8 @@ public:
     virtual u32 receiveOtherMsg(u32, HitSensor *, HitSensor *);
 
     void initStageSwitch(const JMapInfoIter &iter);
+    void initActorStarPointerTarget(f32, const TVec3f *, Mtx4 *, TVec3f);
+	
     void initRailRider(const JMapInfoIter &);
     void initHitSensor(s32);
     void initModelManagerWithAnm(const char *, const char *);

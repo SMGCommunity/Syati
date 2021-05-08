@@ -16,6 +16,7 @@ class MorphItemObjNeo : public LiveActor
 public:
 	MorphItemObjNeo(const char *);
 
+	virtual ~MorphItemObjNeo();
 	virtual void init(JMapInfoIter const &);
 	virtual void initAfterPlacement();
 	virtual void appear();
@@ -31,6 +32,8 @@ public:
 	virtual void emitAppearEffects();
 	virtual void appearTransformation();
 	virtual void killTransformation();
+
+	// class functions?
 
 	u16 _90;
 	u16 _92;

@@ -7,6 +7,7 @@ class RingBeam : public LiveActor
 public:
 	RingBeam(const char *, LiveActor *, bool, bool, bool, bool, const char * pName);
 
+	virtual ~RingBeam();
 	virtual void init(const JMapInfoIter &);
 	virtual void movement();
 	virtual void appear();

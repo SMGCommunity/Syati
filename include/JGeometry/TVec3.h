@@ -36,6 +36,7 @@ namespace JGeometry
         void operator =(const TVec3<T> &);
         TVec3<T> operator +(const TVec3<T> &) const;
         TVec3<T> operator +=(const TVec3<T> &);
+        TVec3<T> operator -() const; // mi
         TVec3<T> operator -(const TVec3<T> &); // mi
         TVec3<T> operator -=(const TVec3<T> &); // ami
         TVec3<T> operator *(T) const; // ml

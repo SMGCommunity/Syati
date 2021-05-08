@@ -6,11 +6,14 @@
 #define CHIP_BLUE 0
 #define CHIP_YELLOW 1
 
+class PartsModel;
+
 class ChipBase : public LiveActor
 {
 public:
 	ChipBase(const char *, s32, const char *);
 
+	virtual ~ChipBase();
 	virtual void init(const JMapInfoIter &);
 	virtual void initAfterPlacement();
 	virtual void makeActorAppeared();
@@ -30,23 +33,23 @@ public:
 	void requestGet(HitSensor *, HitSensor *);
 	void requestShow();
 	void requestHide();
-	void requestStartControl();
-	void requestEndControl();
-	void exeFlashing();
-	void exeGot();
-	// there is a bit more
 
-	s32 _90;
-	s32 _94;
-	s32 _98;
-	s32 _9C;
-	s32 _A0;
-	f32 _A4;
-	f32 _A8;
-	f32 _AC;
-	s32 mArg0;
-	s32 _B4;
+	void exeFlashing();
+
+	void exeGot();
+	bool isGettable() const;
+
+	bool isNeedBubble(const JMapInfoIter &);
+
+	u32* mFlashingCtrl; // 90
+	u32* mRailMover; // 94
+	PartsModel* mBubble; // 98
+	const char* mModelName; // 9C
+	NameObj* mHost; // A0
+	TVec3f mClippingRange; // A4
+	s32 mGroup; // B0
+	s32 mType; // B4
 	s32 _B8;
 	u8 _BC;
-	bool mArg2;
+	bool mArg2; // BD
 };
