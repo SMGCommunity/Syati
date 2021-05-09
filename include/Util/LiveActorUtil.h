@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Collision/CollisionScaleType.h"
 #include "JGeometry/TMatrix34.h"
 #include "JGeometry/TPosition3.h"
 #include "JGeometry/TQuat4.h"
@@ -7,6 +8,7 @@
 #include "JMap/JMapInfoIter.h"
 
 class ActorLightCtrl;
+class CollisionParts;
 class CollisionPartsFilterBase;
 class LiveActor;
 class LodCtrl;
@@ -189,6 +191,8 @@ namespace MR
     void initFurPlanet(LiveActor *);
     void initFurPlayer(LiveActor *);
     void initCollisionParts(LiveActor *, const char *, HitSensor *, Mtx4 *);
+
+    CollisionParts* createCollisionPartsFromLiveActor(LiveActor *, const char *, HitSensor *, MR::CollisionScaleType);
 
     void validateCollisionParts(LiveActor *);
 
