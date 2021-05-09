@@ -115,7 +115,7 @@ namespace MR
     void stopScene(s32);
     void stopSceneForDefaultHit(s32);
     bool tryRumblePad(const void *, const char *, s32);
-    bool tryRumblePadVeryStrongLong(const void *, s32);
+    bool tryRumblePadVeryStrong(const void *, s32);
     bool tryRumblePadStrong(const void *, s32);
     bool tryRumblePadMiddle(const void *, s32);
     bool tryRumblePadWeak(const void *, s32);
