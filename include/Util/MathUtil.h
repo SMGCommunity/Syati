@@ -117,7 +117,7 @@ namespace MR
 	void vecBlendNormal(const TVec3f &, const TVec3f &, TVec3f *, f32);
 	void vecBlendSphere(const TVec3f &, const TVec3f &, TVec3f *, f32);
 	void blendColor(_GXColor *, _GXColor const &, _GXColor const &, f32);
-
+	void turnVecToPlane(TVec3f *, const TVec3f &, const TVec3f &);
 	void getRotatedAxisY(TVec3f *, const TVec3f &);
 	void getRotatedAxisZ(TVec3f *, const TVec3f &);
 	f32 getMaxElement(const TVec3f &);

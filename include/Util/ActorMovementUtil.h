@@ -80,6 +80,8 @@ namespace MR
 	void resetPosition(LiveActor *, const char *);
 	void makeMtxOnMapCollision(TPositionMtx *, LiveActor *, f32);
 
+	void addVelocityMoveToDirection(LiveActor *, const TVec3f, f32);
+
 	void addVelocityJump(LiveActor *, f32);
 	void addVelocityLimit(LiveActor *, const TVec3f &);
 	void setVelocityJump(LiveActor *, f32);
@@ -124,6 +126,7 @@ namespace MR
 	void calcVelocityRailMoveOnGround(TVec3f *, const LiveActor *);
 	void calcVelocityAreaOrRailMoveOnGround(TVec3f *, const LiveActor *);
 
+	void rotateDirectionGravityDegree(const LiveActor *, TVec3f *, f32);
 	void turnDirection(const LiveActor *, TVec3f *, const TVec3f &, f32);
 	void turnDirectionDegree(const LiveActor *, TVec3f *, const TVec3f &, f32);
 	void turnDirectionToTarget(const LiveActor *, TVec3f *, const TVec3f &, f32);
@@ -131,6 +134,7 @@ namespace MR
 	void turnDirectionToTargetDegreeHorizon(const LiveActor *, TVec3f *, const TVec3f &, f32);
 	void turnDirectionToTargetUseGroundNormalDegree(const LiveActor *, TVec3f *, const TVec3f &, f32);
 
+	void turnDirectionToGround(const LiveActor *, TVec3f *);
 	void moveAndTurnToDirection(LiveActor *, TVec3f *, const TVec3f &, f32, f32, f32, f32);
 	void moveAndTurnToTarget(LiveActor *, TVec3f *, const TVec3f &, f32, f32, f32, f32);
 	void moveAndTurnToPlayer(LiveActor *, TVec3f *, f32, f32, f32, f32);

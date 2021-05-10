@@ -26,6 +26,9 @@ namespace JGeometry
         void set(T, T, T);
 
         void set(TVec3<T> const &);
+
+        void negate();
+
         void zero();
 
         bool epsilonEquals(const TVec3<T> &, T) const;
@@ -43,7 +46,7 @@ namespace JGeometry
         TVec3<T> operator *=(T); // amu
 
         void scale(T);
-        void scale(JGeometry::TVec3<T> &, T);
+        void scale(T, const TVec3<T> &);
         T x; // _0
         T y; // _4
         T z; // _8

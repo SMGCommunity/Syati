@@ -12,6 +12,8 @@ namespace MR
 
     void makeMtxUpFront(TPositionMtx *, const TVec3f &, const TVec3f &);
 
+    void makeMtxUpNoSupportPos(TPositionMtx *, const TVec3f &, const TVec3f &);
+
     void makeMtxFrontUpPos(TPositionMtx *, const TVec3f &, const TVec3f &, const TVec3f &);
 
     void extractMtxXDir(Mtx, TVec3f *);
