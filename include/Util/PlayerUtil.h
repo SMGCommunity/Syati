@@ -95,6 +95,7 @@ namespace MR
 	bool isPlayerPointedBy2POnTriggerButton();
 
 	bool isPlayerInRush();
+
 	bool isPlayerNeedBrakingCamera();
 
 	bool isPlayerFlying();

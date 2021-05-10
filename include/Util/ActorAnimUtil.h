@@ -6,9 +6,9 @@ class LiveActor;
 
 namespace MR
 {
+	bool tryStartAllAnim(const LiveActor *, const char *);
 	void startBck(const LiveActor *, const char *);
 
-	bool tryStartAllAnim(const LiveActor *, const char *);
 	bool isActionEnd(const LiveActor *);
 
 	void startBckWithInterpole(const LiveActor *, const char *, s32);
