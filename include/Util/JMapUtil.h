@@ -4,8 +4,6 @@
 #include "JGeometry/TVec3.h"
 #include "JMap/JMapInfoIter.h"
 
-bool getJMapInfoRailArg(const JMapInfoIter &, const char *, s32 *);
-
 namespace MR
 {
     bool isValidInfo(const JMapInfoIter &);
@@ -99,6 +97,7 @@ namespace MR
     s32 getDemoGroupLinkID(const JMapInfoIter &);
     bool getDemoSkip(const JMapInfoIter &);
 
+    bool getJMapInfoRailArg(const JMapInfoIter &, const char *, s32 *);
     bool getJMapInfoRailArg0NoInit(const JMapInfoIter &, s32 *);
     bool getRailId(const JMapInfoIter &, s32 *);
     bool getNextLinkRailId(const JMapInfoIter &, s32 *);

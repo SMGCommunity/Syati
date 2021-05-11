@@ -5,7 +5,7 @@
 #include "JGeometry/TVec3.h"
 #include "kamek.h"
 
-class _GXColor;
+struct _GXColor;
 
 namespace MR
 {
