@@ -8,6 +8,15 @@ class LiveActor;
 
 namespace MR
 {
+    bool isJudgedToClipFrustum(const TVec3f &, f32);
+
+    bool isJudgedToClipFrustum300m(const TVec3f &, f32);
+    bool isJudgedToNearClip(const TVec3f &, f32);
+
+    bool isInWater(const TVec3f &);
+    bool isInDeath(const TVec3f &);
+    bool isInDarkMatter(const TVec3f &);
+
     void connectToScene(NameObj *, int, int, int, int);
     void connectToSceneCollisionMapObj(LiveActor *);
     void connectToSceneCollisionMapObjWeakLight(LiveActor *);
@@ -106,7 +115,7 @@ namespace MR
     void stopScene(s32);
     void stopSceneForDefaultHit(s32);
     bool tryRumblePad(const void *, const char *, s32);
-    bool tryRumblePadVeryStrongLong(const void *, s32);
+    bool tryRumblePadVeryStrong(const void *, s32);
     bool tryRumblePadStrong(const void *, s32);
     bool tryRumblePadMiddle(const void *, s32);
     bool tryRumblePadWeak(const void *, s32);

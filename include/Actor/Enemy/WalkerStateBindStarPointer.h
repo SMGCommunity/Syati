@@ -10,7 +10,11 @@ class WalkerStateBindStarPointer : public NerveExecutor
 public:
     WalkerStateBindStarPointer(LiveActor *, AnimScaleController *);
 
-    bool tryStarPointBind() const;
+    virtual ~WalkerStateBindStarPointer();
+    virtual void appear();
+    virtual void kill();
+
+    bool tryStartPointBind() const;
 
     u8 _8[0x1C-0x8];
 };

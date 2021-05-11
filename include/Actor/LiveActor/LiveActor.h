@@ -33,6 +33,8 @@ public:
     bool mIsClippingInvalid; // _8
 };
 
+class CollisionParts;
+
 class LiveActor : public NameObj
 {
 public:
@@ -100,7 +102,7 @@ public:
     u32 _74;
     //LiveActorFlag mFlags; // _70
     ShadowControllerList* mShadowController; // _78
-    u32* _7C; // CollisionParts*
+    CollisionParts* mCollisionParts; // _7C
     StageSwitchCtrl* mStageSwitchCtrl; // _80
     StarPointerTarget* mPointerTarget; // _84
     ActorLightCtrl* mLightCtrl; // _88
