@@ -10,6 +10,10 @@ namespace MR
 {
     void makeMtxTRS(Mtx, const TVec3f &, const TVec3f &, const TVec3f &);
 
+    void blendMtxRotate(Mtx4*, Mtx4*, f32, Mtx4*);
+    void blendMtxRotateSlerp(Mtx4*, Mtx4*, f32, Mtx4*);
+    void blendMtx(Mtx4*, Mtx4*, f32, Mtx4*);
+
     void makeMtxUpFront(TPositionMtx *, const TVec3f &, const TVec3f &);
 
     void makeMtxUpNoSupportPos(TPositionMtx *, const TVec3f &, const TVec3f &);
