@@ -13,6 +13,7 @@
 #include "Actor/Sound/AudAnmSoundObject.h"
 #include "Actor/StarPointer/StarPointerTarget.h"
 #include "Collision/Binder.h"
+#include "Collision/CollisionParts.h"
 #include "JGeometry/TVec3.h"
 #include "Actor/Model/ModelManager.h"
 #include "Map/Switch/StageSwitch.h"
@@ -32,8 +33,6 @@ public:
     bool mIsClipped; // _7
     bool mIsClippingInvalid; // _8
 };
-
-class CollisionParts;
 
 class LiveActor : public NameObj
 {
