@@ -195,8 +195,9 @@ namespace MR
     CollisionParts* createCollisionPartsFromLiveActor(LiveActor *, const char *, HitSensor *, MR::CollisionScaleType);
 
     void validateCollisionParts(LiveActor *);
-
+    void validateCollisionParts(CollisionParts *);
     void invalidateCollisionParts(LiveActor *);
+    void invalidateCollisionParts(CollisionParts *);
 
     bool isExistStarPointerTarget(const LiveActor *);
 
