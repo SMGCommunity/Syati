@@ -9,6 +9,7 @@ class TriangleFilterBase;
 
 class CollisionParts
 {
+public:
 	CollisionParts();
 
 	// unknown function here
