@@ -57,5 +57,5 @@ class CollisionParts
 	s32 _E4;
 	f32 _E8; // TVec3f?
 	f32 _EC;
-	f32 _E0;
+	f32 _F0;
 };
