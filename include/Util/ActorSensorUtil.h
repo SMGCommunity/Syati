@@ -175,6 +175,7 @@ namespace MR
 
 	bool isMsgSupportTicoSpin(u32);
 	bool isMsgAutoRushBegin(u32);
+	bool isMsgRushBegin(u32);
 
 	bool isMsgUpdateBaseMtx(u32);
 

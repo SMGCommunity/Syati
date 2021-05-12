@@ -13,6 +13,7 @@ namespace MR
     void blendMtxRotate(Mtx4 *, Mtx4 *, f32, Mtx4 *);
     void blendMtxRotateSlerp(Mtx4 *, Mtx4 *, f32, Mtx4 *);
     void blendMtx(Mtx4 *, Mtx4 *, f32, Mtx4 *);
+    void makeMtxWithoutScale(TPositionMtx *, const TPositionMtx &);
 
     void makeMtxUpFront(TPositionMtx *, const TVec3f &, const TVec3f &);
 
