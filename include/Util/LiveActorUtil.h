@@ -195,6 +195,7 @@ namespace MR
     void initCollisionPartsAutoEqualScaleOne(LiveActor *, const char *, HitSensor *, Mtx4 *);
 
     CollisionParts* createCollisionPartsFromLiveActor(LiveActor *, const char *, HitSensor *, MR::CollisionScaleType);
+    CollisionParts* createCollisionPartsFromLiveActor(LiveActor *, const char *, HitSensor *, Mtx4 *, MR::CollisionScaleType);
 
     void validateCollisionParts(LiveActor *);
     void validateCollisionParts(CollisionParts *);
