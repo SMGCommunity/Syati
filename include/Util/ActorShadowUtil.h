@@ -70,7 +70,7 @@ namespace MR
     void onShadowFollowHostScaleAll(LiveActor *);
     void calcClippingRangeIncludeShadow(TVec3f *, f32 *, const LiveActor *, f32);
     void setClippingRangeIncludeShadow(LiveActor *, TVec3f *, f32);
-    void isShadowProjected(const LiveActor *, const char *);
+    bool isShadowProjected(const LiveActor *, const char *);
     void getShadowProjectionPos(const LiveActor *, const char *, TVec3f *);
     void getShadowProjectionNormal(const LiveActor *, const char *, TVec3f *);
     f32 getShadowProjectionLength(const LiveActor *, const char *);
