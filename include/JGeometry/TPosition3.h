@@ -8,7 +8,9 @@ namespace JGeometry
     class TPosition3
     {
     public:
-        T _0[3][4];
+        TPosition3();
+
+        f32 val[3][4];
     };
 };
 
