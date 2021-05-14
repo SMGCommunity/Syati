@@ -6,13 +6,18 @@ namespace JGeometry
     class TVec2
     {
     public:
-        TVec2() { }
+        TVec2() {}
         TVec2(const TVec2<T> &);
-        TVec2(T a, T b) : x(a), y(b) { }
+        TVec2(T a, T b) : x(a), y(b) {}
 
         template<typename T>
-        TVec2(T, T, T);
+        TVec2(T, T);
 
+        // T distance(const TVec2<T> &) const; does this still exist in SMG2?
+
+        void sub(const TVec3<T> &);
+        T length() const;
+        T squared() const;
         T dot(const TVec2<T> &) const;
 
         template<typename T>
@@ -24,7 +29,9 @@ namespace JGeometry
         void setMin(const TVec2<T> &);
         void setMax(const TVec2<T> &);
 
-        void operator =(const TVec2<T> &);
+        void zero();
+
+        void operator =(const TVec2<T> &); // as
         TVec2<T> operator +(const TVec2<T> &) const; // pl
         TVec2<T> operator -(const TVec2<T> &) const; // mi
         TVec2<T> operator *(T) const; // ml

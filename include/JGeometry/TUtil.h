@@ -6,7 +6,11 @@ namespace JGeometry
 	class TUtil
 	{
 	public:
+		static T PI();
+
 		static T asin(T);
+		static T acos(T);
+
 		static T sqrt(T);
 		static T inv_sqrt(T);
 
