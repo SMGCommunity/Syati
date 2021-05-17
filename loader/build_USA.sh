@@ -13,6 +13,4 @@ done
 echo Linking...
 mkdir -p out
 
-../Kamek/Kamek.exe kamekLoader.o smg.o -static=0x80001800 -input-dol=../dols/USA.dol -output-dol=out/USA.dol
-
-sleep 100
+../Kamek/Kamek.exe kamekLoader.o smg.o -static=0x80001800 -output-riiv=out/riivo_USA.xml -input-dol=../dols/USA.dol -output-dol=out/USA.dol

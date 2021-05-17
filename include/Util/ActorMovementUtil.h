@@ -134,6 +134,12 @@ namespace MR
 	void turnDirectionToTargetDegreeHorizon(const LiveActor *, TVec3f *, const TVec3f &, f32);
 	void turnDirectionToTargetUseGroundNormalDegree(const LiveActor *, TVec3f *, const TVec3f &, f32);
 
+	void turnDirectionToPlayerDegree(const LiveActor *, TVec3f *, f32);
+	void turnDirectionToPlayerDegreeHorizon(const LiveActor *, TVec3f *, f32);
+	void turnDirectionFromTargetDegree(const LiveActor *, TVec3f *, f32);
+	void turnDirectionFromTargetDegreeHorizon(const LiveActor *, TVec3f *, f32);
+	void turnDirectionFromPlayerDegree(const LiveActor *, TVec3f *, f32);
+	void turnDirectionFromPlayerDegreeHorizon(const LiveActor *, TVec3f *, f32);
 	void turnDirectionToGround(const LiveActor *, TVec3f *);
 	void moveAndTurnToDirection(LiveActor *, TVec3f *, const TVec3f &, f32, f32, f32, f32);
 	void moveAndTurnToTarget(LiveActor *, TVec3f *, const TVec3f &, f32, f32, f32, f32);
