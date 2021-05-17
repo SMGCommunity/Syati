@@ -56,12 +56,12 @@ namespace JGeometry
 
         void operator =(const TVec3<T> &); // as
         TVec3<T> operator +(const TVec3<T> &) const; // pl
-        TVec3<T> operator +=(const TVec3<T> &); // apl
+        void operator +=(const TVec3<T> &); // apl
         TVec3<T> operator -(const TVec3<T> &) const; // mi
         TVec3<T> operator -() const; // mi
-        TVec3<T> operator -=(const TVec3<T> &); // ami
+        void operator -=(const TVec3<T> &); // ami
         TVec3<T> operator *(T) const; // ml
-        TVec3<T> operator *=(T); // amu
+        void operator *=(T); // amu
         TVec3<T> operator /(T) const; // dv
         bool operator ==(const TVec3<T> &) const; // eq
 
