@@ -8,6 +8,9 @@ namespace JGeometry
     class TPosition3
     {
     public:
+        void setTrans(const TVec3f &);
+        void setTrans(f32, f32, f32);
+
         f32 val[3][4];
     };
 };
