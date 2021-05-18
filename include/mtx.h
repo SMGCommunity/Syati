@@ -46,8 +46,8 @@ void PSVECCrossProduct(const Vec* sourceA, const Vec* sourceB, Vec* dest);
 f32 PSVecDistance(const Vec* sourceA, const Vec* sourceB);
 
 // quat
-// PSQUATMultiply
-// PSQUATDotProduct
+void PSQUATMultiply(const Quaternion* sourceA, const Quaternion* sourceB, Quaternion* dest);
+f32 PSQUATDotProduct(const Quaternion* sourceA, const Quaternion* sourceB);
 void C_QUATMtx(Quaternion* dest, const Mtx source);
 void C_QUATSlerp(const Quaternion* sourceA, const Quaternion* sourceB, Quaternion* dest, f32 value);
 
