@@ -43,7 +43,7 @@ void PSVECNormalize(const Vec* source, Vec* dest);
 f32 PSVECMag(const Vec* vec);
 f32 PSVECDotProduct(const Vec* sourceA, const Vec* sourceB);
 void PSVECCrossProduct(const Vec* sourceA, const Vec* sourceB, Vec* dest);
-f32 PSVecDistance(const Vec* sourceA, const Vec* sourceB);
+f32 PSVECDistance(const Vec* sourceA, const Vec* sourceB);
 
 // quat
 void PSQUATMultiply(const Quaternion* sourceA, const Quaternion* sourceB, Quaternion* dest);
