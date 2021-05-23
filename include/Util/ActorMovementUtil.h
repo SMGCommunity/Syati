@@ -11,6 +11,7 @@ class LiveActor;
 namespace MR
 {
 	f32 calcDistance(const HitSensor *, const HitSensor *, TVec3f *);
+	f32 calcDistance(const LiveActor *, const TVec3f &);
 
 	f32 calcDistanceHorizontal(const LiveActor *, const TVec3f &, const TVec3f &);
 	f32 calcDistanceHorizontal(const LiveActor *, const TVec3f &);
