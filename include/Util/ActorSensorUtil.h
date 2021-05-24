@@ -56,7 +56,9 @@ namespace MR
 	void setSensorPos(HitSensor *, const TVec3f &);
 
 	f32 getSensorRadius(HitSensor *);
-	HitSensor* getSensor(LiveActor *, const char *);
+	f32 getSensorRadius(LiveActor *, const char *);
+	void getSensorRadius(HitSensor *, f32);
+	void getSensorRadius(LiveActor *, const char *, f32);
 
 	void validateHitSensors(LiveActor *);
 	void invalidateHitSensors(LiveActor *);
