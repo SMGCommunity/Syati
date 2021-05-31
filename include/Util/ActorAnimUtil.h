@@ -7,7 +7,7 @@ class LiveActor;
 namespace MR
 {
 	bool tryStartAllAnim(const LiveActor *, const char *);
-	void startBck(const LiveActor *, const char *);
+	void startAction(const LiveActor *, const char *);
 
 	bool isActionEnd(const LiveActor *);
 
