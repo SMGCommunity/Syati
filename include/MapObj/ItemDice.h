@@ -14,12 +14,12 @@ public:
 	virtual u32 receiveMsgPush(HitSensor *, HitSensor *);
 	virtual u32 receiveMsgPlayerAttack(u32, HitSensor *, HitSensor *);
 
-	virtual const char* getModelName() = 0;
+	virtual const char* getModelName() const = 0;
 	virtual void initItems() = 0;
 	virtual void setAnimFrame() = 0;
 	virtual void setResultFrame(u32) = 0;
 	virtual bool makeResult(u32) = 0;
-	virtual bool isGoodResult(u32) = 0;
+	virtual bool isGoodResult(u32) const = 0;
 
 	// Todo: More class functions
 	void exeSpin();
