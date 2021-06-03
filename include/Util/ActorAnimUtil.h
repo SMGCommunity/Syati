@@ -11,8 +11,8 @@ namespace MR
 
 	bool isActionEnd(const LiveActor *);
 
-	void startBckWithInterpole(const LiveActor *, const char *, s32);
-	void startBckNoInterpole(const LiveActor *, const char *);
+	void startActionWithInterpole(const LiveActor *, const char *, s32);
+	void startActionNoInterpole(const LiveActor *, const char *);
 
 	bool tryStartBck(const LiveActor *, const char *, const char *);
 	bool tryStartBckAndBtp(const LiveActor *, const char *, const char *);
