@@ -36,7 +36,7 @@ namespace JGeometry
         void setQuat(const TQuat4f &);
         void setScale(f32, f32, f32);
 
-        f32 val[3][4];
+        T val;
     };
 };
 
