@@ -49,7 +49,7 @@ namespace MR
 	void setPlayerSwingInhibitTimer(u16);
 	void setPlayerSwingPermission(bool);
 	void setPlayerStateWait();
-	void startActionPlayer(const char *, const char *);
+	void startBckPlayer(const char *, const char *);
 
 	bool isBckStoppedPlayer();
 	bool isBckOneTimeAndStoppedPlayer();
