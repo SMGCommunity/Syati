@@ -11,7 +11,7 @@ namespace JGeometry
         void setTrans(const TVec3f &);
         void setTrans(f32, f32, f32);
         
-        T val;
+        f32 val[3][4];
     };
 };
 
