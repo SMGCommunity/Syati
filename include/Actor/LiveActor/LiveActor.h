@@ -97,13 +97,10 @@ public:
     RailRider* mRailRider; // _64
     EffectKeeper* mEffectKeeper; // _68
     AudAnmSoundObject* mSoundObj; // _6C
-    u32 _70;
-    u32 _74;
-    //LiveActorFlag mFlags; // _70
-    ShadowControllerList* mShadowController; // _78
-    CollisionParts* mCollisionParts; // _7C
-    StageSwitchCtrl* mStageSwitchCtrl; // _80
-    StarPointerTarget* mPointerTarget; // _84
-    ActorLightCtrl* mLightCtrl; // _88
-    ActorPadAndCameraCtrl* mCameraCtrl; // _8C
+    LiveActorFlag mFlags; // _70
+    ShadowControllerList* mShadowController; // _7C
+    CollisionParts* mCollisionParts; // _80
+    StageSwitchCtrl* mStageSwitchCtrl; // _84
+    StarPointerTarget* mPointerTarget; // _88
+    ActorLightCtrl* mLightCtrl; // _8C
 };
