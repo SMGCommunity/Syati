@@ -1,5 +1,18 @@
 Util (0x80006EA0)
 Animation (0x80069240)
+	AnmPlayer
+	BckCtrl
+	BpkPlayer
+	BrkPlayer
+	BtkPlayer
+	BtpPlayer
+	BvaPlayer
+	LayoutAnmBuffer
+	MaterialAnmBuffer
+	XanimeCore
+	XanimePlayer
+	XanimeResource
+	SyncBckEffectChecker
 Area (0x8006F810)
 	AreaForm
 	AreaObj
@@ -63,7 +76,6 @@ Effect (0x80148160)
 	SingleEmitter
 	?
 	SpinPullParticleCallBack
-	SyncBckEffectChecker
 	WaterFortressRain
 Enemy (0x8014FD90)
 	WalkerStateBindStarPointer
