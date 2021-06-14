@@ -17,7 +17,7 @@ namespace JGeometry
 
         void sub(const TVec3<T> &);
         T length() const;
-        T squared() const;
+        T squared(const TVec2<T> &) const;
         T dot(const TVec2<T> &) const;
 
         template<typename T>

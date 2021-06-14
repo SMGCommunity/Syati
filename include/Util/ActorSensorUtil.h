@@ -247,8 +247,8 @@ namespace MR
 
 	bool isMsgGroupMoveStart(u32);
 	bool isMsgGroupMoveStop(u32);
-	bool isMsgGrouShow(u32);
-	bool isMsgGrouHide(u32);
+	bool isMsgGroupShow(u32);
+	bool isMsgGroupHide(u32);
 
 	void calcPosBetweenSensors(TVec3f *, const HitSensor *, const HitSensor *, f32);
 	bool tryForceKillIfMsgStartPowerStarGet(LiveActor *, u32);
