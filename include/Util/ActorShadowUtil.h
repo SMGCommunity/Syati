@@ -7,8 +7,10 @@ class Color8;
 class HitSensor;
 class LiveActor;
 
+// Complete
 namespace MR
 {
+    // This belongs to ActorShadowLocalUtil
     void initShadowFromCSV(LiveActor *, const char *, bool);
 
     void initShadowFromCSVWithInitShadowVolumeSphere(LiveActor *, const char *);
@@ -18,7 +20,8 @@ namespace MR
     void addShadowVolumeCylinder(LiveActor *, const char *, f32);
     void addShadowVolumeBox(LiveActor *, const char *, const TVec3f &);
     void addShadowVolumeBox(LiveActor *, const char *, const TVec3f &, Mtx4*);
-
+    void addShadowVolumeLine((LiveActor *, const char *, LiveActor *, const char *, f32, LiveActor *, const char *, f32);
+    void addShadowVolumeFlatModel((LiveActor *, const char *, const char *, Mtx4 *);
     void initShadowSurfaceCircle(LiveActor *, f32);
     void initShadowVolumeSphere(LiveActor *, f32);
     void initShadowVolumeOval(LiveActor *, const TVec3f &);
@@ -56,8 +59,8 @@ namespace MR
     void excludeCalcShadowToMyCollision(LiveActor *, const char *);
     void excludeCalcShadowToSensorAll(LiveActor *, const HitSensor *);
     void excludeCalcShadowToActorAll(LiveActor *, const LiveActor *);
-    void isExistShadow(const LiveActor *, const char *);
-
+    bool isExistShadow(const LiveActor *, const char *);
+    bool isExistShadows(const LiveActor *);
     void invalidateShadow(LiveActor *, const char *);
     void validateShadow(LiveActor *, const char *);
     void validateShadowGroup(LiveActor *, const char *);

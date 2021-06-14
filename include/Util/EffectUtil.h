@@ -13,6 +13,7 @@ class Triangle;
 namespace MR
 {
 	bool isExistEffect(const LiveActor *, const char *);
+
 	void requestEffectStopSceneStart();
 	void requestEffectStopSceneEnd();
 	void addEffect(LiveActor *, const char *);
@@ -35,15 +36,16 @@ namespace MR
 	bool isEffectValid(const LiveActor *, const char *);
 	void onDrawEffect(LiveActor *);
 	void offDrawEffect(LiveActor *);
-
+	void onCalcEmitter(LiveActor *);
+	void offCalcEmitter(LiveActor *);
 	void pauseOffEffectAll(LiveActor *);
-
+	void setAllEffectDrawOrder(LiveActor *, s32);
 	void onEmitEffectSyncClipping(LiveActor *, const char *);
 	void onForceDeleteEffectSyncClipping(LiveActor *, const char *);
 	void setEffectName(LiveActor *, const char *, const char *);
 	void setEffectHostSRT(LiveActor *, const char *, const TVec3f *, const TVec3f *, const TVec3f *);
-	void setEffectHostMtx(LiveActor *, const char *, Mtx4*);
-
+	void setEffectHostMtx(LiveActor *, const char *, Mtx4 *);
+	void setAllEffectHostMtx(LiveActor *, Mtx4 *);
 	void setEffectBaseScale(LiveActor *, const char *, f32);
 	void setEffectColor(LiveActor *, const char *, u8, u8, u8, u8, u8, u8);
 	void setEffectPrmColor(LiveActor *, const char *, u8, u8, u8);
@@ -52,7 +54,7 @@ namespace MR
 	void addEffectHitNormal(LiveActor *, const char *);
 	void emitEffectHit(LiveActor *, const TVec3f &, const char *);
 	void emitEffectHit(LiveActor *, const TVec3f &, const TVec3f &, const char *);
-	void emitEffectHit(LiveActor *, Mtx4*, const char *);
+	void emitEffectHit(LiveActor *, Mtx4 *, const char *);
 	void emitEffectHitBetweenSensors(LiveActor *, const HitSensor *, const HitSensor *, f32, const char *);
 	void initEffectAfterPlacement(LiveActor *, bool);
 	void updateEffectFloorCode(LiveActor *, const Triangle *);

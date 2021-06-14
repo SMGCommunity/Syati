@@ -8,6 +8,7 @@ class J3DModelData;
 class J3DJoint;
 class LiveActor;
 
+// Complete
 namespace MR
 {
     J3DJoint* getJoint(J3DModel *, const char *);

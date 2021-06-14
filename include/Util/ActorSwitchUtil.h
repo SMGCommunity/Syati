@@ -5,6 +5,7 @@
 
 class LiveActor;
 
+// Complete
 namespace MR
 {
 	bool useStageSwitchReadA(LiveActor *, const JMapInfoIter &);
