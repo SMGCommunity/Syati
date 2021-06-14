@@ -114,14 +114,16 @@ namespace MR
 
 	bool sendMsgPlayerTrample(HitSensor *, HitSensor *);
 	bool sendMsgPlayerPunch(HitSensor *, HitSensor *);
-
+	bool sendMsgInvincibleAttack(HitSensor *, HitSensor *);
 	bool sendMsgDrillAttack(HitSensor *, HitSensor *);
 	bool sendMsgRockAttack(HitSensor *, HitSensor *);
 	bool sendMsgJump(HitSensor *, HitSensor *);
 	bool sendMsgTouchJump(HitSensor *, HitSensor *);
 	bool sendMsgTaken(HitSensor *, HitSensor *);
 	bool sendMsgAwayJump(HitSensor *, HitSensor *);
-
+	
+	bool sendMsgRushEnd(HitSensor *, HitSensor *);
+	bool sendMsgIsRushEnable(HitSensor *, HitSensor *);
 	bool sendMsgEnemyAttackMsgToDir(u32, HitSensor *, HitSensor *, const TVec3f &);
 	bool sendMsgEnemyAttackFlipVeryWeak(HitSensor *, HitSensor *);
 	bool sendMsgEnemyAttackFlipWeak(HitSensor *, HitSensor *);
@@ -149,6 +151,7 @@ namespace MR
 	bool sendMsgEnemyAttackMaximum(HitSensor *, HitSensor *);
 	bool sendMsgEnemyAttackMaximumToDir(HitSensor *, HitSensor *, const TVec3f &);
 	bool sendMsgEnemyAttackToBindedSensor(LiveActor *, HitSensor *);
+	bool sendMsgEnemyAttackExplosionToBindedSensor(LiveActor *, HitSensor *);
 
 	bool sendSimpleMsgToActor(u32, LiveActor *);
 	bool sendMsgToBindedSensor(u32, LiveActor *, HitSensor *);
@@ -183,25 +186,26 @@ namespace MR
 	bool isMsgPlayerHipDropFloor(u32);
 	bool isMsgPlayerUpperPunch(u32);
 	bool isMsgPlayerKick(u32);
-	bool isMsgGoldenTurtleAttack(u32);
 
 	bool isMsgJetTurtleAttack(u32);
-
+	bool isMsgYoshiProjectile(u32);
+	bool isMsgYoshiEat(u32);
+	bool isMsgYoshiProjectileOrEat(u32);
 	bool isMsgFireBallAttack(u32);
 	bool isMsgSearchlightAttack(u32);
 	bool isMsgFreezeAttack(u32);
 	bool isMsgInvincibleAttack(u32);
 	bool isMsgDrillAttack(u32);
 	bool isMsgRockAttack(u32);
-
+	bool isMsgSnowBallAttack(u32);
 	bool isMsgSupportTicoSpin(u32);
 	bool isMsgAutoRushBegin(u32);
 	bool isMsgRushBegin(u32);
 
 	bool isMsgUpdateBaseMtx(u32);
-
+	bool isMsgRushForceCancel(u32);
 	bool isMsgRushCancel(u32);
-
+	bool isMsgRushEnd(u32);
 	bool isMsgIsRushTakeOver(u32);
 	bool isMsgFloorTouch(u32);
 	bool isMsgWallTouch(u32);
@@ -210,7 +214,8 @@ namespace MR
 	bool isMsgItemPull(u32);
 	bool isMsgItemShow(u32);
 	bool isMsgItemHide(u32);
-
+	
+	bool isMsgItemStartMove(u32);
 	bool isMsgItemEndMove(u32);
 
 	bool isMsgInhaleBlackHole(u32);
@@ -239,6 +244,11 @@ namespace MR
 	bool isMsgStarPieceAttack(u32);
 	bool isMsgStarPieceReflect(u32);
 	bool isMsgStarPieceGift(u32);
+
+	bool isMsgGroupMoveStart(u32);
+	bool isMsgGroupMoveStop(u32);
+	bool isMsgGrouShow(u32);
+	bool isMsgGrouHide(u32);
 
 	void calcPosBetweenSensors(TVec3f *, const HitSensor *, const HitSensor *, f32);
 	bool tryForceKillIfMsgStartPowerStarGet(LiveActor *, u32);
