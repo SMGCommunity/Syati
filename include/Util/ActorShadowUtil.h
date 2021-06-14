@@ -20,8 +20,8 @@ namespace MR
     void addShadowVolumeCylinder(LiveActor *, const char *, f32);
     void addShadowVolumeBox(LiveActor *, const char *, const TVec3f &);
     void addShadowVolumeBox(LiveActor *, const char *, const TVec3f &, Mtx4*);
-    void addShadowVolumeLine((LiveActor *, const char *, LiveActor *, const char *, f32, LiveActor *, const char *, f32);
-    void addShadowVolumeFlatModel((LiveActor *, const char *, const char *, Mtx4 *);
+    void addShadowVolumeLine(LiveActor *, const char *, LiveActor *, const char *, f32, LiveActor *, const char *, f32);
+    void addShadowVolumeFlatModel(LiveActor *, const char *, const char *, Mtx4 *);
     void initShadowSurfaceCircle(LiveActor *, f32);
     void initShadowVolumeSphere(LiveActor *, f32);
     void initShadowVolumeOval(LiveActor *, const TVec3f &);

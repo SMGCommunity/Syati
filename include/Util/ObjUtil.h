@@ -135,5 +135,5 @@ namespace MR
     void stopShakingCamera(NameObj *);
     bool isName(const NameObj *, const char *);
     bool isSame(const NameObj *, const NameObj *);
-    bool tryRegisterNamePosLinkObj(const NameObj *, const JMapInfoIter &, const char *)
+    bool tryRegisterNamePosLinkObj(const NameObj *, const JMapInfoIter &, const char *);
 };

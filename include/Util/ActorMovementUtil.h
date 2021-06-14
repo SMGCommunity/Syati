@@ -34,7 +34,7 @@ namespace MR
 	void calcSideVec(TVec3f *, const LiveActor *);
 
 	void calcPositionUpOffset(TVec3f *, const LiveActor *, f32);
-	void calcVecToPlayer(Tvec3f *, const LiveActor *);
+	void calcVecToPlayer(TVec3f *, const LiveActor *);
 
 	void calcVecToPlayerH(TVec3f *, const LiveActor *, const TVec3f *);
 	void calcVecFromPlayerH(TVec3f *, const LiveActor *);
