@@ -79,12 +79,13 @@ namespace MR
 	LiveActor* getSensorHost(const HitSensor *);
 	bool isSensor(const HitSensor *, const char *);
 	bool isSensorPlayer(const HitSensor *);
-
+	bool isSensorYoshi(const HitSensor *);
 	bool isSensorBinder(const HitSensor *);
-
+	bool isSensorReceiver(const HitSensor *);
 	bool isSensorRide(const HitSensor *);
 	bool isSensorPlayerOrRide(const HitSensor *);
-
+	bool isSensorPlayerOrYoshi(const HitSensor *);
+	bool isSensorPlayerOrYoshiOrRide(const HitSensor *);
 	bool isSensorEnemy(const HitSensor *);
 	bool isSensorEnemyAttack(const HitSensor *);
 	bool isSensorNpc(const HitSensor *);
