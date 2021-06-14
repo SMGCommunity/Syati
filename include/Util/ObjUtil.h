@@ -4,6 +4,7 @@
 #include "kamek.h"
 
 class NameObj;
+class LayoutActor;
 class LiveActor;
 
 namespace MR
