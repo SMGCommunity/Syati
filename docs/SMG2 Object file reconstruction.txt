@@ -86,7 +86,7 @@ Boss (0x8008A560)
 	DinoPackunDemoPosition
 	DinoPackunEggShell
 	DinoPackunFire
-	DinoPackungSequencer
+	DinoPackunSequencer
 	DinoPackunStateAwake
 	DinoPackunStateDamage
 	DinoPackunStateFire
@@ -97,9 +97,68 @@ Boss (0x8008A560)
 	DinoPackunTrackFire
 	DinoPackunVs1
 	DinoPackunVs2
+	DinoPackunBaby
 	...
-Camera
-Demo
+	Dodoryu
+	DodoryuDemo
+	DodoryuHill
+	DodoryuMove
+	DodoryuStateBase
+	DodoryuStateLv1
+	DodoryuStateLv2
+	DodoryuStateWait
+	DodoryuUtil
+	...
+	KingTossin
+	Koopa
+	KoopaBattleAccessor
+	?
+	KoopaDemoChamber
+	KoopaFinalBattlePos
+	...
+	KoopaJrCastle
+	...
+	KoopaJrCastleWindUp
+	KoopaJrRobot
+	...
+	KoopaJrRobotBreakableStep
+	...
+	KoopaSealField
+	...
+	OtaKing
+	OtaKingLongFoot
+	OtaKingMagma
+	Polta
+	PoltaActionBase
+	PoltaActionSequencer
+	PoltaArm
+	PoltaBattleLv1
+	PoltaBattleLv2
+	PoltaDemo
+	PoltaFunction
+	PoltaGroundRock
+	PoltaGroundRockHolder
+	PoltaRock
+	PoltaRockHolder
+	PoltaSensorCtrl
+	PoltaStateAttackGround
+	PoltaStateGenerateRock
+	PoltaStateGroundRockAttack
+	PoltaStatePunch
+	PoltaStateStagger
+	PoltaWaitStart
+	Sandy
+	...
+	TwoLegs
+	TwoLegsBullet
+	...
+	Yukkina
+	YukkinaGroundSnow
+Camera (0x8010BE80)
+Demo (0x80133C20)
+	CompleteEndingDemoObj
+	...
+	TransformFaceTicoBabyDemoObj
 Effect (0x80148160)
 	AutoEffectGroup
 	AutoEffectGroupHolder
@@ -767,7 +826,12 @@ NameObj (0x80339560)
 NPC (0x80343E50)
 Player
 RhythmLib
-Ride
+Ride (0x8042A960)
+	Creeper
+	Fluff
+	FluffWind
+	GliBird
+	...
 Scene
 Screen
 Speaker
