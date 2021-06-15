@@ -953,8 +953,33 @@ Ride (0x8042A960)
 	Fluff
 	FluffWind
 	GliBird
+	GliBirdFootJointCtrl
+	GliBirdTutorial
+	JumpBranch
+	Plant
+	PlantLeaf
+	PlantStalk
+	PlantSlider
+	Pole
+	RollingRock
 	...
-Scene
+	SphereAccelSensorController
+	SphereController
+	SpherePadController
+	SwingRope
+	SwingRopePoint
+	Tamakoro
+	TamakoroTutorial
+	Trapeze
+	TubeSlider
+	TubeSliderCoinCreator
+	TubeSliderCrystal
+	TubeSliderDamageObj
+	TubeSliderEnemy
+	TubeSliderFunction
+	TubeSliderJumpStep
+	TubesliderObjCreator
+Scene (0x80451340)
 Screen
 Speaker
 System
