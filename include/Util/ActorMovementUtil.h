@@ -11,7 +11,8 @@ class LiveActor;
 namespace MR
 {
 	f32 calcDistance(const HitSensor *, const HitSensor *, TVec3f *);
-
+	f32 calcDistance(const LiveActor *, const TVec3f &);
+	f32 calcDistance(const LiveActor *, const LiveActor *);
 	f32 calcDistanceHorizontal(const LiveActor *, const TVec3f &, const TVec3f &);
 	f32 calcDistanceHorizontal(const LiveActor *, const TVec3f &);
 	f32 calcDistanceVertical(const LiveActor *, const TVec3f &, const TVec3f &);
@@ -26,10 +27,14 @@ namespace MR
 	bool isNearPlayerAnyTime(const LiveActor *, f32);
 	bool isNearPlayer(const TVec3f &, f32);
 	bool isNearPlayerPose(const LiveActor *, f32, f32);
+	bool isNearPlayerHorizontal(const LiveActor *, f32);
 
 	void calcFrontVec(TVec3f *, const LiveActor *);
 	void calcUpVec(TVec3f *, const LiveActor *);
 	void calcSideVec(TVec3f *, const LiveActor *);
+
+	void calcPositionUpOffset(TVec3f *, const LiveActor *, f32);
+	void calcVecToPlayer(TVec3f *, const LiveActor *);
 
 	void calcVecToPlayerH(TVec3f *, const LiveActor *, const TVec3f *);
 	void calcVecFromPlayerH(TVec3f *, const LiveActor *);
@@ -62,6 +67,7 @@ namespace MR
 	void makeMtxTransRotateY(Mtx4*, const LiveActor *);
 
 	void calcMtxFromGravityAndZAxis(TPositionMtx *, const LiveActor *, const TVec3f &, const TVec3f &);
+	void calcMtxFromGravityAndZAxis(TPositionMtx *, const LiveActor *, const TVec3f &);
 
 	void calcActorAxis(TVec3f *, TVec3f *, TVec3f *, const LiveActor *);
 	void calcActorAxisY(TVec3f *, const LiveActor *);
@@ -73,6 +79,8 @@ namespace MR
 	void makeQuatFromRotate(TQuat4f *, const LiveActor *);
 	void makeQuatAndFrontFromRotate(TQuat4f *, TVec3f *, const LiveActor *);
 
+	void turnQuatUpToGravity(TQuat4f *, const TQuat4f &, const LiveActor *);
+
 	void blendQuatFromGroundAndFront(TQuat4f *, const LiveActor *, const TVec3f &, f32, f32);
 
 	void resetPosition(LiveActor *);
@@ -80,8 +88,22 @@ namespace MR
 	void resetPosition(LiveActor *, const char *);
 	void makeMtxOnMapCollision(TPositionMtx *, LiveActor *, f32);
 
+	void calcVelocityMoveToDirectionHorizon(TVec3f *, const LiveActor *, const TVec3f &, f32);
+	void calcVelocityMoveToDirectionHorizon(TVec3f *, const LiveActor *, const TVec3f &, f32, f32, f32, f32);
+
+	void calcVelocityMoveToDirection(TVec3f *, const LiveActor *, const TVec3f &, f32);
+	void calcVelocityMoveToDirection(TVec3f *, const LiveActor *, const TVec3f &, f32, f32, f32, f32);
+	void calcVelocityMoveToTarget(TVec3f *, const LiveActor *, const TVec3f &, f32);
+
 	void addVelocityMoveToDirection(LiveActor *, const TVec3f, f32);
 
+	void addVelocityMoveToTargetHorizon(LiveActor *, const TVec3f &, f32);
+	void addVelocityMoveToTargetHorizon(LiveActor *, const TVec3f &, f32, f32, f32, f32);
+	void addVelocityMoveToTarget(LiveActor *, const TVec3f &, f32);
+	void addVelocityMoveToTarget(LiveActor *, const TVec3f &, f32, f32, f32, f32);
+	
+	void addVelocityClockwiseToTarget(LiveActor *, const TVec3f &, f32);
+	void addVelocityClockwiseToTarget(LiveActor *, f32);
 	void addVelocityJump(LiveActor *, f32);
 	void addVelocityLimit(LiveActor *, const TVec3f &);
 	void setVelocityJump(LiveActor *, f32);
@@ -134,6 +156,12 @@ namespace MR
 	void turnDirectionToTargetDegreeHorizon(const LiveActor *, TVec3f *, const TVec3f &, f32);
 	void turnDirectionToTargetUseGroundNormalDegree(const LiveActor *, TVec3f *, const TVec3f &, f32);
 
+	void turnDirectionToPlayerDegree(const LiveActor *, TVec3f *, f32);
+	void turnDirectionToPlayerDegreeHorizon(const LiveActor *, TVec3f *, f32);
+	void turnDirectionFromTargetDegree(const LiveActor *, TVec3f *, f32);
+	void turnDirectionFromTargetDegreeHorizon(const LiveActor *, TVec3f *, f32);
+	void turnDirectionFromPlayerDegree(const LiveActor *, TVec3f *, f32);
+	void turnDirectionFromPlayerDegreeHorizon(const LiveActor *, TVec3f *, f32);
 	void turnDirectionToGround(const LiveActor *, TVec3f *);
 	void moveAndTurnToDirection(LiveActor *, TVec3f *, const TVec3f &, f32, f32, f32, f32);
 	void moveAndTurnToTarget(LiveActor *, TVec3f *, const TVec3f &, f32, f32, f32, f32);

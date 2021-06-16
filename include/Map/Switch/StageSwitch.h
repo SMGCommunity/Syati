@@ -26,6 +26,8 @@ public:
     bool isValidSwitchDead() const;
     bool isOnAllSwitchAfterB(s32) const;
     bool isOnAnyOneSwitchAfterB(s32) const;
+    bool isOnSwitchParam() const;
+    bool isValidSwitchParam() const;
 
     SwitchIdInfo* mSW_A; // _0
     SwitchIdInfo* mSW_B; // _4
@@ -51,6 +53,10 @@ class StageSwitchFunction
 {
 public:
     static SwitchIdInfo* createSwitchIdInfo(const char *, const JMapInfoIter &l, bool);
+    static void onSwitchBySwitchIdInfo(const SwitchIdInfo &);
+    static void offSwitchBySwitchIdInfo(const SwitchIdInfo &);
+    static bool isOnSwitchBySwitchIdInfo(const SwitchIdInfo &);
+    static void onGlobalSwitchById(int);
 };
 
 class BitFlag128

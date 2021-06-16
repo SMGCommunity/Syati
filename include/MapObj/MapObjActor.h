@@ -73,7 +73,7 @@ namespace MapObjActorUtil
 	void pauseAllMapPartsFunctions(const MapObjActor *);
 	void resumeAllMapPartsFunctions(const MapObjActor *);
 	bool isRotatorMoving(const MapObjActor *);
-	bool isRailMoveWorking(const MapObjActor *);
+	bool isRailMoverWorking(const MapObjActor *);
 	f32 getSeesaw1AxisAngularSpeed(const MapObjActor *);
 	void startRotator(const MapObjActor *);
 	void startRailMover(const MapObjActor *);

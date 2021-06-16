@@ -10,8 +10,10 @@ namespace JGeometry
     {
     public:
         TQuat4() {}
-        TQuat4(const TQuat4<T> &);
         TQuat4(T a, T b, T c, T d) : x(a), y(b), z(c), w(d) {}
+
+        template<typename T>
+        TQuat4(T, T, T, T); // does it still support f32?
 
         void getXDir(const TVec3<T> &) const;
         void getYDir(const TVec3<T> &) const;
@@ -19,7 +21,7 @@ namespace JGeometry
 
         void getEuler(const TVec3<T> &) const;
         void setEuler(f32, f32, f32);
-        void setEulerZ(f32);
+        // void setEulerZ(f32); does this still exist in SMG2?
 
         void rotate(const TVec3<T> &) const;
         void setRotate(const TVec3<T> &, f32);
@@ -30,7 +32,7 @@ namespace JGeometry
         void normalize(const TQuat4<T> &);
 
         void slerp(const TQuat4<T> &, f32);
-        void slerp(const TQuat4<T> &, const TQuat4<T> &, f32);
+        // void slerp(const TQuat4<T> &, const TQuat4<T> &, f32); does this still exist in SMG2?
 
         void transform(const TVec3<T> &);
         void transform(const TVec3<T> &, const TVec3<T> &);

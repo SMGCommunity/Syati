@@ -1,5 +1,6 @@
 #pragma once
 
+#include "JGeometry/TPosition3.h"
 #include "JGeometry/TVec3.h"
 #include "kamek.h"
 
@@ -153,6 +154,8 @@ namespace MR
 	void stopSoundPlayer(const char *, u32);
 	void startSoundPlayerJ(const char *);
 
+	void showPlayer();
+
 	void showPlayerJoint(const char *);
 	void hidePlayerJoint(const char *);
 
@@ -177,6 +180,8 @@ namespace MR
 	Mtx* getPlayerBaseMtx();
 
 	MarioActor* getPlayerDemoActor();
+
+	void calcPlayerJointMtx(TPositionMtx *, const char *);
 
 	void pushPlayer(const TVec3f &);
 	void pushPlayerFromArea(const TVec3f &);

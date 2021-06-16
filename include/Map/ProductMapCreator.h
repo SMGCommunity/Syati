@@ -1,10 +1,10 @@
 #include "Actor/NameObj/NameObj.h"
 #include "kamek.h"
 
-class PlanetCreator : public NameObj
+class ProductMapCreator : public NameObj
 {
 public:
-	PlanetCreator(const char *);
+	ProductMapCreator(const char *);
 
 	bool doesProductMapObjExist(const char *);
 	void* getObjClassName(const char *);

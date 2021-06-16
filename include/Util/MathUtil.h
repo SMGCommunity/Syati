@@ -49,9 +49,9 @@ namespace MR
 	void makeQuatRotateRadian(TQuat4f *, const TVec3f &);
 	void makeQuatRotateDegree(TQuat4f *, const TVec3f &);
 	void makeQuatFromVec(TQuat4f *, const TVec3f &, const TVec3f &);
-
 	void makeQuatSideUp(TQuat4f *, const TVec3f &, const TVec3f &);
 	void makeQuatUpFront(TQuat4f *, const TVec3f &, const TVec3f &);
+	void makeQuatFrontUp(TQuat4f *, const TVec3f &, const TVec3f &);
 	void makeQuatUpNoSupport(TQuat4f *, const TVec3f &);
 	void blendQuatUpFront(TQuat4f *, const TVec3f &, const TVec3f &, f32, f32);
 	void blendQuatFrontUp(TQuat4f *, const TVec3f &, const TVec3f &, f32, f32);
@@ -109,11 +109,11 @@ namespace MR
 	bool isAngleBetween(f32, f32, f32);
 	bool blendAngle(f32, f32, f32);
 	f32 lerp(u8, u8, f32);
-
+	f32 lerp(f32, f32, f32);
 	f32 lerp(_GXColor, _GXColor, f32);
 	void sortSmall(long, f32 *, long *);
 	void sortSmall(long, u32 *, long *);
-
+	void vecBlend(const TVec3f &, const TVec3f &, TVec3f *, f32);
 	void vecBlendNormal(const TVec3f &, const TVec3f &, TVec3f *, f32);
 	void vecBlendSphere(const TVec3f &, const TVec3f &, TVec3f *, f32);
 	void blendColor(_GXColor *, _GXColor const &, _GXColor const &, f32);

@@ -8,6 +8,7 @@ class LiveActor;
 class NameObj;
 class PlanetGravity;
 
+// Complete
 void getJMapInfoArgPlus(const JMapInfoIter &, const char *, f32 *);
 void getJMapInfoArgPlus(const JMapInfoIter &, const char *, s32 *);
 void calcGravityVectorOrZero(const NameObj *, const TVec3f &, u32, TVec3f *, GravityInfo *, u32);

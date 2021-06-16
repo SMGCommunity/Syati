@@ -191,12 +191,16 @@ namespace MR
     void initFurPlanet(LiveActor *);
     void initFurPlayer(LiveActor *);
     void initCollisionParts(LiveActor *, const char *, HitSensor *, Mtx4 *);
+    void initCollisionPartsAutoEqualScale(LiveActor *, const char *, HitSensor *, Mtx4 *);
+    void initCollisionPartsAutoEqualScaleOne(LiveActor *, const char *, HitSensor *, Mtx4 *);
 
     CollisionParts* createCollisionPartsFromLiveActor(LiveActor *, const char *, HitSensor *, MR::CollisionScaleType);
+    CollisionParts* createCollisionPartsFromLiveActor(LiveActor *, const char *, HitSensor *, Mtx4 *, MR::CollisionScaleType);
 
     void validateCollisionParts(LiveActor *);
-
+    void validateCollisionParts(CollisionParts *);
     void invalidateCollisionParts(LiveActor *);
+    void invalidateCollisionParts(CollisionParts *);
 
     bool isExistStarPointerTarget(const LiveActor *);
 

@@ -4,6 +4,7 @@
 #include "kamek.h"
 
 class NameObj;
+class LayoutActor;
 class LiveActor;
 
 namespace MR
@@ -73,10 +74,13 @@ namespace MR
     void connectToSceneAir(LiveActor *);
     void connectToSceneSun(LiveActor *);
 
-    /* These are wrong in SMG2, to be removed
-    void registerNameObjToExecuteHolder(NameObj *, int, int, int, int);
-
-    bool isStageStateScenarioOpeningCamera();*/
+    void requestMovementOn(NameObj *);
+    void requestMovementOn(LiveActor *);
+    void requestMovementOn(LayoutActor *);
+    void requestMovementOff(NameObj *);
+    void requestMovementOff(LiveActor *);
+    void requestMovementOff(LayoutActor *);
+    void joinToNameObjGrozp(NameObj *, const char *);
 
     void declarePowerStar(const NameObj *);
     void declarePowerStar(const NameObj *, s32);
@@ -91,7 +95,6 @@ namespace MR
     void requestAppearPowerStarCoin100();
     bool isEndPowerStarAppearDemo(const NameObj *);
     NameObj* createPowerStarDemoModel(const NameObj *, const char *, Mtx);
-
     void declareCoin(const NameObj *, s32);
     s32 getDeclareRemnantCoinCount(const NameObj *);
 
@@ -122,7 +125,6 @@ namespace MR
     bool tryRumblePadVeryWeak(const void *, s32);
 
     bool tryRumbleDefaultHit(const void *, s32);
-
     void shakeCameraVeryStrong();
     void shakeCameraStrong();
     void shakeCameraNormalStrong();
@@ -134,4 +136,5 @@ namespace MR
     void stopShakingCamera(NameObj *);
     bool isName(const NameObj *, const char *);
     bool isSame(const NameObj *, const NameObj *);
+    bool tryRegisterNamePosLinkObj(const NameObj *, const JMapInfoIter &, const char *);
 };
