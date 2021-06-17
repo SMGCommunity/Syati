@@ -1,4 +1,13 @@
 Util (0x80006EA0)
+	...
+	MtxUtil
+	MultiEventCamera
+	NerveUtil
+	NPCUtil
+	...
+	TalkUtil
+	AreaObjUtil
+	...
 Animation (0x80069240)
 	AnmPlayer
 	BckCtrl
@@ -279,7 +288,43 @@ Camera (0x8010BE80)
 	OnlyCamera
 Demo (0x80133C20)
 	CompleteEndingDemoObj
-	...
+	DemoActionKeeper
+	DemoCameraFunction
+	DemoCameraKeeper
+	DemoCastGroup
+	DemoCastGroupHolder
+	DemoCastSubGroup
+	DemoCtrlBase
+	DemoDirector
+	DemoEndStartPosCameraSetter
+	DemoExecutor
+	DemoExecutorFunction
+	DemoFunction
+	DemoParamCommonDataTable
+	DemoPlayerKeeper
+	DemoPositionController
+	DemoSimpleCastHolder
+	DemoSoundKeeper
+	DemoStartRequestHolder
+	DemoStartRequestUtil
+	DemoSubPartKeeper
+	DemoTalkAnimCtrl
+	DemoTimeKeeper
+	?
+	DemoTitleAnim
+	DemoWipeKeeper
+	GrandStarReturnDemoStarter
+	MarioFaceAfterGrandStarTakeOffDemoObj
+	MarioFacePlanetTakeOffDemoObj
+	MeetKoopaDemoObj
+	NormalEndingDemoObj
+	OpeningDemoObj
+	PrepareKoopaFinalDemoObj
+	ReturnDemoRailMove
+	ScenarioStarter
+	StaffRollDemoObj
+	StarReturnDemoStarter
+	StoryBookWarpDemo
 	TransformFaceTicoBabyDemoObj
 Effect (0x80148160)
 	AutoEffectGroup
@@ -791,6 +836,7 @@ MapObj (0x8026DE50)
 	PlantGroup
 	PlantPoint
 	PlantRailInfo
+	PlayerFollowPass
 	PoleObstacleParts
 	PowerStar
 	PowerStarAppearPoint
@@ -946,7 +992,62 @@ NameObj (0x80339560)
 	NameObjListExecutor
 	NameObjRegister
 NPC (0x80343E50)
-Player
+	BombHeiRed
+	BringEnemy
+	Caretaker
+	CareTakerHunter
+	CollectTico
+	Dreamer
+	GhostAttackGhost
+	GhostAttackGhostFootprint
+	GhostAttackManager
+	GliBirdNpc
+	HoneyBee
+	HoneyQueen
+	Kinopio
+	KinopioBank
+	KinopioPostman
+	KoopaNpc
+	LuigiTalkNpc
+	MameMuimuiAttackMan
+	Meister
+	...
+	Moc
+	Monte
+	MonteThrow
+	Peach
+	Penguin
+	PenguinCoach
+	PenguinMaster
+	Pichan
+	PichanRacer
+	PlayAttackMan
+	...
+	PowerStarEventKeeper
+	Rabbit
+	RabbitStateCaught
+	RabbitStateWaitStart
+	Rosetta
+	ScoreAttackMan
+	SignBoard
+	StarListBoard
+	StrayTico
+	SuperDreamer
+	SupportTico
+	...
+	Tico
+	TicoBaby
+	TicoBig
+	TicoEat
+	...
+	TogepinAttackMan
+	TrickRabbit
+	...
+Player (0x8037E310)
+	DrawAdaptor
+	FireMarioBall
+	GhostPacket
+	...
 RhythmLib
 Ride (0x8042A960)
 	Creeper
@@ -980,7 +1081,7 @@ Ride (0x8042A960)
 	TubeSliderJumpStep
 	TubesliderObjCreator
 Scene (0x80451340)
-Screen
-Speaker
+Screen (0x8045D2D0)
+Speaker (0x804AB6A0)
 System
 ...

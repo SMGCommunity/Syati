@@ -23652,6 +23652,7 @@ __DBEXIReadReg=0x80643930
 __DBEXIWriteReg=0x80643A54
 __DBEXIReadRam=0x80643B58
 __DBEXIWriteRam=0x80643C38
+_dtors=0x80644BA0
 cCreateTable__30@unnamed@AreaObjContainer_cpp@=0x806452F0
 sCollisionInfo__26@unnamed@BossStinkBug_cpp@=0x80647040
 sKeepBendPower__24@unnamed@DinoPackun_cpp@=0x80647080
