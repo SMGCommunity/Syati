@@ -1,12 +1,63 @@
 Util (0x80006EA0)
-	...
+	?
+	ActorAnimUtil
+	ActorCameraUtil
+	ActorInitUtil
+	ActorMovementUtil
+	ActorSensorUtil
+	ActorShadowLocalUtil
+	ActorShadowUtil
+	ActorStateUtil
+	ActorSwitchUtil
+	BgmUtil
+	BitArray
+	CameraUtil
+	?
+	DemoUtil
+	DrawUtil
+	EffectUtil
+	EventUtil
+	FileUtil
+	FootPrint
+	FurCtrl
+	FurDrawer
+	FurMulti
+	FurShader
+	GamePadUtil
+	GravityUtil
+	HashSortTable
+	JMapUtil
+	JointUtil
+	LayoutUtil
+	LiveActorUtil
+	MapPartsUtil
+	MapUtil
+	MathUtil
+	MemoryUtil
+	MessageUtil
+	ModelUtil
 	MtxUtil
 	MultiEventCamera
 	NerveUtil
 	NPCUtil
-	...
+	ObjUtil
+	ParabolicPath
+	PlayerUtil
+	RailUtil
+	...?
+	SceneUtil
+	ScreenUtil
+	ShareUtil
+	SoundUtil
+	StarPointerUtil
+	StringUtil
+	SupportTicoUtil
+	SwitchEventFunctorListener
+	SystemUtil
 	TalkUtil
 	AreaObjUtil
+	BaseMatrixFollowTargetHolder
+	BothDirList
 	...
 Animation (0x80069240)
 	AnmPlayer

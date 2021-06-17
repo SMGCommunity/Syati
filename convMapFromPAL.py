@@ -24,7 +24,14 @@ KOR_OFFSETS = [
     (0x80492340, 0x50),
     (0x80494AA0, 0x70),
     (0x804BD390, 0x90),
-    (0x8054B440, 0x100)
+    (0x8054B440, 0x100),
+    # there is more here
+    (0x80643D20, 0x580),  # Data start
+    (0x8064CBB0, 0x590),  # After language-related table
+    (0x8064CF12, 0x5A0),  # After language ID table
+    (0x806599A0, -0x68C0),  # After ErrorMessageArchive
+    # there is more here
+    (0x8072DD80, -0x4E60)  # BSS Start
 ]
 
 TWN_OFFSETS = [
@@ -42,7 +49,7 @@ CUR_OFFSET_INFO = {
 
 
 # This function goes through all regions and tries to find the next offset to apply to symbol addresses. If a new offset
-# has been found, the current offset info for the corresponding will be updated.
+# has been found, the current offset info for the corresponding region will be updated.
 def try_advance_offsets(address: int):
     for region in REGIONS:
         # PAL is used as the base, so we do not have to calculate offsets for that region
