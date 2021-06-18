@@ -58,7 +58,23 @@ Util (0x80006EA0)
 	AreaObjUtil
 	BaseMatrixFollowTargetHolder
 	BothDirList
+	CollisionPartsFilter
+	DrawDirect
+	DrawDirectUtil
+	FixedPosition
+	GeometryBindUtil
+	IKJoint
+	JMapIdInfo
+	JMapInfo
+	JMapLinkInfo
+	JointController
+	JointRumbler
 	...
+	RumbleCalculator
+	SpringValue
+	TriangleFilter
+	TriggerChecker
+	ValueControl
 Animation (0x80069240)
 	AnmPlayer
 	BckCtrl

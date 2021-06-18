@@ -2,16 +2,7 @@
 
 #include "kamek.h"
 #include "JMap/JMapInfoIter.h"
-
-class NameObjUnkStruct
-{
-public:
-    NameObjUnkStruct();
-
-    s16 _0;
-    s16 _2;
-    s16 _4;
-};
+#include "Util/JMapLinkInfo.h"
 
 class NameObj
 {
@@ -33,5 +24,5 @@ public:
     const char* mName; // _4
     u16 mFlags; // _8
     s16 mExecuteIdx; // _A
-    NameObjUnkStruct _C;
+    JMapLinkInfo mLinkInfo; // _C
 };
