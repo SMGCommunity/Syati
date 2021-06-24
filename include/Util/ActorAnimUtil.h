@@ -11,7 +11,10 @@ namespace MR
 	bool tryStartAllAnim(const LiveActor *, const char *);
 	void startAction(const LiveActor *, const char *);
 
+	bool tryStartActionNotPlaying(const LiveActor *, const char *);
+
 	bool isActionEnd(const LiveActor *);
+	bool isAnyAnimPlaying(const LiveActor *, const char *);
 
 	void startBckWithInterpole(const LiveActor *, const char *, s32);
 	void startBckNoInterpole(const LiveActor *, const char *);

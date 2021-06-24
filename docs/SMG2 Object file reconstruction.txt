@@ -389,6 +389,7 @@ Demo (0x80133C20)
 	PrepareKoopaFinalDemoObj
 	ReturnDemoRailMove
 	ScenarioStarter
+	?
 	StaffRollDemoObj
 	StarReturnDemoStarter
 	StoryBookWarpDemo
@@ -1106,10 +1107,32 @@ NPC (0x80343E50)
 	TicoBaby
 	TicoBig
 	TicoEat
-	...
+	TicoFatCoin
+	TicoFatStarPiece
+	TicoRail
+	TicoShop
+	TicoShopDice
+	?
 	TogepinAttackMan
 	TrickRabbit
-	...
+	TrickRabbitUtil
+	CometEventExecutorTimeLimit
+	?
+	CometEventKeeper
+	EventDirector
+	NPCActor
+	NPCDirector
+	NPCFunction
+	NPCParameter
+	?
+	ScoreAttackCounter
+	TalkBalloon
+	TalkDirector
+	TalkMessageCtrl
+	TalkNodeCtrl
+	TalkState
+	TalkSupportPlayerWatcher
+	TurnJointCtrl
 Player (0x8037E310)
 	DrawAdaptor
 	FireMarioBall
