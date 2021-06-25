@@ -18,6 +18,8 @@
 #include "Actor/Model/ModelManager.h"
 #include "Map/Switch/StageSwitch.h"
 
+class ResourceHolder;
+
 class LiveActorFlag
 {
 public:
@@ -40,9 +42,7 @@ public:
     LiveActor(const char *);
 
     virtual void init(JMapInfoIter const &);
-
     virtual void movement();
-
     virtual void calcAnim();
     virtual void calcViewAndEntry();
 
@@ -63,26 +63,27 @@ public:
     virtual u32 receiveMsgPlayerAttack(u32, HitSensor *, HitSensor *);
     virtual u32 receiveMsgEnemyAttack(u32, HitSensor *, HitSensor *);
     virtual u32 receiveOtherMsg(u32, HitSensor *, HitSensor *);
-
-    void initStageSwitch(const JMapInfoIter &iter);
-    void initActorStarPointerTarget(f32, const TVec3f *, Mtx4 *, TVec3f);
-	
-    void initRailRider(const JMapInfoIter &);
-    void initHitSensor(s32);
-    void initModelManagerWithAnm(const char *, const char *);
-    void initEffectKeeper(s32, const char *, bool);
-    void initSound(s32, const char *, bool, const TVec3f &);
-    void initNerve(const Nerve *, s32);
-    void initShadowControllerList(u32);
-    void initBinder(f32, f32, u32);
-
+    
     void setNerve(const Nerve *);
     bool isNerve(const Nerve*) const;
     s32 getNerveStep() const;
 
-    void func_8000C170(const JMapInfoIter &, const char *, bool);
-
     HitSensor* getSensor(const char *) const;
+
+    void initModelManagerWithAnm(const char *, const char *, bool, bool);
+    void initNerve(const Nerve *, s32);
+    void initHitSensor(s32);
+    void initBinder(f32, f32, u32);
+    void initRailRider(const JMapInfoIter &);
+    void initEffectKeeper(s32, const char *, bool);
+    void initSound(s32, const char *, bool, const TVec3f &);
+    void initShadowControllerList(u32);
+    void initActorCollisionParts(const char *, HitSensor *, ResourceHolder *, Mtx4 *, bool, bool);
+    void initStageSwitch(const JMapInfoIter &iter);
+    void initActorStarPointerTarget(f32, const TVec3f *, Mtx4 *, TVec3f);
+	void initActorLightCtrl();
+
+    void updateBinder();
 
     TVec3f mTranslation; // _14
     TVec3f mRotation; // _20
