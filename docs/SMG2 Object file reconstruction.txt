@@ -1138,7 +1138,21 @@ Player (0x8037E310)
 	FireMarioBall
 	GhostPacket
 	...
-RhythmLib
+RhythmLib (0x80422990)
+	AudRhythmSeqParser
+	AudBgmTempoAdjuster
+	AudMeTrack
+	AudMeChannelMgr
+	AudMeSeqCtrl
+	AudMeSeqReader
+	AudMeSeqParser
+	AudMeTrackCallback
+	AudMePlayer
+	AudRhythmMeSystem
+	AudMeHandles
+	AudMeObject
+	AudChordInfo
+	AudRhythmHolder
 Ride (0x8042A960)
 	Creeper
 	Fluff
@@ -1171,7 +1185,38 @@ Ride (0x8042A960)
 	TubeSliderJumpStep
 	TubesliderObjCreator
 Scene (0x80451340)
+	GameScene
+	GameSceneFunction
+	GameScenePauseControl
+	GameSceneScenarioOpeningCameraState
+	IntermissionScene
+	LogoScene
+	ModelWipeScene
+	MultiSceneActor
+	MultiScene
+	MultiSceneEffectKeeper
+	PlacementInfoOrdered
+	PlacementStateChecker
+	ScenarioSelectScene
+	Scene
+	SceneDataInitializer
+	SceneExecutor
+	SceneFactory
+	SceneFunction
+	SceneNameObjListExecutor
+	SceneNameObjMovementController
+	SceneObjHolder
+	StageDataHolder
+	StageDataLoader
+	StopSceneController
 Screen (0x8045D2D0)
 Speaker (0x804AB6A0)
-System
+	SpkSpeakerCtrl
+	SpkSystem
+	SpkMixingBuffer
+	SpkWave
+	SpkTable
+	SpkData
+	SpkSound
+System (0x804AD660)
 ...
