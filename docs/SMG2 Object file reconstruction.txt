@@ -603,7 +603,7 @@ LiveActor (0x80228320)
 	AllLiveActorGroup
 	AnimationRandomPlayer
 	Binder
-	?
+	BreakModel
 	ChangeObjHolder
 	ClippingActorHolder
 	ClippingActorInfo
@@ -632,7 +632,8 @@ LiveActor (0x80228320)
 	?
 	ModelObj
 	PartsModel
-	?
+	PartsModelLodCtrl
+	RailObj
 	RailRider
 	SensorHitChecker
 	?
@@ -1109,6 +1110,7 @@ NPC (0x80343E50)
 	TicoEat
 	TicoFatCoin
 	TicoFatStarPiece
+	?
 	TicoRail
 	TicoShop
 	TicoShopDice
