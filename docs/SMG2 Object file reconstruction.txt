@@ -903,6 +903,7 @@ MapObj (0x8026DE50)
 	PetitPorter
 	PhantomTorch
 	PicketSwitch
+	PlacementObj
 	PlantGroup
 	PlantPoint
 	PlantRailInfo

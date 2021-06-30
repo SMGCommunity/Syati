@@ -20,9 +20,27 @@ public:
     virtual void unk2();
 
     void initWithoutIter();
+    void setName(const char *);
+    void setLinkedInfo(const JMapInfoIter &);
+
+    void executeMovement();
+    void requestSuspend();
+    void requestResume();
+    void syncWithFlags();
 
     const char* mName; // _4
     u16 mFlags; // _8
     s16 mExecuteIdx; // _A
-    JMapLinkInfo mLinkInfo; // _C
+    JMapLinkInfo mLinkedInfo; // _C
+
+    // Flag 0 = movement
+    // Flag 1 = resume
+    // Flag 2 = suspend
+};
+
+class NameObjFunction
+{
+public:
+    static void requestMovementOn(NameObj *);
+    static void requestMovementOff(NameObj *);
 };
