@@ -11,6 +11,7 @@ class ActorLightCtrl;
 class CollisionParts;
 class CollisionPartsFilterBase;
 class LiveActor;
+class LiveActorGroup;
 class LodCtrl;
 class MirrorActor;
 class ModelObj;
@@ -180,6 +181,7 @@ namespace MR
 
     void joinToGroup(LiveActor *, const char *);
     void joinToGroupArray(LiveActor *, const JMapInfoIter &, const char *, s32);
+    LiveActorGroup* getGroupFromArray(const LiveActor *);
 
     void addToAttributeGroupSearchTurtle(const LiveActor *);
     bool isExistInAttributeGroupSearchTurtle(const LiveActor *);

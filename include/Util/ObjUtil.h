@@ -80,7 +80,7 @@ namespace MR
     void requestMovementOff(NameObj *);
     void requestMovementOff(LiveActor *);
     void requestMovementOff(LayoutActor *);
-    void joinToNameObjGrozp(NameObj *, const char *);
+    void joinToNameObjGroup(NameObj *, const char *);
 
     void declarePowerStar(const NameObj *);
     void declarePowerStar(const NameObj *, s32);
