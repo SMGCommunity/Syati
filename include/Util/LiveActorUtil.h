@@ -66,6 +66,8 @@ namespace MR
     void initMirrorReflection(LiveActor *);
     void setMirrorReflectionInfoFromMtxYUp(const TPositionMtx &);
     void setMirrorReflectionInfoFromModel(LiveActor *);
+    
+    void initJointTransform(const LiveActor *);
 
     f32 getBckFrame(const LiveActor *);
     f32 getBtkFrame(const LiveActor *);
@@ -180,7 +182,7 @@ namespace MR
     void offCalcGravity(LiveActor *);
 
     void joinToGroup(LiveActor *, const char *);
-    void joinToGroupArray(LiveActor *, const JMapInfoIter &, const char *, s32);
+    LiveActorGroup* joinToGroupArray(LiveActor *, const JMapInfoIter &, const char *, s32);
     LiveActorGroup* getGroupFromArray(const LiveActor *);
 
     void addToAttributeGroupSearchTurtle(const LiveActor *);
