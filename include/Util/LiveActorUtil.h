@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Collision/CollisionScaleType.h"
+#include "Map/Collision/CollisionScaleType.h"
 #include "JGeometry/TMatrix34.h"
 #include "JGeometry/TPosition3.h"
 #include "JGeometry/TQuat4.h"

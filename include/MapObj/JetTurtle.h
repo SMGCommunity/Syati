@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Actor/LiveActor/LiveActor.h"
+#include "LiveActor/LiveActor.h"
 
 class JetTurtle : public LiveActor
 {
@@ -13,9 +13,9 @@ public:
 	virtual void appear();
 	virtual void control();
 	virtual void attackSensor(HitSensor *, HitSensor *);
-	virtual u32 receiveMsgPlayerAttack(u32, HitSensor *, HitSensor *);
-	virtual u32 receiveMsgEnemyAttack(u32, HitSensor *, HitSensor *);
-	virtual u32 receiveOtherMsg(u32, HitSensor *, HitSensor *);
+	virtual bool receiveMsgPlayerAttack(u32, HitSensor *, HitSensor *);
+	virtual bool receiveMsgEnemyAttack(u32, HitSensor *, HitSensor *);
+	virtual bool receiveOtherMsg(u32, HitSensor *, HitSensor *);
 	virtual void exeThrowing();
 	virtual void resetPosition();
 	virtual void reset(u32);

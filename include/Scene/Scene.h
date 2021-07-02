@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Actor/Nerve/NerveExecutor.h"
+#include "System/NerveExecutor.h"
 #include "Scene/SceneNameObjListExecutor.h"
 #include "Scene/SceneObjHolder.h"
 

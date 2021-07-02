@@ -12,14 +12,14 @@ class Nerve;
 namespace MR
 {
 	bool tryRegisterDemoCast(LiveActor *, const JMapInfoIter &);
-	void registerDemoActionFunctor(const LiveActor *, bool, const MR::FunctorBase &, const char *);
+	void registerDemoActionFunctor(const LiveActor *, const MR::FunctorBase &, const char *);
 	void registerDemoActionNerve(const LiveActor *, const Nerve *, const char *);
-	bool tryRegisterDemoActionFunctor(const LiveActor *, bool, const MR::FunctorBase &, const char *);
+	bool tryRegisterDemoActionFunctor(const LiveActor *, const MR::FunctorBase &, const char *);
 	bool tryRegisterDemoActionNerve(const LiveActor *, const Nerve *, const char *);
 	bool tryRegisterDemoCast(LiveActor *, const char *, const JMapInfoIter &);
 	bool registerDemoCast(LiveActor *, const char *, const JMapInfoIter &);
 	bool initTalkAnimDemoCast(LiveActor *, const JMapInfoIter &, const char *, const char *);
-	bool registerDemoActionFunctorDirect(const LiveActor *, bool, const MR::FunctorBase &, const char *, const char *);
+	bool registerDemoActionFunctorDirect(const LiveActor *, const MR::FunctorBase &, const char *, const char *);
 
 	void tryRegisterDemoActionFunctorDirect(const LiveActor *, bool, const MR::FunctorBase &, const char *, const char *);
 	bool tryStartDemoRegistered(LiveActor *, const char *);

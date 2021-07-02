@@ -1,11 +1,11 @@
 #pragma once
 
-#include "Actor/LiveActor/LiveActor.h"
 #include "JGeometry/TVec3.h"
 #include "JMap/JMapInfoIter.h"
 
 class ActorCameraInfo;
 class CameraTargetArg;
+class LiveActor;
 
 void createActorCameraName(char *, u32, const LiveActor *, const ActorCameraInfo *);
 void createMultiActorCameraName(char *, u32, const LiveActor *, const ActorCameraInfo *, const char *);

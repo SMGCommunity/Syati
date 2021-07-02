@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Actor/LiveActor/LiveActor.h"
+class LiveActor;
 
 namespace MR
 {

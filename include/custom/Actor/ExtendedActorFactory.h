@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Actor/NameObj/NameObjFactory.h"
+#include "kamek.h"
+#include "NameObj/NameObjFactory.h"
 #include "custom/Actor/MyFirstActor.h"
-
 #include "os.h"
 
 // ensure you bump up this value when you add more actors!

@@ -1,4 +1,4 @@
-#include "Actor/AreaObj/AreaObj.h"
+#include "AreaObj/AreaObj.h"
 #include "Util/PlayerUtil.h"
 #include "Util/ScreenUtil.h"
 #include "Util/StageUtil.h"

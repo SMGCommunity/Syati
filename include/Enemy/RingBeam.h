@@ -1,6 +1,8 @@
 #pragma once
 
-#include "Actor/LiveActor/LiveActor.h"
+#include "kamek.h"
+#include "LiveActor/LiveActor.h"
+#include "LiveActor/State/ActorStateParamScale.h"
 
 class RingBeam : public LiveActor
 {
@@ -15,7 +17,9 @@ public:
 	virtual void makeActorDead();
 	virtual void control();
 	virtual void attackSensor(HitSensor *, HitSensor *);
-	virtual u32 receiveMsgPlayerAttack(u32, HitSensor *, HitSensor *);
+	virtual bool receiveMsgPlayerAttack(u32, HitSensor *, HitSensor *);
+
+	void initWithParamScale(const JMapInfoIter &, const ActorStateParamScale *);
 
 	void setSpeed(f32);
 	void setLife(s32);

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Actor/LiveActor/LiveActor.h"
-#include "Actor/LOD/LodCtrl.h"
+#include "LiveActor/LiveActor.h"
+#include "LiveActor/LOD/LodCtrl.h"
 #include "MapObj/MapObjActorInitInfo.h"
 
 class MapObjActor : public LiveActor

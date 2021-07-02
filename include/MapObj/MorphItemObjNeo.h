@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Actor/LiveActor/LiveActor.h"
+#include "LiveActor/LiveActor.h"
 
 #define MORPH_HOPPER 1
 #define MORPH_BEE 2
@@ -25,8 +25,8 @@ public:
 	virtual void makeActorDead();
 	virtual void control();
 	virtual void calcAndSetBaseMtx();
-	virtual u32 receiveMsgPlayerAttack(u32, HitSensor *, HitSensor *);
-	virtual u32 receiveOtherMsg(u32, HitSensor *, HitSensor *);
+	virtual bool receiveMsgPlayerAttack(u32, HitSensor *, HitSensor *);
+	virtual bool receiveOtherMsg(u32, HitSensor *, HitSensor *);
 	virtual bool isDemo() const;
 	virtual u32 getPowerUp();
 	virtual void emitAppearEffects();

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Actor/LiveActor/LiveActor.h"
-#include "Actor/LiveActor/PartsModel.h"
-#include "JGeometry/TMatrix34.h"
+#include "kamek.h"
+#include "LiveActor/LiveActor.h"
+#include "LiveActor/PartsModel.h"
 
 class JumpEmitter : public LiveActor
 {

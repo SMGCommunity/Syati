@@ -82,6 +82,19 @@ namespace MR
     void requestMovementOff(LayoutActor *);
     void joinToNameObjGroup(NameObj *, const char *);
 
+    JMapInfo* createCsvParser(const char *, const char *, ...);
+
+    s32 getCsvDataElementNum(const JMapInfo *);
+    bool getCsvDataStr(const char **, const JMapInfo *, const char *, s32);
+    void getCsvDataStrOrNULL(const char **, const JMapInfo *, const char *, s32);
+    bool getCsvDataS32(s32 *, const JMapInfo *, const char *, s32);
+
+    bool getCsvDataS16(s16 *, const JMapInfo *, const char *, s32);
+    void getCsvDataU8(u8 *, const JMapInfo *, const char *, s32);
+    void getCsvDataF32(f32 *, const JMapInfo *, const char *, s32);
+    void getCsvDataBool(bool *, const JMapInfo *, const char *, s32);
+    void getCsvDataVec(Vec *, const JMapInfo *, const char *, s32);
+
     void declarePowerStar(const NameObj *);
     void declarePowerStar(const NameObj *, s32);
     void declarePowerStarCoin100();
@@ -94,7 +107,7 @@ namespace MR
 
     void requestAppearPowerStarCoin100();
     bool isEndPowerStarAppearDemo(const NameObj *);
-    NameObj* createPowerStarDemoModel(const NameObj *, const char *, Mtx);
+    NameObj* createPowerStarDemoModel(const NameObj *, const char *, Mtx4 *);
     void declareCoin(const NameObj *, s32);
     s32 getDeclareRemnantCoinCount(const NameObj *);
 

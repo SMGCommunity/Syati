@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Actor/LiveActor/LiveActor.h"
+#include "LiveActor/LiveActor.h"
 #include "JGeometry/TMatrix34.h"
 #include "JGeometry/TVec3.h"
 #include "MapObj/SpinDriverPathDrawer.h"

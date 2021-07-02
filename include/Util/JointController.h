@@ -34,6 +34,8 @@ template<typename T>
 class JointControlDelegator : public JointController
 {
 public:
+	typedef bool (T::*CalcJointMtxFunc)(TPositionMtx *, const JointControllerInfo &);
+
 	inline JointControlDelegator() : JointController() {}
 
 	virtual bool calcJointMatrix(TPositionMtx * pMtx, const JointControllerInfo & rInfo)
@@ -63,6 +65,6 @@ public:
 	virtual ~JointControlDelegator() {}
 
 	T* mObjPtr; // _C
-	bool (T::*mCalcJointMtxFunc)(TPositionMtx *, const JointControllerInfo &); // _10
-	bool (T::*mCalcJointMtxAfterChildFunc)(TPositionMtx *, const JointControllerInfo &); // _1C
+	CalcJointMtxFunc mCalcJointMtxFunc; // _10
+	CalcJointMtxFunc mCalcJointMtxAfterChildFunc; // _1C
 };
