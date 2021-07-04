@@ -1,6 +1,7 @@
 #pragma once
 
 #include "JGeometry/TVec3.h"
+#include "JMap/JMapInfoIter.h"
 #include "kamek.h"
 
 class NameObj;
