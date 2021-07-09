@@ -13,7 +13,8 @@ public:
 	void setLocalPosition(const TVec3f &);
 	void setUpDirection(const TVec3f &);
 	void setRadius(f32);
-	// two unknown functions for setting Arg1 and Arg2
+	void setUnusedArg0(f32);
+	// one unknown function
 
 	TVec3f mLocalPos; // _28
 	TVec3f _34;
@@ -21,6 +22,6 @@ public:
 	TVec3f _4C;
 	f32 mRadius; // _58
 	f32 _5C;
-	f32 _60; // Obj_arg1
+	f32 mUnusedArg0; // _60
 	f32 _64; // Obj_arg2
 };

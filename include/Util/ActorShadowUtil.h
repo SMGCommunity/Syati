@@ -26,7 +26,7 @@ namespace MR
     void initShadowVolumeSphere(LiveActor *, f32);
     void initShadowVolumeOval(LiveActor *, const TVec3f &);
     void initShadowVolumeCylinder(LiveActor *, f32);
-    void initShadowVolumeBox(LiveActor *, const char *, const TVec3f &);
+    void initShadowVolumeFlatModel(LiveActor *, const char *, Mtx4*);
     void setShadowDropPositionPtr(LiveActor *, const char *, const TVec3f *);
     void setShadowDropPositionMtxPtr(LiveActor *, const char *, Mtx4*, const TVec3f &);
     void setShadowDropPositionAtJoint(LiveActor *, const char *, const char *, const TVec3f &);

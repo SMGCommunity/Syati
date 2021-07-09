@@ -20,5 +20,5 @@ class CubeGravity : public PlanetGravity
 	f32 _88;
 	f32 _8C;
 	f32 _90;
-	u8 mFlags; // _94, always 63
+	u8 mActiveFaces; // _94
 };

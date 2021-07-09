@@ -5,6 +5,7 @@
 
 class AreaObjFollower : public BaseMatrixFollower
 {
+public:
 	AreaObjFollower(AreaObj *, const JMapInfoIter &);
 
 	virtual void update();

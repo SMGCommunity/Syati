@@ -3,6 +3,17 @@
 #include "JGeometry/TPosition3.h"
 #include "NameObj/NameObj.h"
 
+// Gravity vector calculation flags
+#define GRAVITY_TYPE_NORMAL 1
+#define GRAVITY_TYPE_SHADOW 2
+#define GRAVITY_TYPE_MAGNET 4
+#define GRAVITY_TYPE_MARIO_LAUNCHER 8
+
+// Gravity power types
+#define GRAVITY_POWER_LIGHT 0
+#define GRAVITY_POWER_NORMAL 1
+#define GRAVITY_POWER_HEAVY 2
+
 class PlanetGravity
 {
 public:
@@ -20,17 +31,17 @@ public:
 	void setPriority(s32);
 	void updateIdentityMtx();
 
-	f32 _4;
-	f32 _8;
+	f32 mRange; // _4
+	f32 mDistant; // _8
 	s32 mPriority; // _C
-	s32 _10;
+	s32 mGravityId; // _10
 	NameObj* mFollowHost; // _14
-	s32 _18;
-	s32 _1C;
-	bool mIsActive; // _20
-	u8 _21;
+	u32 mGravityType; // _18
+	u32 mGravityPower; // _1C
+	bool _20;
+	bool mIsInverse; // _21
 	bool mIsZero; // _22
-	u8 _23;
-	u8 _24;
-	u8 _25;
+	bool _23;
+	bool mIsRegistered; // _24
+	bool mIsActive; // _25
 };

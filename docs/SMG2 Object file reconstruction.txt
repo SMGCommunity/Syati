@@ -996,6 +996,7 @@ MapObj (0x8026DE50)
 	StarPieceSpot
 	StarPieceSpotEruption
 	StemFruit
+	Sun
 	SuperSpinDriver
 	SupportFlushPoint
 	SupportPlayDirector

@@ -2,7 +2,7 @@
 
 #include "Gravity/PlanetGravity.h"
 
-class SegmentGravity : PlanetGravity
+class SegmentGravity : public PlanetGravity
 {
 public:
 	SegmentGravity();

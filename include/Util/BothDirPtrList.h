@@ -2,6 +2,7 @@
 
 #include "kamek.h"
 
+// Complete
 namespace MR
 {
 	class BothDirPtrList;	

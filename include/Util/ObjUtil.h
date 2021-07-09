@@ -124,7 +124,7 @@ namespace MR
     void declareStarPieceReceiver(const NameObj *, s32);
     void clearGotCountStarPieceReceiver(const NameObj *);
     bool hopStarPiece(const NameObj *, const TVec3f &, const TVec3f &);
-    bool appearStarPiece(const NameObj *, const TVec3f &, s32, f32, f32, bool);
+    bool appearStarPiece(const NameObj * pHost, const TVec3f & rPosition, s32 numItems, f32 radius, f32 height, bool);
     bool appearStarPieceToDirection(const NameObj *, const TVec3f &, const TVec3f &, s32, f32, f32, bool);
 
     void initStarPieceGetCSSound();

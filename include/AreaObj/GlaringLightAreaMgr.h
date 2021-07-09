@@ -5,7 +5,7 @@
 class GlaringLightAreaMgr : public AreaObjMgr
 {
 public:
-	GlaringLightAreaMgr(const char *);
+	GlaringLightAreaMgr(s32, const char *);
 
 	virtual ~GlaringLightAreaMgr();
 };

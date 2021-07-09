@@ -52,7 +52,7 @@ namespace MR
 	HitSensor* addHitSensorMapObj(LiveActor *, const char *);
 	bool tryUpdateHitSensorsAll(LiveActor *);
 	void updateHitSensorsAll(LiveActor *);
-	bool isSensorType(HitSensor *, u32);
+	bool isSensorType(const HitSensor *, u32);
 	void setSensorType(LiveActor *, const char *, u32);
 
 	HitSensor* getSensorWithIndex(LiveActor *, int);

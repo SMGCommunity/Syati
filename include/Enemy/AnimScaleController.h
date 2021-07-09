@@ -1,21 +1,26 @@
 #pragma once
 
 #include "kamek.h"
+#include "JGeometry/TVec3.h"
 #include "System/Nerve/NerveExecutor.h"
+
+class LiveActor;
 
 struct AnimScaleParam
 {
+    AnimScaleParam();
+
     f32 _0;
     f32 _4;
     f32 _8;
     f32 _C;
-    f32 _10;
-    f32 _14;
-    f32 _18;
-    f32 _1C;
-    f32 _20;
-    f32 _24;
-    f32 _28;
+    f32 _10; // dpdvib
+    f32 _14; // dpdvib
+    f32 _18; // dpdvib
+    f32 _1C; // dpdvib
+    f32 _20; // hitreac
+    f32 _24; // hitreac
+    f32 _28; // hitreac
     s32 _2C;
     f32 _30;
 };
@@ -45,7 +50,7 @@ public:
     void update();
     void updateScale(f32, f32);
 
-    s32 _8;
+    AnimScaleParam* mAnimScaleParam;
     TVec3f mScale; // _C;
     f32 _18;
 };

@@ -12,5 +12,5 @@ public:
 	virtual void movement();
 
 	u32* mSound; // _48
-	TVec3f& mSoundPos; // _4C
+	TVec3f mSoundPos; // _4C
 };

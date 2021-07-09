@@ -26,7 +26,7 @@ public:
 class CubeCameraMgr : public AreaObjMgr
 {
 public:
-	CubeCameraMgr(const char *);
+	CubeCameraMgr(s32, const char *);
 
 	virtual ~CubeCameraMgr();
 

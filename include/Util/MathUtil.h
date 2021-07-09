@@ -122,8 +122,8 @@ namespace MR
 	void getRotatedAxisZ(TVec3f *, const TVec3f &);
 	f32 getMaxElement(const TVec3f &);
 	f32 getMaxAbsElement(const TVec3f &);
-	s32 getMaxElementIndex(const TVec3f &);
-	s32 getMaxAbsElementIndex(const TVec3f &);
+	u32 getMaxElementIndex(const TVec3f &);
+	u32 getMaxAbsElementIndex(const TVec3f &);
 	f32 diffAngleAbsFast(const TVec3f &, const TVec3f &);
 	f32 diffAngleAbs(const TVec3f &, const TVec3f &);
 	f32 diffAngleAbs(const TVec2f &, const TVec2f &);

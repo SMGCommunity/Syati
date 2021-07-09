@@ -58,6 +58,7 @@ namespace MR
 	void turnMtxToLocalDirDegree(TPositionMtx *, const TVec3f &, const TVec3f &, f32);
 	void makeMtxMoment(TPositionMtx *, const TVec3f &);
 
+	void setMtxTrans(Mtx4 *, const TVec3f &);
 	void setMtxTrans(Mtx4 *, f32, f32, f32);
 	void addTransMtx(Mtx4 *, const TVec3f &);
 	void addTransMtxLocal(Mtx4 *, const TVec3f &);
