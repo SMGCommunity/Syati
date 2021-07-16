@@ -1,17 +1,33 @@
 #pragma once
 
 #include "JGeometry/TPosition3.h"
-#include "NameObj/NameObj.h"
+#include "JMap/JMapInfoIter.h"
+#include "Util/AssignableArray.h"
+#include "Util/JMapLinkInfo.h"
 
 class LiveActor;
+class NameObj;
 
 class BaseMatrixFollowValidater
 {
 public:
-	bool isValid(s32) const = 0;
+	virtual bool isValid(s32) const = 0;
 };
 
-class BaseMatrixFollowTarget;
+class BaseMatrixFollowTarget
+{
+public:
+	BaseMatrixFollowTarget(const JMapLinkInfo *);
+
+	void set(LiveActor *, const TPositionMtx &, const TPositionMtx *, BaseMatrixFollowValidater *);
+	Mtx4* getHostBaseMtx() const;
+
+	Mtx mMtx; // _0
+	Mtx4* mHostMtx; // _30
+	LiveActor* mHost; // _34
+	const JMapLinkInfo* mLinkInfo; // _38
+	BaseMatrixFollowValidater* mValidater; // _3C
+};
 
 class BaseMatrixFollower
 {
@@ -32,9 +48,24 @@ public:
 	s32 _10;
 };
 
-class BaseMatrixFollowTarget;
+class BaseMatrixFollowTargetHolder
+{
+public:
+	BaseMatrixFollowTargetHolder(const char *, s32, s32);
 
-class BaseMatrixFollowTargetHolder;
+	virtual void initAfterPlacement();
+	virtual void movement();
+
+	void addFollower(BaseMatrixFollower *);
+	void setFollowTargetInfo(LiveActor *, const JMapInfoIter &, const TPositionMtx *, BaseMatrixFollowValidater *);
+	BaseMatrixFollowTarget* findFollowTarget(const JMapLinkInfo *);
+	BaseMatrixFollowTarget* findFollowTarget(const BaseMatrixFollower *);
+
+	MR::AssignableArray<BaseMatrixFollowTarget*> mTargets; //_14
+	s32 mNumTargets; // _1C
+	MR::AssignableArray<BaseMatrixFollower*> mFollowers; // _20
+	s32 mNumFollowers; // _28
+};
 
 namespace MR {
 	bool isValidFollowID(const JMapInfoIter &);

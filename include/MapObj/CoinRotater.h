@@ -13,7 +13,7 @@ class CoinRotater : public NameObj
 
 	f32 mRotateY;
 	f32 mHiSpeedRotateY;
-	f§2 mInWaterRotateY;
+	f32 mInWaterRotateY;
 	Mtx mMtxRotateY;
 	Mtx mMtxHiSpeedRotateY;
 	Mtx mMtxInWaterRotateY;

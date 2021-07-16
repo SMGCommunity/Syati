@@ -14,7 +14,7 @@ public:
 	void connect();
 	void connect(LiveActor *);
 
-	LiveActor* mActor;
-	s32 _4; // appears to be a pointer
-	Mtx mMtx;
+	LiveActor* mActor; // _0
+	u32* _4; // appears to be a pointer
+	Mtx mMtx; // _8
 };

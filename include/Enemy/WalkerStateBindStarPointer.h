@@ -2,9 +2,9 @@
 
 #include "Enemy/AnimScaleController.h"
 #include "LiveActor/LiveActor.h"
-#include "System/Nerve/NerveExecutor.h"
+#include "LiveActor/State/ActorStateBase.h"
 
-class WalkerStateBindStarPointer : public NerveExecutor
+class WalkerStateBindStarPointer : public ActorStateBaseInterface
 {
 public:
     WalkerStateBindStarPointer(LiveActor *, AnimScaleController *);

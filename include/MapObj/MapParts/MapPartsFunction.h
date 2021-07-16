@@ -11,14 +11,11 @@ public:
 	virtual ~MapPartsFunction();
 	virtual void init(const JMapInfoIter &);
 	virtual void movement();
-
 	virtual bool isWorking() const;
 	virtual void start();
 	virtual void end();
 	virtual bool receiveMsg(u32);
 	virtual void control();
-
-	void movement();
 	
 	void initNerve(const Nerve *);
 	void setNerve(const Nerve *);
@@ -28,9 +25,9 @@ public:
 	bool sendMsgToHost(u32);
 	f32 getSpeed() const;
 
-	Spine* mSpine;
-	LiveActor* mHost;
-	bool _1C;
-	f32 mSpeed;
+	Spine* mSpine; // _14
+	LiveActor* mHost; // _18
+	bool mEnabled; // _1C
+	f32 mSpeed; // _20
 	s32 _24;
 };

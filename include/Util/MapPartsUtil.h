@@ -1,8 +1,8 @@
 #pragma once
 
+#include "kamek.h"
 #include "JGeometry/TVec3.h"
 #include "JMap/JMapInfoIter.h"
-#include "kamek.h"
 
 class HitSensor;
 class LiveActor;
@@ -10,8 +10,6 @@ class MapPartsRailGuideDrawer;
 
 namespace MR
 {
-	HitSensor* getBodySensor(LiveActor *);
-	void setBodySensorType(LiveActor *, u32);
 	void getMapPartsObjectNameIfExistShapeID(char *, u32, const JMapInfoIter &);
 	void initMapPartsClipping(LiveActor *, const JMapInfoIter &, TVec3f *, bool);
 	MapPartsRailGuideDrawer* createMapPartsRailGuideDrawer(LiveActor *, const char *, const JMapInfoIter &);

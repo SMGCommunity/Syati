@@ -2,6 +2,7 @@
 
 #include "LiveActor/LiveActor.h"
 #include "JGeometry/TMatrix34.h"
+#include "JGeometry/TQuat4.h"
 #include "JGeometry/TVec3.h"
 #include "MapObj/SpinDriverPathDrawer.h"
 
@@ -19,14 +20,12 @@ public:
 	s32 _90;
 	s32 _94;
 	s32 _98;
-	SpinDriverPathDrawer* mSpinDriverPathDrawer;
+	SpinDriverPathDrawer* mSpinDriverPathDrawer; // _9C
 	s32 _A0;
 	s32 _A4;
-
 	Mtx _A8;
-
-	s32 _D8, _DC, _E0, _E4;
-	s32 _E8, _EC, _F0, _F4;
+	TQuat4f _D8;
+	TQuat4f _E8;
 	TVec3f _F8;
 	TVec3f _104;
 	TVec3f _110;

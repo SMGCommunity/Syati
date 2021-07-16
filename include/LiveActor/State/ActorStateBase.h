@@ -1,6 +1,6 @@
 #pragma once
 
-#include "System/NerveExecutor.h"
+#include "System/Nerve/NerveExecutor.h"
 
 class ActorStateBaseInterface : public NerveExecutor
 {

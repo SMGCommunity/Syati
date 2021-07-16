@@ -1,6 +1,6 @@
 #pragma once
 
-#include "LiveActor/LiveActor.h"
+#include "LiveActor/Model/ModelObj.h"
 
 class BlackHole : public LiveActor
 {
@@ -24,10 +24,12 @@ public:
     void exeWait();
     void exeDisappear();
 
-    s32 _90;
+    ModelObj* mBlackHoleModel; // _90
     f32 _94;
     f32 _98;
-    TVec3f _9C;
+    f32 _9C;
+    f32 _A0;
+    f32 _A4;
     s32 _A8;
     Mtx _AC;
     Mtx _DC;

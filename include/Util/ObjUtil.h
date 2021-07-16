@@ -1,12 +1,15 @@
 #pragma once
 
+#include "kamek.h"
 #include "JGeometry/TVec3.h"
 #include "JMap/JMapInfoIter.h"
-#include "kamek.h"
+#include "Util/Functor.h"
 
 class NameObj;
 class LayoutActor;
 class LiveActor;
+class ResourceHolder;
+class StageSwitchCtrl;
 
 namespace MR
 {
@@ -59,9 +62,11 @@ namespace MR
     void connectToScene3DModelFor2D(LiveActor *);
     void connectToSceneLayout(NameObj *);
 
+    void connectToSceneLayoutMovementCalcAnim(NameObj *);
+    void connectToSceneLayoutDecoration(NameObj *);
     void connectToSceneTalkLayout(NameObj *);
     void connectToSceneWipeLayout(NameObj *);
-
+    void connectToSceneLayoutOnPause(NameObj *);
     void connectToSceneLayoutMovement(NameObj *);
     void connectToSceneMirrorMapObj(LiveActor *);
     void connectToSceneMirrorMapObjDecoration(LiveActor *);
@@ -82,14 +87,27 @@ namespace MR
     void requestMovementOff(LiveActor *);
     void requestMovementOff(LayoutActor *);
     void joinToNameObjGroup(NameObj *, const char *);
+    void registerPreDrawFunction(const MR::FunctorBase &, int);
 
+    void listenNameObjStageSwitchOnAppear(const NameObj *, const StageSwitchCtrl *, const MR::FunctorBase &);
+    void listenNameObjStageSwitchOnOffAppear(const NameObj *, const StageSwitchCtrl *, const MR::FunctorBase &, const MR::FunctorBase &);
+    void listenNameObjStageSwitchOnA(const NameObj *, const StageSwitchCtrl *, const MR::FunctorBase &);
+    void listenNameObjStageSwitchOnOffA(const NameObj *, const StageSwitchCtrl *, const MR::FunctorBase &, const MR::FunctorBase &);
+    void listenNameObjStageSwitchOnB(const NameObj *, const StageSwitchCtrl *, const MR::FunctorBase &);
+    void listenNameObjStageSwitchOffB(const NameObj *, const StageSwitchCtrl *, const MR::FunctorBase &);
+    void listenNameObjStageSwitchOnOffB(const NameObj *, const StageSwitchCtrl *, const MR::FunctorBase &, const MR::FunctorBase &);
+
+    // ResourceHolder stuff is found here
+    JMapInfo* createCsvParser(const ResourceHolder *, const char *, ...);
     JMapInfo* createCsvParser(const char *, const char *, ...);
+    JMapInfo* tryCreateCsvParser(const ResourceHolder *, const char *, ...);
+    JMapInfo* tryCreateCsvParser(const LiveActor *, const char *, ...);
 
     s32 getCsvDataElementNum(const JMapInfo *);
     bool getCsvDataStr(const char **, const JMapInfo *, const char *, s32);
     void getCsvDataStrOrNULL(const char **, const JMapInfo *, const char *, s32);
     bool getCsvDataS32(s32 *, const JMapInfo *, const char *, s32);
-
+    bool getCsvDataU32(s32 *, const JMapInfo *, const char *, s32);
     bool getCsvDataS16(s16 *, const JMapInfo *, const char *, s32);
     void getCsvDataU8(u8 *, const JMapInfo *, const char *, s32);
     void getCsvDataF32(f32 *, const JMapInfo *, const char *, s32);
@@ -151,4 +169,13 @@ namespace MR
     bool isName(const NameObj *, const char *);
     bool isSame(const NameObj *, const NameObj *);
     bool tryRegisterNamePosLinkObj(const NameObj *, const JMapInfoIter &, const char *);
+
+    bool tryFindLinkNamePos(const NameObj *, const char *, Mtx4 *);
+    bool findNamePos(const char *, TVec3f *, TVec3f *);
+    bool findNamePosOnGround(const char *, Mtx4 *);
+
+    bool tryFindNamePos(const char *, TVec3f *, TVec3f *);
+    
+    bool tryFindLinkNamePos(const NameObj *, const char *, TVec3f *, TVec3f *);
+    bool tryFindLinkNamePos(const NameObj *, const char *, Mtx4 *);
 };

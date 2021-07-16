@@ -48,30 +48,3 @@ public:
 	u8 _F1;
 	u8 _F2;
 };
-
-namespace NrvSimpleBreakableObj
-{
-	class NrvWait : public Nerve
-	{
-	public:
-		virtual void execute(Spine *) const;
-
-		static NrvWait sInstance;
-	};
-
-	class NrvTryStartDemo : public Nerve
-	{
-	public:
-		virtual void execute(Spine *) const;
-
-		static NrvTryStartDemo sInstance;
-	};
-
-	class NrvDemo : public Nerve
-	{
-	public:
-		virtual void execute(Spine *) const;
-
-		static NrvDemo sInstance;
-	};
-}

@@ -31,8 +31,8 @@ namespace MR
     void setScale(LiveActor *, const TVec3f &);
     void setScale(LiveActor *, f32, f32, f32);
     void setScale(LiveActor *, f32);
-
     void copyTransRotateScale(const LiveActor *, LiveActor *);
+    void copyTransRotate(const LiveActor *, LiveActor *);
 
     bool isValidMovement(const LiveActor *);
     bool isValidCalcAnim(const LiveActor *);
@@ -60,7 +60,10 @@ namespace MR
     void setBaseScale(LiveActor *, const TVec3f &);
 
     // ResourceHolder stuff is found here
-
+    void initDLMakerFog(LiveActor *, bool);
+    
+    void initDLMakerChangText(LiveActor *, const char *);
+    void initDLMakerTexMtx(LiveActor *, const char *);
     void initDLMakerProjmapEffectMtxSetter(LiveActor *);
 
     void initMirrorReflection(LiveActor *);
@@ -120,12 +123,13 @@ namespace MR
 
     void setNerveAtStep(LiveActor *, const Nerve *, s32);
     void setNerveAtBckStopped(LiveActor *, const Nerve *);
-
+    bool trySetNerve(LiveActor *, const Nerve *);
     bool isOnGround(const LiveActor *);
     bool isOnGroundCos(const LiveActor *, f32);
     bool isBindedGround(const LiveActor *);
     bool isBindedWall(const LiveActor *);
-
+    bool isBindedWallOfMap(const LiveActor *);
+    bool isBindedWallOfMoveLimit(const LiveActor *);
     bool isBindedRoof(const LiveActor *);
     bool isBinded(const LiveActor *);
     bool isPressedRoofAndGround(const LiveActor *);
@@ -160,18 +164,19 @@ namespace MR
     bool isDead(const LiveActor *);
     bool isHiddenModel(const LiveActor *);
     void showModel(LiveActor *);
-
+    void showModelAndEffects(LiveActor *);
     void hideModel(LiveActor *);
-
+    void hideModelAndEffects(LiveActor *);
     void hideModelAndOnCalcAnim(LiveActor *);
     void showModelIfHidden(LiveActor *);
     void hideModelIfShown(LiveActor *);
     void hideModelAndOnCalcAnimIfShown(LiveActor *);
-
+    bool isStopAnimFrame(LiveActor *);
     void stopAnimFrame(LiveActor *);
     void releaseAnimFrame(LiveActor *);
     bool isNoCalcAnim(const LiveActor *);
-
+    void onCalcAnim(LiveActor *);
+    void offCalcAnim(LiveActor *);
     bool isNoCalcView(const LiveActor *);
     bool isNoEntryDrawBuffer(const LiveActor *);
     bool isNoBind(const LiveActor *);
@@ -185,13 +190,20 @@ namespace MR
     LiveActorGroup* joinToGroupArray(LiveActor *, const JMapInfoIter &, const char *, s32);
     LiveActorGroup* getGroupFromArray(const LiveActor *);
 
+    void callMakeActorDeadAllGroupMember(const LiveActor *);
+    void callKillAllGroupMember(const LiveActor *);
+    void callMakeActorAppearedAllGroupMember(const LiveActor *);
+    void callAppearAllGroupMember(const LiveActor *);
+    void callRequestMovementOnAllGroupMember(const LiveActor *);
+    void callInvalidateClippingAllGroupMember(const LiveActor *);
+    void callValidateClippingAllGroupMember(const LiveActor *);
     void addToAttributeGroupSearchTurtle(const LiveActor *);
     bool isExistInAttributeGroupSearchTurtle(const LiveActor *);
     void calcGravity(LiveActor *);
     void calcGravity(LiveActor *, const TVec3f &);
     void calcGravityOrZero(LiveActor *);
     void initFur(LiveActor *);
-
+    void initFurEnemy(LiveActor *);
     void initFurPlanet(LiveActor *);
     void initFurPlayer(LiveActor *);
     void initCollisionParts(LiveActor *, const char *, HitSensor *, Mtx4 *);
@@ -201,12 +213,24 @@ namespace MR
     CollisionParts* createCollisionPartsFromLiveActor(LiveActor *, const char *, HitSensor *, MR::CollisionScaleType);
     CollisionParts* createCollisionPartsFromLiveActor(LiveActor *, const char *, HitSensor *, Mtx4 *, MR::CollisionScaleType);
 
+    CollisionParts* tryCreateCollisionMoveLimit(LiveActor *, HitSensor *);
+    CollisionParts* tryCreateCollisionWaterSurface(LiveActor *, HitSensor *);
+    f32 getCollisionBoundingSphereRange(const LiveActor *);
+    bool isValidCollisionParts(LiveActor *);
     void validateCollisionParts(LiveActor *);
     void validateCollisionParts(CollisionParts *);
     void invalidateCollisionParts(LiveActor *);
     void invalidateCollisionParts(CollisionParts *);
+    void onUpdateCollisionParts(LiveActor *);
+    void onUpdateCollisionPartsOneTimeImmediately(LiveActor *);
+    void offUpdateCollisionParts(LiveActor *);
 
-    bool isExistStarPointerTarget(const LiveActor *);
+    void resetAllCollisionMtx(LiveActor *);
+    void setCollisionMtx(LiveActor *);
+    void setCollisionMtx(LiveActor *, CollisionParts *);
+    CollisionParts* getCollisionParts(LiveActor *);
+    bool isExistCollisionParts(const LiveActor *);
+    u32 getCollisionSensortType(const CollisionParts *);
 
     ModelObj* createModelObjMapObj(const char *, const char *, Mtx4 *);
     ModelObj* createModelObjMapObjStrongLight(const char *, const char *, Mtx4 *);
@@ -233,4 +257,7 @@ namespace MR
     void stopSceneAtStep(const LiveActor *, s32, s32);
     void tryRumblePadAndCameraDistanceStrong(const LiveActor *, f32, f32, f32);
     void tryRumblePadAndCameraDistanceMiddle(const LiveActor *, f32, f32, f32);
+
+    HitSensor* getBodySensor(LiveActor *);
+    void setBodySensorType(LiveActor *, u32);
 };

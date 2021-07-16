@@ -14,7 +14,7 @@ public:
 	void exeWait();
 	void initPowerUpModel(const JMapInfoIter &);
 
-	s32 mPowerUpType;
-	f32 mRotation;
-	bool mIsDrill;
+	s32 mPowerUpType; // _90
+	f32 mRotation; // _94
+	bool mIsDrill; // _98
 };

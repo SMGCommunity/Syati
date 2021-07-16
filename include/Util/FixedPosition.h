@@ -18,6 +18,7 @@ public:
 	void setBaseMtx(Mtx4 *);
 	void setLocalTrans(const TVec3f &);
 	void copyTrans(TVec3f *) const;
+	void copyRotate(TVec3f *) const;
 
 	Mtx4* mBaseMtx; // _0
 	TVec3f mLocalTrans; // _4

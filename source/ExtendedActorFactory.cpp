@@ -1,6 +1,4 @@
 #include "custom/Actor/ExtendedActorFactory.h"
-
-#include "Map/Planet/PlanetMapCreator.h"
 #include "Util/StringUtil.h"
 
 // patch is at 804564D4, we still have r3 as our name

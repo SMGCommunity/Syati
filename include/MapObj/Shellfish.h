@@ -35,5 +35,5 @@ public:
 	LiveActor* mItem; // 98
 	s32 mItemType; // 9C
 	bool mBindItem; // A0
-	u32* mBodyCollision; // A4
+	CollisionParts* mBodyCollision; // A4
 };

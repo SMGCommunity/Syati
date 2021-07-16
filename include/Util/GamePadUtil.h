@@ -55,7 +55,7 @@ namespace MR
 	bool testSystemTriggerB();
 	// two unknown functions here
 	bool testDPDMenuPadDecideTrigger();
-	// unknown function here
+	bool testPlayer1TriggerA();
 	bool testFpViewStartTrigger();
 	bool testFpViewOutTrigger();
 
