@@ -1,6 +1,6 @@
 #pragma once
 
-#include "kamek.h"
+#include "syati.h"
 #include "JGeometry/TMatrix34.h"
 
 class J3DModel;

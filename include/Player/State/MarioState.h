@@ -58,7 +58,7 @@ public:
 	virtual bool update();
 	virtual bool notice();
 	virtual bool keep();
-	virtual bool postureCtrl(Mtx4 *);
+	virtual bool postureCtrl(MtxPtr);
 	virtual void hitWall(const TVec3f &, HitSensor *);
 	virtual void hitPoly(u8, const TVec3f &, HitSensor *);
 	virtual bool passRing(const HitSensor *);

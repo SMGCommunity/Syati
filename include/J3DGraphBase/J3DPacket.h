@@ -2,7 +2,7 @@
 
 #include "J3DGraphBase/J3DDrawBuffer.h"
 #include "revolution/GD/GDBase.h"
-#include "kamek.h"
+#include "syati.h"
 
 const u32 sDifferedRegister[0x7] =
 {

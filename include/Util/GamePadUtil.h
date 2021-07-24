@@ -2,7 +2,7 @@
 
 #include "JGeometry/TVec2.h"
 #include "JGeometry/TVec3.h"
-#include "kamek.h"
+#include "syati.h"
 
 namespace MR
 {

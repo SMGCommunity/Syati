@@ -1,8 +1,6 @@
 #pragma once
 
-#include "kamek.h"
 #include "NameObj/NameObj.h"
-#include "os.h"
 
 class MyFirstActor : public NameObj
 {

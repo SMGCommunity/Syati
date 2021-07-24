@@ -1,6 +1,6 @@
 #pragma once
 
-#include "kamek.h"
+#include "syati.h"
 #include "Animation/BpkPlayer.h"
 #include "Animation/BrkPlayer.h"
 #include "Animation/BtkPlayer.h"

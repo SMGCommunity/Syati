@@ -54,7 +54,7 @@ namespace MR
     bool changeShowModelFlagSyncNearClipping(LiveActor *, f32);
     bool isClipped(const LiveActor *);
     bool isInvalidClipping(const LiveActor *);
-    void setBaseTRMtx(LiveActor *, Mtx4 *);
+    void setBaseTRMtx(LiveActor *, MtxPtr);
     void setBaseTRMtx(LiveActor *, const TPositionMtx &);
     void setBaseTRMtx(LiveActor *, const TQuat4f &);
     void setBaseScale(LiveActor *, const TVec3f &);
@@ -206,12 +206,12 @@ namespace MR
     void initFurEnemy(LiveActor *);
     void initFurPlanet(LiveActor *);
     void initFurPlayer(LiveActor *);
-    void initCollisionParts(LiveActor *, const char *, HitSensor *, Mtx4 *);
-    void initCollisionPartsAutoEqualScale(LiveActor *, const char *, HitSensor *, Mtx4 *);
-    void initCollisionPartsAutoEqualScaleOne(LiveActor *, const char *, HitSensor *, Mtx4 *);
+    void initCollisionParts(LiveActor *, const char *, HitSensor *, MtxPtr);
+    void initCollisionPartsAutoEqualScale(LiveActor *, const char *, HitSensor *, MtxPtr);
+    void initCollisionPartsAutoEqualScaleOne(LiveActor *, const char *, HitSensor *, MtxPtr);
 
     CollisionParts* createCollisionPartsFromLiveActor(LiveActor *, const char *, HitSensor *, MR::CollisionScaleType);
-    CollisionParts* createCollisionPartsFromLiveActor(LiveActor *, const char *, HitSensor *, Mtx4 *, MR::CollisionScaleType);
+    CollisionParts* createCollisionPartsFromLiveActor(LiveActor *, const char *, HitSensor *, MtxPtr, MR::CollisionScaleType);
 
     CollisionParts* tryCreateCollisionMoveLimit(LiveActor *, HitSensor *);
     CollisionParts* tryCreateCollisionWaterSurface(LiveActor *, HitSensor *);
@@ -232,24 +232,24 @@ namespace MR
     bool isExistCollisionParts(const LiveActor *);
     u32 getCollisionSensortType(const CollisionParts *);
 
-    ModelObj* createModelObjMapObj(const char *, const char *, Mtx4 *);
-    ModelObj* createModelObjMapObjStrongLight(const char *, const char *, Mtx4 *);
-    ModelObj* createModelObjNoSilhouettedMapObj(const char *, const char *, Mtx4 *);
-    ModelObj* createModelObjNoSilhouettedMapObjStrongLight(const char *, const char *, Mtx4 *);
-    ModelObj* createModelObjIndirectMapObj(const char *, const char *, Mtx4 *);
-    ModelObj* createModelObjPlayerDecoration(const char *, const char *, Mtx4 *);
-    ModelObj* createModelObjEnemy(const char *, const char *, Mtx4 *);
-    ModelObj* createModelObjNPC(const char *, const char *, Mtx4 *);
-    ModelObj* createModelObjBloomModel(const char *, const char *, Mtx4 *);
+    ModelObj* createModelObjMapObj(const char *, const char *, MtxPtr);
+    ModelObj* createModelObjMapObjStrongLight(const char *, const char *, MtxPtr);
+    ModelObj* createModelObjNoSilhouettedMapObj(const char *, const char *, MtxPtr);
+    ModelObj* createModelObjNoSilhouettedMapObjStrongLight(const char *, const char *, MtxPtr);
+    ModelObj* createModelObjIndirectMapObj(const char *, const char *, MtxPtr);
+    ModelObj* createModelObjPlayerDecoration(const char *, const char *, MtxPtr);
+    ModelObj* createModelObjEnemy(const char *, const char *, MtxPtr);
+    ModelObj* createModelObjNPC(const char *, const char *, MtxPtr);
+    ModelObj* createModelObjBloomModel(const char *, const char *, MtxPtr);
 
-    PartsModel* createPartsModelMapObj(LiveActor *, const char *, const char *, Mtx4 *);
-    PartsModel* createPartsModelMapObjStrongLight(LiveActor *, const char *, const char *, Mtx4 *);
-    PartsModel* createPartsModelNoSilhouettedMapObj(LiveActor *, const char *, const char *, Mtx4 *);
-    PartsModel* createPartsModelEnemy(LiveActor *, const char *, const char *, Mtx4 *);
-    PartsModel* createPartsModelNpc(LiveActor *, const char *, const char *, Mtx4 *);
-    PartsModel* createPartsModelIndirectNpc(LiveActor *, const char *, const char *, Mtx4 *);
-    PartsModel* createPartsModelEnemyAndFix(LiveActor *, const char *, const char *, Mtx4 *);
-    PartsModel* createPartsModelNpcAndFix(LiveActor *, const char *, const char *, Mtx4 *);
+    PartsModel* createPartsModelMapObj(LiveActor *, const char *, const char *, MtxPtr);
+    PartsModel* createPartsModelMapObjStrongLight(LiveActor *, const char *, const char *, MtxPtr);
+    PartsModel* createPartsModelNoSilhouettedMapObj(LiveActor *, const char *, const char *, MtxPtr);
+    PartsModel* createPartsModelEnemy(LiveActor *, const char *, const char *, MtxPtr);
+    PartsModel* createPartsModelNpc(LiveActor *, const char *, const char *, MtxPtr);
+    PartsModel* createPartsModelIndirectNpc(LiveActor *, const char *, const char *, MtxPtr);
+    PartsModel* createPartsModelEnemyAndFix(LiveActor *, const char *, const char *, MtxPtr);
+    PartsModel* createPartsModelNpcAndFix(LiveActor *, const char *, const char *, MtxPtr);
 
     LodCtrl* createLodCtrlNPC(LiveActor *, const JMapInfoIter &);
     LodCtrl* createLodCtrlPlanet(LiveActor *, const JMapInfoIter &, f32, s32);

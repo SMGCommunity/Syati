@@ -1,12 +1,10 @@
 #pragma once
 
-#include "kamek.h"
 #include "NameObj/NameObjFactory.h"
 #include "custom/Actor/MyFirstActor.h"
-#include "os.h"
 
 // ensure you bump up this value when you add more actors!
-#define NUM_ACTORS 0x1
+#define NUM_ACTORS 1
 
 namespace ExtendedActorFactory
 {

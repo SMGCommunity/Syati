@@ -1,6 +1,6 @@
 #pragma once
 
-#include "kamek.h"
+#include "syati.h"
 #include "JGeometry/TVec3.h"
 #include "JMap/JMapInfoIter.h"
 #include "Util/Functor.h"
@@ -126,7 +126,7 @@ namespace MR
 
     void requestAppearPowerStarCoin100();
     bool isEndPowerStarAppearDemo(const NameObj *);
-    NameObj* createPowerStarDemoModel(const NameObj *, const char *, Mtx4 *);
+    NameObj* createPowerStarDemoModel(const NameObj *, const char *, MtxPtr);
     void declareCoin(const NameObj *, s32);
     s32 getDeclareRemnantCoinCount(const NameObj *);
 
@@ -170,12 +170,12 @@ namespace MR
     bool isSame(const NameObj *, const NameObj *);
     bool tryRegisterNamePosLinkObj(const NameObj *, const JMapInfoIter &, const char *);
 
-    bool tryFindLinkNamePos(const NameObj *, const char *, Mtx4 *);
+    bool tryFindLinkNamePos(const NameObj *, const char *, MtxPtr);
     bool findNamePos(const char *, TVec3f *, TVec3f *);
-    bool findNamePosOnGround(const char *, Mtx4 *);
+    bool findNamePosOnGround(const char *, MtxPtr);
 
     bool tryFindNamePos(const char *, TVec3f *, TVec3f *);
     
     bool tryFindLinkNamePos(const NameObj *, const char *, TVec3f *, TVec3f *);
-    bool tryFindLinkNamePos(const NameObj *, const char *, Mtx4 *);
+    bool tryFindLinkNamePos(const NameObj *, const char *, MtxPtr);
 };

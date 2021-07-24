@@ -2,7 +2,7 @@ CW_PATH=../CodeWarrior
 CPPFILES="kamekLoader smg"
 
 CC=$CW_PATH/mwcceppc
-CFLAGS="-i . -I- -i ../include -Cpp_exceptions off -enum int -Os -use_lmw_stmw on -fp hard -rostr -sdata 0 -sdata2 0 -DJAP"
+CFLAGS="-i . -I- -i ../include -Cpp_exceptions off -enum int -O4,s -use_lmw_stmw on -fp hard -func_align 4 -str pool -rostr -sdata 0 -sdata2 0 -DJAP"
 
 for i in $CPPFILES
 do

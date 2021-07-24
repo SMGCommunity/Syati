@@ -60,7 +60,7 @@ namespace MR
 	void getGeneralPosData(const char **, TVec3f *, TVec3f *, JMapLinkInfo **, int);
 	void getRestartPosData(TVec3f *, TVec3f *, const JMapInfoIter &);
 	s32 getChildObjNum(const JMapInfoIter &);
-	void getChildObjData(const char **, const JMapInfoIter &, int);
+	void getChildObjName(const char **, const JMapInfoIter &, int);
 
 	void initChildObj(NameObj *, const JMapInfoIter &, int);
 	const char* getAppearPowerStarObjName(s32);
@@ -72,8 +72,8 @@ namespace MR
 
 	bool isPlacementLocalStage();
 	s32 getPlacedZoneId(const JMapInfoIter &);
-	Mtx4* getZonePlacementMtx(const JMapInfoIter &);
-	Mtx4* getZonePlacementMtx(s32);
+	MtxPtr getZonePlacementMtx(const JMapInfoIter &);
+	MtxPtr getZonePlacementMtx(s32);
 
 	const char* getJapaneseObjectName(const char *);
 	void setCurrentPlacementZoneId(s32);

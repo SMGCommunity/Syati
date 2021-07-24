@@ -1,6 +1,6 @@
 #pragma once
 
-#include "kamek.h"
+#include "syati.h"
 #include "NameObj/NameObj.h"
 #include "JGeometry/TVec3.h"
 

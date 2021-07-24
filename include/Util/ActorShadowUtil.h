@@ -1,7 +1,7 @@
 #pragma once
 
 #include "JGeometry/TVec3.h"
-#include "kamek.h"
+#include "syati.h"
 
 class Color8;
 class HitSensor;
@@ -16,19 +16,19 @@ namespace MR
     void initShadowFromCSVWithInitShadowVolumeSphere(LiveActor *, const char *);
     void initShadowFromCSVWithoutInitShadowVolumeSphere(LiveActor *, const char *);
     void initShadowControllerList(LiveActor *, u32);
-    void addShadowVolumeOval(LiveActor *, const char *, const TVec3f &, Mtx4*);
+    void addShadowVolumeOval(LiveActor *, const char *, const TVec3f &, MtxPtr);
     void addShadowVolumeCylinder(LiveActor *, const char *, f32);
     void addShadowVolumeBox(LiveActor *, const char *, const TVec3f &);
-    void addShadowVolumeBox(LiveActor *, const char *, const TVec3f &, Mtx4*);
+    void addShadowVolumeBox(LiveActor *, const char *, const TVec3f &, MtxPtr);
     void addShadowVolumeLine(LiveActor *, const char *, LiveActor *, const char *, f32, LiveActor *, const char *, f32);
-    void addShadowVolumeFlatModel(LiveActor *, const char *, const char *, Mtx4 *);
+    void addShadowVolumeFlatModel(LiveActor *, const char *, const char *, MtxPtr);
     void initShadowSurfaceCircle(LiveActor *, f32);
     void initShadowVolumeSphere(LiveActor *, f32);
     void initShadowVolumeOval(LiveActor *, const TVec3f &);
     void initShadowVolumeCylinder(LiveActor *, f32);
-    void initShadowVolumeFlatModel(LiveActor *, const char *, Mtx4*);
+    void initShadowVolumeFlatModel(LiveActor *, const char *, MtxPtr);
     void setShadowDropPositionPtr(LiveActor *, const char *, const TVec3f *);
-    void setShadowDropPositionMtxPtr(LiveActor *, const char *, Mtx4*, const TVec3f &);
+    void setShadowDropPositionMtxPtr(LiveActor *, const char *, MtxPtr, const TVec3f &);
     void setShadowDropPositionAtJoint(LiveActor *, const char *, const char *, const TVec3f &);
     void setShadowDropDirectionPtr(LiveActor *, const char *, const TVec3f *);
     void setShadowDropDirectionPtrAll(LiveActor *, const TVec3f *);

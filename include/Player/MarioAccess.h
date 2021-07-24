@@ -51,7 +51,7 @@ public:
 	static void addStarPiece();
 	static void getStarPieceDirect(); // dummied-out
 	static void scatterStarPiece(u32);
-	static Mtx4* getJointMtx(const char *);
+	static MtxPtr getJointMtx(const char *);
 	static void concatWithJointMtx(TPositionMtx *, const char *);
 	static TVec3f* getVelocity();
 	static TVec3f* getLastMove();
@@ -79,8 +79,8 @@ public:
 	static void endTalk();
 	static void readyRemoteDemo();
 
-	static void setBaseMtx(Mtx4 *);
-	static Mtx4* getBaseMtx();
+	static void setBaseMtx(MtxPtr);
+	static MtxPtr getBaseMtx();
 	static bool calcSpinPullVelocity(TVec3f *, const TVec3f &);
 	static void tryCoinPull();
 	static void addVelocity(const TVec3f &);

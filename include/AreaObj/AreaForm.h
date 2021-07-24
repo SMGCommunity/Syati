@@ -1,6 +1,6 @@
 #pragma once
 
-#include "kamek.h"
+#include "syati.h"
 #include "JGeometry/TPosition3.h"
 #include "JGeometry/TVec3.h"
 #include "JMap/JMapInfoIter.h"
@@ -35,7 +35,7 @@ public:
 	void calcLocalPos(TVec3f *, const TVec3f &) const;
 	void calcLocalRotate(TVec3f *, const TVec3f &) const;
 
-	f32 getBaseSize;
+	f32 getBaseSize();
 	void updateBoxParam();
 	void calcWorldMtx(TPositionMtx *) const;
 

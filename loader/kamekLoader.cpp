@@ -233,4 +233,3 @@ void loadKamekBinaryFromDisc(const loaderFunctions *funcs, const char *path)
 	funcs->kamekFree(buffer, false, funcs);
 	funcs->OSReport("All done!\n");
 }
-

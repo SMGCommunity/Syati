@@ -20,10 +20,10 @@ public:
 	BaseMatrixFollowTarget(const JMapLinkInfo *);
 
 	void set(LiveActor *, const TPositionMtx &, const TPositionMtx *, BaseMatrixFollowValidater *);
-	Mtx4* getHostBaseMtx() const;
+	MtxPtr getHostBaseMtx() const;
 
 	Mtx mMtx; // _0
-	Mtx4* mHostMtx; // _30
+	MtxPtr mHostMtx; // _30
 	LiveActor* mHost; // _34
 	const JMapLinkInfo* mLinkInfo; // _38
 	BaseMatrixFollowValidater* mValidater; // _3C

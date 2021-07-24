@@ -24,7 +24,7 @@ public:
 	void setMtx(const TPositionMtx &);
 	void setMtx();
 	void updateMtx();
-	void makeEqualScale(Mtx4 *);
+	void makeEqualScale(MtxPtr);
 	void updateBoundingSphereRange();
 	void updateBoundingSphereRange(TVec3f);
 	void updateBoundingSphereRangePrivate(f32);

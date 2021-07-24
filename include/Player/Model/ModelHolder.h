@@ -9,5 +9,5 @@ public:
 
 	virtual ~ModelHolder();
 
-	void updateMtx(Mtx4 *);
+	void updateMtx(MtxPtr);
 };

@@ -1,4 +1,4 @@
-#include <kamek.h>
+#include "syati.h"
 
 struct DVDHandle
 {
@@ -33,4 +33,3 @@ struct loaderFunctions {
 };
 
 void loadKamekBinaryFromDisc(const loaderFunctions *funcs, const char *path);
-

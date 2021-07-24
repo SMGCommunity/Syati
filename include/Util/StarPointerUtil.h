@@ -1,6 +1,6 @@
 #pragma once
 
-#include "kamek.h"
+#include "syati.h"
 #include "JGeometry/TVec2.h"
 #include "JGeometry/TVec3.h"
 
@@ -48,8 +48,8 @@ namespace MR
 	bool isExistStarPointerTarget(const LiveActor *);
 	void setStarPointerTargetRadius3d(LiveActor *, f32);
 	bool isStarPointerPointing(const TVec3f &, f32, s32, bool);
-	Mtx4* getStarPointerViewMtx();
-	Mtx4* getStarPointerProjMtx();
+	MtxPtr getStarPointerViewMtx();
+	MtxPtr getStarPointerProjMtx();
 	f32 getStarPointerRadius(s32);
 	TVec2f* getStarPointerScreenPosition(s32);
 	void getStarPointerScreenPositionOrEdge(s32);

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "kamek.h"
+#include "syati.h"
 #include "NameObj/NameObj.h"
 #include "Util/Functor.h"
 
@@ -44,10 +44,6 @@ public:
 	void drawOpa(int);
 	void drawXlu(int);
 	void executeDraw(int);
-	void initMovementList();
-	void initCalcAnimList();
-	void initCalcViewAndEntryList();
-	void initDrawList();
 
 	u32* mDrawBuffer; // _4; MR::Vector<AssignableArray<DrawBufferGroup>>
 	u32* mMovementList; // _8

@@ -3,7 +3,7 @@
 #include "JGeometry/TPosition3.h"
 #include "JGeometry/TQuat4.h"
 #include "JGeometry/TVec3.h"
-#include "kamek.h"
+#include "syati.h"
 
 class HitSensor;
 class LiveActor;
@@ -62,9 +62,9 @@ namespace MR
 	bool isInWater(const LiveActor *, const TVec3f &);
 	bool isInDeath(const LiveActor *, const TVec3f &);
 
-	void makeMtxTR(Mtx4*, const LiveActor *);
-	void makeMtxTRS(Mtx4*, const LiveActor *);
-	void makeMtxTransRotateY(Mtx4*, const LiveActor *);
+	void makeMtxTR(MtxPtr, const LiveActor *);
+	void makeMtxTRS(MtxPtr, const LiveActor *);
+	void makeMtxTransRotateY(MtxPtr, const LiveActor *);
 
 	void calcMtxFromGravityAndZAxis(TPositionMtx *, const LiveActor *, const TVec3f &, const TVec3f &);
 	void calcMtxFromGravityAndZAxis(TPositionMtx *, const LiveActor *, const TVec3f &);
@@ -73,8 +73,8 @@ namespace MR
 	void calcActorAxisY(TVec3f *, const LiveActor *);
 	void calcActorAxisZ(TVec3f *, const LiveActor *);
 	void faceToVector(TQuat4f *, TVec3f, f32);
-	void faceToVector(Mtx4*, TVec3f, f32);
-	void faceToPoint(Mtx4*, TVec3f, f32);
+	void faceToVector(MtxPtr, TVec3f, f32);
+	void faceToPoint(MtxPtr, TVec3f, f32);
 
 	void makeQuatFromRotate(TQuat4f *, const LiveActor *);
 	void makeQuatAndFrontFromRotate(TQuat4f *, TVec3f *, const LiveActor *);

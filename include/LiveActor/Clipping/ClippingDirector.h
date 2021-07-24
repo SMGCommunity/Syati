@@ -1,6 +1,6 @@
 #pragma once
 
-#include "kamek.h"
+#include "syati.h"
 #include "LiveActor/Clipping/ClippingActorHolder.h"
 #include "LiveActor/Clipping/ClippingGroupHolder.h"
 #include "LiveActor/Clipping/ClippingJudge.h"

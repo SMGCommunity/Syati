@@ -1,6 +1,6 @@
 #pragma once
 
-#include "kamek.h"
+#include "syati.h"
 #include <revolution/gx.h>
 
 const s32 GPU_FIFO_ADDR = 0xCC008000;

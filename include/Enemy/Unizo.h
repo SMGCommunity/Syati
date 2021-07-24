@@ -1,6 +1,6 @@
 #pragma once
 
-#include "kamek.h"
+#include "syati.h"
 #include "JGeometry/TQuat4.h"
 #include "LiveActor/LiveActor.h"
 #include "LiveActor/Model/ModelObj.h"

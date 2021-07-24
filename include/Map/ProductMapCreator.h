@@ -1,4 +1,4 @@
-#include "kamek.h"
+#include "syati.h"
 #include "NameObj/NameObj.h"
 
 class ProductMapCreator : public NameObj

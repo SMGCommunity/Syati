@@ -19,13 +19,13 @@ public:
 
     void initFixedPosition(const TVec3f &, const TVec3f &, const char *);
     void initFixedPosition(const char *);
-    void initFixedPosition(Mtx4*, const TVec3f &, const TVec3f &);
+    void initFixedPosition(MtxPtr, const TVec3f &, const TVec3f &);
     void loadFixedPosition(const char*, const LiveActor*);
     void offFixedPosNormalizeScale();
 
     LiveActor* mHost; // _90
     FixedPosition* mFixedPos; // _94
-    Mtx4* _98;
+    MtxPtr _98;
     bool mCalcOwnMatrix; // _9C
     bool _9D;
     bool _9E;

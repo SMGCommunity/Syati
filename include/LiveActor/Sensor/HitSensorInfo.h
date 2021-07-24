@@ -1,6 +1,6 @@
 #pragma once
 
-#include "kamek.h"
+#include "syati.h"
 #include "JGeometry/TVec3.h"
 
 class HitSensor;
@@ -11,7 +11,7 @@ public:
     HitSensorInfo(const char *, HitSensor *, const TVec3f *, Mtx *, const TVec3f &, bool);
 
     void setFollowPos(const TVec3f *);
-    void setFollowMtx(Mtx4 *);
+    void setFollowMtx(MtxPtr);
     void update();
     void doObjCol();
 

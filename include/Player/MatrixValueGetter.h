@@ -3,13 +3,11 @@
 #include "NameObj/NameObj.h"
 #include "Util/HashUtil.h"
 
-struct MatrixValueEntry
+struct MatrixValueTable
 {
 	const char* mKey; // _0
 	f32 mValue; // _4
 };
-
-typedef MatrixValueEntry MatrixValueTable[];
 
 class MatrixValueGetter : public NameObj
 {

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "kamek.h"
+#include "syati.h"
 #include "Animation/AnmPlayer.h"
 #include "J3DGraphBase/J3DModel.h"
 #include "System/Resource/ResourceHolder.h"

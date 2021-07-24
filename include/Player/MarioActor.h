@@ -86,7 +86,7 @@ public:
 	s32 _1AC;
 	u8 _1B0;
 	u8 _1B1;
-	Mtx4* _1B4[8];
+	MtxPtr _1B4[8];
 	s32 _1D4[8];
 	Mtx _1F4;
 	Mtx _224;

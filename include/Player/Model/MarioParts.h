@@ -5,8 +5,8 @@
 class MarioParts : public PartsModel
 {
 public:
-	MarioParts(LiveActor *, const char *, const char *, bool, Mtx4 *, Mtx4 *);
-	MarioParts(LiveActor *, const char *, const char *, Mtx4 *);
+	MarioParts(LiveActor *, const char *, const char *, bool, MtxPtr, MtxPtr);
+	MarioParts(LiveActor *, const char *, const char *, MtxPtr);
 
 	virtual ~MarioParts();
 	virtual void init(const JMapInfoIter &);

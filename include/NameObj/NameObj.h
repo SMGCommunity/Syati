@@ -1,8 +1,12 @@
 #pragma once
 
-#include "kamek.h"
+#include "syati.h"
 #include "JMap/JMapInfoIter.h"
 #include "Util/JMapLinkInfo.h"
+
+#define NAMEOBJ_FLAG_MOVEMENT 1
+#define NAMEOBJ_FLAG_RESUME 2
+#define NAMEOBJ_FLAG_SUSPEND 4
 
 class NameObj
 {
@@ -32,10 +36,6 @@ public:
     u16 mFlags; // _8
     s16 mExecuteIdx; // _A
     JMapLinkInfo mLinkedInfo; // _C
-
-    // Flag 0 = movement
-    // Flag 1 = resume
-    // Flag 2 = suspend
 };
 
 class NameObjFunction

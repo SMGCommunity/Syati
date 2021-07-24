@@ -2,7 +2,7 @@
 
 #include "JKernel/JKRFileFinder.h"
 #include "JKernel/JKRFileLoader.h"
-#include "kamek.h"
+#include "syati.h"
 
 enum JKRMemBreakFlag
 {

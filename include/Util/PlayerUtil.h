@@ -1,6 +1,6 @@
 #pragma once
 
-#include "kamek.h"
+#include "syati.h"
 #include "JGeometry/TPosition3.h"
 
 class BckCtrlData;
@@ -80,7 +80,7 @@ namespace MR
 	void setPlayerPos(const char *);
 	void setPlayerPosAndWait(const TVec3f &);
 	void setPlayerPosAndWait(const char *);
-	void setPlayerLinkPosAndWait(const NameObj *, const char *);
+	void setPlayerLinkPosAndWait(const NameObj *, const char *, bool);
 	void setPlayerPosOnGround(const char *);
 	void setPlayerPosOnGroundAndWait(const char *);
 	bool isPlayerHipDropFalling();
@@ -200,7 +200,7 @@ namespace MR
 	void unlockPlayerAnimation();
 	void resetPlayerStatus();
 	void resetPlayerEffect();
-	void setPlayerBaseMtx(Mtx4*);
+	void setPlayerBaseMtx(MtxPtr);
 
 	Mtx* getPlayerBaseMtx();
 

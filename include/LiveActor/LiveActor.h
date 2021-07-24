@@ -78,9 +78,9 @@ public:
     void initEffectKeeper(s32, const char *, bool);
     void initSound(s32, const char *, bool, const TVec3f &);
     void initShadowControllerList(u32);
-    void initActorCollisionParts(const char *, HitSensor *, ResourceHolder *, Mtx4 *, bool, bool);
+    void initActorCollisionParts(const char *, HitSensor *, ResourceHolder *, MtxPtr, bool, bool);
     void initStageSwitch(const JMapInfoIter &iter);
-    void initActorStarPointerTarget(f32, const TVec3f *, Mtx4 *, TVec3f);
+    void initActorStarPointerTarget(f32, const TVec3f *, MtxPtr, TVec3f);
 	void initActorLightCtrl();
 
     void updateBinder();

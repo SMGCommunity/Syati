@@ -1,9 +1,7 @@
-#include "kamek.h"
 #include "AreaObj/AreaObj.h"
 #include "Util/PlayerUtil.h"
 #include "Util/ScreenUtil.h"
 #include "Util/StageUtil.h"
-#include "os.h"
 
 const char* pStages[2] = { "IslandFleetGalaxy", "RedBlueExGalaxy" };
 

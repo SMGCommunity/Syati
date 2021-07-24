@@ -2,7 +2,7 @@
 
 #include "JMap/JMapInfoIter.h"
 #include "Util/Functor.h"
-#include "kamek.h"
+#include "syati.h"
 
 class LayoutActor;
 class LiveActor;

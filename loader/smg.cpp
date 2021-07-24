@@ -88,7 +88,13 @@ void unknownVersion()
 
 void loadSMGBinary()
 {
-	loadKamekBinaryFromDisc(&functions.base, "/CustomCode/CustomCode.bin");
+#if defined(USA)
+	loadKamekBinaryFromDisc(&functions.base, "/CustomCode/CustomCode_USA.bin");
+#elif defined(PAL)
+	loadKamekBinaryFromDisc(&functions.base, "/CustomCode/CustomCode_PAL.bin");
+#elif defined(JAP)
+	loadKamekBinaryFromDisc(&functions.base, "/CustomCode/CustomCode_JAP.bin");
+#endif
 }
 
 // GameSystemException::init

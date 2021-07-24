@@ -1,7 +1,7 @@
 #pragma once
 
 #include "System/Nerve/Nerve.h"
-#include "kamek.h"
+#include "syati.h"
 
 class ActorStateKeeper;
 

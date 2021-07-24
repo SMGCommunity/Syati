@@ -1,6 +1,6 @@
 #pragma once
 
-#include "kamek.h"
+#include "syati.h"
 #include "System/Nerve/Nerve.h"
 
 class NerveExecutor

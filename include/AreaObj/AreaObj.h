@@ -1,6 +1,6 @@
 #pragma once
 
-#include "kamek.h"
+#include "syati.h"
 #include "AreaObj/AreaForm.h"
 #include "NameObj/NameObj.h"
 #include "Map/Switch/StageSwitch.h"
