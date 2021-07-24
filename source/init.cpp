@@ -1,4 +1,4 @@
-#include "kamek.h"
+#include "syati.h"
 
 typedef void (*Func)(void);
 

@@ -18,7 +18,7 @@ namespace ExtendedActorFactory
         return new MyFirstActor("MyFirstActor");
     }
 
-    const ActorEntry cCreateTable[NUM_ACTORS] =
+    const CreateActorEntry cCreateTable[NUM_ACTORS] =
     {
         { "MyFirstActor", createExtActor<MyFirstActor> }
     };
