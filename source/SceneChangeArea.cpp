@@ -33,3 +33,11 @@ kmWritePointer(0x8067054C, SceneChangeAreaControl);
 #ifdef JAP
 kmWritePointer(0x8066A62C, SceneChangeAreaControl);
 #endif
+
+#ifdef TWN
+kmWritePointer(0x8066B0EC, SceneChangeAreaControl);
+#endif
+
+#ifdef KOR
+kmWritePointer(0x80669C8C, SceneChangeAreaControl);
+#endif

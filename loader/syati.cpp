@@ -27,15 +27,17 @@ void freeAdapter(void *buffer, bool isForCode, const loaderFunctions *funcs) {
 
 #ifdef USA
 const loaderFunctionsEx functions = {
-	{(OSReport_t) 0x805B6210,
-	(OSFatal_t) 0x805B8500,
-	(DVDConvertPathToEntrynum_t) 0x805D1370,
-	(DVDFastOpen_t) 0x805D1680,
-	(DVDReadPrio_t) 0x805D1A50,
-	(DVDClose_t) 0x805D1810,
-	(sprintf_t) 0x80633CBC,
-	allocAdapter,
-	freeAdapter},
+	{
+		(OSReport_t) 0x805B6210,
+		(OSFatal_t) 0x805B8500,
+		(DVDConvertPathToEntrynum_t) 0x805D1370,
+		(DVDFastOpen_t) 0x805D1680,
+		(DVDReadPrio_t) 0x805D1A50,
+		(DVDClose_t) 0x805D1810,
+		(sprintf_t) 0x80633CBC,
+		allocAdapter,
+		freeAdapter
+	},
 	(JKRHeap_Alloc_t) 0x80501310,
 	(JKRHeap_Free_t) 0x80501360,
 	(void **) 0x807D6110, // JKRHeap::sSystemHeap
@@ -45,15 +47,17 @@ const loaderFunctionsEx functions = {
 
 #ifdef PAL
 const loaderFunctionsEx functions = {
-	{(OSReport_t) 0x805B6210,
-	(OSFatal_t) 0x805B8500,
-	(DVDConvertPathToEntrynum_t) 0x805D1370,
-	(DVDFastOpen_t) 0x805D1680,
-	(DVDReadPrio_t) 0x805D1A50,
-	(DVDClose_t) 0x805D1810,
-	(sprintf_t) 0x80633CBC,
-	allocAdapter,
-	freeAdapter},
+	{
+		(OSReport_t) 0x805B6210,
+		(OSFatal_t) 0x805B8500,
+		(DVDConvertPathToEntrynum_t) 0x805D1370,
+		(DVDFastOpen_t) 0x805D1680,
+		(DVDReadPrio_t) 0x805D1A50,
+		(DVDClose_t) 0x805D1810,
+		(sprintf_t) 0x80633CBC,
+		allocAdapter,
+		freeAdapter
+	},
 	(JKRHeap_Alloc_t) 0x80501310,
 	(JKRHeap_Free_t) 0x80501360,
 	(void **) 0x807DB810, // JKRHeap::sSystemHeap
@@ -63,19 +67,61 @@ const loaderFunctionsEx functions = {
 
 #ifdef JAP
 const loaderFunctionsEx functions = {
-	{(OSReport_t) 0x805B6210,
-	(OSFatal_t) 0x805B8500,
-	(DVDConvertPathToEntrynum_t) 0x805D1370,
-	(DVDFastOpen_t) 0x805D1680,
-	(DVDReadPrio_t) 0x805D1A50,
-	(DVDClose_t) 0x805D1810,
-	(sprintf_t) 0x80633CBC,
-	allocAdapter,
-	freeAdapter},
+	{
+		(OSReport_t) 0x805B6210,
+		(OSFatal_t) 0x805B8500,
+		(DVDConvertPathToEntrynum_t) 0x805D1370,
+		(DVDFastOpen_t) 0x805D1680,
+		(DVDReadPrio_t) 0x805D1A50,
+		(DVDClose_t) 0x805D1810,
+		(sprintf_t) 0x80633CBC,
+		allocAdapter,
+		freeAdapter
+	},
 	(JKRHeap_Alloc_t) 0x80501310,
 	(JKRHeap_Free_t) 0x80501360,
 	(void **) 0x807D58D0, // JKRHeap::sSystemHeap
 	(void **) 0x807D58D0 // JKRHeap::sRootHeap
+};
+#endif
+
+#ifdef TWN
+const loaderFunctionsEx functions = {
+	{
+		(OSReport_t) 0x805B6310,
+		(OSFatal_t) 0x805B8600,
+		(DVDConvertPathToEntrynum_t) 0x805D1470,
+		(DVDFastOpen_t) 0x805D1780,
+		(DVDReadPrio_t) 0x805D1B50,
+		(DVDClose_t) 0x805D1910,
+		(sprintf_t) 0x8063422C,
+		allocAdapter,
+		freeAdapter
+	},
+	(JKRHeap_Alloc_t) 0x805013A0,
+	(JKRHeap_Free_t) 0x805013F0,
+	(void **) 0x8072F710, // JKRHeap::sSystemHeap
+	(void **) 0x8072F710 // JKRHeap::sRootHeap
+};
+#endif
+
+#ifdef KOR
+const loaderFunctionsEx functions = {
+	{
+		(OSReport_t) 0x805B6310,
+		(OSFatal_t) 0x805B8600,
+		(DVDConvertPathToEntrynum_t) 0x805D1470,
+		(DVDFastOpen_t) 0x805D1780,
+		(DVDReadPrio_t) 0x805D1B50,
+		(DVDClose_t) 0x805D1910,
+		(sprintf_t) 0x8063422C,
+		allocAdapter,
+		freeAdapter
+	},
+	(JKRHeap_Alloc_t) 0x805013A0,
+	(JKRHeap_Free_t) 0x805013F0,
+	(void **) 0x8072E2B0, // JKRHeap::sSystemHeap
+	(void **) 0x8072E2B0 // JKRHeap::sRootHeap
 };
 #endif
 
@@ -94,8 +140,16 @@ void loadSMGBinary()
 	loadKamekBinaryFromDisc(&functions.base, "/CustomCode/CustomCode_PAL.bin");
 #elif defined(JAP)
 	loadKamekBinaryFromDisc(&functions.base, "/CustomCode/CustomCode_JAP.bin");
+#elif defined(TWN)
+	loadKamekBinaryFromDisc(&functions.base, "/CustomCode/CustomCode_TWN.bin");
+#elif defined(KOR)
+	loadKamekBinaryFromDisc(&functions.base, "/CustomCode/CustomCode_KOR.bin");
 #endif
 }
 
 // GameSystemException::init
-kmBranch(0x804B7D38, loadSMGBinary);
+#if defined(TWN) || defined(KOR)
+	kmBranch(0x804B7DA8, loadSMGBinary);
+#else
+	kmBranch(0x804B7D38, loadSMGBinary);
+#endif

@@ -1084,6 +1084,12 @@ NPC (0x80343E50)
 	MameMuimuiAttackMan
 	Meister
 	...
+	MiiDatabase
+	MiiFaceIcon
+	MiiFaceIconHolder
+	MiiFaceParts
+	MiiFacePartsHolder
+	MiiFaceRecipe
 	Moc
 	Monte
 	MonteThrow
@@ -1357,3 +1363,34 @@ NW24 (0x804FE450)
 	...
 JKernel (0x80500F60)
 	...
+...
+JMath (0x8053A730)
+	JMath
+	random
+	JMATrigonometric
+JParticle (0x8053ADF0)
+	JPAResourceManager
+	JPAResource
+	JPABaseShape
+	JPAExtraShape
+	JPAChildShape
+	JPAExTexShape
+	JPADynamicsBlock
+	JPAFieldBlock
+	JPAKeyBlock
+	JPATexture
+	JPAResourceLoader
+	JPAEmitterManager
+	JPAEmitter
+	JPAParticle
+	JPAMath
+gd (0x80544010)
+	GDBase
+	GDGeometry
+	GDIndirect
+	GDLight
+	GDPixel
+	GDTev
+	GDTexture
+	GDTRansform
+...

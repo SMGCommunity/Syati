@@ -1,5 +1,5 @@
 CW_PATH=../CodeWarrior
-CPPFILES="kamekLoader smg"
+CPPFILES="kamekLoader syati"
 
 CC=$CW_PATH/mwcceppc
 CFLAGS="-i . -I- -i ../include -Cpp_exceptions off -enum int -O4,s -use_lmw_stmw on -fp hard -func_align 4 -str pool -rostr -sdata 0 -sdata2 0 -DUSA"
@@ -13,4 +13,4 @@ done
 echo Linking...
 mkdir -p out
 
-../Kamek/Kamek.exe kamekLoader.o smg.o -static=0x80001800 -output-riiv=out/riivo_USA.xml -input-dol=../dols/USA.dol -output-dol=out/USA.dol
+../Kamek/Kamek.exe kamekLoader.o syati.o -static=0x80001800 -output-riiv=out/riivo_USA.xml -input-dol=../dols/USA.dol -output-dol=out/USA.dol
