@@ -1,4 +1,81 @@
 Util (0x80006EA0)
+	?
+	ActorAnimUtil
+	ActorCameraUtil
+	ActorInitUtil
+	ActorMovementUtil
+	ActorSensorUtil
+	ActorShadowLocalUtil
+	ActorShadowUtil
+	ActorStateUtil
+	ActorSwitchUtil
+	BgmUtil
+	BitArray
+	CameraUtil
+	?
+	DemoUtil
+	DrawUtil
+	EffectUtil
+	EventUtil
+	FileUtil
+	FootPrint
+	FurCtrl
+	FurDrawer
+	FurMulti
+	FurShader
+	GamePadUtil
+	GravityUtil
+	HashSortTable
+	JMapUtil
+	JointUtil
+	LayoutUtil
+	LightUtil
+	LiveActorUtil
+	MapPartsUtil
+	MapUtil
+	MathUtil
+	MemoryUtil
+	MessageUtil
+	ModelUtil
+	MtxUtil
+	MultiEventCamera
+	NerveUtil
+	NPCUtil
+	ObjUtil
+	ParabolicPath
+	PlayerUtil
+	RailUtil
+	...?
+	SceneUtil
+	ScreenUtil
+	ShareUtil
+	SoundUtil
+	StarPointerUtil
+	StringUtil
+	SupportTicoUtil
+	SwitchEventFunctorListener
+	SystemUtil
+	TalkUtil
+	AreaObjUtil
+	BaseMatrixFollowTargetHolder
+	BothDirList
+	CollisionPartsFilter
+	DrawDirect
+	DrawDirectUtil
+	FixedPosition
+	GeometryBindUtil
+	IKJoint
+	JMapIdInfo
+	JMapInfo
+	JMapLinkInfo
+	JointController
+	JointRumbler
+	...
+	RumbleCalculator
+	SpringValue
+	TriangleFilter
+	TriggerChecker
+	ValueControl
 Animation (0x80069240)
 	AnmPlayer
 	BckCtrl
@@ -279,7 +356,44 @@ Camera (0x8010BE80)
 	OnlyCamera
 Demo (0x80133C20)
 	CompleteEndingDemoObj
-	...
+	DemoActionKeeper
+	DemoCameraFunction
+	DemoCameraKeeper
+	DemoCastGroup
+	DemoCastGroupHolder
+	DemoCastSubGroup
+	DemoCtrlBase
+	DemoDirector
+	DemoEndStartPosCameraSetter
+	DemoExecutor
+	DemoExecutorFunction
+	DemoFunction
+	DemoParamCommonDataTable
+	DemoPlayerKeeper
+	DemoPositionController
+	DemoSimpleCastHolder
+	DemoSoundKeeper
+	DemoStartRequestHolder
+	DemoStartRequestUtil
+	DemoSubPartKeeper
+	DemoTalkAnimCtrl
+	DemoTimeKeeper
+	?
+	DemoTitleAnim
+	DemoWipeKeeper
+	GrandStarReturnDemoStarter
+	MarioFaceAfterGrandStarTakeOffDemoObj
+	MarioFacePlanetTakeOffDemoObj
+	MeetKoopaDemoObj
+	NormalEndingDemoObj
+	OpeningDemoObj
+	PrepareKoopaFinalDemoObj
+	ReturnDemoRailMove
+	ScenarioStarter
+	?
+	StaffRollDemoObj
+	StarReturnDemoStarter
+	StoryBookWarpDemo
 	TransformFaceTicoBabyDemoObj
 Effect (0x80148160)
 	AutoEffectGroup
@@ -490,7 +604,7 @@ LiveActor (0x80228320)
 	AllLiveActorGroup
 	AnimationRandomPlayer
 	Binder
-	?
+	BreakModel
 	ChangeObjHolder
 	ClippingActorHolder
 	ClippingActorInfo
@@ -519,7 +633,8 @@ LiveActor (0x80228320)
 	?
 	ModelObj
 	PartsModel
-	?
+	PartsModelLodCtrl
+	RailObj
 	RailRider
 	SensorHitChecker
 	?
@@ -788,9 +903,11 @@ MapObj (0x8026DE50)
 	PetitPorter
 	PhantomTorch
 	PicketSwitch
+	PlacementObj
 	PlantGroup
 	PlantPoint
 	PlantRailInfo
+	PlayerFollowPass
 	PoleObstacleParts
 	PowerStar
 	PowerStarAppearPoint
@@ -879,6 +996,7 @@ MapObj (0x8026DE50)
 	StarPieceSpot
 	StarPieceSpotEruption
 	StemFruit
+	Sun
 	SuperSpinDriver
 	SupportFlushPoint
 	SupportPlayDirector
@@ -946,8 +1064,106 @@ NameObj (0x80339560)
 	NameObjListExecutor
 	NameObjRegister
 NPC (0x80343E50)
-Player
-RhythmLib
+	BombHeiRed
+	BringEnemy
+	Caretaker
+	CareTakerHunter
+	CollectTico
+	Dreamer
+	GhostAttackGhost
+	GhostAttackGhostFootprint
+	GhostAttackManager
+	GliBirdNpc
+	HoneyBee
+	HoneyQueen
+	Kinopio
+	KinopioBank
+	KinopioPostman
+	KoopaNpc
+	LuigiTalkNpc
+	MameMuimuiAttackMan
+	Meister
+	...
+	MiiDatabase
+	MiiFaceIcon
+	MiiFaceIconHolder
+	MiiFaceParts
+	MiiFacePartsHolder
+	MiiFaceRecipe
+	Moc
+	Monte
+	MonteThrow
+	Peach
+	Penguin
+	PenguinCoach
+	PenguinMaster
+	Pichan
+	PichanRacer
+	PlayAttackMan
+	...
+	PowerStarEventKeeper
+	Rabbit
+	RabbitStateCaught
+	RabbitStateWaitStart
+	Rosetta
+	ScoreAttackMan
+	SignBoard
+	StarListBoard
+	StrayTico
+	SuperDreamer
+	SupportTico
+	...
+	Tico
+	TicoBaby
+	TicoBig
+	TicoEat
+	TicoFatCoin
+	TicoFatStarPiece
+	?
+	TicoRail
+	TicoShop
+	TicoShopDice
+	?
+	TogepinAttackMan
+	TrickRabbit
+	TrickRabbitUtil
+	CometEventExecutorTimeLimit
+	?
+	CometEventKeeper
+	EventDirector
+	NPCActor
+	NPCDirector
+	NPCFunction
+	NPCParameter
+	?
+	ScoreAttackCounter
+	TalkBalloon
+	TalkDirector
+	TalkMessageCtrl
+	TalkNodeCtrl
+	TalkState
+	TalkSupportPlayerWatcher
+	TurnJointCtrl
+Player (0x8037E310)
+	DrawAdaptor
+	FireMarioBall
+	GhostPacket
+	...
+RhythmLib (0x80422990)
+	AudRhythmSeqParser
+	AudBgmTempoAdjuster
+	AudMeTrack
+	AudMeChannelMgr
+	AudMeSeqCtrl
+	AudMeSeqReader
+	AudMeSeqParser
+	AudMeTrackCallback
+	AudMePlayer
+	AudRhythmMeSystem
+	AudMeHandles
+	AudMeObject
+	AudChordInfo
+	AudRhythmHolder
 Ride (0x8042A960)
 	Creeper
 	Fluff
@@ -980,7 +1196,201 @@ Ride (0x8042A960)
 	TubeSliderJumpStep
 	TubesliderObjCreator
 Scene (0x80451340)
-Screen
-Speaker
-System
+	GameScene
+	GameSceneFunction
+	GameScenePauseControl
+	GameSceneScenarioOpeningCameraState
+	IntermissionScene
+	LogoScene
+	ModelWipeScene
+	MultiSceneActor
+	MultiScene
+	MultiSceneEffectKeeper
+	PlacementInfoOrdered
+	PlacementStateChecker
+	ScenarioSelectScene
+	Scene
+	SceneDataInitializer
+	SceneExecutor
+	SceneFactory
+	SceneFunction
+	SceneNameObjListExecutor
+	SceneNameObjMovementController
+	SceneObjHolder
+	StageDataHolder
+	StageDataLoader
+	StopSceneController
+Screen (0x8045D2D0)
+	...
+	BackButton
+	BatteryInfo
+	BloomEffect
+	BloomEffectSimple
+	BombTimerLayout
+	ButtonPaneController
+	CameraInfo
+	CaptureScreenDirector
+	CenterScreenBlur
+	CinemaFrame
+	CoinCounter
+	CometMedalCounter
+	CopyFilterNegater
+	CounterLayoutAppearer
+	CounterLayoutController
+	CountUpPaneRumbler
+	CustomTagProcessor
+	DepthOfFieldBlur
+	ExterminationCounter
+	DreamerButtonGuidance
+	EncouragePal60Window
+	ErrorMessageWindow
+	FileSelectButton
+	FileSelectInfo
+	FileSelectNumber
+	FullnessMeter
+	FullScreenBlur
+	GalaxyCometScreenFilter
+	GalaxyConfirmLayout
+	GalaxyMapGalaxyPlain
+	GalaxyNamePlate
+	GalaxyNamePlateDrawer
+	GamePauseSequence
+	GameSceneLayoutHolder
+	GameSetLayout
+	GameStageClearSequence
+	GliBirdGuidance
+	GalaxyStatusIcon
+	GrandGalaxyMapInfo
+	HeatHazeEffect
+	HomeButtonLayout
+	IconAButton
+	ImageEffectBase
+	ImageEffectDirector
+	ImageEffectLocalUtil
+	ImageEffectResource
+	ImageEffectState
+	ImageEffectSystemHolder
+	InformationMessage
+	InformationObserver
+	LayoutActor
+	LayoutGroupCtrl
+	LayoutManager
+	?
+	LayoutPaneCtrl
+	LensFlare
+	LogoFader
+	Manual2P
+	MarioMeter
+	MarioSubMeter
+	MessageTagSkipTagProcessor
+	MeterLayout
+	MiiConfirmIcon
+	MiiSelect
+	MiiSelectIcon
+	MissLayout
+	NoteCounter
+	OneUpBoard
+	PaneEffectKeeper
+	PauseBLur
+	PauseMenu
+	PlayerActionGuidance
+	PlayerLeft
+	PlayerMissLeft
+	PopUpAddTimeAttackTime
+	PostFog
+	PostManLetter
+	PostOutline
+	PurpleCoinCounter
+	RaceLayout
+	ReplaceTagProcessor
+	SaveIcon
+	ScenarioSelectLayout
+	ScenarioTitle
+	SceneWipeHolder
+	ScoreCounterLayout
+	ScoreResult
+	ScoreResultKeeper
+	ScreenAlphaCapture
+	ScreenBlurEffect
+	ScreenPreserver
+	SimpleLayout
+	StaffRoll
+	...
+	StageResultInformer
+	StarCounter
+	StarPieceBank
+	StarPieceCounter
+	StarPointerBlur
+	StarPointerController
+	StarPointerDirector
+	StarPointerGuidance
+	StarPointerLayout
+	StarPointerTarget
+	StartCountdownLayout
+	StoryBookText
+	SubMeterLayout
+	SuddenDeathMeter
+	SupportPlayGuidance
+	SwitchingScreenEffect
+	SysInfoWindow
+	SystemWipeHolder
+	TimeLimitLayout
+	TimeStopScreenEffect
+	TimeUpLayout
+	TitleSequenceProduct
+	WaterCameraFilter
+	WipeFade
+	WipeGameOver
+	WipeHolderBase
+	WipeKoopa
+	WipeMario
+	WipeRing
+	...
+	YesNoController
+	YesNoLayout
+	YoshiTargetMark
+Speaker (0x804AB6A0)
+	SpkSpeakerCtrl
+	SpkSystem
+	SpkMixingBuffer
+	SpkWave
+	SpkTable
+	SpkData
+	SpkSound
+System (0x804AD660)
+	...
+NW24 (0x804FE450)
+	...
+JKernel (0x80500F60)
+	...
+...
+JMath (0x8053A730)
+	JMath
+	random
+	JMATrigonometric
+JParticle (0x8053ADF0)
+	JPAResourceManager
+	JPAResource
+	JPABaseShape
+	JPAExtraShape
+	JPAChildShape
+	JPAExTexShape
+	JPADynamicsBlock
+	JPAFieldBlock
+	JPAKeyBlock
+	JPATexture
+	JPAResourceLoader
+	JPAEmitterManager
+	JPAEmitter
+	JPAParticle
+	JPAMath
+gd (0x80544010)
+	GDBase
+	GDGeometry
+	GDIndirect
+	GDLight
+	GDPixel
+	GDTev
+	GDTexture
+	GDTRansform
 ...

@@ -3,7 +3,7 @@
 #include "JGeometry/TQuat4.h"
 #include "JGeometry/TVec2.h"
 #include "JGeometry/TVec3.h"
-#include "kamek.h"
+#include "syati.h"
 
 struct _GXColor;
 
@@ -80,7 +80,7 @@ namespace MR
 	void rotateVecRadian(TVec3f *, const TVec3f &, f32);
 	void rotateVecRadian(TVec3f *, const TVec3f &, const TVec3f &, f32);
 
-	void calcLocalVec(TVec3f *, Mtx4*);
+	void calcLocalVec(TVec3f *, MtxPtr);
 	void normalize(TVec2f *);
 	void normalize(TVec3f *);
 	void normalize(const TVec2f &, TVec2f *);
@@ -113,6 +113,7 @@ namespace MR
 	f32 lerp(_GXColor, _GXColor, f32);
 	void sortSmall(long, f32 *, long *);
 	void sortSmall(long, u32 *, long *);
+	void PSvecBlend(const TVec3f *, const TVec3f *, f32, f32);
 	void vecBlend(const TVec3f &, const TVec3f &, TVec3f *, f32);
 	void vecBlendNormal(const TVec3f &, const TVec3f &, TVec3f *, f32);
 	void vecBlendSphere(const TVec3f &, const TVec3f &, TVec3f *, f32);
@@ -122,8 +123,8 @@ namespace MR
 	void getRotatedAxisZ(TVec3f *, const TVec3f &);
 	f32 getMaxElement(const TVec3f &);
 	f32 getMaxAbsElement(const TVec3f &);
-	s32 getMaxElementIndex(const TVec3f &);
-	s32 getMaxAbsElementIndex(const TVec3f &);
+	u32 getMaxElementIndex(const TVec3f &);
+	u32 getMaxAbsElementIndex(const TVec3f &);
 	f32 diffAngleAbsFast(const TVec3f &, const TVec3f &);
 	f32 diffAngleAbs(const TVec3f &, const TVec3f &);
 	f32 diffAngleAbs(const TVec2f &, const TVec2f &);

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "kamek.h"
+#include "syati.h"
 #include "JGeometry/TVec3.h"
 
 class LiveActor;
@@ -9,7 +9,7 @@ class HitSensor;
 namespace MR
 {
 	void setSensorFollowPos(LiveActor *, const char *, const TVec3f &);
-	void setSensorFollowMtx(LiveActor *, const char *, Mtx4 *);
+	void setSensorFollowMtx(LiveActor *, const char *, MtxPtr);
 	HitSensor* addHitSensor(LiveActor *, const char *, u32, u16, f32, const TVec3f &);
 	HitSensor* addHitSensorBinder(LiveActor *, const char *, u16, f32, const TVec3f &);
 	HitSensor* addHitSensorPriorBinder(LiveActor *, const char *, u16, f32, const TVec3f &);
@@ -25,11 +25,11 @@ namespace MR
 	HitSensor* addHitSensorPosRide(LiveActor *, const char *, u16, f32, const TVec3f *, const TVec3f &);
 	HitSensor* addHitSensorPosMapObj(LiveActor *, const char *, u16, f32, const TVec3f *, const TVec3f &);
 	HitSensor* addHitSensorPosEnemyAttack(LiveActor *, const char *, u16, f32, const TVec3f *, const TVec3f &);
-	HitSensor* addHitSensorMtx(LiveActor *, const char *, u32, u16, f32, Mtx4 *, const TVec3f &);
-	HitSensor* addHitSensorMtxRide(LiveActor *, const char *, u16, f32, Mtx4 *, const TVec3f &);
-	HitSensor* addHitSensorMtxEnemy(LiveActor *, const char *, u16, f32, Mtx4 *, const TVec3f &);
-	HitSensor* addHitSensorMtxEnemyAttack(LiveActor *, const char *, u16, f32, Mtx4 *, const TVec3f &);
-	HitSensor* addHitSensorMtxAnimal(LiveActor *, const char *, u16, f32, Mtx4 *, const TVec3f &);
+	HitSensor* addHitSensorMtx(LiveActor *, const char *, u32, u16, f32, MtxPtr, const TVec3f &);
+	HitSensor* addHitSensorMtxRide(LiveActor *, const char *, u16, f32, MtxPtr, const TVec3f &);
+	HitSensor* addHitSensorMtxEnemy(LiveActor *, const char *, u16, f32, MtxPtr, const TVec3f &);
+	HitSensor* addHitSensorMtxEnemyAttack(LiveActor *, const char *, u16, f32, MtxPtr, const TVec3f &);
+	HitSensor* addHitSensorMtxAnimal(LiveActor *, const char *, u16, f32, MtxPtr, const TVec3f &);
 	HitSensor* addHitSensorAtJoint(LiveActor *, const char *, const char *, u32, u16, f32, const TVec3f &);
 	HitSensor* addHitSensorAtJointMapObj(LiveActor *, const char *, const char *, u16, f32, const TVec3f &);
 	HitSensor* addHitSensorAtJointMapObjSimple(LiveActor *, const char *, const char *, u16, f32, const TVec3f &);
@@ -52,7 +52,7 @@ namespace MR
 	HitSensor* addHitSensorMapObj(LiveActor *, const char *);
 	bool tryUpdateHitSensorsAll(LiveActor *);
 	void updateHitSensorsAll(LiveActor *);
-	bool isSensorType(HitSensor *, u32);
+	bool isSensorType(const HitSensor *, u32);
 	void setSensorType(LiveActor *, const char *, u32);
 
 	HitSensor* getSensorWithIndex(LiveActor *, int);

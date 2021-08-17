@@ -1,7 +1,7 @@
 #pragma once
 
 #include "JGeometry/TVec3.h"
-#include "kamek.h"
+#include "syati.h"
 
 class HitSensor;
 class LayoutActor;
@@ -44,8 +44,8 @@ namespace MR
 	void onForceDeleteEffectSyncClipping(LiveActor *, const char *);
 	void setEffectName(LiveActor *, const char *, const char *);
 	void setEffectHostSRT(LiveActor *, const char *, const TVec3f *, const TVec3f *, const TVec3f *);
-	void setEffectHostMtx(LiveActor *, const char *, Mtx4 *);
-	void setAllEffectHostMtx(LiveActor *, Mtx4 *);
+	void setEffectHostMtx(LiveActor *, const char *, MtxPtr);
+	void setAllEffectHostMtx(LiveActor *, MtxPtr);
 	void setEffectBaseScale(LiveActor *, const char *, f32);
 	void setEffectColor(LiveActor *, const char *, u8, u8, u8, u8, u8, u8);
 	void setEffectPrmColor(LiveActor *, const char *, u8, u8, u8);
@@ -54,7 +54,7 @@ namespace MR
 	void addEffectHitNormal(LiveActor *, const char *);
 	void emitEffectHit(LiveActor *, const TVec3f &, const char *);
 	void emitEffectHit(LiveActor *, const TVec3f &, const TVec3f &, const char *);
-	void emitEffectHit(LiveActor *, Mtx4 *, const char *);
+	void emitEffectHit(LiveActor *, MtxPtr, const char *);
 	void emitEffectHitBetweenSensors(LiveActor *, const HitSensor *, const HitSensor *, f32, const char *);
 	void initEffectAfterPlacement(LiveActor *, bool);
 	void updateEffectFloorCode(LiveActor *, const Triangle *);

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Actor/LiveActor/LiveActor.h"
 #include "MapObj/MapObjActor.h"
 #include "MapObj/MapObjActorInitInfo.h"
 #include "JGeometry/TVec3.h"
@@ -15,7 +14,7 @@ public:
 	virtual void startClipped();
 	virtual void endClipped();
 
-	virtual u32 receiveOtherMsg(u32, HitSensor *, HitSensor *);
+	virtual bool receiveOtherMsg(u32, HitSensor *, HitSensor *);
 
 	virtual void initCaseUseSwitchB(const MapObjActorInitInfo &);
 	virtual void initCaseNoUseSwitchB(const MapObjActorInitInfo &);

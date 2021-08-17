@@ -1,13 +1,14 @@
 #pragma once
 
+#include "syati.h"
 #include "JGeometry/TPosition3.h"
-#include "JGeometry/TVec3.h"
-#include "kamek.h"
 
+class BckCtrlData;
 class CameraTargetArg;
 class HitSensor;
 class LiveActor;
 class MarioActor;
+class NameObj;
 
 namespace MR
 {
@@ -28,7 +29,7 @@ namespace MR
 	void setPlayerUpperRotateY(f32);
 	TVec3f* getPlayerRotate();
 	TVec3f* getPlayerShadowRotate();
-
+	void copyPlayerTR(LiveActor *);
 	TVec3f* getPlayerVelocity();
 	TVec3f* getPlayerLastMove();
 	void setPlayerJumpVec(const TVec3f &);
@@ -50,14 +51,15 @@ namespace MR
 	void setPlayerSwingPermission(bool);
 	void setPlayerStateWait();
 	void startBckPlayer(const char *, const char *);
+	void startBckPlayer(const char *, const BckCtrlData &);
 
 	bool isBckStoppedPlayer();
 	bool isBckOneTimeAndStoppedPlayer();
-
+	f32 getBckFrameMaxPlayer();
 	f32 getBckFrameMaxPlayer(const char *);
-
+	void startBckPlayerJ(const char *);
 	void becomeContinuousBckPlayer();
-
+	void progressPlayerBckOnPause();
 	const char* getPlayerCurrentBckName();
 	void setBckBlendWeight(f32, f32);
 	void setBckBlendWeight(f32, f32, f32);
@@ -78,7 +80,7 @@ namespace MR
 	void setPlayerPos(const char *);
 	void setPlayerPosAndWait(const TVec3f &);
 	void setPlayerPosAndWait(const char *);
-	void setPlayerLinkPosAndWait(const NameObj *, const char *);
+	void setPlayerLinkPosAndWait(const NameObj *, const char *, bool);
 	void setPlayerPosOnGround(const char *);
 	void setPlayerPosOnGroundAndWait(const char *);
 	bool isPlayerHipDropFalling();
@@ -94,12 +96,15 @@ namespace MR
 	bool isPlayerSwingAction();
 
 	bool isPlayerPointedBy2POnTriggerButton();
-
+	bool isPlayerSquat();
 	bool isPlayerInRush();
-
+	bool isPlayerRecovering();
 	bool isPlayerNeedBrakingCamera();
 
 	bool isPlayerFlying();
+
+	bool isPlayerHanging();
+	bool isPlayerBury();
 
 	bool isPlayerElementModeTornado();
 	bool isPlayerElementModeInvincible();
@@ -108,13 +113,23 @@ namespace MR
 	bool isPlayerElementModeTeresa();
 	bool isPlayerElementModeIce();
 	bool isPlayerElementModeFire();
-	bool isPlayerElementModeRock();
 	bool isPlayerElementModeCloud();
-
+	bool isPlayerElementModeRock();
 	bool isPlayerElementModeNormal();
-
+	void changePlayerModeBee();
+	void changePlayerModeHopper();
+	void changePlayerModeTeresa();
+	void changePlayerModeIce();
+	void changePlayerModeFire();
+	void changePlayerModeYoshi();
+	void changePlayerModeCloud();
+	void changePlayerModeRock();
+	void changePlayerModeFoo();
+	void changePlayerModeInvincible();
+	void changePlayerItemLifeUp();
 	void curePlayerElementMode();
 
+	bool isPlayerParalyzing();
 	bool isPlayerDamaging();
 
 	bool isPlayerStaggering();
@@ -144,8 +159,9 @@ namespace MR
 	void tryPlayerPullActor(HitSensor *);
 	void tryPlayerDropTakingActor();
 	void tryPlayerKillTakingActor();
-
+	bool isPlayerCarrySensorType(u32);
 	bool isPlayerCarryAny();
+	LiveActor* getPlayerCarrySensorHost();
 
 	void startSoundPlayer(const char *, s32);
 
@@ -153,9 +169,12 @@ namespace MR
 
 	void stopSoundPlayer(const char *, u32);
 	void startSoundPlayerJ(const char *);
-
+	void emitEffectPlayer(const char *);
+	void deleteEffectPlayer(const char *);
 	void showPlayer();
+	void hidePlayer();
 
+	void hidePlayerTryDeleteEffect();
 	void showPlayerJoint(const char *);
 	void hidePlayerJoint(const char *);
 
@@ -168,20 +187,27 @@ namespace MR
 	void startPlayerTalk(const LiveActor *);
 	void endPlayerTalk();
 
+	bool isCurrentRushActor(const char *);
+	bool isCurrentRushRockMario();
+	bool isCurrentRushTamakoro();
+	bool isCurrentRushSpinDriver();
+	bool isCurrentRushItemDrill();
 	bool isExistMario();
 	void startPlayerEvent(const char *);
-
+	void offPlayerControl();
+	void onPlayerControl(bool);
 	bool isOffPlayerControl();
 	void unlockPlayerAnimation();
 	void resetPlayerStatus();
 	void resetPlayerEffect();
-	void setPlayerBaseMtx(Mtx4*);
+	void setPlayerBaseMtx(MtxPtr);
 
 	Mtx* getPlayerBaseMtx();
 
 	MarioActor* getPlayerDemoActor();
 
 	void calcPlayerJointMtx(TPositionMtx *, const char *);
+	void concatWithPlayerJointMtx(TPositionMtx *, const char *);
 
 	void pushPlayer(const TVec3f &);
 	void pushPlayerFromArea(const TVec3f &);
@@ -194,4 +220,5 @@ namespace MR
 	// getFullScreenBlurTexture();
 
 	u16 getPlayerMovementTimer();
+	HitSensor* getPlayerBodySensor();
 };

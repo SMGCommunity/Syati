@@ -1,7 +1,7 @@
 #pragma once
 
 #include "JGeometry/TVec3.h"
-#include "kamek.h"
+#include "syati.h"
 
 namespace JGeometry
 {

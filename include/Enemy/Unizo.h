@@ -1,7 +1,9 @@
 #pragma once
 
-#include "Actor/LiveActor/LiveActor.h"
-#include "Actor/Model/ModelObj.h"
+#include "syati.h"
+#include "JGeometry/TQuat4.h"
+#include "LiveActor/LiveActor.h"
+#include "LiveActor/Model/ModelObj.h"
 
 #define UNIZO 0
 #define UNIZO_LAND 1
@@ -24,9 +26,9 @@ public:
 	virtual void control();
 	virtual void calcAndSetBaseMtx();
 	virtual void attackSensor(HitSensor *, HitSensor *);
-	virtual u32 receiveMsgPlayerAttack(u32, HitSensor *, HitSensor *);
-	virtual u32 receiveMsgEnemyAttack(u32, HitSensor *, HitSensor *);
-	virtual u32 receiveOtherMsg(u32, HitSensor *, HitSensor *);
+	virtual bool receiveMsgPlayerAttack(u32, HitSensor *, HitSensor *);
+	virtual bool receiveMsgEnemyAttack(u32, HitSensor *, HitSensor *);
+	virtual bool receiveOtherMsg(u32, HitSensor *, HitSensor *);
 
 	void initType(const JMapInfoIter &);
 	void exeWait();
@@ -47,7 +49,7 @@ public:
 	void doAttack(HitSensor *);
 	void doJumpDown();
 	void doFireDown(const TVec3f &);
-	void doBreak();
+	void doBreak(u32, HitSensor *);
 	void doSpin();
 	bool isBreakGround();
 	bool isBreakNow() const;
@@ -58,7 +60,7 @@ public:
 	void startNeedleSound();
 
 	s32 mType; // 90
-	f32 _94[4]; // TVec4f
+	TQuat4f _94;
 	Mtx _A4;
 	Mtx _D4;
 	u32 _104;

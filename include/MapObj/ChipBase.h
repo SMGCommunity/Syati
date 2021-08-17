@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Actor/LiveActor/LiveActor.h"
+#include "LiveActor/LiveActor.h"
 #include "JGeometry/TVec3.h"
 
 #define CHIP_BLUE 0
@@ -19,7 +19,7 @@ public:
 	virtual void makeActorAppeared();
 	virtual void makeActorDead();
 	virtual void control();
-	virtual u32 receiveOtherMsg(u32, HitSensor *, HitSensor *);
+	virtual bool receiveOtherMsg(u32, HitSensor *, HitSensor *);
 
 	void initModel(const JMapInfoIter &);
 	void initSensor();

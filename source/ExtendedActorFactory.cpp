@@ -1,7 +1,4 @@
 #include "custom/Actor/ExtendedActorFactory.h"
-
-#include "Map/Planet/PlanetMapCreator.h"
-#include "Util/CreatorUtil.h"
 #include "Util/StringUtil.h"
 
 // patch is at 804564D4, we still have r3 as our name
@@ -16,7 +13,7 @@ void* getCreator(const char *pName)
 		// go through our custom actor table
         for (s32 i = 0; i < NUM_ACTORS; i++)
         {
-            const ActorEntry* e = &ExtendedActorFactory::cCreateTable[i];
+            const CreateActorEntry* e = &ExtendedActorFactory::cCreateTable[i];
 
 			// if our entry is equal to the one we are looking for, we return its creator
             if (MR::isEqualStringCase(e->pActorName, pName))

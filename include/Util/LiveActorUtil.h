@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Collision/CollisionScaleType.h"
+#include "Map/Collision/CollisionScaleType.h"
 #include "JGeometry/TMatrix34.h"
 #include "JGeometry/TPosition3.h"
 #include "JGeometry/TQuat4.h"
@@ -11,6 +11,7 @@ class ActorLightCtrl;
 class CollisionParts;
 class CollisionPartsFilterBase;
 class LiveActor;
+class LiveActorGroup;
 class LodCtrl;
 class MirrorActor;
 class ModelObj;
@@ -30,8 +31,8 @@ namespace MR
     void setScale(LiveActor *, const TVec3f &);
     void setScale(LiveActor *, f32, f32, f32);
     void setScale(LiveActor *, f32);
-
     void copyTransRotateScale(const LiveActor *, LiveActor *);
+    void copyTransRotate(const LiveActor *, LiveActor *);
 
     bool isValidMovement(const LiveActor *);
     bool isValidCalcAnim(const LiveActor *);
@@ -53,18 +54,23 @@ namespace MR
     bool changeShowModelFlagSyncNearClipping(LiveActor *, f32);
     bool isClipped(const LiveActor *);
     bool isInvalidClipping(const LiveActor *);
-    void setBaseTRMtx(LiveActor *, Mtx4 *);
+    void setBaseTRMtx(LiveActor *, MtxPtr);
     void setBaseTRMtx(LiveActor *, const TPositionMtx &);
     void setBaseTRMtx(LiveActor *, const TQuat4f &);
     void setBaseScale(LiveActor *, const TVec3f &);
 
     // ResourceHolder stuff is found here
-
+    void initDLMakerFog(LiveActor *, bool);
+    
+    void initDLMakerChangText(LiveActor *, const char *);
+    void initDLMakerTexMtx(LiveActor *, const char *);
     void initDLMakerProjmapEffectMtxSetter(LiveActor *);
 
     void initMirrorReflection(LiveActor *);
     void setMirrorReflectionInfoFromMtxYUp(const TPositionMtx &);
     void setMirrorReflectionInfoFromModel(LiveActor *);
+    
+    void initJointTransform(const LiveActor *);
 
     f32 getBckFrame(const LiveActor *);
     f32 getBtkFrame(const LiveActor *);
@@ -117,12 +123,13 @@ namespace MR
 
     void setNerveAtStep(LiveActor *, const Nerve *, s32);
     void setNerveAtBckStopped(LiveActor *, const Nerve *);
-
+    bool trySetNerve(LiveActor *, const Nerve *);
     bool isOnGround(const LiveActor *);
     bool isOnGroundCos(const LiveActor *, f32);
     bool isBindedGround(const LiveActor *);
     bool isBindedWall(const LiveActor *);
-
+    bool isBindedWallOfMap(const LiveActor *);
+    bool isBindedWallOfMoveLimit(const LiveActor *);
     bool isBindedRoof(const LiveActor *);
     bool isBinded(const LiveActor *);
     bool isPressedRoofAndGround(const LiveActor *);
@@ -157,18 +164,19 @@ namespace MR
     bool isDead(const LiveActor *);
     bool isHiddenModel(const LiveActor *);
     void showModel(LiveActor *);
-
+    void showModelAndEffects(LiveActor *);
     void hideModel(LiveActor *);
-
+    void hideModelAndEffects(LiveActor *);
     void hideModelAndOnCalcAnim(LiveActor *);
     void showModelIfHidden(LiveActor *);
     void hideModelIfShown(LiveActor *);
     void hideModelAndOnCalcAnimIfShown(LiveActor *);
-
+    bool isStopAnimFrame(LiveActor *);
     void stopAnimFrame(LiveActor *);
     void releaseAnimFrame(LiveActor *);
     bool isNoCalcAnim(const LiveActor *);
-
+    void onCalcAnim(LiveActor *);
+    void offCalcAnim(LiveActor *);
     bool isNoCalcView(const LiveActor *);
     bool isNoEntryDrawBuffer(const LiveActor *);
     bool isNoBind(const LiveActor *);
@@ -179,49 +187,69 @@ namespace MR
     void offCalcGravity(LiveActor *);
 
     void joinToGroup(LiveActor *, const char *);
-    void joinToGroupArray(LiveActor *, const JMapInfoIter &, const char *, s32);
+    LiveActorGroup* joinToGroupArray(LiveActor *, const JMapInfoIter &, const char *, s32);
+    LiveActorGroup* getGroupFromArray(const LiveActor *);
 
+    void callMakeActorDeadAllGroupMember(const LiveActor *);
+    void callKillAllGroupMember(const LiveActor *);
+    void callMakeActorAppearedAllGroupMember(const LiveActor *);
+    void callAppearAllGroupMember(const LiveActor *);
+    void callRequestMovementOnAllGroupMember(const LiveActor *);
+    void callInvalidateClippingAllGroupMember(const LiveActor *);
+    void callValidateClippingAllGroupMember(const LiveActor *);
     void addToAttributeGroupSearchTurtle(const LiveActor *);
     bool isExistInAttributeGroupSearchTurtle(const LiveActor *);
     void calcGravity(LiveActor *);
     void calcGravity(LiveActor *, const TVec3f &);
     void calcGravityOrZero(LiveActor *);
     void initFur(LiveActor *);
-
+    void initFurEnemy(LiveActor *);
     void initFurPlanet(LiveActor *);
     void initFurPlayer(LiveActor *);
-    void initCollisionParts(LiveActor *, const char *, HitSensor *, Mtx4 *);
-    void initCollisionPartsAutoEqualScale(LiveActor *, const char *, HitSensor *, Mtx4 *);
-    void initCollisionPartsAutoEqualScaleOne(LiveActor *, const char *, HitSensor *, Mtx4 *);
+    void initCollisionParts(LiveActor *, const char *, HitSensor *, MtxPtr);
+    void initCollisionPartsAutoEqualScale(LiveActor *, const char *, HitSensor *, MtxPtr);
+    void initCollisionPartsAutoEqualScaleOne(LiveActor *, const char *, HitSensor *, MtxPtr);
 
     CollisionParts* createCollisionPartsFromLiveActor(LiveActor *, const char *, HitSensor *, MR::CollisionScaleType);
-    CollisionParts* createCollisionPartsFromLiveActor(LiveActor *, const char *, HitSensor *, Mtx4 *, MR::CollisionScaleType);
+    CollisionParts* createCollisionPartsFromLiveActor(LiveActor *, const char *, HitSensor *, MtxPtr, MR::CollisionScaleType);
 
+    CollisionParts* tryCreateCollisionMoveLimit(LiveActor *, HitSensor *);
+    CollisionParts* tryCreateCollisionWaterSurface(LiveActor *, HitSensor *);
+    f32 getCollisionBoundingSphereRange(const LiveActor *);
+    bool isValidCollisionParts(LiveActor *);
     void validateCollisionParts(LiveActor *);
     void validateCollisionParts(CollisionParts *);
     void invalidateCollisionParts(LiveActor *);
     void invalidateCollisionParts(CollisionParts *);
+    void onUpdateCollisionParts(LiveActor *);
+    void onUpdateCollisionPartsOneTimeImmediately(LiveActor *);
+    void offUpdateCollisionParts(LiveActor *);
 
-    bool isExistStarPointerTarget(const LiveActor *);
+    void resetAllCollisionMtx(LiveActor *);
+    void setCollisionMtx(LiveActor *);
+    void setCollisionMtx(LiveActor *, CollisionParts *);
+    CollisionParts* getCollisionParts(LiveActor *);
+    bool isExistCollisionParts(const LiveActor *);
+    u32 getCollisionSensortType(const CollisionParts *);
 
-    ModelObj* createModelObjMapObj(const char *, const char *, Mtx4 *);
-    ModelObj* createModelObjMapObjStrongLight(const char *, const char *, Mtx4 *);
-    ModelObj* createModelObjNoSilhouettedMapObj(const char *, const char *, Mtx4 *);
-    ModelObj* createModelObjNoSilhouettedMapObjStrongLight(const char *, const char *, Mtx4 *);
-    ModelObj* createModelObjIndirectMapObj(const char *, const char *, Mtx4 *);
-    ModelObj* createModelObjPlayerDecoration(const char *, const char *, Mtx4 *);
-    ModelObj* createModelObjEnemy(const char *, const char *, Mtx4 *);
-    ModelObj* createModelObjNPC(const char *, const char *, Mtx4 *);
-    ModelObj* createModelObjBloomModel(const char *, const char *, Mtx4 *);
+    ModelObj* createModelObjMapObj(const char *, const char *, MtxPtr);
+    ModelObj* createModelObjMapObjStrongLight(const char *, const char *, MtxPtr);
+    ModelObj* createModelObjNoSilhouettedMapObj(const char *, const char *, MtxPtr);
+    ModelObj* createModelObjNoSilhouettedMapObjStrongLight(const char *, const char *, MtxPtr);
+    ModelObj* createModelObjIndirectMapObj(const char *, const char *, MtxPtr);
+    ModelObj* createModelObjPlayerDecoration(const char *, const char *, MtxPtr);
+    ModelObj* createModelObjEnemy(const char *, const char *, MtxPtr);
+    ModelObj* createModelObjNPC(const char *, const char *, MtxPtr);
+    ModelObj* createModelObjBloomModel(const char *, const char *, MtxPtr);
 
-    PartsModel* createPartsModelMapObj(LiveActor *, const char *, const char *, Mtx4 *);
-    PartsModel* createPartsModelMapObjStrongLight(LiveActor *, const char *, const char *, Mtx4 *);
-    PartsModel* createPartsModelNoSilhouettedMapObj(LiveActor *, const char *, const char *, Mtx4 *);
-    PartsModel* createPartsModelEnemy(LiveActor *, const char *, const char *, Mtx4 *);
-    PartsModel* createPartsModelNpc(LiveActor *, const char *, const char *, Mtx4 *);
-    PartsModel* createPartsModelIndirectNpc(LiveActor *, const char *, const char *, Mtx4 *);
-    PartsModel* createPartsModelEnemyAndFix(LiveActor *, const char *, const char *, Mtx4 *);
-    PartsModel* createPartsModelNpcAndFix(LiveActor *, const char *, const char *, Mtx4 *);
+    PartsModel* createPartsModelMapObj(LiveActor *, const char *, const char *, MtxPtr);
+    PartsModel* createPartsModelMapObjStrongLight(LiveActor *, const char *, const char *, MtxPtr);
+    PartsModel* createPartsModelNoSilhouettedMapObj(LiveActor *, const char *, const char *, MtxPtr);
+    PartsModel* createPartsModelEnemy(LiveActor *, const char *, const char *, MtxPtr);
+    PartsModel* createPartsModelNpc(LiveActor *, const char *, const char *, MtxPtr);
+    PartsModel* createPartsModelIndirectNpc(LiveActor *, const char *, const char *, MtxPtr);
+    PartsModel* createPartsModelEnemyAndFix(LiveActor *, const char *, const char *, MtxPtr);
+    PartsModel* createPartsModelNpcAndFix(LiveActor *, const char *, const char *, MtxPtr);
 
     LodCtrl* createLodCtrlNPC(LiveActor *, const JMapInfoIter &);
     LodCtrl* createLodCtrlPlanet(LiveActor *, const JMapInfoIter &, f32, s32);
@@ -229,4 +257,7 @@ namespace MR
     void stopSceneAtStep(const LiveActor *, s32, s32);
     void tryRumblePadAndCameraDistanceStrong(const LiveActor *, f32, f32, f32);
     void tryRumblePadAndCameraDistanceMiddle(const LiveActor *, f32, f32, f32);
+
+    HitSensor* getBodySensor(LiveActor *);
+    void setBodySensorType(LiveActor *, u32);
 };

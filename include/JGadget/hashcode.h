@@ -1,8 +1,8 @@
 #pragma once
 
-#include "kamek.h"
+#include "syati.h"
 
 namespace JGadget
 {
-    u16 getHashCode(const char *);
+    u32 getHashCode(const char *);
 };

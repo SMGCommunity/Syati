@@ -1,19 +1,24 @@
 #pragma once
 
-#include "kamek.h"
+#include "syati.h"
 
 class LiveActor;
 
 namespace MR
 {
+	void startBck(const LiveActor *, const char *, const char *);
+	bool isBckStopped(const LiveActor *);
 	bool tryStartAllAnim(const LiveActor *, const char *);
 	void startAction(const LiveActor *, const char *);
 
+	bool tryStartActionNotPlaying(const LiveActor *, const char *);
+
 	bool isActionEnd(const LiveActor *);
+	bool isAnyAnimPlaying(const LiveActor *, const char *);
 
 	void startBckWithInterpole(const LiveActor *, const char *, s32);
 	void startBckNoInterpole(const LiveActor *, const char *);
-
+	void startBckAtFirstStep(const LiveActor *, const char *);
 	bool tryStartBck(const LiveActor *, const char *, const char *);
 	bool tryStartBckAndBtp(const LiveActor *, const char *, const char *);
 	void setAllAnimFrame(const LiveActor *, const char *, f32);
@@ -28,7 +33,8 @@ namespace MR
 	bool isBpkStopped(const LiveActor *);
 	bool isBvaStopped(const LiveActor *);
 	bool isBckOneTimeAndStopped(const LiveActor *);
-
+	bool isBtkOneTimeAndStopped(const LiveActor *);
+	bool isBrkOneTimeAndStopped(const LiveActor *);
 	bool isBckLooped(const LiveActor *);
 	bool checkPassBckFrame(const LiveActor *, f32);
 	bool setBckFrameAtRandom(const LiveActor *);
@@ -76,12 +82,24 @@ namespace MR
 	void setBpkFrame(const LiveActor *, f32);
 	void setBvaFrame(const LiveActor *, f32);
 	bool isBckPlaying(const LiveActor *, const char *);
-
+	bool isBtkPlaying(const LiveActor *, const char *);
+	bool isBrkPlaying(const LiveActor *, const char *);
+	bool isBtpPlaying(const LiveActor *, const char *);
+	bool isBpkPlaying(const LiveActor *, const char *);
+	bool isBvaPlaying(const LiveActor *, const char *);
+	bool isBckPlayingIfExist(const LiveActor *, const char *);
+	bool isBtkPlayingIfExist(const LiveActor *, const char *);
+	bool isBrkPlayingIfExist(const LiveActor *, const char *);
+	bool isBtpPlayingIfExist(const LiveActor *, const char *);
+	bool isBpkPlayingIfExist(const LiveActor *, const char *);
+	bool isBvaPlayingIfExist(const LiveActor *, const char *);
+	bool isPlayingAnim(const LiveActor *, const char *);
+	bool isExistAnim(const LiveActor *, const char *);
 	bool isBckExist(const LiveActor *, const char *);
 	bool isBtkExist(const LiveActor *, const char *);
 	bool isBrkExist(const LiveActor *, const char *);
-	bool isBpkExist(const LiveActor *, const char *);
 	bool isBtpExist(const LiveActor *, const char *);
+	bool isBpkExist(const LiveActor *, const char *);
 	bool isBvaExist(const LiveActor *, const char *);
 	void* getBckCtrl(const LiveActor *);
 	void* getBtkCtrl(const LiveActor *);

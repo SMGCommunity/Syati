@@ -1,6 +1,6 @@
 #pragma once
 
-#include "kamek.h"
+#include "syati.h"
 #include "revolution/gx/GXEnum.h"
 
 void J3DGDSetTexImgPtrRaw(GXTexMapID, u32);

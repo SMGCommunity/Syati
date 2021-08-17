@@ -51,16 +51,16 @@ enum SceneObjType
 	SceneObj_ResourceShare,
 	SceneObj_WarpPodMgr,
 	SceneObj_CenterScreenBlur,
-	SceneObj_47, // スイッチ切り替えエフェクト
-	SceneObj_48, // 時間停止画面取り込みテクスチャ
-	SceneObj_49, // 時間停止画面エフェクト
-	SceneObj_50, // 50; スイングアクション監視者
+	SceneObj_SwitchingScreenEffect,
+	SceneObj_TimeStopScreenCaptureTexture,
+	SceneObj_TimeStopScreenCaptureEffect,
+	SceneObj_SwingActionWatcher, // 50
 	SceneObj_51, // ワールドマップ
 	SceneObj_52, // ワールドマップ（リザルト指揮）
 	SceneObj_53, // スコアアタックアクセサ
-	SceneObj_54, // スコア表示保持
+	SceneObj_ScoreResultKeeper,
 	SceneObj_55, // 郵便屋さんシステム
-	SceneObj_56, // サポートプレイ指揮
+	SceneObj_SupportPlayDirector,
 	SceneObj_AllLiveActorGroup,
 	SceneObj_CameraDirector,
 	SceneObj_PlanetGravityManager,
@@ -96,7 +96,7 @@ enum SceneObjType
 	SceneObj_ClipFieldFillDraw,
 	SceneObj_Deleted_90, // 90
 	SceneObj_ClipAreaHolder,
-	SceneObj_92, // 雪足場管理
+	SceneObj_SnowStepHolder,
 	SceneObj_ClipAreaLightFruit,
 	SceneObj_ScreenAlphaCapture,
 	SceneObj_MapPartsRailGuideHolder,
@@ -128,7 +128,7 @@ enum SceneObjType
 	SceneObj_GalaxyNamePlateDrawer,
 	SceneObj_CinemaFrame,
 	SceneObj_Deleted_123,
-	SceneObj_124, // プレイヤー追随パス
+	SceneObj_PlayerFollowPass,
 	SceneObj_InfernoMarioManager,
 	SceneObj_PlanetMapCreator,
 	SceneObj_ProductMapCreator,
@@ -137,11 +137,11 @@ enum SceneObjType
 	SceneObj_StaffRoll, // 130
 	SceneObj_MapPartsHolder,
 	SceneObj_StarLightAreaHolder,
-	SceneObj_133, // 切り替えオブジェホルダー
+	SceneObj_ChangeObjHolder,
 	SceneObj_DrillHoleHolder,
 	SceneObj_CollectTicoHolder,
 	SceneObj_IceMeteorHolder,
-	SceneObj_137, // 絵本瞬間移動デモ
+	SceneObj_StoryBookWarpDemo,
 	SceneObj_PopoStickingManager,
 	SceneObj_KoopaJrCastleAccessor,
 	SceneObj_KoopaJrCastleWindHolder, // 140

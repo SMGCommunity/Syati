@@ -4,6 +4,7 @@
 #include "JGeometry/TVec3.h"
 #include "JMap/JMapInfoIter.h"
 
+// Complete
 namespace MR
 {
     bool isValidInfo(const JMapInfoIter &);

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Actor/LiveActor/LiveActor.h"
-#include "Actor/Enemy/AnimScaleController.h"
-#include "Actor/Enemy/WalkerStateBindStarPointer.h"
+#include "LiveActor/LiveActor.h"
+#include "Enemy/AnimScaleController.h"
+#include "Enemy/WalkerStateBindStarPointer.h"
 
 class Shellfish : public LiveActor
 {
@@ -15,7 +15,7 @@ public:
 	virtual void control();
 	virtual void calcAndSetBaseMtx();
 	virtual void attackSensor(HitSensor *, HitSensor *);
-	virtual u32 receiveMsgPlayerAttack(u32, HitSensor *, HitSensor *);
+	virtual bool receiveMsgPlayerAttack(u32, HitSensor *, HitSensor *);
 
 	void exeWait();
 	void exeOpen();
@@ -35,5 +35,5 @@ public:
 	LiveActor* mItem; // 98
 	s32 mItemType; // 9C
 	bool mBindItem; // A0
-	u32* mBodyCollision; // A4
+	CollisionParts* mBodyCollision; // A4
 };

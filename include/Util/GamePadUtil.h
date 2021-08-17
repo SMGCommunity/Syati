@@ -2,7 +2,7 @@
 
 #include "JGeometry/TVec2.h"
 #include "JGeometry/TVec3.h"
-#include "kamek.h"
+#include "syati.h"
 
 namespace MR
 {
@@ -55,7 +55,7 @@ namespace MR
 	bool testSystemTriggerB();
 	// two unknown functions here
 	bool testDPDMenuPadDecideTrigger();
-	// unknown function here
+	bool testPlayer1TriggerA();
 	bool testFpViewStartTrigger();
 	bool testFpViewOutTrigger();
 

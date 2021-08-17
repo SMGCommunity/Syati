@@ -17,9 +17,9 @@ public:
 
 	virtual void control();
 
-	virtual u32 receiveMsgPlayerAttack(u32, HitSensor *, HitSensor *);
-	virtual u32 receiveMsgEnemyAttack(u32, HitSensor *, HitSensor *);
-	virtual u32 receiveOtherMsg(u32, HitSensor *, HitSensor *);
+	virtual bool receiveMsgPlayerAttack(u32, HitSensor *, HitSensor *);
+	virtual bool receiveMsgEnemyAttack(u32, HitSensor *, HitSensor *);
+	virtual bool receiveOtherMsg(u32, HitSensor *, HitSensor *);
 
 	virtual void initCaseUseSwitchA(const MapObjActorInitInfo &);
 	virtual void initCaseNoUseSwitchA(const MapObjActorInitInfo &);
@@ -48,30 +48,3 @@ public:
 	u8 _F1;
 	u8 _F2;
 };
-
-namespace NrvSimpleBreakableObj
-{
-	class NrvWait : public Nerve
-	{
-	public:
-		virtual void execute(Spine *) const;
-
-		static NrvWait sInstance;
-	};
-
-	class NrvTryStartDemo : public Nerve
-	{
-	public:
-		virtual void execute(Spine *) const;
-
-		static NrvTryStartDemo sInstance;
-	};
-
-	class NrvDemo : public Nerve
-	{
-	public:
-		virtual void execute(Spine *) const;
-
-		static NrvDemo sInstance;
-	};
-}

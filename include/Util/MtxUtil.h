@@ -2,40 +2,40 @@
 
 #include "JGeometry/TPosition3.h"
 #include "JGeometry/TVec3.h"
-#include "kamek.h"
+#include "syati.h"
 
 namespace MR
 {
-	void makeMtxRotate(Mtx4 *, s16, s16, s16);
-	void makeMtxRotate(Mtx4 *, f32, f32, f32);
-	void makeMtxRotate(Mtx4 *, const TVec3f &);
-	void makeMtxRotateY(Mtx4 *, f32);
-	void makeMtxTR(Mtx4 *, f32, f32, f32, f32, f32, f32);
-	void makeMtxTR(Mtx4 *, const TVec3f &, const TVec3f &);
-	void makeMtxTransRotateY(Mtx4 *, f32, f32, f32, f32);
-	void rotateMtxLocalX(Mtx4 *, f32);
-	void rotateMtxLocalY(Mtx4 *, f32);
-	void rotateMtxLocalZ(Mtx4 *, f32);
-	void rotateMtxLocalXDegree(Mtx4 *, f32);
-	void rotateMtxLocalYDegree(Mtx4 *, f32);
-	void rotateMtxLocalZDegree(Mtx4 *, f32);
-	void preScaleMtx(Mtx4 *, f32);
-	void preScaleMtx(Mtx4 *, const TVec3f &);
-	void preScaleMtx(Mtx4 *, f32, f32, f32);
-	void scaleMtxToLocalMtx(Mtx4 *, Mtx4 *, Mtx4 *, const TVec3f &);
-	void scaleMtxToLocalMtx(Mtx4 *, Mtx4 *, const TVec3f &);
+	void makeMtxRotate(MtxPtr, s16, s16, s16);
+	void makeMtxRotate(MtxPtr, f32, f32, f32);
+	void makeMtxRotate(MtxPtr, const TVec3f &);
+	void makeMtxRotateY(MtxPtr, f32);
+	void makeMtxTR(MtxPtr, f32, f32, f32, f32, f32, f32);
+	void makeMtxTR(MtxPtr, const TVec3f &, const TVec3f &);
+	void makeMtxTransRotateY(MtxPtr, f32, f32, f32, f32);
+	void rotateMtxLocalX(MtxPtr, f32);
+	void rotateMtxLocalY(MtxPtr, f32);
+	void rotateMtxLocalZ(MtxPtr, f32);
+	void rotateMtxLocalXDegree(MtxPtr, f32);
+	void rotateMtxLocalYDegree(MtxPtr, f32);
+	void rotateMtxLocalZDegree(MtxPtr, f32);
+	void preScaleMtx(MtxPtr, f32);
+	void preScaleMtx(MtxPtr, const TVec3f &);
+	void preScaleMtx(MtxPtr, f32, f32, f32);
+	void scaleMtxToLocalMtx(MtxPtr, MtxPtr, MtxPtr, const TVec3f &);
+	void scaleMtxToLocalMtx(MtxPtr, MtxPtr, const TVec3f &);
 	void scaleMtxToDir(TPositionMtx *, const TVec3f &, const TVec3f &);
-	void makeMtxTRS(Mtx4 *, f32, f32, f32, f32, f32, f32, f32, f32, f32);
-	void makeMtxTRS(Mtx4 *, const TVec3f &, const TVec3f &, const TVec3f &);
-	void setMtxAxisXYZ(Mtx4 *, const TVec3f &, const TVec3f &, const TVec3f &);
-	void flattenMtx(Mtx4 *, Mtx4 *, const TVec3f &);
-	void flattenMtx(Mtx4 *, const TVec3f &);
-	void blendMtxRotate(Mtx4 *, Mtx4 *, f32, Mtx4 *);
-	void blendMtxRotateSlerp(Mtx4 *, Mtx4 *, f32, Mtx4 *);
-	void blendMtx(Mtx4 *, Mtx4 *, f32, Mtx4 *);
+	void makeMtxTRS(MtxPtr, f32, f32, f32, f32, f32, f32, f32, f32, f32);
+	void makeMtxTRS(MtxPtr, const TVec3f &, const TVec3f &, const TVec3f &);
+	void setMtxAxisXYZ(MtxPtr, const TVec3f &, const TVec3f &, const TVec3f &);
+	void flattenMtx(MtxPtr, MtxPtr, const TVec3f &);
+	void flattenMtx(MtxPtr, const TVec3f &);
+	void blendMtxRotate(MtxPtr, MtxPtr, f32, MtxPtr);
+	void blendMtxRotateSlerp(MtxPtr, MtxPtr, f32, MtxPtr);
+	void blendMtx(MtxPtr, MtxPtr, f32, MtxPtr);
 	void makeMtxWithoutScale(TPositionMtx *, const TPositionMtx &);
 
-	void makeRTFromMtxPtr(TVec3f *, TVec3f *, Mtx4 *, bool);
+	void makeRTFromMtxPtr(TVec3f *, TVec3f *, MtxPtr, bool);
 	void makeMtxSideUp(TPositionMtx *, const TVec3f &, const TVec3f &);
 	void makeMtxSideUpPos(TPositionMtx *, const TVec3f &, const TVec3f &, const TVec3f &);
 	void makeMtxSideFront(TPositionMtx *, const TVec3f &, const TVec3f &);
@@ -58,22 +58,23 @@ namespace MR
 	void turnMtxToLocalDirDegree(TPositionMtx *, const TVec3f &, const TVec3f &, f32);
 	void makeMtxMoment(TPositionMtx *, const TVec3f &);
 
-	void setMtxTrans(Mtx4 *, f32, f32, f32);
-	void addTransMtx(Mtx4 *, const TVec3f &);
-	void addTransMtxLocal(Mtx4 *, const TVec3f &);
-	void addTransMtxLocalX(Mtx4 *, f32);
-	void addTransMtxLocalY(Mtx4 *, f32);
-	void addTransMtxLocalZ(Mtx4 *, f32);
-	void extractMtxXDir(Mtx4 *, TVec3f *);
-	void extractMtxYDir(Mtx4 *, TVec3f *);
-	void extractMtxZDir(Mtx4 *, TVec3f *);
-	void extractMtxXYZDir(Mtx4 *, TVec3f *, TVec3f *, TVec3f *);
-	void extractMtxTrans(Mtx4 *, TVec3f *);
+	void setMtxTrans(MtxPtr, const TVec3f &);
+	void setMtxTrans(MtxPtr, f32, f32, f32);
+	void addTransMtx(MtxPtr, const TVec3f &);
+	void addTransMtxLocal(MtxPtr, const TVec3f &);
+	void addTransMtxLocalX(MtxPtr, f32);
+	void addTransMtxLocalY(MtxPtr, f32);
+	void addTransMtxLocalZ(MtxPtr, f32);
+	void extractMtxXDir(MtxPtr, TVec3f *);
+	void extractMtxYDir(MtxPtr, TVec3f *);
+	void extractMtxZDir(MtxPtr, TVec3f *);
+	void extractMtxXYZDir(MtxPtr, TVec3f *, TVec3f *, TVec3f *);
+	void extractMtxTrans(MtxPtr, TVec3f *);
 
-	bool isSameMtx(Mtx4 *, Mtx4 *);
-	bool isSameMtxRot(Mtx4 *, Mtx4 *);
-	bool isRotAxisY(Mtx4 *, Mtx4 *);
-	void calcMtxRotAxis(TVec3f *, Mtx4 *, Mtx4 *);
+	bool isSameMtx(MtxPtr, MtxPtr);
+	bool isSameMtxRot(MtxPtr, MtxPtr);
+	bool isRotAxisY(MtxPtr, MtxPtr);
+	void calcMtxRotAxis(TVec3f *, MtxPtr, MtxPtr);
 	Mtx* tmpMtxTrans(const TVec3f &);
 	Mtx* tmpMtxScale(f32, f32, f32);
 	Mtx* tmpMtxRotXRad(f32);
@@ -82,6 +83,6 @@ namespace MR
 	Mtx* tmpMtxRotXDeg(f32);
 	Mtx* tmpMtxRotYDeg(f32);
 	Mtx* tmpMtxRotZDeg(f32);
-	void orderRotateMtx(s16, const TVec3f &, Mtx4 *);
+	void orderRotateMtx(s16, const TVec3f &, MtxPtr);
 	void rotAxisVecRad(const TVec3f &, const TVec3f &, TVec3f *, f32);
 };

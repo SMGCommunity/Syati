@@ -1,7 +1,6 @@
 #pragma once
 
-#include "Actor/NameObj/NameObj.h"
-#include "os.h"
+#include "NameObj/NameObj.h"
 
 class MyFirstActor : public NameObj
 {

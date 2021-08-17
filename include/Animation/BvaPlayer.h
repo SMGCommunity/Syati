@@ -1,5 +1,6 @@
 #pragma once
 
+#include "syati.h"
 #include "Animation/AnmPlayer.h"
 #include "J3DGraphBase/J3DModel.h"
 

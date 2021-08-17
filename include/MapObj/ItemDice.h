@@ -1,4 +1,4 @@
-#include "Actor/LiveActor/LiveActor.h"
+#include "LiveActor/LiveActor.h"
 
 class DiceBase : public LiveActor
 {
@@ -11,8 +11,8 @@ public:
 	virtual void control();
 	virtual void calcAndSetBaseMtx();
 	virtual void attackSensor(HitSensor *, HitSensor *);
-	virtual u32 receiveMsgPush(HitSensor *, HitSensor *);
-	virtual u32 receiveMsgPlayerAttack(u32, HitSensor *, HitSensor *);
+	virtual bool receiveMsgPush(HitSensor *, HitSensor *);
+	virtual bool receiveMsgPlayerAttack(u32, HitSensor *, HitSensor *);
 
 	virtual const char* getModelName() const = 0;
 	virtual void initItems() = 0;
@@ -45,4 +45,16 @@ public:
 	bool _109;
 	s32 _10C;
 	s32 _110;
+};
+
+class SwitchDice : public DiceBase {
+public:
+	inline SwitchDice(const char* pName) : DiceBase(pName) {}
+
+	virtual const char* getModelName() const;
+	virtual void initItems();
+	virtual void setAnimFrame();
+	virtual void setResultFrame(u32);
+	virtual bool makeResult(u32);
+	virtual bool isGoodResult(u32) const;
 };

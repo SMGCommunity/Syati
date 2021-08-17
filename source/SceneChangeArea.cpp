@@ -1,9 +1,7 @@
-#include "Actor/AreaObj/AreaObj.h"
+#include "AreaObj/AreaObj.h"
 #include "Util/PlayerUtil.h"
 #include "Util/ScreenUtil.h"
 #include "Util/StageUtil.h"
-#include "kamek.h"
-#include "os.h"
 
 const char* pStages[2] = { "IslandFleetGalaxy", "RedBlueExGalaxy" };
 
@@ -34,4 +32,12 @@ kmWritePointer(0x8067054C, SceneChangeAreaControl);
 
 #ifdef JAP
 kmWritePointer(0x8066A62C, SceneChangeAreaControl);
+#endif
+
+#ifdef TWN
+kmWritePointer(0x8066B0EC, SceneChangeAreaControl);
+#endif
+
+#ifdef KOR
+kmWritePointer(0x80669C8C, SceneChangeAreaControl);
 #endif

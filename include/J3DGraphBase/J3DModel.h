@@ -2,7 +2,7 @@
 
 #include "J3DGraphBase/J3DModelData.h"
 #include "J3DGraphBase/J3DMtxBuffer.h"
-#include "kamek.h"
+#include "syati.h"
 
 class J3DModel
 {

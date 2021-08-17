@@ -1,6 +1,6 @@
 #pragma once
 
-#include "kamek.h"
+#include "syati.h"
 #include "JGeometry/TMatrix34.h"
 
 class J3DModel;
@@ -8,7 +8,6 @@ class J3DModelData;
 class J3DJoint;
 class LiveActor;
 
-// Complete
 namespace MR
 {
     J3DJoint* getJoint(J3DModel *, const char *);
@@ -17,7 +16,7 @@ namespace MR
     JGeometry::TMatrix34<f32>* getJointMtx(J3DModel *, const char *);
     JGeometry::TMatrix34<f32>* getJointMtx(const LiveActor *, const char *);
     JGeometry::TMatrix34<f32>* getJointMtx(const LiveActor *, s32);
-    void func_8002D5C0(TVec3f *, TVec3f *, const LiveActor *, const char *);
+
     s16 getJointIndex(const LiveActor *, const char *);
     const char* getJointName(const LiveActor *, s32);
     s16 getJointNum(const LiveActor *);

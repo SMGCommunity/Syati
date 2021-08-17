@@ -1,4 +1,4 @@
-#include "kamek.h"
+#include "syati.h"
 
 typedef void (*Func)(void);
 
@@ -13,4 +13,8 @@ void doCtors()
     }
 }
 
-kmBranch(0x804B66E8, doCtors);
+#if defined(TWN) || defined(KOR)
+    kmBranch(0x804B6758, doCtors);
+#else
+    kmBranch(0x804B66E8, doCtors);
+#endif
