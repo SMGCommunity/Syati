@@ -2,7 +2,6 @@
 
 #include "MapObj/MapObjActor.h"
 #include "MapObj/MapObjActorInitInfo.h"
-#include "JGeometry/TVec3.h"
 
 class RailMoveObj : public MapObjActor
 {

@@ -1,9 +1,6 @@
 #pragma once
 
 #include "LiveActor/LiveActor.h"
-#include "JGeometry/TMatrix34.h"
-#include "JGeometry/TQuat4.h"
-#include "JGeometry/TVec3.h"
 #include "MapObj/SpinDriverPathDrawer.h"
 
 #define SUPER_SPIN_DRIVER_YELLOW 0

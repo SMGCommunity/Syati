@@ -1,8 +1,7 @@
 #pragma once
 
-#include "syati.h"
+#include "JSystem.h"
 #include "Animation/AnmPlayer.h"
-#include "J3DGraphBase/J3DModel.h"
 #include "System/Resource/ResourceHolder.h"
 
 class BpkPlayer : public MaterialAnmPlayerBase

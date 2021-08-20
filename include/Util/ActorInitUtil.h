@@ -1,7 +1,6 @@
 #pragma once
 
-#include "JMap/JMapInfoIter.h"
-#include "syati.h"
+#include "JSystem.h"
 
 class LiveActor;
 class JUTTexture;

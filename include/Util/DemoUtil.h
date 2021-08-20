@@ -1,8 +1,6 @@
 #pragma once
 
-#include "JMap/JMapInfoIter.h"
 #include "Util/Functor.h"
-#include "syati.h"
 
 class LayoutActor;
 class LiveActor;

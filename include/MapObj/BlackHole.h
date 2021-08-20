@@ -35,3 +35,10 @@ public:
     Mtx _DC;
     s32 _10C;
 };
+
+namespace NrvBlackHole
+{
+    NERVE(BlackHoleWait);
+    NERVE(BlackHoleDemo);
+    NERVE(BlackHoleDisappear);
+};

@@ -1,9 +1,6 @@
 #pragma once
 
-#include "JGeometry/TQuat4.h"
-#include "JGeometry/TVec2.h"
-#include "JGeometry/TVec3.h"
-#include "syati.h"
+#include "JSystem.h"
 
 struct _GXColor;
 

@@ -11,5 +11,5 @@ public:
     virtual bool update();
     virtual void control();
 
-    u8 mIsDead; // _8
+    bool mIsDead; // _8
 };

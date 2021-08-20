@@ -1,8 +1,6 @@
 #pragma once
 
-#include "syati.h"
 #include "NameObj/NameObj.h"
-#include "JGeometry/TVec3.h"
 
 class CoinRotater : public NameObj
 {

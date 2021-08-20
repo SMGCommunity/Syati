@@ -1,7 +1,6 @@
 #pragma once
 
-#include "syati.h"
-#include "JGeometry/TMatrix34.h"
+#include "JSystem.h"
 
 class J3DModel;
 class J3DModelData;

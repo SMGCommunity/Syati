@@ -5,5 +5,5 @@
 class NameObjFinder
 {
 public:
-	static NameObj* find(const char *);
+	static NameObj* find(const char *pName);
 };

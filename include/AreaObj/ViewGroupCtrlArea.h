@@ -5,7 +5,7 @@
 class ViewGroupCtrlArea : public AreaObj
 {
 public:
-	ViewGroupCtrlArea(const char *);
+	ViewGroupCtrlArea(const char *pName);
 
 	virtual ~ViewGroupCtrlArea();
 };

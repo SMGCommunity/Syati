@@ -1,7 +1,6 @@
 #pragma once
 
-#include "syati.h"
-#include "JMap/JMapInfoIter.h"
+#include "JSystem.h"
 
 class NameObj;
 

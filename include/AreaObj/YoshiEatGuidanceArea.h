@@ -5,9 +5,9 @@
 class YoshiEatGuidanceArea : public AreaObj
 {
 public:
-	YoshiEatGuidanceArea(const char *);
+	YoshiEatGuidanceArea(const char *pName);
 
 	virtual ~YoshiEatGuidanceArea();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 	virtual void movement();
 };

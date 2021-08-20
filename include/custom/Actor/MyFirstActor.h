@@ -6,7 +6,7 @@ class MyFirstActor : public NameObj
 {
 public:
 	// actor constructor
-	MyFirstActor(const char *pActorName) : NameObj(pActorName)
+	MyFirstActor(const char *pName) : NameObj(pName)
 	{
 		
 	}

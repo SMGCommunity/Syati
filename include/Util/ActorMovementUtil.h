@@ -1,9 +1,6 @@
 #pragma once
 
-#include "JGeometry/TPosition3.h"
-#include "JGeometry/TQuat4.h"
-#include "JGeometry/TVec3.h"
-#include "syati.h"
+#include "JSystem.h"
 
 class HitSensor;
 class LiveActor;

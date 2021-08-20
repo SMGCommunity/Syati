@@ -58,53 +58,53 @@ typedef unsigned long size_t;
 int fclose(FILE * stream);
 int fflush(FILE * stream);
 
-int fprintf(FILE * stream, const char * format, ...);
-int snprintf(char * s, size_t n, const char * format, ...);
-int sprintf(char * str, const char * format, ...);
-int sscanf(const char * s, const char * format, ...);
-int vprintf(const char * format, va_list arg);
-int vsnprintf(char * s, size_t n, const char * format, va_list arg);
-int vsprintf(char * s, const char * format, va_list arg);
+int fprintf(FILE *stream, const char *format, ...);
+int snprintf(char *s, size_t n, const char *format, ...);
+int sprintf(char *str, const char *format, ...);
+int sscanf(const char *s, const char *format, ...);
+int vprintf(const char *format, va_list arg);
+int vsnprintf(char *s, size_t n, const char *format, va_list arg);
+int vsprintf(char *s, const char *format, va_list arg);
 
 long int ftell(FILE * stream);
 
 /*
 * stdlib.h
 */
-int atoi(const char * str);
-unsigned long int strtoul(const char* str, char** endptr, int base);
+int atoi(const char *str);
+unsigned long int strtoul(const char *str, char **endptr, int base);
 
-void free(void * ptr);
+void free(void *ptr);
 
 void abort();
 void exit();
 
 int abs(int n);
 
-int mbtowc(wchar_t * pwc, const char * pmb, size_t max);
+int mbtowc(wchar_t *pwc, const char *pmb, size_t max);
 
-size_t mbstowcs(wchar_t * dest, const char * src, size_t max);
-size_t wcstombs(char * dest, const wchar_t * src, size_t max);
+size_t mbstowcs(wchar_t *dest, const char *src, size_t max);
+size_t wcstombs(char *dest, const wchar_t *src, size_t max);
 
 /*
 * string.h
 */
-void* memcpy(void * destination, const void * source, size_t num);
-void* memmove(void * destination, const void * source, size_t num);
-char* strcpy(char * destination, const char * source);
-char* strncpy(char * destination, const char * source, size_t num);
+void* memcpy(void *destination, const void *source, size_t num);
+void* memmove(void *destination, const void *source, size_t num);
+char* strcpy(char *destination, const char *source);
+char* strncpy(char *destination, const char *source, size_t num);
 
-char* strcat(char * destination, const char * source);
+char* strcat(char *destination, const char *source);
 
-int memcmp(const void * ptr1, const void * ptr2, size_t num);
-int strcmp(const char * str1, const char * str2);
-int strncmp(const char * str1, const char * str2, size_t num);
-int strcasecmp(const char * str1, const char * str2); // not standard
+int memcmp(const void *ptr1, const void *ptr2, size_t num);
+int strcmp(const char *str1, const char *str2);
+int strncmp(const char *str1, const char *str2, size_t num);
+int strcasecmp(const char *str1, const char *str2); // not standard
 
-const void* memchr(const void * ptr, int value, size_t num);
-const char* strchr(const char * str, int character);
-const char* strrchr(const char * str, int character);
-const char* strstr(const char * str1, const char * str2);
+const void* memchr(const void *ptr, int value, size_t num);
+const char* strchr(const char *str, int character);
+const char* strrchr(const char *str, int character);
+const char* strstr(const char *str1, const char *str2);
 
 void* memset(void * ptr, int value, size_t num);
 size_t strlen(const char * str);
@@ -112,17 +112,17 @@ size_t strlen(const char * str);
 /*
 * wchar.h
 */
-int fwide(FILE* stream, int mode);
-int swprintf(wchar_t * ws, size_t len, const wchar_t * format, ...);
-int vswprintf(wchar_t * ws, size_t len, const wchar_t * format, va_list arg);
+int fwide(FILE *stream, int mode);
+int swprintf(wchar_t *ws, size_t len, const wchar_t *format, ...);
+int vswprintf(wchar_t *ws, size_t len, const wchar_t *format, va_list arg);
 
-const wchar_t* wcschr(const wchar_t * ws, wchar_t wc);
-int wcscmp(const wchar_t * wcs1, const wchar_t * wcs2);
-wchar_t* wcscpy(wchar_t * destination, const wchar_t * source);
-size_t wcslen(const wchar_t * wcs);
-wchar_t* wcsncpy(wchar_t * destination, const wchar_t * source, size_t num);
-const wchar_t* wmemchr(const wchar_t * ptr, wchar_t wc, size_t num);
-int wmemcmp(const wchar_t * ptr1, const wchar_t * ptr2, size_t num);
+const wchar_t* wcschr(const wchar_t *ws, wchar_t wc);
+int wcscmp(const wchar_t *wcs1, const wchar_t *wcs2);
+wchar_t* wcscpy(wchar_t *destination, const wchar_t *source);
+size_t wcslen(const wchar_t *wcs);
+wchar_t* wcsncpy(wchar_t *destination, const wchar_t *source, size_t num);
+const wchar_t* wmemchr(const wchar_t *ptr, wchar_t wc, size_t num);
+int wmemcmp(const wchar_t *ptr1, const wchar_t *ptr2, size_t num);
 
 #ifdef __cplusplus
 }

@@ -1,8 +1,5 @@
 #pragma once
 
-#include "syati.h"
-#include "JGeometry/TVec3.h"
-#include "JMap/JMapInfoIter.h"
 #include "Util/Functor.h"
 
 class NameObj;

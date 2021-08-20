@@ -1,7 +1,6 @@
 #pragma once
 
-#include "JGeometry/TVec3.h"
-#include "syati.h"
+#include "JSystem.h"
 
 class ParabolicPath
 {

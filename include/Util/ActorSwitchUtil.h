@@ -1,6 +1,5 @@
 #pragma once
 
-#include "JMap/JMapInfoIter.h"
 #include "Util/Functor.h"
 
 class LiveActor;

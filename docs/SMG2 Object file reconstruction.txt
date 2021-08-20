@@ -539,7 +539,7 @@ Enemy (0x8014FD90)
 	StinkBugParent
 	StinkBugSmall
 	StringSpider
-	?
+	SupportTicoStop
 	Takobo
 	TakoboInk
 	TakoboInkHolder
@@ -575,6 +575,7 @@ GameAudio (0x8021F080)
 	AudEffectDirector
 	AudTalkSoundData
 	AudTamakoroBgmCtrl
+	?
 Gravity (0x80222AD0)
 	BarrelGravity
 	ConeGravity
@@ -1179,6 +1180,7 @@ Ride (0x8042A960)
 	Pole
 	RollingRock
 	...
+	SledRopePopint
 	SphereAccelSensorController
 	SphereController
 	SpherePadController

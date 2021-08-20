@@ -1,18 +1,17 @@
 #pragma once
 
-#include "syati.h"
 #include "LiveActor/LiveActor.h"
 
 class ActorStateParamScale
 {
 public:
-	ActorStateParamScale(LiveActor * pHost);
+	ActorStateParamScale(LiveActor *pHost);
 
-	void init(const JMapInfoIter & rIter);
-	void init(const ActorStateParamScale * pOther);
+	void init(const JMapInfoIter &rIter);
+	void init(const ActorStateParamScale *pOther);
 	f32 getSpeed();
 	f32 getNerveStepRate();
-	bool isStep(s32);
+	bool isStep(s32 step);
 	bool isFirstStep();
 	bool isGreaterStep(s32 step);
 	bool isGreaterEqualStep(s32 step);
@@ -21,9 +20,9 @@ public:
 	void update();
 	void resetHostVelocity();
 	void calcHostVelocity();
-	void calcHostVelocity(const TVec3f & velocity);
-	void calcHostVelocity(const TVec3f & velocity, const TVec3f & gravity, f32 speed);
-	bool isNeedForReset(const Nerve * nerve, s32 step);
+	void calcHostVelocity(const TVec3f &rVelocity);
+	void calcHostVelocity(const TVec3f &rVelocity, const TVec3f &rGravity, f32 speed);
+	bool isNeedForReset(const Nerve *pNerve, s32 step);
 
 	bool mIsScale; // _0
 	bool mUpdateAnim; // _1

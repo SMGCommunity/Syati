@@ -1,5 +1,6 @@
-#include "syati.h"
-#include "JGeometry/TVec3.h"
+#pragma once
+
+#include "JSystem.h"
 
 class LiveActor;
 class RailRider;

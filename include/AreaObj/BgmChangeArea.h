@@ -5,10 +5,10 @@
 class BgmChangeArea : public AreaObj
 {
 public:
-	BgmChangeArea(const char *);
+	BgmChangeArea(const char *pName);
 
 	virtual ~BgmChangeArea();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 	virtual void movement();
 	virtual const char* getManagerName() const;
 

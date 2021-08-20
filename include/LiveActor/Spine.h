@@ -1,20 +1,18 @@
 #pragma once
 
 #include "System/Nerve/Nerve.h"
-#include "syati.h"
 
 class ActorStateKeeper;
 
 class Spine
 {
 public:
-    Spine(void *, const Nerve *, s32);
+    Spine(void *pExecutor, const Nerve *pNerve, s32 stateKeeperSize);
 
     void update();
-    void setNerve(const Nerve *);
+    void setNerve(const Nerve *pNextNerve);
     const Nerve* getCurrentNerve() const;
     void changeNerve();
-    void initStateKeeper(s32);
 
     void* mExecutor; // _0
     const Nerve* mCurState; // _4

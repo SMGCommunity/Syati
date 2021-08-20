@@ -1,8 +1,7 @@
 #pragma once
 
-#include "syati.h"
+#include "JSystem.h"
 #include "Util/JMapIdInfo.h"
-#include "JMap/JMapInfoIter.h"
 
 class SwitchIdInfo;
 

@@ -5,7 +5,7 @@
 class SunLightArea : public AreaObj
 {
 public:
-	SunLightArea(const char *);
+	SunLightArea(const char *pName);
 
 	virtual ~SunLightArea();
 	virtual const char* getManagerName() const;

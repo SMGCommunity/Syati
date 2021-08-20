@@ -1,8 +1,7 @@
 #pragma once
 
 #include "Map/Graph/RailGraphIter.h"
-#include "Map/Graph/RailGraphNodeSelector.h"
-#include "JMap/JMapInfoIter.h"
+#include "Map/Graph/RailGraphNodeSelecter.h"
 
 // complete
 namespace MR

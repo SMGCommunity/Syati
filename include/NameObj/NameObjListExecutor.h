@@ -1,6 +1,5 @@
 #pragma once
 
-#include "syati.h"
 #include "NameObj/NameObj.h"
 #include "Util/Functor.h"
 

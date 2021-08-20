@@ -1,7 +1,6 @@
 #pragma once
 
-#include "JGeometry/TPosition3.h"
-#include "JGeometry/TVec3.h"
+#include "JSystem.h"
 
 class HitSensor;
 class Triangle;

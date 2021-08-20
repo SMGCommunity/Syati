@@ -5,8 +5,8 @@
 class ShadowColorArea : public AreaObj
 {
 public:
-	ShadowColorArea(const char *);
+	ShadowColorArea(const char *pName);
 
 	virtual ~ShadowColorArea();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 };

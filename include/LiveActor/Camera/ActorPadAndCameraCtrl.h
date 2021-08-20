@@ -1,8 +1,9 @@
 #pragma once
 
-#include "syati.h"
+#include "JSystem.h"
 #include "LiveActor/Model/ModelManager.h"
-#include "JGeometry/TVec3.h"
+
+// So far I was not able to locate this in SMG2
 
 class ActorPadAndCameraCtrl
 {

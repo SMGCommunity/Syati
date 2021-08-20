@@ -5,8 +5,8 @@
 class SoundEmitterCubeWorldMapSync : public SoundEmitterCube
 {
 public:
-	SoundEmitterCubeWorldMapSync(const char *);
+	SoundEmitterCubeWorldMapSync(const char *pName);
 
 	virtual ~SoundEmitterCubeWorldMapSync();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 };

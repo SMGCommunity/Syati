@@ -5,15 +5,15 @@
 class NameObjHolder
 {
 public:
-    NameObjHolder(s32);
+    NameObjHolder(int size);
 
-    void add(NameObj *);
+    void add(NameObj *pActor);
     void suspendAllObj();
     void resumeAllObj();
     void syncWithFlags();
     void callMethodAllObj();
     void clearArray();
-    NameObj* find(const char *);
+    NameObj* find(const char *pName);
 
     NameObj** mObjs; // _0
     s32 _4;

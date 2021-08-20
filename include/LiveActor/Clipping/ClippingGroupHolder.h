@@ -1,6 +1,5 @@
 #pragma once
 
-#include "syati.h"
 #include "LiveActor/Clipping/ClippingActorInfo.h"
 #include "NameObj/NameObj.h"
 

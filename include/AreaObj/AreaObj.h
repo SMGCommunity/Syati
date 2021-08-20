@@ -1,20 +1,19 @@
 #pragma once
 
-#include "syati.h"
+#include "NameObj.h"
 #include "AreaObj/AreaForm.h"
-#include "NameObj/NameObj.h"
 #include "Map/Switch/StageSwitch.h"
 #include "Util/AssignableArray.h"
 
 class AreaObj : public NameObj
 {
 public:
-    AreaObj(const char *);
-    AreaObj(int, const char *);
+    AreaObj(const char *pName);
+    AreaObj(int shapeNo, const char *pName);
 
     virtual ~AreaObj();
-    virtual void init(const JMapInfoIter &);
-    virtual bool isInVolume(const TVec3f &) const;
+    virtual void init(const JMapInfoIter &rIter);
+    virtual bool isInVolume(const TVec3f &rTranslation) const;
     virtual s32 getAreaPriority() const;
     virtual const char* getManagerName() const;
 
@@ -23,7 +22,7 @@ public:
     void awake();
     void sleep();
 
-    void initForm(const JMapInfoIter &);
+    void initForm(const JMapInfoIter &rIter);
     bool isNotHemisphere() const;
 
     void onSwitchA();
@@ -33,7 +32,7 @@ public:
     bool isValidSwitchA() const;
     bool isValidSwitchB() const;
 
-    void setFollowMtx(const TPositionMtx *);
+    void setFollowMtx(const TPositionMtx *pFollowMtx);
     Mtx* getFollowMtx() const;
 
     AreaForm* mAreaForm; // _14
@@ -55,12 +54,12 @@ public:
 class AreaObjMgr : public NameObj
 {
 public:
-    AreaObjMgr(s32, const char *);
+    AreaObjMgr(s32 size, const char *pName);
 
     virtual ~AreaObjMgr();
     
-    void entry(AreaObj *);
-    bool find_in(const TVec3f &) const;
+    void entry(AreaObj *pArea);
+    bool find_in(const TVec3f &rTranslation) const;
     void requestMovementOnAll();
 
     MR::AssignableArray<AreaObj*> mAreas; // 14

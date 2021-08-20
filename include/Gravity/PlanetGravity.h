@@ -1,6 +1,5 @@
 #pragma once
 
-#include "JGeometry/TPosition3.h"
 #include "NameObj/NameObj.h"
 
 // Gravity vector calculation flags

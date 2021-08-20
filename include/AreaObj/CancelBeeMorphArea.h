@@ -5,9 +5,9 @@
 class CancelBeeMorphArea : public AreaObj
 {
 public:
-	CancelBeeMorphArea(const char *);
+	CancelBeeMorphArea(const char *pName);
 
 	virtual ~CancelBeeMorphArea();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 	virtual void movement();
 };

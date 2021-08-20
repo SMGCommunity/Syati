@@ -1,7 +1,6 @@
 #pragma once
 
-#include "syati.h"
-#include "Actor/Sensor/HitSensor.h"
+#include "LiveActor/Sensor/HitSensor.h"
 
 class SensorGroup
 {

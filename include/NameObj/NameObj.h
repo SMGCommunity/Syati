@@ -1,7 +1,6 @@
 #pragma once
 
-#include "syati.h"
-#include "JMap/JMapInfoIter.h"
+#include "JSystem.h"
 #include "Util/JMapLinkInfo.h"
 
 #define NAMEOBJ_FLAG_MOVEMENT 1
@@ -11,10 +10,10 @@
 class NameObj
 {
 public:
-    NameObj(const char *pActorName);
+    NameObj(const char *pName);
 
     virtual ~NameObj();
-    virtual void init(const JMapInfoIter &);
+    virtual void init(const JMapInfoIter &rIter);
     virtual void initAfterPlacement();
     virtual void movement();
     virtual void draw() const;
@@ -24,8 +23,8 @@ public:
     virtual void unk2();
 
     void initWithoutIter();
-    void setName(const char *);
-    void setLinkedInfo(const JMapInfoIter &);
+    void setName(const char *pName);
+    void setLinkedInfo(const JMapInfoIter &rIter);
 
     void executeMovement();
     void requestSuspend();
@@ -41,6 +40,6 @@ public:
 class NameObjFunction
 {
 public:
-    static void requestMovementOn(NameObj *);
-    static void requestMovementOff(NameObj *);
+    static void requestMovementOn(NameObj *pActor);
+    static void requestMovementOff(NameObj *pActor);
 };

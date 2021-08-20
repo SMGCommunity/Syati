@@ -1,7 +1,6 @@
 #pragma once
 
-#include "JGeometry/TPosition3.h"
-#include "JMap/JMapInfoIter.h"
+#include "JSystem.h"
 #include "Util/AssignableArray.h"
 #include "Util/JMapLinkInfo.h"
 

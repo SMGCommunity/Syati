@@ -1,3 +1,5 @@
+#pragma once
+
 #include "LiveActor/LiveActor.h"
 
 class DiceBase : public LiveActor

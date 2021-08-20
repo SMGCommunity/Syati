@@ -1,8 +1,6 @@
 #pragma once
 
-#include "NameObj/NameObj.h"
 #include "Gravity/GravityInfo.h"
-#include "Gravity/PlanetGravity.h"
 
 class PlanetGravityManager : public NameObj
 {

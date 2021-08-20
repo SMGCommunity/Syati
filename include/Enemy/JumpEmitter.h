@@ -1,16 +1,15 @@
 #pragma once
 
-#include "syati.h"
-#include "LiveActor/LiveActor.h"
 #include "LiveActor/PartsModel.h"
+#include "LiveActor/State/ActorStateParamScale.h"
 
 class JumpEmitter : public LiveActor
 {
 public:
-	JumpEmitter(const char *);
+	JumpEmitter(const char *pName);
 
 	virtual ~JumpEmitter();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 	virtual void movement();
 	virtual void kill();
 	virtual void control();
@@ -20,19 +19,17 @@ public:
 	void endEventCamera();
 	void updateRotate();
 
-	Mtx* mJointMtx;
-	Mtx _94;
+	Mtx* mJointMtx; // _90
+	Mtx mHeadMtx; // _94
 	PartsModel* mHead;
-	s32 _C8; // not in ctor
-	f32 _CC;
-	f32 _D0;
-	f32 _D4;
-	u8 _D8;
-	s32 _DC;
-	s32 _E0;
+	ActorStateParamScale* mParamScale; // _C8
+	TVec3f _CC;
+	bool mUpdateEventCamera; // _D8
+	u32* mActorCameraInfo; // _DC
+	u32* mMultiEventCamera; // _E0
 };
 
 namespace MR
 {
-	bool enableGroupAttack(LiveActor *, f32, f32);
+	bool enableGroupAttack(LiveActor *pActor, f32, f32);
 };

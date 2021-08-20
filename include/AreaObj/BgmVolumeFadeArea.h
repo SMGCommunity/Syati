@@ -5,10 +5,10 @@
 class BgmVolumeFadeArea : public AreaObj
 {
 public:
-	BgmVolumeFadeArea(const char *);
+	BgmVolumeFadeArea(const char *pName);
 
 	virtual ~BgmVolumeFadeArea();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 	virtual void movement();
 	virtual const char* getManagerName() const;
 

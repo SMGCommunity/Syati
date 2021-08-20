@@ -6,10 +6,10 @@
 class WarpCube : public AreaObj
 {
 public:
-	inline WarpCube(const char * pName) : AreaObj(pName), mLinkInfo(NULL) {}
+	inline WarpCube(const char *pName) : AreaObj(pName), mLinkInfo(NULL) {}
 
 	virtual ~WarpCube();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 	virtual void movement();
 	virtual void draw();
 
@@ -22,7 +22,7 @@ public:
 class WarpCubeMgr : public AreaObjMgr
 {
 public:
-	inline WarpCubeMgr(s32, const char * pName) : AreaObj(pName), mEventCameraArea(NULL) {}
+	inline WarpCubeMgr(s32 size, const char *pName) : AreaObjMgr(size, pName), mEventCameraArea(NULL) {}
 
 	virtual ~WarpCubeMgr();
 

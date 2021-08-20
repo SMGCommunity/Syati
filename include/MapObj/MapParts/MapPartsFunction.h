@@ -1,6 +1,5 @@
 #pragma once
 
-#include "syati.h"
 #include "LiveActor/LiveActor.h"
 
 class MapPartsFunction : public NameObj

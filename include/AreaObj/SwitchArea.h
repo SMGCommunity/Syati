@@ -5,10 +5,10 @@
 class SwitchArea : public AreaObj
 {
 public:
-	SwitchArea(const char *);
+	SwitchArea(const char *pName);
 
 	virtual ~SwitchArea();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 	virtual void movement();
 	virtual const char* getManagerName() const;
 

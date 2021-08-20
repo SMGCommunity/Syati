@@ -1,8 +1,6 @@
 #pragma once
 
-#include "syati.h"
-#include "JGeometry/TVec3.h"
-#include "JMap/JMapInfoIter.h"
+#include "JSystem.h"
 
 class LiveActor;
 class Triangle;

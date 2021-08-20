@@ -1,11 +1,9 @@
 #pragma once
 
-#include "syati.h"
 #include "LiveActor/Clipping/ClippingActorHolder.h"
 #include "LiveActor/Clipping/ClippingGroupHolder.h"
 #include "LiveActor/Clipping/ClippingJudge.h"
 #include "LiveActor/LOD/LodCtrl.h"
-#include "NameObj/NameObj.h"
 
 class ClippingDirector : public NameObj
 {

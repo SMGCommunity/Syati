@@ -1,6 +1,6 @@
 #pragma once
 
-#include "JMap/JMapInfo.h"
+#include "JSystem.h"
 
 class RailGraphEdge
 {
