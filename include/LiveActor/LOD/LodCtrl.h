@@ -1,7 +1,6 @@
 #pragma once
 
 #include "LiveActor/Model/ModelObj.h"
-#include "JMap/JMapInfoIter.h"
 
 class ActorLightCtrl;
 

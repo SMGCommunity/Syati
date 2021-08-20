@@ -1,8 +1,6 @@
 #pragma once
 
-#include "JGeometry/TVec2.h"
-#include "JGeometry/TVec3.h"
-#include "syati.h"
+#include "JSystem.h"
 
 namespace MR
 {
@@ -79,7 +77,7 @@ namespace MR
 	s32 isOperatingWPad(s32);
 };
 
-class WPadRumble
+class WPadRumble;
 
 namespace WPadFunction {
 	WPadRumble* getWPadRumble(s32);

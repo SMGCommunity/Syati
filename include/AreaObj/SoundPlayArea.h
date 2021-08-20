@@ -5,10 +5,10 @@
 class SoundPlayArea : public AreaObj
 {
 public:
-	SoundPlayArea(const char *);
+	SoundPlayArea(const char *pName);
 
 	virtual ~SoundPlayArea();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 	virtual void movement();
 
 	void setupSoundPos();

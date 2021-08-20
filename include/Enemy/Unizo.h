@@ -1,8 +1,5 @@
 #pragma once
 
-#include "syati.h"
-#include "JGeometry/TQuat4.h"
-#include "LiveActor/LiveActor.h"
 #include "LiveActor/Model/ModelObj.h"
 
 #define UNIZO 0
@@ -12,10 +9,10 @@
 class Unizo : public LiveActor
 {
 public:
-	Unizo(const char *);
+	Unizo(const char *pActor);
 
 	virtual ~Unizo();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 	virtual void initAfterPlacement();
 	virtual void appear();
 	virtual void makeActorAppeared();
@@ -25,12 +22,12 @@ public:
 	virtual void startClipped();
 	virtual void control();
 	virtual void calcAndSetBaseMtx();
-	virtual void attackSensor(HitSensor *, HitSensor *);
-	virtual bool receiveMsgPlayerAttack(u32, HitSensor *, HitSensor *);
-	virtual bool receiveMsgEnemyAttack(u32, HitSensor *, HitSensor *);
-	virtual bool receiveOtherMsg(u32, HitSensor *, HitSensor *);
+	virtual void attackSensor(HitSensor *pSender, HitSensor *pReceiver);
+	virtual bool receiveMsgPlayerAttack(u32 msg, HitSensor *pSender, HitSensor *pReceiver);
+	virtual bool receiveMsgEnemyAttack(u32 msg, HitSensor *pSender, HitSensor *pReceiver);
+	virtual bool receiveOtherMsg(u32 msg, HitSensor *pSender, HitSensor *pReceiver);
 
-	void initType(const JMapInfoIter &);
+	void initType(const JMapInfoIter &rIter);
 	void exeWait();
 	void exeJump();
 	void exeChase();
@@ -46,10 +43,10 @@ public:
 	void updateSurfaceEffect();
 	void deleteEffect();
 	void doJump();
-	void doAttack(HitSensor *);
+	void doAttack(HitSensor *pReceiver);
 	void doJumpDown();
-	void doFireDown(const TVec3f &);
-	void doBreak(u32, HitSensor *);
+	void doFireDown(u32 msg, const TVec3f & rDir);
+	void doBreak(u32 msg, HitSensor *pSender);
 	void doSpin();
 	bool isBreakGround();
 	bool isBreakNow() const;
@@ -76,4 +73,18 @@ public:
 	f32 _12C;
 	f32 _130;
 	u32 _134;
+};
+
+namespace NrvUnizo
+{
+	NERVE(UnizoNrvWait);
+	NERVE(UnizoNrvJump);
+	NERVE(UnizoNrvChase);
+	NERVE(UnizoNrvAttack);
+	NERVE(UnizoNrvCollidePlayer);
+	NERVE(UnizoNrvCollideEnemy);
+	NERVE(UnizoNrvBreak);
+	NERVE(UnizoNrvFireDown);
+	NERVE(UnizoNrvJumpDown);
+	NERVE(UnizoNrvPointing);
 };

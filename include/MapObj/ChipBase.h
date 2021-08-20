@@ -1,7 +1,6 @@
 #pragma once
 
 #include "LiveActor/LiveActor.h"
-#include "JGeometry/TVec3.h"
 
 #define CHIP_BLUE 0
 #define CHIP_YELLOW 1

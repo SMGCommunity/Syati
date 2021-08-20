@@ -5,8 +5,8 @@
 class SpinGuidanceArea : public AreaObj
 {
 public:
-	SpinGuidanceArea(const char *);
+	SpinGuidanceArea(const char *pName);
 
 	virtual ~SpinGuidanceArea();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 };

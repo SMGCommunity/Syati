@@ -5,9 +5,9 @@
 class CumulativeTimerSwitchArea : public AreaObj
 {
 public:
-	CumulativeTimerSwitchArea(const char *);
+	CumulativeTimerSwitchArea(const char *pName);
 
 	virtual ~CumulativeTimerSwitchArea();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 	virtual void movement();
 };

@@ -54,6 +54,10 @@ typedef f32 (*MtxPtr)[4];
 typedef f32 ROMtx[4][3];
 typedef f32 (*ROMtxPtr)[3];
 
+// 3x3 matrix & pointer
+typedef f32 Mtx33[3][3];
+typedef f32(*Mtx33Ptr)[3];
+
 // 4x4 matrix & pointer
 typedef f32 Mtx44[4][4];
 typedef f32 (*Mtx44Ptr)[4];

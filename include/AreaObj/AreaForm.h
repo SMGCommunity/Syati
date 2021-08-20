@@ -1,9 +1,6 @@
 #pragma once
 
-#include "syati.h"
-#include "JGeometry/TPosition3.h"
-#include "JGeometry/TVec3.h"
-#include "JMap/JMapInfoIter.h"
+#include "JSystem.h"
 
 enum AreaFormType
 {
@@ -17,8 +14,8 @@ enum AreaFormType
 class AreaForm
 {
 public:
-	virtual void init(const JMapInfoIter &) = 0;
-	virtual bool isInVolume(const TVec3f &) const = 0;
+	virtual void init(const JMapInfoIter &rIter) = 0;
+	virtual bool isInVolume(const TVec3f &rTranslation) const = 0;
 
 	Mtx* mFollowMtx; // _4
 };
@@ -26,8 +23,8 @@ public:
 class AreaFormCube : public AreaForm
 {
 public:
-	virtual void init(const JMapInfoIter &);
-	virtual bool isInVolume(const TVec3f &) const;
+	virtual void init(const JMapInfoIter &rIter);
+	virtual bool isInVolume(const TVec3f &rTranslation) const;
 
 	void calcWorldPos(TVec3f *) const;
 	void calcWorldRotate(TVec3f *) const;
@@ -51,8 +48,8 @@ public:
 class AreaFormSphere : public AreaForm
 {
 public:
-	virtual void init(const JMapInfoIter &);
-	virtual bool isInVolume(const TVec3f &) const;
+	virtual void init(const JMapInfoIter &rIter);
+	virtual bool isInVolume(const TVec3f &rTranslation) const;
 
 	void calcUpVec(const TVec3f *);
 
@@ -67,8 +64,8 @@ public:
 class AreaFormBowl : public AreaForm
 {
 public:
-	virtual void init(const JMapInfoIter &);
-	virtual bool isInVolume(const TVec3f &) const;
+	virtual void init(const JMapInfoIter &rIter);
+	virtual bool isInVolume(const TVec3f &rTranslation) const;
 
 	void calcUpVec(const TVec3f &);
 	
@@ -80,8 +77,8 @@ public:
 class AreaFormCylinder : public AreaForm
 {
 public:
-	virtual void init(const JMapInfoIter &);
-	virtual bool isInVolume(const TVec3f &) const;
+	virtual void init(const JMapInfoIter &rIter);
+	virtual bool isInVolume(const TVec3f &rTranslation) const;
 	
 	void calcPos(const TVec3f *);
 	void calcCenterPos(const TVec3f *);
@@ -96,5 +93,5 @@ public:
 
 namespace MR
 {
-	AreaForm* createAreaForm(int);
+	AreaForm* createAreaForm(int shapeNo);
 };

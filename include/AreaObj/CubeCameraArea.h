@@ -5,19 +5,19 @@
 class CubeCameraArea : public AreaObj
 {
 public:
-	CubeCameraArea(const char *);
+	CubeCameraArea(const char *pName);
 
 	virtual ~CubeCameraArea();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 	virtual void movement();
-	virtual bool isInVolume(const TVec3f &) const;
+	virtual bool isInVolume(const TVec3f &mTranslation) const;
 	virtual s32 getAreaPriority() const;
 	virtual const char* getManagerName() const;
 	virtual s32 getCategoryArg() const;
 
 	bool isValidCameeraID() const;
 	u16 getCameraID() const;
-	void setCurrentCategory(s32);
+	void setCurrentCategory(s32 category);
 
 	u16 mCameraId;
 	s32 mZoneId;
@@ -26,7 +26,7 @@ public:
 class CubeCameraMgr : public AreaObjMgr
 {
 public:
-	CubeCameraMgr(s32, const char *);
+	CubeCameraMgr(s32 size, const char *pName);
 
 	virtual ~CubeCameraMgr();
 

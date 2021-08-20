@@ -1,7 +1,6 @@
 #pragma once
 
-#include "JGeometry/TVec3.h"
-#include "JMap/JMapInfoIter.h"
+#include "JSystem.h"
 
 class GravityInfo;
 class LiveActor;

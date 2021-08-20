@@ -1,5 +1,7 @@
+#pragma once
+
 #include "LiveActor/LiveActorGroup.h"
-#include "Enemy/WalkerStateBindStarPointer.h"
+#include "Enemy/StateController/WalkerStateBindStarPointer.h"
 
 class GliderShooterBullet : public LiveActor
 {
@@ -7,13 +9,13 @@ public:
 	GliderShooterBullet();
 
 	virtual ~GliderShooterBullet();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 	virtual void appear();
 	virtual void kill();
 	virtual void control();
 	virtual void calcAndSetBaseMtx();
-	virtual void attackSensor(HitSensor *, HitSensor *);
-	virtual bool receiveMsgEnemyAttack(u32, HitSensor *, HitSensor *);
+	virtual void attackSensor(HitSensor *pSender, HitSensor *pReceiver);
+	virtual bool receiveMsgEnemyAttack(u32 msg, HitSensor *pSender, HitSensor *pReceiver);
 
 	void exeFly();
 	void exeFreeze();
@@ -30,5 +32,11 @@ public:
 	GliderShooterBulletHolder();
 
 	virtual ~GliderShooterBulletHolder();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
+};
+
+namespace NrvGliderShooterBullet
+{
+	NERVE(GliderShooterBulletNrvFly);
+	NERVE(GliderShooterBulletNrvFreeze);
 };

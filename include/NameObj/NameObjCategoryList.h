@@ -16,9 +16,9 @@ namespace
     class NameObjRealDelegator : public NameObjDelegator
     {
     public:
-        inline NameObjRealDelegator(T funcPtr)
+        inline NameObjRealDelegator(T pFunc)
         {
-            mFunctionPtr = funcPtr;
+            mFunctionPtr = pFunc;
         }
 
         void operator()(NameObj *pObj)

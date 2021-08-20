@@ -19,3 +19,9 @@ public:
 	Mtx _28;
 	s32 mPostureType; // _58
 };
+
+namespace NrvMapPartsRailPosture
+{
+	NERVE(HostTypeDoNothing);
+	NERVE(HostTypeMove);
+};

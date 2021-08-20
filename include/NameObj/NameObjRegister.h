@@ -7,8 +7,8 @@ class NameObjRegister
 public:
 	NameObjRegister();
 
-	void setCurrentHolder(NameObjHolder *);
-	void add(NameObj *);
+	void setCurrentHolder(NameObjHolder *pHolder);
+	void add(NameObj *pActor);
 
 	NameObjHolder* mHolder; // _0
 };

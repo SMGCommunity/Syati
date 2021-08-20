@@ -1,7 +1,6 @@
 #pragma once
 
-#include "syati.h"
-#include "JGeometry/TPosition3.h"
+#include "JSystem.h"
 
 class BckCtrlData;
 class CameraTargetArg;

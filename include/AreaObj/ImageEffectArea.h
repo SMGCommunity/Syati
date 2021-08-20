@@ -11,10 +11,10 @@
 class ImageEffectArea : public AreaObj
 {
 public:
-	ImageEffectArea(int screenType, const char * pName);
+	ImageEffectArea(int screenType, const char *pName);
 
 	virtual ~ImageEffectArea();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 	virtual bool isSyncWithPlayer() const;
 
 	s32 mEffectType; // _48
@@ -23,7 +23,7 @@ public:
 class ImageEffectAreaMgr : public AreaObjMgr
 {
 public:
-	ImageEffectAreaMgr(s32, const char *);
+	ImageEffectAreaMgr(s32 size, const char *pName);
 
 	virtual ~ImageEffectAreaMgr();
 };

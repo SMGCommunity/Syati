@@ -14,28 +14,28 @@ struct PostCreationEntry
     void (*mPostCreationFunc)(const JMapInfoIter &); // _4
 };
 
-template<typename T>
-NameObj* createNameObj(const char*);
-
-template<typename T>
-NameObj* createBaseOriginCube(const char*);
-
-template<typename T>
-NameObj* createCenterOriginCube(const char*);
-
-template<typename T>
-NameObj* createSphere(const char*);
-
-template<typename T>
-NameObj* createBaseOriginCylinder(const char*);
-
 class NameObjFactory
 {
 public:
-    static void* getCreator(const char *);
-    static void callPostCreation(const char *, const JMapInfoIter &);
-    static NameObj* initChildObj(const JMapInfoIter &, int);
+    static void* getCreator(const char *pName);
+    static void callPostCreation(const char *pName, const JMapInfoIter &rIter);
+    static NameObj* initChildObj(const JMapInfoIter &rIter, int index);
 
     static CreateActorEntry cCreateTable[1003];
     static PostCreationEntry cPostCreationTable[27];
+
+    template<typename T>
+    static NameObj* createNameObj(const char *pName);
+
+    template<typename T>
+    static NameObj* createBaseOriginCube(const char *pName);
+
+    template<typename T>
+    static NameObj* createCenterOriginCube(const char *pName);
+
+    template<typename T>
+    static NameObj* createSphere(const char *pName);
+
+    template<typename T>
+    static NameObj* createBaseOriginCylinder(const char *pName);
 };

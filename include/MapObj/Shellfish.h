@@ -1,8 +1,7 @@
 #pragma once
 
 #include "LiveActor/LiveActor.h"
-#include "Enemy/AnimScaleController.h"
-#include "Enemy/WalkerStateBindStarPointer.h"
+#include "Enemy/StateController/WalkerStateBindStarPointer.h"
 
 class Shellfish : public LiveActor
 {

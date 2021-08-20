@@ -1,6 +1,6 @@
 #pragma once
 
-#include "JGeometry/TPosition3.h"
+#include "JSystem.h"
 
 class J3DJoint;
 class J3DModel;

@@ -1,5 +1,6 @@
 #pragma once
-#include "JMap/JMapInfoIter.h"
+
+#include "JSystem.h"
 
 class ActorCameraInfo
 {

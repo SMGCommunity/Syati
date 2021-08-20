@@ -85,3 +85,10 @@ namespace MapObjActorUtil
 	void killBloomModel(const MapObjActor *);
 	void appearBloomModel(const MapObjActor *);
 };
+
+namespace NrvMapObjActor
+{
+	NERVE(HostTypeWait);
+	NERVE(HostTypeMove);
+	NERVE(HostTypeDone);
+};

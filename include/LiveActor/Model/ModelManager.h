@@ -1,13 +1,12 @@
 #pragma once
 
-#include "syati.h"
+#include "JSystem.h"
 #include "Animation/BpkPlayer.h"
 #include "Animation/BrkPlayer.h"
 #include "Animation/BtkPlayer.h"
 #include "Animation/BtpPlayer.h"
 #include "Animation/BvaPlayer.h"
 #include "LiveActor/Model/DisplayListMaker.h"
-#include "J3DGraphBase/J3DModel.h"
 #include "System/Resource/ResourceHolder.h"
 
 class ModelManager

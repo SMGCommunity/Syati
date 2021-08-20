@@ -1,6 +1,6 @@
 #pragma once
 
-#include "JKernel/JKRHeap.h"
+#include "JSystem.h"
 
 namespace MR
 {
@@ -8,7 +8,7 @@ namespace MR
 	{
 	public:
 		virtual void operator()() = 0;
-		virtual FunctorBase* clone(JKRHeap*) const = 0;
+		virtual FunctorBase* clone(JKRHeap *pHeap) const = 0;
 	};
 
 	template<typename P, typename M>
@@ -22,9 +22,9 @@ namespace MR
 			(mObjPtr->*mFuncPtr)();
 		}
 
-		virtual FunctorV0M<P, M>* clone(JKRHeap* heap) const
+		virtual FunctorV0M<P, M>* clone(JKRHeap *pheap) const
 		{
-			FunctorV0M<P, M>* functor = new(heap, 0) FunctorV0M<P, M>();
+			FunctorV0M<P, M>* functor = new(pheap, 0) FunctorV0M<P, M>();
 			functor->mObjPtr = mObjPtr;
 			functor->mFuncPtr = mFuncPtr;
 			return functor;

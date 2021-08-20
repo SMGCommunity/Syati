@@ -1,12 +1,14 @@
+#pragma once
+
 #include "AreaObj/ImageEffectArea.h"
 
 class BloomArea : public ImageEffectArea
 {
 public:
-	BloomArea(const char *);
+	BloomArea(const char *pName);
 
 	virtual ~BloomArea();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 	virtual const char* getManagerName() const;
 
 	s8 _4C;

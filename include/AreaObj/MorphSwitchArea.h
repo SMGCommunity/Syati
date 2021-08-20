@@ -5,10 +5,10 @@
 class MorphSwitchArea : public AreaObj
 {
 public:
-	MorphSwitchArea(const char *);
+	MorphSwitchArea(const char *pName);
 
 	virtual ~MorphSwitchArea();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 	virtual void movement();
 	
 	bool checkCondition() const;

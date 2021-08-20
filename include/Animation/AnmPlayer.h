@@ -1,9 +1,7 @@
 #pragma once
 
-#include "syati.h"
+#include "JSystem.h"
 #include "System/Resource/ResourceInfo.h"
-#include "J3DGraphBase/J3DAnimation.h"
-#include "J3DGraphBase/J3DModelData.h"
 
 class AnmPlayerBase
 {

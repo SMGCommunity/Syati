@@ -1,6 +1,6 @@
 #pragma once
 
-#include "J3DGraphBase/J3DModel.h"
+#include "JSystem.h"
 #include "System/Resource/ResourceHolder.h"
 
 class DisplayListMaker

@@ -10,11 +10,10 @@
 #include "LiveActor/Sensor/HitSensor.h"
 #include "LiveActor/Sensor/HitSensorKeeper.h"
 #include "LiveActor/Shadow/ShadowController.h"
-#include "LiveActor/Sound/AudAnmSoundObject.h"
-#include "LiveActor/StarPointer/StarPointerTarget.h"
+#include "AudioLib/AudAnmSoundObject.h"
+#include "Screen/StarPointerTarget.h"
 #include "LiveActor/Binder.h"
 #include "Map/Collision/CollisionParts.h"
-#include "JGeometry/TVec3.h"
 #include "LiveActor/Model/ModelManager.h"
 #include "Map/Switch/StageSwitch.h"
 
@@ -41,6 +40,7 @@ class LiveActor : public NameObj
 public:
     LiveActor(const char *);
 
+    virtual ~LiveActor();
     virtual void init(JMapInfoIter const &);
     virtual void movement();
     virtual void calcAnim();

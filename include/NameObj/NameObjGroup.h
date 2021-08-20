@@ -1,19 +1,18 @@
 #pragma once
 
-#include "syati.h"
 #include "NameObj/NameObj.h"
 
 class NameObjGroup : public NameObj
 {
 public:
-	NameObjGroup(const char *, int);	
+    NameObjGroup(const char *pName, int size);	
 
-	virtual ~NameObjGroup();
+    virtual ~NameObjGroup();
 
-    void registerObj(NameObj *);
+    void registerObj(NameObj *pActor);
 
     void pauseOffAll() const;
-    void initObjArray(s32);
+    void initObjArray(s32 size);
 
     s32 mMaxObjs; // _14
     s32 mNumObjs; // _18

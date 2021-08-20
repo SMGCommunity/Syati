@@ -5,10 +5,10 @@
 
 class LightArea : public AreaObj
 {
-	LightArea(const char *);
+	LightArea(const char *pName);
 
 	virtual ~LightArea();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 	virtual const char* getManagerName();
 
 	bool _48;
@@ -16,7 +16,7 @@ class LightArea : public AreaObj
 
 class LightAreaHolder : public AreaObjMgr
 {
-	LightAreaHolder(s32, const char *);
+	LightAreaHolder(s32 size, const char *pName);
 
 	virtual ~LightAreaHolder();
 	virtual void initAfterPlacement();

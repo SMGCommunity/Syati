@@ -5,8 +5,8 @@
 class ClipDrawArea : public AreaObj
 {
 public:
-	ClipDrawArea(const char *);
+	ClipDrawArea(const char *pName);
 
 	virtual ~ClipDrawArea();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 };

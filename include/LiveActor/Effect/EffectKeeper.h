@@ -1,6 +1,5 @@
 #pragma once
 
-#include "syati.h"
 #include "LiveActor/LiveActor.h"
 #include "LiveActor/Binder.h"
 #include "System/Resource/ResourceHolder.h"

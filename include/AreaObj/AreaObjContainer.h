@@ -1,6 +1,5 @@
 #pragma once
 
-#include "syati.h"
 #include "AreaObj/AreaObj.h"
 #include "Util/AssignableArray.h"
 
@@ -13,18 +12,18 @@ struct ManagerEntry
 
 class AreaObjContainer : public NameObj
 {
-	AreaObjContainer(const char *);
+	AreaObjContainer(const char *pName);
 
 	virtual ~AreaObjContainer(); 
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 	
 	// there is a jump to getManager before this
-	AreaObjMgr* getManager(const char *) const;
-	AreaObj* getAreaObj(const char *) const;
-	bool isExistAreaObj(const char *) const;
+	AreaObjMgr* getManager(const char *pName) const;
+	AreaObj* getAreaObj(const char *pName) const;
+	bool isExistAreaObj(const char *pName) const;
 
     template<typename T>
-    NameObj* createManager(s32, const char *);
+    NameObj* createManager(s32 size, const char *pName);
 
 	static ManagerEntry cCreateTable[95];
 

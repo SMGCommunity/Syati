@@ -5,7 +5,7 @@
 class MovementOnOffGroupHolder : public NameObj
 {
 public:
-	MovementOnOffGroupHolder(const char *);
+	MovementOnOffGroupHolder(const char *pName);
 
 	virtual ~MovementOnOffGroupHolder();
 

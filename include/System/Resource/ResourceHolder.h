@@ -1,6 +1,6 @@
 #pragma once
 
-#include "JKernel/JKRArchive.h"
+#include "JSystem.h"
 #include "System/Resource/ResourceInfo.h"
 
 class ResourceHolder

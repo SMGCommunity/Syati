@@ -1,7 +1,6 @@
 #pragma once
 
-#include "syati.h"
-#include "JGeometry/TVec3.h"
+#include "JSystem.h"
 
 class Binder
 {

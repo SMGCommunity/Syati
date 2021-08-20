@@ -7,7 +7,7 @@
 class Scene : public NerveExecutor
 {
 public:
-	Scene(const char *);
+	Scene(const char *pName);
 
 	virtual ~Scene();
 	virtual void init();

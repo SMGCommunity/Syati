@@ -1,11 +1,7 @@
 #pragma once
 
 #include "Map/Collision/CollisionScaleType.h"
-#include "JGeometry/TMatrix34.h"
-#include "JGeometry/TPosition3.h"
-#include "JGeometry/TQuat4.h"
-#include "JGeometry/TVec3.h"
-#include "JMap/JMapInfoIter.h"
+#include "JSystem.h"
 
 class ActorLightCtrl;
 class CollisionParts;

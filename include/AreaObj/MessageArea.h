@@ -5,10 +5,10 @@
 class MessageArea : public AreaObj
 {
 public:
-	MessageArea(const char *);
+	MessageArea(const char *pName);
 
 	virtual ~MessageArea();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 
 	s32 mZoneId;
 };

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "syati.h"
 #include "LiveActor/LiveActor.h"
 
 #define MARIO_ALL_MODEL_MARIO 0

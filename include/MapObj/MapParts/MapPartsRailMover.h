@@ -1,6 +1,6 @@
 #pragma once
 
-#include "MapObj/MapParts/MapPartsFunction.h"
+#include "MapObj/MapParts/MapPartsRailPointPassChecker.h"
 
 class MapPartsRailMover : public MapPartsFunction
 {
@@ -44,10 +44,10 @@ public:
 	void exeStopAtEnd();
 	void exeStopAtEndWithPlayerOn();
 
-	s32 _28;
-	s32 _2C;
-	s32 _30;
-	s32 _34;
+	MapPartsRailPointPassChecker* mPointPassChecker; // _28
+	s32 mMoveConditionType; // _2C
+	s32 mMoveStopType; // _30
+	s32 mSignMotionType; // _34
 	TVec3f mTranslation;
 	TVec3f _44;
 	f32 _50;
@@ -61,4 +61,20 @@ public:
 	u8 _70;
 	s32 _74;
 	u8 _78;
+};
+
+namespace NrvMapPartsRailMover
+{
+	NERVE(HostTypeWait);
+	NERVE(HostTypeMove);
+	NERVE(HostTypeMoveStart);
+	NERVE(HostTypeStopAtPointBeforeRotate);
+	NERVE(HostTypeStopAtPointAfterRotate);
+	NERVE(HostTypeStopAtEndBeforeRotate);
+	NERVE(HostTypeStopAtEndAfterRotate);
+	NERVE(HostTypeStopAtEndWithPlayerOn);
+	NERVE(HostTypeWaitForRestartByPlayerOn);
+	NERVE(HostTypeRotateAtPoint);
+	NERVE(HostTypeRotateAtEndPoint);
+	NERVE(HostTypeVanish);
 };

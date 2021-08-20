@@ -1,12 +1,14 @@
+#pragma once
+
 #include "AreaObj/ImageEffectArea.h"
 
 class PostFogArea : public ImageEffectArea
 {
 public:
-	PostFogArea(const char *);
+	PostFogArea(const char *pName);
 
 	virtual ~PostFogArea();
-	virtual void init(const JMapInfoIter &);
+	virtual void init(const JMapInfoIter &rIter);
 	virtual const char* getManagerName() const;
 
 	s32 getMinRange() const;
