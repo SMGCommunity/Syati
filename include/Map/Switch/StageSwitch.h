@@ -3,6 +3,7 @@
 #include "JSystem.h"
 #include "Util/JMapIdInfo.h"
 
+class NameObj;
 class SwitchIdInfo;
 
 class StageSwitchCtrl

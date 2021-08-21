@@ -1,6 +1,6 @@
 #pragma once
 
-#include "LiveActor/Model/ModelObj.h"
+#include "LiveActor/ModelObj.h"
 #include "LiveActor/State/ActorStateParamScale.h"
 
 class RingBeamShadowDrawer;

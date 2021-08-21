@@ -59,3 +59,9 @@ public:
 	f32 _EC;
 	f32 _F0;
 };
+
+class CollisionPartsFilterBase
+{
+public:
+	virtual bool isInvalidParts(const CollisionParts *) const = 0;
+};

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "JSystem.h"
+
 class MapObjActorInitInfo
 {
 public:

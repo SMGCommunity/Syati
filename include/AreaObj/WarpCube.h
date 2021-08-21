@@ -1,7 +1,7 @@
 #pragma once
 
 #include "AreaObj/AreaObj.h"
-#include "LiveActor/Camera/ActorCameraInfo.h"
+#include "LiveActor/Control/ActorCameraInfo.h"
 
 class WarpCube : public AreaObj
 {

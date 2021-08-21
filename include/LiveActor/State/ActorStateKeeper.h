@@ -1,6 +1,5 @@
 #pragma once
 
-#include "System/Nerve.h"
 #include "LiveActor/State/ActorStateBase.h"
 
 class ActorStateKeeper

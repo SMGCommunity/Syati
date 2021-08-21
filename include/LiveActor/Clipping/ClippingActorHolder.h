@@ -1,8 +1,8 @@
 #pragma once
 
 #include "LiveActor/Clipping/ClippingActorInfo.h"
-#include "LiveActor/LiveActor.h"
 
+class LiveActor;
 class LodCtrl;
 
 class ClippingActorHolder : public NameObj

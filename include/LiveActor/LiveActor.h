@@ -1,21 +1,21 @@
 #pragma once
 
-#include "LiveActor/Animation/ActorAnimKeeper.h"
-#include "LiveActor/Camera/ActorPadAndCameraCtrl.h"
-#include "LiveActor/Effect/EffectKeeper.h"
-#include "LiveActor/Light/ActorLightCtrl.h"
-#include "NameObj/NameObj.h"
-#include "LiveActor/Spine.h"
-#include "LiveActor/Rail/RailRider.h"
+#include "AudioLib/AudAnmSoundObject.h"
+#include "LiveActor/Control/ActorAnimKeeper.h"
+#include "LiveActor/Control/ActorLightCtrl.h"
+#include "LiveActor/Control/ActorPadAndCameraCtrl.h"
+#include "LiveActor/Control/Binder.h"
+#include "LiveActor/Control/EffectKeeper.h"
+#include "LiveActor/Control/ModelManager.h"
+#include "LiveActor/RailRider.h"
 #include "LiveActor/Sensor/HitSensor.h"
 #include "LiveActor/Sensor/HitSensorKeeper.h"
 #include "LiveActor/Shadow/ShadowController.h"
-#include "AudioLib/AudAnmSoundObject.h"
-#include "Screen/StarPointerTarget.h"
-#include "LiveActor/Binder.h"
+#include "LiveActor/Spine.h"
 #include "Map/Collision/CollisionParts.h"
-#include "LiveActor/Model/ModelManager.h"
 #include "Map/Switch/StageSwitch.h"
+#include "NameObj/NameObj.h"
+#include "Screen/StarPointerTarget.h"
 
 class ResourceHolder;
 

@@ -2,9 +2,6 @@
 
 #include "JSystem.h"
 
-class LiveActor;
-class SensorGroup;
-
 // Actor sensor types
 #define ATYPE_PLAYER_START 0x00
 #define ATYPE_PLAYER 0x01
@@ -280,6 +277,9 @@ class SensorGroup;
 #define ACTMES_LAUNCHER_BREAKABLE 0xF4
 #define ACTMES_PLANT_GROUP_EMIT_ITEM 0xF5
 
+class LiveActor;
+class SensorGroup;
+
 class HitSensor
 {
 public:
@@ -304,4 +304,23 @@ public:
     bool _20;
     bool _21;
     LiveActor* mParentActor; // _24
+};
+
+class HitSensorInfo
+{
+public:
+    HitSensorInfo(const char *, HitSensor *, const TVec3f *pFollowPos, MtxPtr pFollowMtx, const TVec3f &, bool);
+
+    void setFollowPos(const TVec3f *pFollowPos);
+    void setFollowMtx(MtxPtr pFollowMtx);
+    void update();
+    void doObjCol();
+
+    const char* mName; // _0
+    s32 mHashCode; // _4
+    HitSensor* mSensor; // _8
+    TVec3f mOffset; // _C
+    TVec3f* mFollowPos; // _18
+    MtxPtr mFollowMtx; // _1C
+    bool _20;
 };

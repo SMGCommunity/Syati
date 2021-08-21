@@ -33,7 +33,7 @@ public:
 
 	void sendMsgToGroupMember(u32, HitSensor *, const char *);
 
-	JMapIdInfo* mGroupId; // _20;
+	JMapIdInfo* mGroupId; // _20
 	u32 mMessage; // _24
 	HitSensor* mSender; // _28
 	const char* mReceiverName; // _2C
@@ -47,12 +47,12 @@ public:
 	virtual ~LiveActorGroupArray();
 	virtual void init(const JMapInfoIter &);
 
-	LiveActorGroup* tryCreateGroupForLiveActor(LiveActor *, const JMapInfoIter &);
-	LiveActorGroup* getLiveActorGroup(const LiveActor *) const;
+	MsgSharedGroup* tryCreateGroupForLiveActor(LiveActor *, const JMapInfoIter &);
+	MsgSharedGroup* getLiveActorGroup(const LiveActor *) const;
 	MsgSharedGroup* createGroup(const JMapInfoIter &, const char *, s32);
-	LiveActorGroup* findGroup(const JMapInfoIter &) const;
-	LiveActorGroup* findGroup(const LiveActor *) const;
+	MsgSharedGroup* findGroup(const JMapInfoIter &) const;
+	MsgSharedGroup* findGroup(const LiveActor *) const;
 
-	LiveActorGroup* mGroups[32]; // _14
+	MsgSharedGroup* mGroups[32]; // _14
 	s32 mNumGroups; // _94
 };

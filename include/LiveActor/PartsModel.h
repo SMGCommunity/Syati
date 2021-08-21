@@ -6,7 +6,7 @@
 class PartsModel : public LiveActor
 {
 public:
-    PartsModel(LiveActor *, const char *, const char *, Mtx, s32, bool);
+    PartsModel(LiveActor *pHost, const char *pName, const char *pModelName, MtxPtr pMtx, s32, bool);
 
     virtual ~PartsModel();
     virtual void init(const JMapInfoIter &);
