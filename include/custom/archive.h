@@ -11,16 +11,22 @@ namespace Syati
     JKRArchive* loadArchive(const char *pArchivePath)
     {
         bool isExist = MR::isFileExist(pArchivePath, false);
-        OSReport("exist: %d\n", isExist);
-        void* rawData = MR::loadToMainRAM(pArchivePath, 0, MR::getStationedHeapNapa(), 1);
-        OSReport("loaded into ram\n");
-        OSReport("raw data ptr: %p\n");
+       
+        if (isExist)
+        {
+            void* rawData = MR::loadToMainRAM(pArchivePath, 0, MR::getStationedHeapNapa(), 1);
+            OSReport("loaded into ram\n");
+            OSReport("raw data ptr: %p\n");
 
-        FileLoader* ldr = SingletonHolder<FileLoader>::sInstance;
-        JKRArchive* arch = ldr->createAndAddArchive(rawData, 0, pArchivePath);
-        OSReport("added archive\n");
+            FileLoader* ldr = SingletonHolder<FileLoader>::sInstance;
+            JKRArchive* arch = ldr->createAndAddArchive(rawData, 0, pArchivePath);
+            OSReport("added archive\n");
 
-        return arch;
+            return arch;
+        }
+        
+        OSReport("file %s not found!!\n", pArchivePath);
+        return 0;
     }
 
     void* loadResourceFromArchive(const char *pArchivePath, const char *pFile)
