@@ -46,7 +46,18 @@ compiler_options = [
     "-o"
 ]
 
+assembler_options = [
+    "-i .",
+    "-I-",
+    "-i include",
+    "-proc gekko",
+    "-c",
+    f"-D{region}",
+    "-o"
+]
+
 command = "CodeWarrior\mwcceppc.exe " + " ".join(compiler_options)
+asm_cmd = "CodeWarrior\mwasmeppc.exe "  + " ".join(assembler_options)
 
 # Clean the entire build folder first if it exists
 if os.path.exists("build"):
@@ -54,6 +65,7 @@ if os.path.exists("build"):
 
 # Fetch all source C++ files that need to be compiled
 tasks = list()
+asm_tasks = list()
 
 for root, dirs, files in os.walk("source"):
     for file in files:
@@ -64,6 +76,13 @@ for root, dirs, files in os.walk("source"):
             os.makedirs(os.path.dirname(build_path), exist_ok=True)
 
             tasks.append((source_path, build_path))
+        elif file.endswith(".s"):
+            source_path = os.path.join(root, file)
+            build_path = source_path.replace("source", "build").replace(".s", ".o")
+
+            os.makedirs(os.path.dirname(build_path), exist_ok=True)
+
+            asm_tasks.append((source_path, build_path))
 
 if len(tasks) < 1:
     err("No C++ files to compile!")
@@ -78,12 +97,21 @@ for task in tasks:
     if subprocess.call(f"{command} {build_path} {source_path}", shell=True) != 0:
         err("Compiler error.")
 
+for a_task in asm_tasks:
+    source_path, build_path = a_task
+
+    print(f"Assembling {source_path}...")
+
+    if subprocess.call(f"{asm_cmd} {build_path} {source_path}", shell=True) != 0:
+        err("Assembler error.")
+
 # Link all object files and create the CustomCode binary
 print("Linking...")
 
 object_files = " ".join([task[1] for task in tasks])
+asm_obj_files = " ".join([a_task[1] for a_task in asm_tasks])
 
-kamek_cmd = f"Kamek\Kamek.exe {object_files} -externals=symbols/{region}.txt -output-kamek=CustomCode_{region}.bin"
+kamek_cmd = f"Kamek\Kamek.exe {object_files} {asm_obj_files} -externals=symbols/{region}.txt -output-kamek=CustomCode_{region}.bin"
 
 if subprocess.call(kamek_cmd, shell=True) != 0:
     err("Linking failed.")
