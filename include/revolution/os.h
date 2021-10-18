@@ -8,6 +8,7 @@ extern "C" {
 #endif
 
 void OSReport(const char *, ...);
+void OSFatal(u32 *fg, u32 *bg, const char *str, ...);
 
 #ifdef __cplusplus
 }
