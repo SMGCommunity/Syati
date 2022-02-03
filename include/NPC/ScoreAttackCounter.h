@@ -5,6 +5,7 @@
 class LiveActor;
 
 class ScoreAttackFunction {
+public:
 	void score100Points(const LiveActor *pHost);
 	void score10PointsMultiply(const LiveActor *pHost, s32 factor);
 	void score10PointsMultiply(s32 factor);
