@@ -45,8 +45,6 @@ public:
 	TVec3f _FC;
 	bool _108;
 	bool _109;
-	s32 _10C;
-	s32 _110;
 };
 
 class SwitchDice : public DiceBase {

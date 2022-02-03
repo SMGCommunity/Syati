@@ -80,8 +80,8 @@ namespace MR
 	void calcLocalVec(TVec3f *, MtxPtr);
 	void normalize(TVec2f *);
 	void normalize(TVec3f *);
-	void normalize(const TVec2f &, TVec2f *);
-	void normalize(const TVec3f &, TVec3f *);
+	void normalize(TVec2f *, const TVec2f &);
+	void normalize(TVec3f *, const TVec3f &);
 	void normalizeOrZero(TVec2f *);
 	void normalizeOrZero(TVec3f *);
 	void normalizeOrZero(const TVec3f &, TVec3f *);

@@ -72,6 +72,7 @@ public:
 	// three more virtual functions
 
 	// todo: tons of functions to be documented
+	TVec3f* getGravityVec() const;
 	void setPlayerMode(u16, bool, bool);
 
 	u8 _90;

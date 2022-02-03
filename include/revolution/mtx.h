@@ -1,9 +1,7 @@
-#pragma once
-
-#include "revolution/types.h"
-
 #ifndef __REVOLUTION_MTX_H
 #define __REVOLUTION_MTX_H
+
+#include "revolution/types.h"
 
 #ifdef __cplusplus
 extern "C" {

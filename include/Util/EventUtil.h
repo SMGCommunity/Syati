@@ -13,8 +13,8 @@ namespace MR
 	bool isPlayerLuigi();
 	s32 getStarPieceNum();
 	void addStarPiece(int);
-	void incCoin(int);
-
+	void incCoin(int, LiveActor *);
+	void decCoin(int);
 	s32 getCoinNum();
 	void incPurpleCoin();
 	s32 getPurpleCoinNum();

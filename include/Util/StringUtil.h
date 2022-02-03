@@ -4,6 +4,7 @@
 
 namespace MR
 {
+    wchar_t* addPictureFontCode(wchar_t *, int);
     // more functions before this
     bool isEqualString(const char *, const char *);
     bool isEqualStringCase(const char *, const char *);
