@@ -1,21 +1,26 @@
 #pragma once
 
-namespace JGeometry
-{
+#include "revolution.h"
+
+namespace JGeometry {
 	template<typename T>
-	class TUtil
-	{
+	class TUtil {
 	public:
-		static T PI();
+	};
 
-		static T asin(T);
-		static T acos(T);
+	template<>
+	class TUtil<f32> {
+	public:
+		static f32 PI();
 
-		static T sqrt(T);
-		static T inv_sqrt(T);
+		static f32 asin(f32);
+		static f32 acos(f32);
 
-		static T clamp(T, T, T);
+		static f32 sqrt(f32);
+		static f32 inv_sqrt(f32);
+
+		static f32 clamp(f32, f32, f32);
 		
-		static bool epsilonEquals(T, T, T);
+		static bool epsilonEquals(f32, f32, f32);
 	};
 };

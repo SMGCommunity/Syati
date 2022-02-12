@@ -1,51 +1,54 @@
 #pragma once
 
-#include "syati.h"
+#include "revolution.h"
 
 class JSUPtrLink;
 
-class JSUPtrList
-{
+class JSUPtrList {
 public:
+    inline JSUPtrList() {
+        initiate();
+    }
+
     JSUPtrList(bool hasBeenInit);
     ~JSUPtrList();
 
     void initiate();
-    void setFirst(JSUPtrLink* link);
-    void append(JSUPtrLink* link);
-    void prepend(JSUPtrLink* link);
-    void remove(JSUPtrLink* link);
+    void setFirst(JSUPtrLink *pNode);
+    void append(JSUPtrLink *pNode);
+    void prepend(JSUPtrLink *pNode);
+    void insert(JSUPtrLink *, JSUPtrLink *);
+    void remove(JSUPtrLink *pNode);
 
-    JSUPtrLink* mFirst; // _0
-    JSUPtrLink* mNext; // _4
-    u32 mNumPtrs; // _8
+    JSUPtrLink* mHead; // _0
+    JSUPtrLink* mTail; // _4
+    u32 mNodeCount;    // _8
 };
 
-template<typename T>
-class JSUList : public JSUPtrList
-{
+class JSUPtrLink {
 public:
-    JSUList();
-    ~JSUList();
-};
-
-class JSUPtrLink
-{
-public:
-    JSUPtrLink(void *);
+    JSUPtrLink(void *pData);
     ~JSUPtrLink();
 
-    void* mPtr; // _0
+    void *mData;          // _0
     JSUPtrList* mPtrList; // _4
-    u32 _8;
-    JSUPtrLink* _C;
+    JSUPtrLink* mPrev;    // _8
+    JSUPtrLink* mNext;    // _C
 };
 
 template<typename T>
-class JSULink : public JSUPtrLink
-{
+class JSULink : public JSUPtrLink {
 public:
-    inline JSULink(void* ptr) : JSUPtrLink(ptr) { }
+    JSULink(void *pData) : JSUPtrLink(pData) { }
 
     ~JSULink();
+};
+
+template<typename T>
+class JSUList : public JSUPtrList {
+public:
+    JSUList() : JSUPtrList() { }
+    JSUList(bool hasBeenInit) : JSUPtrList(hasBeenInit) { }
+
+    ~JSUList();
 };

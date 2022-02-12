@@ -1,12 +1,9 @@
 #pragma once
 
-#include "syati.h"
+#include "revolution.h"
 
-namespace JUtility
-{
-    class TColor
-    {
-    public:
+namespace JUtility {
+    struct TColor {
         TColor(u8, u8, u8, u8);
         void operator=(const TColor &);
 

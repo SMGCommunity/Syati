@@ -1,5 +1,5 @@
 #pragma once
 
-#include "syati.h"
+#include "revolution.h"
 
 s32 JKRConvertAttrToCompressionType(s32);

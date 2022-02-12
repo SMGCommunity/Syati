@@ -1,7 +1,7 @@
 #pragma once
 
 #include "JSystem/JGeometry/TVec3.h"
-#include "syati.h"
+#include "revolution.h"
 
 class J3DTransformInfo
 {

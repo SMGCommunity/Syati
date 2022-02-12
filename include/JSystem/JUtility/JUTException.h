@@ -1,9 +1,8 @@
 #pragma once
 
-#include "syati.h"
+#include "revolution.h"
 
-class JUTException
-{
+class JUTException {
 public:
     static void panic_f(const char *, s32, const char *, ...);
 };

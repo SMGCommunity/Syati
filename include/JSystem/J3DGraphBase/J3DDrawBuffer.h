@@ -1,6 +1,6 @@
 #pragma once
 
-#include "syati.h"
+#include "revolution.h"
 
 class J3DDrawBuffer
 {

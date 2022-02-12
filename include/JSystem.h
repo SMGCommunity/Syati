@@ -4,7 +4,6 @@
 #include "JSystem/JGadget.h"
 #include "JSystem/JGeometry.h"
 #include "JSystem/JKernel.h"
-#include "JSystem/JMap.h"
 #include "JSystem/JMath.h"
 #include "JSystem/JSupport.h"
 #include "JSystem/JUtility.h"

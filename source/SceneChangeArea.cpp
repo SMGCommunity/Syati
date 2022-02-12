@@ -1,22 +1,18 @@
-#include "AreaObj/AreaObj.h"
-#include "Util/PlayerUtil.h"
-#include "Util/ScreenUtil.h"
-#include "Util/StageUtil.h"
+#include "syati.h"
 
-const char* pStages[2] = { "IslandFleetGalaxy", "RedBlueExGalaxy" };
+const char* pStages[2] = {
+    "IslandFleetGalaxy",
+    "RedBlueExGalaxy"
+};
 
-void SceneChangeAreaControl(AreaObj *pArea)
-{
-    TVec3f* pos = MR::getPlayerPos();
-
-    if (pArea->isInVolume(*pos))
-    {
+void SceneChangeAreaControl(AreaObj *pArea) {
+    if (pArea->isInVolume(*MR::getPlayerPos())) {
         MR::closeSystemWipeFadeWithCaptureScreen(pArea->mObjArg1 == -1 ? 0 : pArea->mObjArg1);
         
         if (pArea->mObjArg0 != -1)
-            MR::goToGalaxy(pStages[pArea->mObjArg0]);
+            GameSequenceFunction::changeToScenarioSelect(pStages[pArea->mObjArg0]);
         else
-            MR::goToGalaxy("IslandFleetGalaxy");
+            GameSequenceFunction::changeToScenarioSelect("IslandFleetGalaxy");
 
         pArea->mValidate = 0;
     }

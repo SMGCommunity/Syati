@@ -1,13 +1,12 @@
 #pragma once
 
-#include "NameObj/NameObjFactory.h"
+#include "Game/NameObj/NameObjFactory.h"
 #include "custom/Actor/MyFirstActor.h"
 
 // ensure you bump up this value when you add more actors!
 #define NUM_ACTORS 1
 
-namespace ExtendedActorFactory
-{
+namespace Syati {
     template<typename T>
     NameObj* createExtActor(const char *pName);
 

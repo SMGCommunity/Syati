@@ -29,20 +29,17 @@ typedef volatile f64 vf64;
 #define NULL 0
 
 // 32-bit floating point 3D vector
-typedef struct
-{
+typedef struct {
 	f32 x, y, z;
 } Vec;
 
 // Signed 16-bit integer 3D vector
-typedef struct
-{
+typedef struct {
 	s16 x, y, z;
 } S16Vec;
 
 // Quaternion & pointer
-typedef struct
-{
+typedef struct {
 	f32 x, y, z, w;
 } Quaternion;
 

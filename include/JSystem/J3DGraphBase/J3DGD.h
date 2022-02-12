@@ -1,6 +1,6 @@
 #pragma once
 
-#include "syati.h"
+#include "revolution.h"
 
 void J3DGDSetTexImgPtrRaw(GXTexMapID, u32);
 void J3DGDWriteCPCmd(u8, u32);

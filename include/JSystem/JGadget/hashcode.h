@@ -1,8 +1,7 @@
 #pragma once
 
-#include "syati.h"
+#include "revolution.h"
 
-namespace JGadget
-{
+namespace JGadget {
     u32 getHashCode(const char *pString);
 };
