@@ -18,4 +18,5 @@ public:
 	f32 _8;
 	f32 _C;
 	f32 _10;
+	bool mStopScene; // _14
 };

@@ -6,7 +6,7 @@
 namespace MR {
 	class FunctorBase {
 	public:
-		virtual void operator()() = 0;
+		virtual void operator()() const = 0;
 		virtual FunctorBase* clone(JKRHeap *pHeap) const = 0;
 	};
 

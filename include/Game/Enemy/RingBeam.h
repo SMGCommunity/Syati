@@ -39,6 +39,7 @@ public:
 	ModelObj* mShadowModel; // _AC
 	ActorStateParamScale* mParamScale; // _B0
 	TVec3f _B4;
+	TVec3f _C0;
 	TVec3f _CC;
 	TVec3f _D8;
 	f32 mColor; // _E4
@@ -46,7 +47,6 @@ public:
 	f32 _EC;
 };
 
-namespace NrvRingBeam
-{
+namespace NrvRingBeam {
 	NERVE(RingBeamNrvSpread);
 };

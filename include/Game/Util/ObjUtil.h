@@ -64,6 +64,7 @@ namespace MR {
 
     void connectToSceneLayoutMovementCalcAnim(NameObj *);
     void connectToSceneLayoutDecoration(NameObj *);
+    void connectToSceneLayoutFileSelect(NameObj *);
     void connectToSceneTalkLayout(NameObj *);
     void connectToSceneWipeLayout(NameObj *);
     void connectToSceneLayoutOnPause(NameObj *);
@@ -75,11 +76,15 @@ namespace MR {
     void connectToSceneNoShadowedMapObjStrongLight(LiveActor *);
     void connectToSceneNoSilhouettedMapObj(LiveActor *);
     void connectToSceneNoSilhouettedMapObjStrongLight(LiveActor *);
-
+    void connectToSceneNoSilhouettedMapObjStrongLightCalcAnim(LiveActor *);
+    void connectToSceneNoSilhouettedMapObjWeakLightCalcAnim(LiveActor *);
+    void connectToSceneSwitchingScreenEffect(LiveActor *);
     void connectToSceneSky(LiveActor *);
     void connectToSceneAir(LiveActor *);
     void connectToSceneSun(LiveActor *);
-
+    void connectToSceneWorldMapMiniObj(LiveActor *);
+    void connectToSceneWorldMapIcon(LiveActor *);
+    void connectToSceneSuperDreamer(LiveActor *);
     void requestMovementOn(NameObj *);
     void requestMovementOn(LiveActor *);
     void requestMovementOn(LayoutActor *);

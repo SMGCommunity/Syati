@@ -19,8 +19,8 @@ public:
 	void endEventCamera();
 	void updateRotate();
 
-	Mtx* mJointMtx; // _90
-	Mtx mHeadMtx; // _94
+	MtxPtr mJointMtx; // _90
+	TMtx34f mHeadMtx; // _94
 	PartsModel* mHead;
 	ActorStateParamScale* mParamScale; // _C8
 	TVec3f _CC;
