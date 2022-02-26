@@ -189,6 +189,9 @@ namespace MR {
 	bool isMsgPlayerUpperPunch(u32);
 	bool isMsgPlayerKick(u32);
 
+	bool isMsgThrow(u32 msg);
+	bool isMsgDamageOrRushDrop(u32 msg);
+
 	bool isMsgJetTurtleAttack(u32);
 	bool isMsgYoshiProjectile(u32);
 	bool isMsgYoshiEat(u32);
@@ -217,10 +220,11 @@ namespace MR {
 	bool isMsgItemShow(u32);
 	bool isMsgItemHide(u32);
 	
-	bool isMsgItemStartMove(u32);
-	bool isMsgItemEndMove(u32);
+	bool isMsgItemStartMove(u32 msg);
 
-	bool isMsgInhaleBlackHole(u32);
+	bool isMsgItemEndMove(u32 msg);
+
+	bool isMsgInhaleBlackHole(u32 msg);
 
 	bool isMsgEnemyAttack(u32);
 	bool isMsgEnemyAttackFire(u32);
@@ -246,7 +250,8 @@ namespace MR {
 	bool isMsgStarPieceAttack(u32);
 	bool isMsgStarPieceReflect(u32);
 	bool isMsgStarPieceGift(u32);
-
+	bool isMsgStarLightGrow(u32 msg);
+	bool isMsgStarLightShrink(u32 msg);
 	bool isMsgReflect(u32);
 	bool isMsgReflectV(u32);
 	bool isMsgGroupMoveStart(u32);
