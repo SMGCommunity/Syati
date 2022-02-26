@@ -72,13 +72,13 @@ namespace MR {
 	void invalidateHitSensor(HitSensor *);
 	void validateHitSensor(LiveActor *, const char *);
 	void invalidateHitSensor(LiveActor *, const char *);
-	void tryValidateHitSensor(LiveActor *, const char *);
-	void tryInvalidateHitSensor(LiveActor *, const char *);
-	void clearHitSensors(LiveActor *);
-	s32 getSensorNum(const LiveActor *);
-	HitSensor* getSensor(LiveActor *, int);
-	LiveActor* getSensorHost(const HitSensor *);
-	bool isSensor(const HitSensor *, const char *);
+	bool tryValidateHitSensor(LiveActor *, const char *);
+	bool tryInvalidateHitSensor(LiveActor *, const char *);
+	void clearHitSensors(LiveActor *pActor);
+	s32 getSensorNum(const LiveActor *pActor);
+	HitSensor* getSensor(LiveActor *pActor, int index);
+	LiveActor* getSensorHost(const HitSensor *pSensor);
+	bool isEqualSensor(const HitSensor *pOtherSensor, const LiveActor *pActor, const char *pSensorName);
 	bool isSensorPlayer(const HitSensor *);
 	bool isSensorYoshi(const HitSensor *);
 	bool isSensorBinder(const HitSensor *);
@@ -101,6 +101,7 @@ namespace MR {
 	bool tryGetItem(HitSensor *, HitSensor *);
 	TVec3f* getSensorPos(const HitSensor *);
 	TVec3f* getSensorPos(const LiveActor *, const char *);
+	// Two functions that are identical to the above two functions
 
 	void calcSensorDirection(TVec3f *, const HitSensor *, const HitSensor *);
 	void calcSensorDirectionNormalize(TVec3f *, const HitSensor *, const HitSensor *);
@@ -169,17 +170,20 @@ namespace MR {
 	bool sendMsgToEnemyAttackBlowOrTrample(HitSensor *, HitSensor *, f32);
 	bool sendMsgToEnemyAttackShockWave(HitSensor *, HitSensor *);
 	bool sendMsgToAllLiveActor(u32, LiveActor *);
-	bool sendMsgToGroupMember(u32, LiveActor *, HitSensor *, const char *);
+	bool sendMsgToGroupMember(u32 msg, LiveActor *pGroupActor, HitSensor *pSender, const char *pSensorName);
+	bool sendMsgGroupMoveStartToMember(LiveActor *pGroupActor, HitSensor *pSender, const char *pSensorName);
+	bool sendMsgGroupMoveStopToMember(LiveActor *pGroupActor, HitSensor *pSender, const char *pSensorName);
+	bool sendMsgGroupShowToMember(LiveActor *pGroupActor, HitSensor *pSender, const char *pSensorName);
+	bool sendMsgGroupHideToMember(LiveActor *pGroupActor, HitSensor *pSender, const char *pSensorName);
+	bool sendMsgExplosionToNearActor(HitSensor *pSender, f32 range);
+	bool isInSpinStormRange(u32 msg, HitSensor *, HitSensor *, f32 range);
+	void receiveItemShowMsg(u32 msg, HitSensor *, HitSensor *);
+	void receiveItemHideMsg(u32 msg, HitSensor *, HitSensor *);
+	void getGroundSensor(const LiveActor *pActor);
+	void getRoofSensor(const LiveActor *pActor);
+	void getWallSensor(const LiveActor *pActor);
 
-	bool sendMsgExplosionToNearActor(HitSensor *, f32);
-	bool isInSpinStormRange(u32, HitSensor *, HitSensor *, f32);
-	void receiveItemShowMsg(u32, HitSensor *, HitSensor *);
-	void receiveItemHideMsg(u32, HitSensor *, HitSensor *);
-	void getGroundSensor(const LiveActor *);
-	void getRoofSensor(const LiveActor *);
-	void getWallSensor(const LiveActor *);
-
-	bool isMsgPlayerHitAll(u32);
+	bool isMsgPlayerHitAll(u32 msg);
 
 	bool isMsgPlayerSpinAttack(u32);
 	bool isMsgPlayerSpinAttackOrSupportTico(u32);
