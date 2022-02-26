@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Game/LiveActor/ActionBgmCtrl.h"
+#include "Game/LiveActor/ActorActionKeeper.h"
 #include "Game/LiveActor/ActorCameraInfo.h"
 #include "Game/LiveActor/ActorLightCtrl.h"
 #include "Game/LiveActor/ActorPadAndCameraCtrl.h"

@@ -2,6 +2,7 @@
 
 #include "revolution.h"
 #include "Game/AudioLib/AudAnmSoundObject.h"
+#include "Game/LiveActor/ActorActionKeeper.h"
 #include "Game/LiveActor/ActorLightCtrl.h"
 #include "Game/LiveActor/ActorPadAndCameraCtrl.h"
 #include "Game/LiveActor/Binder.h"
@@ -62,7 +63,7 @@ public:
     virtual bool receiveMsgEnemyAttack(u32 msg, HitSensor *pSender, HitSensor *pReceiver);
     virtual bool receiveOtherMsg(u32 msg, HitSensor *pSender, HitSensor *pReceiver);
 
-    void initModelManagerWithAnm(const char *, const char *, bool, bool);
+    void initModelManagerWithAnm(const char *, const char *, const char *, bool);
     void initNerve(const Nerve *pNerve, s32);
     void initHitSensor(s32 sensorCount);
     void initBinder(f32, f32, u32);
@@ -73,7 +74,7 @@ public:
     void initActorCollisionParts(const char *, HitSensor *, ResourceHolder *, MtxPtr, bool, bool);
     void initStageSwitch(const JMapInfoIter &rIter);
     void initActorStarPointerTarget(f32, const TVec3f *, MtxPtr, TVec3f);
-	void initActorLightCtrl();
+    void initActorLightCtrl();
 
     void setNerve(const Nerve *pNerve);
     bool isNerve(const Nerve *pNerve) const;
@@ -89,7 +90,7 @@ public:
     TVec3f mScale;                           // _2C
     TVec3f mVelocity;                        // _38
     TVec3f mGravity;                         // _44
-    void* _50;
+    ActorActionKeeper* mActionKeeper;        // _50
     ModelManager* mModelManager;             // _54
     Spine* mSpine;                           // _58
     HitSensorKeeper* mSensorKeeper;          // _5C
