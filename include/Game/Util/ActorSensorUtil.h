@@ -153,6 +153,7 @@ namespace MR {
 	bool sendMsgEnemyAttackMaximumToDir(HitSensor *, HitSensor *, const TVec3f &);
 	bool sendMsgEnemyAttackToBindedSensor(LiveActor *, HitSensor *);
 	bool sendMsgEnemyAttackExplosionToBindedSensor(LiveActor *, HitSensor *);
+	bool sendMsgEnemyAttackRollToBindedSensor(LiveActor *, HitSensor *);
 
 	bool sendSimpleMsgToActor(u32, LiveActor *);
 	bool sendMsgToBindedSensor(u32, LiveActor *, HitSensor *);
@@ -227,7 +228,7 @@ namespace MR {
 	bool isMsgEnemyAttackElectric(u32);
 	bool isMsgExplosionAttack(u32);
 	bool isMsgToEnemyAttackBlow(u32);
-
+	bool isMsgToEnemyAttackRoll(u32);
 	bool isMsgToEnemyAttackTrample(u32);
 
 	bool isMsgToEnemyAttackShockWave(u32);
@@ -240,12 +241,14 @@ namespace MR {
 	bool isMsgBallDashWall(u32);
 	bool isMsgBallDashGround(u32);
 	bool isMsgStartPowerStarGet(u32);
-	bool isMsgTouchPlantItem(u32);
+
 	bool isMsgHitmarkEmit(u32);
 	bool isMsgStarPieceAttack(u32);
 	bool isMsgStarPieceReflect(u32);
 	bool isMsgStarPieceGift(u32);
 
+	bool isMsgReflect(u32);
+	bool isMsgReflectV(u32);
 	bool isMsgGroupMoveStart(u32);
 	bool isMsgGroupMoveStop(u32);
 	bool isMsgGroupShow(u32);

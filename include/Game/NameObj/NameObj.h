@@ -20,8 +20,8 @@ public:
     virtual void draw() const;
     virtual void calcAnim();
     virtual void calcViewAndEntry();
-    virtual void unk1();
-    virtual void unk2();
+    virtual void startMovement();
+    virtual void endMovement();
 
     void initWithoutIter();
     void setName(const char *pName);
@@ -32,9 +32,9 @@ public:
     void requestResume();
     void syncWithFlags();
 
-    const char* mName; // _4
-    u16 mFlags; // _8
-    s16 mExecuteIdx; // _A
+    const char* mName;        // _4
+    u16 mFlags;               // _8
+    s16 mExecuteIdx;          // _A
     JMapLinkInfo mLinkedInfo; // _C
 };
 

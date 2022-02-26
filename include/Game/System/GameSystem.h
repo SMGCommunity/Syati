@@ -18,7 +18,8 @@ class SystemWipeHolder;
 class GameSystem : public NerveExecutor {
 public:
 	GameSystem();
-	~GameSystem();
+
+	virtual ~GameSystem();
 	
 	void init();
 	bool isExecuteLoadSystemArchive() const;
