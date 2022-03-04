@@ -18,6 +18,7 @@
 #include "Game/LiveActor/ClippingJudge.h"
 #include "Game/LiveActor/DisplayListMaker.h"
 #include "Game/LiveActor/EffectKeeper.h"
+#include "Game/LiveActor/FlashingCtrl.h"
 #include "Game/LiveActor/HitSensor.h"
 #include "Game/LiveActor/HitSensorKeeper.h"
 #include "Game/LiveActor/LiveActor.h"

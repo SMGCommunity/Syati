@@ -14,9 +14,9 @@ public:
 
 	void exeBreak();
 
-	LiveActor* mHost; // _90
+	LiveActor* mHost;      // _90
 	const char* mAnimName; // _94
-	MtxPtr mMtx; // _98
+	MtxPtr mMtx;           // _98
 };
 
 namespace NrvBreakModel {

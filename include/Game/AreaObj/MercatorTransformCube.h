@@ -16,12 +16,12 @@ public:
 	void calcUV(TVec2f * pUV, const TVec3f &) const;
 	void calcLocalBoxSize(TVec3f *pLocalBoxSize) const;
 
-	Mtx mZonePlacementMtx; // _48
+	TMtx34f mZonePlacementMtx; // _48
 };
 
 class DivideMercatorRailPosInfo {
 public:
-	virtual void setPosition(s32, const TVec3f &mPosition) = 0;
+	virtual void setPosition(s32, const TVec3f &rPosition) = 0;
 
 	LiveActor* mActor; // _4
 };
