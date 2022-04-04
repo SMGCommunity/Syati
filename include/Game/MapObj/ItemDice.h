@@ -47,9 +47,9 @@ public:
 	bool _109;
 };
 
-class SwitchDice : public DiceBase {
+class MultipleChoiceDice : public DiceBase {
 public:
-	inline SwitchDice(const char* pName) : DiceBase(pName) {}
+	inline MultipleChoiceDice(const char* pName) : DiceBase(pName) {}
 
 	virtual const char* getModelName() const;
 	virtual void initItems();
