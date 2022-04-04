@@ -24,7 +24,7 @@ namespace MR {
         }
 
         virtual FunctorBase* clone(JKRHeap *pHeap) const {
-            return new (pHeap, 0) FunctorV0M(*this);
+            return new (pHeap, 0) FunctorV0M(mCaller, mCallee);
         };
 
         T mCaller;
