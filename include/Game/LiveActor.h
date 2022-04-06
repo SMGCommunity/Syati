@@ -11,6 +11,7 @@
 #include "Game/LiveActor/AllLiveActorGroup.h"
 #include "Game/LiveActor/Binder.h"
 #include "Game/LiveActor/BreakModel.h"
+#include "Game/LiveActor/ChangeObj.h"
 #include "Game/LiveActor/ClippingActorHolder.h"
 #include "Game/LiveActor/ClippingActorInfo.h"
 #include "Game/LiveActor/ClippingDirector.h"

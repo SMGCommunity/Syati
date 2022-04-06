@@ -15,6 +15,7 @@
 #include "Game/Util/TriggerChecker.h"
 #include "Game/Util/ValueControl.h"
 
+#include "Game/Util/ActorMoveParam.h"
 #include "Game/Util/ActorAnimUtil.h"
 #include "Game/Util/ActorCameraUtil.h"
 #include "Game/Util/ActorInitUtil.h"

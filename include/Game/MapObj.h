@@ -7,6 +7,7 @@
 #include "Game/MapObj/ChipHolder.h"
 #include "Game/MapObj/Coin.h"
 #include "Game/MapObj/CoinRotater.h"
+#include "Game/MapObj/DummyDisplayModel.h"
 #include "Game/MapObj/InvisiblePolygonObj.h"
 #include "Game/MapObj/ItemDice.h"
 #include "Game/MapObj/JetTurtle.h"

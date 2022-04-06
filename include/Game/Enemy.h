@@ -2,6 +2,8 @@
 
 #include "Game/Enemy/AnimScaleController.h"
 #include "Game/Enemy/AnimStampController.h"
+#include "Game/Enemy/BegomanBaby.h"
+#include "Game/Enemy/BegomanBase.h"
 #include "Game/Enemy/GliderShooterBullet.h"
 #include "Game/Enemy/JumpEmitter.h"
 #include "Game/Enemy/Kameck.h"
