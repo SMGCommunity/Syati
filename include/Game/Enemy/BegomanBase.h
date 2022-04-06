@@ -33,11 +33,11 @@ public:
 
     virtual u32 getKind() const = 0;
     virtual bool onTouchElectric(const TVec3f &, const TVec3f &);
-    virtual void setNerveReturn() = 0;
+    virtual bool setNerveReturn() = 0;
     virtual void setNerveLaunch();
-    virtual void setNerveWait() = 0;
+    virtual Nerve* getNerveWait() = 0;
     virtual void addVelocityOnPushedFromElectricRail(const TVec3f &, const TVec3f &);
-    virtual void requestAttack();
+    virtual bool requestAttack();
 
     BegomanSound& getSoundNormal();
     void initCore(const JMapInfoIter &rIter, const char *rModelName, bool);

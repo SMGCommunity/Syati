@@ -20,8 +20,8 @@ public:
     virtual bool receiveOtherMsg(u32 msg, HitSensor *pSender, HitSensor *pReceiver);
     virtual u32 getKind() const;
     virtual bool onTouchElectric(const TVec3f &, const TVec3f &);
-    virtual void setNerveReturn();
-    virtual void setNerveWait();
+    virtual bool setNerveReturn();
+    virtual Nerve* getNerveWait();
 
     void appearFromLaunch(const TVec3f &, const TVec3f &);
     void killWithGenItem();

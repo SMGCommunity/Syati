@@ -4,6 +4,9 @@
 #include "JSystem.h"
 
 class ParabolicPath {
+public:
+	ParabolicPath();
+
 	void initFromMaxHeight(const TVec3f &, const TVec3f &, const TVec3f &);
 	void initFromUpVector(const TVec3f &, const TVec3f &, const TVec3f &, f32);
 	void initFromUpVectorAddHeight(const TVec3f &, const TVec3f &, const TVec3f &, f32);
