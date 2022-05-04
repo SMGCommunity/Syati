@@ -26,6 +26,7 @@
 #include "Game/Util/ActorSwitchUtil.h"
 #include "Game/Util/BgmUtil.h"
 #include "Game/Util/AreaObjUtil.h"
+#include "Game/Util/CameraUtil.h"
 #include "Game/Util/DemoUtil.h"
 #include "Game/Util/EffectUtil.h"
 #include "Game/Util/EventUtil.h"

@@ -1,11 +1,11 @@
 ﻿#include "syati.h"
-#include "custom/Actor/ExtendedActorFactory.h"
+#include "syati/Actor/ExtendedActorFactory.h"
 
 
 /*********************************************************************************************************************/
 /* Extended NameObjFactory                                                                                           */
 /*********************************************************************************************************************/
-namespace Syati {
+namespace syati {
     void* getNameObjCreator(const char *pName) {
         void* creator = NameObjFactory::getCreator(pName);
 

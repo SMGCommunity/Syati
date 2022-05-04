@@ -1,7 +1,7 @@
 #include "syati.h"
-#include "custom/archive.h"
+#include "syati/archive.h"
 
-namespace Syati {
+namespace syati {
     JKRArchive* loadArchive(const char *pArchivePath) {
         bool isExist = MR::isFileExist(pArchivePath, false);
 

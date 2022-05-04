@@ -17,9 +17,9 @@ if len(sys.argv) < 2:
 region = sys.argv[1]
 
 # Check if CodeWarrior and Kamek are present in the toolchain
-if not os.path.exists("CodeWarrior/mwcceppc.exe"):
+if not os.path.exists("deps/CodeWarrior/mwcceppc.exe"):
     err("CodeWarrior compiler not found.")
-if not os.path.exists("Kamek/Kamek.exe"):
+if not os.path.exists("deps/Kamek/Kamek.exe"):
     err("Kamek linker not found.")
 
 # Define the compiler options and command
@@ -56,8 +56,8 @@ assembler_options = [
     "-o"
 ]
 
-command = "CodeWarrior\mwcceppc.exe " + " ".join(compiler_options)
-asm_cmd = "CodeWarrior\mwasmeppc.exe "  + " ".join(assembler_options)
+command = "deps\CodeWarrior\mwcceppc.exe " + " ".join(compiler_options)
+asm_cmd = "deps\CodeWarrior\mwasmeppc.exe "  + " ".join(assembler_options)
 
 # Clean the entire build folder first if it exists
 if os.path.exists("build"):
@@ -111,7 +111,7 @@ print("Linking...")
 object_files = " ".join([task[1] for task in tasks])
 asm_obj_files = " ".join([a_task[1] for a_task in asm_tasks])
 
-kamek_cmd = f"Kamek\Kamek.exe {object_files} {asm_obj_files} -externals=symbols/{region}.txt -output-kamek=CustomCode_{region}.bin"
+kamek_cmd = f"deps\Kamek\Kamek.exe {object_files} {asm_obj_files} -externals=symbols/{region}.txt -output-kamek=CustomCode_{region}.bin"
 
 if subprocess.call(kamek_cmd, shell=True) != 0:
     err("Linking failed.")

@@ -17,6 +17,10 @@ struct JointControllerInfo;
 class BegomanBaby;
 struct BegomanSound;
 
+struct BegomanSound {
+    const char* mSoundLabel;
+};
+
 class BegomanBase : public LiveActor, public ChangeObj {
 public:
     BegomanBase(const char *pName);

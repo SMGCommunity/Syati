@@ -1,8 +1,8 @@
 *.dol
 *.o
 *.vscode
-CodeWarrior/*
-Kamek/*
+deps/CodeWarrior/*
+deps/Kamek/*
 *.idb
 *.id0
 *.id1
