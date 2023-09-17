@@ -1,5 +1,6 @@
 #pragma once
 
+#include "syati.h"
 #include "revolution.h"
 class TalkNodeCtrl;
 
@@ -36,6 +37,7 @@ public:
     void isCurrentNodeContinue() const;
     void rootNodeEve();
     void rootNodeSel(bool);
+    void setMessageArg(const CustomTagArg&);
     //void registerBranchFunc(const TalkMessageFuncBase&);
     //void registerEventFunc(const TalkMessageFuncBase&);
     //void registerAnimeFunc(const TalkMessageFuncBase&);
