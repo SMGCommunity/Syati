@@ -1,35 +1,44 @@
 #pragma once
 
-#include "syati.h"
-#include "revolution.h"
-#include "Game/MapObj/Coin.h"
+#include "Game/LiveActor/LiveActorGroup.h"
 
-class NameObj;
-class CoinHolder : public NameObj {
+class Coin;
 
+class CoinHostInfo {
 public:
-	CoinHolder(const char*);
-	virtual void init(const JMapInfoIter&);
-	void appearCoin(const NameObj*, const TVec3f&, const TVec3f&, s32, s32, s32, f32);
-	void hopCoin(const NameObj*, TVec3f&, TVec3f&);
-	void appearCoinPop(const NameObj*, const TVec3f&, s32);
-	void appearCoinPopToDirection(const NameObj*, TVec3f&, TVec3f&, s32);
-	void appearCoinToVelocity(const NameObj*, TVec3f&, TVec3f&, s32);
-	void appearCoinCircle(const NameObj*, TVec3f&, s32);
-	void declare(const NameObj*, s32);
-	void getDeclareRemnantCoinCount(const NameObj*) const;
-	void findHostInfo(const NameObj*) const;
+	CoinHostInfo();
 
-	s32 _14;
-    s32 _18;
-    f32 _1C;
-	f32 _20;
-	s32 _24;
-	Coin* mCoin;
+	const NameObj *mHost; // _0
+	s32 mDeclaredCount;	  // _4
+	s32 mAppearedCount;	  // _8
+	s32 mCollectedCount;  // _C
+};
+
+class CoinHolder : public LiveActorGroup {
+public:
+	CoinHolder(const char *pName);
+	
+	virtual ~CoinHolder();
+	virtual void init(const JMapInfoIter &rIter);
+
+	bool appearCoin(const NameObj *pHost, const TVec3f &, const TVec3f &, s32, s32, s32, f32);
+	bool hopCoin(const NameObj *pHost, const TVec3f &, const TVec3f &);
+	bool appearCoinPop(const NameObj *pHost, const TVec3f &, s32);
+	bool appearCoinPopToDirection(const NameObj *pHost, const TVec3f &, const TVec3f &, s32);
+	bool appearCoinAgainstGravity(const NameObj *pHost, const TVec3f &, s32);
+	bool appearCoinToVelocity(const NameObj *pHost, const TVec3f &, const TVec3f &, s32);
+	bool appearCoinCircle(const NameObj *pHost, const TVec3f &, s32);
+	void declare(const NameObj *pHost, s32 count);
+	s32 getDeclareRemnantCoinCount(const NameObj *pHost) const;
+	s32 getUncollectedCoinCount(const NameObj *pHost) const;
+	CoinHostInfo* findHostInfo(const NameObj *pHost) const;
+
+	CoinHostInfo* mHostInfos; // _20
+	s32 mDeclaredCount;       // _24
 };
 
 namespace MR {
+	void createCoinHolder();
 	CoinHolder* getCoinHolder();
-    CoinHolder* createCoinHolder();
-	void addToCoinHolder(const NameObj*, Coin*);
+	void addToCoinHolder(const NameObj *pHost, Coin *pCoin);
 };
