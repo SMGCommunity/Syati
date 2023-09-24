@@ -1,3 +1,4 @@
+#ifdef GSTANDPAD
 #pragma once
 
 /*
@@ -91,3 +92,4 @@ namespace pad {
 #define NrvPadRecordHelperWait &pad::NrvPadRecordHelper::NrvWait::sInstance
 #define NrvPadRecordHelperPreparing &pad::NrvPadRecordHelper::NrvPreparing::sInstance
 #define NrvPadRecordHelperRecording &pad::NrvPadRecordHelper::NrvRecording::sInstance
+#endif

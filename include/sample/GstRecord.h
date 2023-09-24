@@ -1,3 +1,4 @@
+#ifdef GSTANDPAD
 #pragma once
 
 /*
@@ -96,3 +97,4 @@ namespace gst {
         virtual void supplyGstFrame() const;
     };
 };
+#endif
