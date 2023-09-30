@@ -1,0 +1,5 @@
+#pragma once
+
+namespace std {
+    float atan2(float, float);
+};

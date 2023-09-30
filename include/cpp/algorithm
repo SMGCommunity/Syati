@@ -1,0 +1,46 @@
+#pragma once
+
+namespace std 
+{
+
+template<typename Iter, typename Func>
+Func for_each(Iter begin, Iter end, Func f) {
+    for (; begin != end; begin++)
+        f(*begin);
+    return f;
+}
+
+template<typename Iter, typename T>
+Iter find(Iter begin, Iter end, const T& item) {
+    for (; begin != end; begin++)
+        if (*begin == item)
+            return begin;
+    return end;
+}
+
+template<typename Iter, typename Func>
+Iter find_if(Iter begin, Iter end, Func f) {
+    for (; begin != end; begin++)
+        if (f(*begin))
+            return begin;
+    return end;
+}
+
+template <typename T>
+void swap(T& a, T& b) noexcept {
+    T tmp(a);
+    a = b;
+    b = tmp;
+}
+
+template<typename Iter>
+void reverse(Iter begin, Iter end) {
+    while (begin != end) {
+        if (begin == --end)
+            break;
+        swap(*begin, *end);
+        begin++;
+    }
+}
+
+}
