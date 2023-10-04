@@ -62,7 +62,7 @@ public:
     s32 _44;
     s32 _48;
     s32 _4C;
-    bool _50;
+    bool mShowFrame;
     bool _51;
     bool _52;
     bool _53;

@@ -42,17 +42,18 @@ public:
     void exeDecided();
     void exeDecidedToDisappear();
 
-    LayoutActor* mHost;
-    const char* mPaneName1;
-    const char* mPaneName2;
+    LayoutActor* mHost; // 8
+    const char* mPaneName1; // 0xC
+    const char* mPaneName2; // 0x10
     u32 _14;
     s32 _18;
     bool _1C;
     f32 _20;
     bool _24;
     bool _25;
-    bool _26;
+    bool mFadeAfterSelect;
     bool _27;
+    bool _28;
     bool _29;
     s32 _2C;
     const char* mAnimNameAppear; // 0x30
