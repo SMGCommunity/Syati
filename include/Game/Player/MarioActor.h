@@ -254,7 +254,7 @@ public:
 	s16 _CD0;
 	s32 _CD4[64];
 	u8 _DD4[64];
-	s32 _E14;
+	HitSensor* _E14;
 	s32 _E18;
 	s32 _E1C;
 	s32 _E20;

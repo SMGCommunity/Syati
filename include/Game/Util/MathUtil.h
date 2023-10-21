@@ -82,9 +82,9 @@ namespace MR {
 	void normalize(TVec3f *);
 	void normalize(TVec2f *, const TVec2f &);
 	void normalize(TVec3f *, const TVec3f &);
-	void normalizeOrZero(TVec2f *);
-	void normalizeOrZero(TVec3f *);
-	void normalizeOrZero(const TVec3f &, TVec3f *);
+	bool normalizeOrZero(TVec2f *);
+	bool normalizeOrZero(TVec3f *);
+	bool normalizeOrZero(const TVec3f &, TVec3f *);
 	void normalize(f32, f32, f32);
 	void normalizeAbs(f32, f32, f32);
 	void normalizeAngleAbs(f32);
@@ -113,7 +113,7 @@ namespace MR {
 	void PSvecBlend(const TVec3f *, const TVec3f *, f32, f32);
 	void vecBlend(TVec3f *, const TVec3f &, const TVec3f &, f32);
 	void vecBlendNormal(TVec3f *, const TVec3f &, const TVec3f &, f32);
-	void vecBlendSphere(TVec3f *, const TVec3f &, const TVec3f &, f32);
+	bool vecBlendSphere(TVec3f *, const TVec3f &, const TVec3f &, f32);
 	void blendColor(GXColor *, GXColor const &, GXColor const &, f32);
 	void turnVecToPlane(TVec3f *, const TVec3f &, const TVec3f &);
 	void getRotatedAxisY(TVec3f *, const TVec3f &);

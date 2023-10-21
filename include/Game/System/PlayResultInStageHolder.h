@@ -43,18 +43,18 @@ public:
 	u8 mSavedTicoCoin;             // _61
 	u8 mNotifyTicoCoin;            // _62
 	u8 _63;
-	s32 _64;
+	s32 mStageClearTime; // _64
 	u8 _68;
 	JMapLinkInfo* mRestartMarioNo; // _6C
-	s32 _70;
+	s32 mMissNum; //_70
 	u8 _74;
 	u8 _75;
 	u8 _76;
 	s32 mPlayerHealth;             // _78
 	s32 _7C;
-	u8 _80;
-	s32 _84;
-	u8 _88;
+	bool mIsClearAsLuigi; // _80
+	s32 mDreamerMode; // _84 | 0 = None | 1 = Dreamer | 2 = SuperDreamer
+	bool mIsUsedSuperDreamer; // _88
 	u8 _8C[12];
 	u8 _98[12];
 };

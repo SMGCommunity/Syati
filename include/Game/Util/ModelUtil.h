@@ -4,6 +4,8 @@
 
 class LiveActor;
 class J3DModel;
+class XanimeResourceTable;
+class ResourceHolder;
 
 namespace MR {
     bool isExistCollisionResource(const LiveActor *, const char *);
@@ -14,4 +16,6 @@ namespace MR {
     void hideMaterial(const LiveActor *, const char *);
     void showMaterial(J3DModel *, const char *);
     void showMaterial(const LiveActor *, const char *);
+
+    XanimeResourceTable* newXanimeResourceTable(ResourceHolder*);
 };

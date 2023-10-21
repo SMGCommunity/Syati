@@ -9,6 +9,7 @@ class HitSensor;
 class LiveActor;
 class MarioActor;
 class NameObj;
+class XanimeResourceTable;
 
 namespace MR {
 	bool isOnGroundPlayer();
@@ -65,7 +66,7 @@ namespace MR {
 	void setBckBlendWeight(f32, f32, f32, f32);
 	void setBckRatePlayer(f32);
 
-	// getPlayerXanimeResource();
+	XanimeResourceTable* getPlayerXanimeResource();
 	void jumpPlayer(const TVec3f &);
 	void forceJumpPlayer(const TVec3f &);
 	void forceFlyPlayer(const TVec3f &, const TVec3f &, s32);
@@ -77,7 +78,7 @@ namespace MR {
 	bool isActorOnPlayer(const LiveActor *);
 	bool isOnPlayerShadow(const LiveActor *);
 	void setPlayerPos(const char *);
-	void setPlayerPosAndWait(const TVec3f &);
+	void setPlayerPosAndWait(const TVec3f &, bool);
 	void setPlayerPosAndWait(const char *);
 	void setPlayerLinkPosAndWait(const NameObj *, const char *, bool);
 	void setPlayerPosOnGround(const char *);

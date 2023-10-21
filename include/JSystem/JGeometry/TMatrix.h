@@ -22,7 +22,7 @@ namespace JGeometry {
     template<>
     struct SMatrix34C<f32> {
         void set(const SMatrix34C<f32> &);
-        void set(const MtxPtr);
+        void set(float const (*)[4]); //The Symbols do not match up unless this function accepts float const (*)[4]
         void set(f32, f32, f32, f32, f32, f32, f32, f32, f32, f32, f32, f32);
 
         inline operator MtxPtr() { return val; }
