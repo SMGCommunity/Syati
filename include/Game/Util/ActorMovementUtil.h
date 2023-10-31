@@ -123,8 +123,8 @@ namespace MR {
 
 	void forceBindOnGround(LiveActor *, f32, f32);
 
-	void reboundVelocityFromEachCollision(LiveActor *, f32, f32, f32, f32);
-	void reboundVelocityFromCollision(LiveActor *, f32, f32, f32);
+	bool reboundVelocityFromEachCollision(LiveActor *, f32, f32, f32, f32);
+	bool reboundVelocityFromCollision(LiveActor *, f32, f32, f32);
 	void zeroVelocity(LiveActor *);
 	void setVelocity(LiveActor *, const TVec3f &);
 	void addVelocity(LiveActor *, const TVec3f &);
@@ -143,25 +143,25 @@ namespace MR {
 	void addVelocitySeparateHV(LiveActor *, HitSensor *, HitSensor *, f32, f32);
 	void setVelocitySeparateHV(LiveActor *, HitSensor *, HitSensor *, f32, f32);
 
-	void reflectVelocityH(LiveActor *, HitSensor *, HitSensor *, f32);
-	void calcVelocityAreaMoveOnGround(TVec3f *, const LiveActor *);
-	void calcVelocityRailMoveOnGround(TVec3f *, const LiveActor *);
-	void calcVelocityAreaOrRailMoveOnGround(TVec3f *, const LiveActor *);
+	bool reflectVelocityH(LiveActor *, HitSensor *, HitSensor *, f32);
+	bool calcVelocityAreaMoveOnGround(TVec3f *, const LiveActor *);
+	bool calcVelocityRailMoveOnGround(TVec3f *, const LiveActor *);
+	bool calcVelocityAreaOrRailMoveOnGround(TVec3f *, const LiveActor *);
 
 	void rotateDirectionGravityDegree(const LiveActor *, TVec3f *, f32);
-	void turnDirection(const LiveActor *, TVec3f *, const TVec3f &, f32);
-	void turnDirectionDegree(const LiveActor *, TVec3f *, const TVec3f &, f32);
-	void turnDirectionToTarget(const LiveActor *, TVec3f *, const TVec3f &, f32);
-	void turnDirectionToTargetDegree(const LiveActor *, TVec3f *, const TVec3f &, f32);
-	void turnDirectionToTargetDegreeHorizon(const LiveActor *, TVec3f *, const TVec3f &, f32);
-	void turnDirectionToTargetUseGroundNormalDegree(const LiveActor *, TVec3f *, const TVec3f &, f32);
+	bool turnDirection(const LiveActor *, TVec3f *, const TVec3f &, f32);
+	bool turnDirectionDegree(const LiveActor *, TVec3f *, const TVec3f &, f32);
+	bool turnDirectionToTarget(const LiveActor *, TVec3f *, const TVec3f &, f32);
+	bool turnDirectionToTargetDegree(const LiveActor *, TVec3f *, const TVec3f &, f32);
+	bool turnDirectionToTargetDegreeHorizon(const LiveActor *, TVec3f *, const TVec3f &, f32);
+	bool turnDirectionToTargetUseGroundNormalDegree(const LiveActor *, TVec3f *, const TVec3f &, f32);
 
-	void turnDirectionToPlayerDegree(const LiveActor *, TVec3f *, f32);
-	void turnDirectionToPlayerDegreeHorizon(const LiveActor *, TVec3f *, f32);
-	void turnDirectionFromTargetDegree(const LiveActor *, TVec3f *, f32);
-	void turnDirectionFromTargetDegreeHorizon(const LiveActor *, TVec3f *, f32);
-	void turnDirectionFromPlayerDegree(const LiveActor *, TVec3f *, f32);
-	void turnDirectionFromPlayerDegreeHorizon(const LiveActor *, TVec3f *, f32);
+	bool turnDirectionToPlayerDegree(const LiveActor *, TVec3f *, f32);
+	bool turnDirectionToPlayerDegreeHorizon(const LiveActor *, TVec3f *, f32);
+	bool turnDirectionFromTargetDegree(const LiveActor *, TVec3f *, f32);
+	bool turnDirectionFromTargetDegreeHorizon(const LiveActor *, TVec3f *, f32);
+	bool turnDirectionFromPlayerDegree(const LiveActor *, TVec3f *, f32);
+	bool turnDirectionFromPlayerDegreeHorizon(const LiveActor *, TVec3f *, f32);
 	void turnDirectionToGround(const LiveActor *, TVec3f *);
 	void moveAndTurnToDirection(LiveActor *, TVec3f *, const TVec3f &, f32, f32, f32, f32);
 	void moveAndTurnToTarget(LiveActor *, TVec3f *, const TVec3f &, f32, f32, f32, f32);
