@@ -1,3 +1,4 @@
+
 #pragma once
 
 #include "syati.h"
@@ -30,7 +31,7 @@ public:
     bool mIsUsedNewButton; // 0x5A NEW
     s32 unk3; // 0x5C
 
-    #if defined (ALL) || defined (SMSS) || defined (CA)
+    #if defined ALL || defined CA || defined SMSS || defined SMG63
     ButtonPaneController* mButtonNew; // 0x60 NEW
     TVec2f mButtonNewFollowPos; // 0x64 NEW
     #endif
