@@ -13,7 +13,6 @@ public:
     virtual void control();
     void calcJointPlane(TMtx34f* pMtx, const JointControllerInfo& info);
 
-    void exeWaitAfterCollapsed(); // NEW
     void exeReturn(); // NEW
 
     s32 _D0;
