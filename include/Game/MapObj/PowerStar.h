@@ -52,7 +52,7 @@ public:
     TVec3f mDemoAppearPos; // 0x98
     TVec3f _A4;
     TVec3f _B0;
-    TMtx34f _BC;
+    TMtx34f mPostureMtx; // 0xBC
     TMtx34f mModelObjMtx; // 0xEC
     LiveActor* mCameraActor; // 0x11C
     DemoObj* mDemoObjPeach; // 0x120
@@ -61,13 +61,13 @@ public:
     bool mInvalidateClipping; // 0x12C
     bool _12D;
     s32 mColor; // 0x130
-    bool isGrandStar; // 0x134
-    bool isGreenStar; // 0x135
+    bool mIsGrandStar; // 0x134
+    bool mIsGreenStar; // 0x135
     bool mCalcAppearanceGravity; // 0x136
     bool mIgnoreGravity; // 0x137
     bool mAppearPointPos; // 0x138
     ActorCameraInfo mActorCameraInfo; // 0x13C
     LiveActor* mNearestAppearPoint; // 0x140
     TMtx34f _144;
-    bool isUseStageSwitchAwake; // 0x174
+    bool mIsUseStageSwitchAwake; // 0x174
 };
