@@ -88,11 +88,11 @@ bool CustomActor::receiveMsgPlayerAttack (u32 msg, HitSensor *pSender, HitSensor
 ```
 Here we are given the type of collision that occured (msg), as well as two HitSensor pointers.
 
-To figure out what the sender is, you can call one of the 25 `MR::isSensor...` functions. When checking for the player, using `MR::isSensorPlayerOrYoshiOrRide(pSender)` is recommended.
+To figure out what type the sender is, you can call one of the 25 `MR::isSensor...` functions. When checking for the player, using `MR::isSensorPlayerOrYoshiOrRide(pSender)` is recommended.
 
 To figure out what type of interaction ocurred, use one of the 105 `MR::isMsg` functions. For example, the player spin-attacking your actor can be checked by calling `MR::isMsgPlayerSpinAttack(msg)`.
 
-Remember that the function has to return a bool. This is needed to let the sender of the message know that there was an interaction (`true`) or if it was simply ignored (`false`). For example, if the player interacts with it and true is returned, a certain particle effect will be created to show the impact.
+Remember that the function has to return a bool. This is needed to let the sender of the message know that there was an interaction (`true`) or that it was simply ignored (`false`). For example, if the player interacts with it and (`true`) is returned, a certain particle effect will be created to show the impact.
 > To see which functions best fit your purpose, look at the HitSensor.h file in Syati's include/Game/LiveActor directory.</div>
 ### About Collision
 Some actors also feature collision on top of a HitSensor, which needs to be initialized seperately.
