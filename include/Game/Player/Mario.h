@@ -3,6 +3,7 @@
 #include "revolution.h"
 
 class MarioActor;
+class MarioState;
 
 class Mario {
 public:
