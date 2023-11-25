@@ -42,25 +42,26 @@ public:
     void exeDecided();
     void exeDecidedToDisappear();
 
-    LayoutActor* _8;
-    const char* _C;
-    const char* _10;
+    LayoutActor* mHost; // 8
+    const char* mPaneName1; // 0xC
+    const char* mPaneName2; // 0x10
     u32 _14;
     s32 _18;
     bool _1C;
     f32 _20;
     bool _24;
     bool _25;
-    bool _26;
+    bool mFadeAfterSelect;
     bool _27;
+    bool _28;
     bool _29;
     s32 _2C;
-    const char* _30;
-    const char* _34;
-    const char* _38;
-    const char* _3C;
-    const char* _40;
-    const char* _44;
+    const char* mAnimNameAppear; // 0x30
+    const char* mAnimNameWait; // 0x34
+    const char* mAnimNameDecide; // 0x38
+    const char* mAnimNameSelectIn; // 0x3C
+    const char* mAnimNameSelectOut; // 0x40
+    const char* mAnimNameEnd; // 0x44
     s32 _48;
     s32 _4C;
 };

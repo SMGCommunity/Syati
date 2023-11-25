@@ -9,17 +9,47 @@
 class PowerStar : public LiveActor {
 public:
     PowerStar(const char *pName);
-
-    virtual bool receiveOtherMsg(u32 msg, HitSensor *pSender, HitSensor *pReceiver);
-
-    void initMapToolInfo(const JMapInfoIter &rIter);
-    void initShadow(const JMapInfoIter& rIter);
-
-    void calcAppearDemoRiseTrans(TVec3f *pDest, f32 yOffset) const;
-    void applyAppearDemoRiseTrans(const TVec3f &rDest, f32 yOffset, f32);
-
+    virtual void init(const JMapInfoIter& rIter);
+    virtual void initAfterPlacement();
+    virtual void appear();
+    virtual void makeActorAppeared();
+    void requestAppear();
+    void setDemoAppearPos(const TVec3f&);
+    bool isEndAppearPos() const;
+    void offAppearDemo();
+    void setupColor(const NameObj*, s32);
+    void setupColorAtResultSequence(LiveActor*, bool);
+    void requestPointLight(const LiveActor*, const NameObj*, s32);
+    void requestPointLightAtResultSequence(const LiveActor*);
+    f32 getPowerStarWaitRotateSpeed();
+    void getBtpFrameCurrentStage(s32);
+    void isCurrentStageKoopaVs3();
+    void initShadowPowerStar(LiveActor*, bool);
+    virtual void control();
+    virtual void calcAndSetBaseMtx();
+    virtual bool receiveMsgPlayerAttack(u32, HitSensor*, HitSensor*);
+    virtual bool receiveOtherMsg(u32, HitSensor*, HitSensor*);
+    void initMapToolInfo(const JMapInfoIter&);
+    void initModel();
+    void initSensorGrandStar();
+    void initShadow(const JMapInfoIter&);
+    void initPosture();
+    void endAppearDemo();
+    PowerStarAppearPoint* getNearestAppearPoint(const TVec3f&);
+    LiveActor* getAppearCameraActor();
+    ActorCameraInfo* getAppearCameraInfo() const;
+    void requestAppearOrWait();
+    const char* getStarGetAnimCameraName() const;
+    void calcAppearDemoRiseTrans(const TVec3f*, f32);
+    void applyAppearDemoRiseTrans(const TVec3f*, f32, f32);
     void processWait(f32);
-    bool isEndAppearDemo() const;
+    void calcStageClearDemoMtx();
+    void startExistLevelSound();
+    void exeAppearDemoRise();
+    void exeAppearDemoMove();
+    void exeWait();
+    void exeStageClearDemo();
+    virtual ~PowerStar();
 
     s32 mPowerStarId; //_90
     bool mUseAppearDemo; //_94
