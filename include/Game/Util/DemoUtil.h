@@ -7,6 +7,7 @@ class LayoutActor;
 class LiveActor;
 class NameObj;
 class Nerve;
+class TalkMessageCtrl;
 
 namespace MR {
 	bool tryRegisterDemoCast(LiveActor *, const JMapInfoIter &);
@@ -53,6 +54,9 @@ namespace MR {
 	bool requestStartDemoRegisteredMarioPuppetable(LiveActor *, const Nerve *, const Nerve *, const char *);
 	void endDemo(NameObj *, const char *);
 	void endDemoWaitCameraInterpolating(NameObj *, const char *);
+
+	void initDemoSheetTalkAnim(LiveActor *, JMapInfoIter const &, char const *, char const *, TalkMessageCtrl *, TVec3f, MtxPtr);
+	bool tryInitDemoSheetTalkAnim(LiveActor *, JMapInfoIter const &, char const *, char const *, TalkMessageCtrl *, TVec3f, MtxPtr);
 
 	bool isDemoExist(const char *);
 	bool isDemoActive();

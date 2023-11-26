@@ -3,7 +3,7 @@
 #include "revolution.h"
 #include "Game/LiveActor/LiveActor.h"
 
-class DemoObj : LiveActor {
+class DemoObj : public LiveActor {
 public:
     DemoObj(const char *pName, MtxPtr pMtx);
 
