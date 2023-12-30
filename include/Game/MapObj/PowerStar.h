@@ -54,7 +54,7 @@ public:
     TVec3f _B0;
     TMtx34f mPostureMtx; // 0xBC
     TMtx34f mModelObjMtx; // 0xEC
-    LiveActor* mCameraActor; // 0x11C
+    LiveActor* mDemoStar; // 0x11C
     DemoObj* mDemoObjPeach; // 0x120
     DemoObj* mDemoObjTicoBaby; // 0x124
     DemoObj* mDemoObjSupportTico; // 0x128
@@ -66,7 +66,7 @@ public:
     bool mCalcAppearanceGravity; // 0x136
     bool mIgnoreGravity; // 0x137
     bool mAppearPointPos; // 0x138
-    ActorCameraInfo mActorCameraInfo; // 0x13C
+    ActorCameraInfo* mActorCameraInfo; // 0x13C
     LiveActor* mNearestAppearPoint; // 0x140
     TMtx34f _144;
     bool mIsUseStageSwitchAwake; // 0x174
