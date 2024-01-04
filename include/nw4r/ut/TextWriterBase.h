@@ -5,9 +5,9 @@
 namespace nw4r {
 	namespace ut {
         class Glyph;
-        class Color;
         class Font;
         class Rect;
+        class Color;
 
         class CharWriter {
         public:
@@ -23,7 +23,7 @@ namespace nw4r {
             void UpdateVertexColor();
             void SetupVertexFormat();
             void SetupGXDefault();
-            void SetupGXWithColorMappin(Color, Color);
+            void SetupGXWithColorMapping(Color, Color);
             void SetupGXForI();
             void SetupGXForRGBA();
             f32 GetCursorX() const;
@@ -69,19 +69,21 @@ namespace nw4r {
             s32 CalcStringWidth(const T*, int) const;
             s32 CalcStringHeight(const T*, int) const;
             s32 CalcStringRect(Rect*, const T*, int) const;
-            void Printf(const T*, ...);
+            f32 Printf(const T*, ...);
             //void VPrintf(const T*, __va_list_struct*);
-            void Print(const T*, int);
-            void PrintfMutable(const T*, ...);
+            f32 Print(const T*, int);
+            f32 PrintfMutable(const T*, ...);
             //void VPrintfMutable(const T*, __va_list_struct*);
             void PrintMutable(const T*, int);
-            //int VSNPrintf(char*, unsigned long, const T*, __va_list_struct*);
+            //int VSNPrintf(T*, unsigned long, const T*, __va_list_struct*);
             s32 CalcLineWidth(const T*, int);
             s32 CalcLineRectImpl(Rect*, const T*, int);
             s32 CalcStringRectImpl(Rect*, const T*, int);
             void PrintImpl(const T*, int, bool);
             void AdjustCursor(float*, float*, const T*, int);
             bool IsDrawFlagSet(unsigned long, unsigned long) const;
+            f32 GetLineSpace() const;
+            f32 GetCharSpace() const;
 
             s32 _4C;
             s32 _50;
