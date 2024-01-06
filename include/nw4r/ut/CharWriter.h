@@ -2,13 +2,14 @@
 
 #include "revolution.h"
 #include "Font.h"
+#include "Color.h"
+#include "nw4r\misc.h"
+#include "nw4r\math\types.h"
 
 namespace nw4r::ut {
-    // Undocumented atm
-    
-    class Color;
 
     class CharWriter {
+        public:
         enum GradationMode
         {
             GRADMODE_NONE,
@@ -25,27 +26,75 @@ namespace nw4r::ut {
 
         // Originally public
 
-        void SetFont(const Font& font);
-        const Font* GetFont() const;
+        void SetFont(const Font& font) {
+            mFont = &font;
+        }
+        const Font* GetFont() const {
+            return mFont;
+        }
         void SetupGX();
-        void ResetTextureCache();
-        void SetColorMapping(Color min, Color max);
-        const Color GetColorMappingMin() const;
-        const Color GetColorMappingMax() const;
-        void ResetColorMapping();
-        void SetAlpha(u8 alpha);
-        u8 GetAlpha() const;
-        void SetGradationMode(GradationMode mode);
-        GradationMode GetGradationMode() const;
-        void SetTextColor(Color color);
-        void SetTextColor(Color start, Color end);
-        const Color GetTextColor() const;
-        const Color GetGradationStartColor() const;
-        const Color GetGradationEndColor() const;
-        void SetScale(f32 hScale, f32 vScale);
-        void SetScale(f32 hvScale);
-        f32 GetScaleH() const;
-        f32 GetScaleV() const;
+        void ResetTextureCache() {
+            mLoadingTexture.Reset();
+        }
+        void SetColorMapping(Color min, Color max) {
+            mColorMapping.min = min;
+            mColorMapping.max = max;
+        }
+        const Color GetColorMappingMin() const {
+            return mColorMapping.min;
+        }
+        const Color GetColorMappingMax() const {
+            return mColorMapping.max;
+        }
+        void ResetColorMapping() {
+            SetColorMapping(DEFAULT_COLOR_MAPPING_MIN, DEFAULT_COLOR_MAPPING_MAX);
+        }
+        void SetAlpha(u8 alpha) {
+            mAlpha = alpha;
+            UpdateVertexColor();
+        }
+        u8 GetAlpha() const {
+            return mAlpha;
+        }
+        void SetGradationMode(GradationMode mode) {
+            mTextColor.gradationMode = mode;
+            UpdateVertexColor();
+        }
+        GradationMode GetGradationMode() const {
+            return mTextColor.gradationMode;
+        }
+        void SetTextColor(Color color) {
+            mTextColor.start = color;
+            UpdateVertexColor();
+        }
+        void SetTextColor(Color start, Color end) {
+            mTextColor.start = start;
+            mTextColor.end = end;
+            UpdateVertexColor();
+        }
+        const Color GetTextColor() const {
+            return mTextColor.start;
+        }
+        const Color GetGradationStartColor() const {
+            return mTextColor.start;
+        }
+        const Color GetGradationEndColor() const {
+            return mTextColor.end;
+        }
+        void SetScale(f32 hScale, f32 vScale) {
+            mScale.x = hScale;
+            mScale.y = vScale;
+        }
+        void SetScale(f32 hvScale) {
+            mScale.x = hvScale;
+            mScale.y = hvScale;
+        }
+        f32 GetScaleH() const {
+            return mScale.x;
+        }
+        f32 GetScaleV() const {
+            return mScale.y;
+        }
         void SetFontSize(f32 width, f32 height);
         void SetFontSize(f32 height);
         f32 GetFontWidth() const;
@@ -53,49 +102,142 @@ namespace nw4r::ut {
         f32 GetFontAscent() const;
         f32 GetFontDescent() const;
         void EnableLinearFilter(bool atSmall, bool atLarge);
-        bool IsLinearFilterEnableAtSmall() const;
-        bool IsLinearFilterEnableAtLarge() const;
-        bool IsWidthFixed() const;
-        void EnableFixedWidth(bool isFixed);
-        f32 GetFixedWidth() const;
-        void SetFixedWidth(f32 width);
+        bool IsLinearFilterEnableAtSmall() const {
+            return mFilter.atSmall == GX_LINEAR;
+        }
+        bool IsLinearFilterEnableAtLarge() const {
+            return mFilter.atLarge == GX_LINEAR;
+        }
+        bool IsWidthFixed() const {
+            return mIsWidthFixed;
+        }
+        void EnableFixedWidth(bool isFixed) {
+            mIsWidthFixed = isFixed;
+        }
+        f32 GetFixedWidth() const {
+            return mFixedWidth;
+        }
+        void SetFixedWidth(f32 width) {
+            mFixedWidth = width;
+        }
         f32 Print(CharCode code);
         void DrawGlyph(const Glyph& glyph);
-        void SetCursor(f32 x, f32 y);
-        void SetCursor(f32 x, f32 y, f32 z);
-        void MoveCursor(f32 dx, f32 dy);
-        void MoveCursor(f32 dx, f32 dy, f32 dz);
-        void MoveCurosr(f32 dx, f32 dy);
-        void SetCursorX(f32 x);
-        void SetCursorY(f32 y);
-        void SetCursorZ(f32 z);
-        void MoveCursorX(f32 dx);
-        void MoveCursorY(f32 dy);
-        void MoveCursorZ(f32 dz);
-        f32 GetCursorX() const;
-        f32 GetCursorY() const;
-        f32 GetCursorZ() const;
+        void SetCursor(f32 x, f32 y) {
+            mCursorPos.x = x;
+            mCursorPos.y = y;
+        }
+        void SetCursor(f32 x, f32 y, f32 z) {
+            mCursorPos.x = x;
+            mCursorPos.y = y;
+            mCursorPos.z = z;
+        }
+        void MoveCursor(f32 dx, f32 dy) {
+            mCursorPos.x += dx;
+            mCursorPos.y += dy;
+        }
+        void MoveCursor(f32 dx, f32 dy, f32 dz) {
+            mCursorPos.x += dx;
+            mCursorPos.y += dy;
+            mCursorPos.z += dz;
+        }
+        void MoveCurosr(f32 dx, f32 dy) {
+            MoveCursor(dx, dy);
+        }
+        void SetCursorX(f32 x) {
+            mCursorPos.x = x;
+        }
+        void SetCursorY(f32 y) {
+            mCursorPos.y = y;
+        }
+        void SetCursorZ(f32 z) {
+            mCursorPos.z = z;
+        }
+        void MoveCursorX(f32 dx) {
+            mCursorPos.x += dx;
+        }
+        void MoveCursorY(f32 dy) {
+            mCursorPos.y += dy;
+        }
+        void MoveCursorZ(f32 dz) {
+            mCursorPos.z += dz;
+        }
+        f32 GetCursorX() const {
+            return mCursorPos.x;
+        }
+        f32 GetCursorY() const {
+            return mCursorPos.y;
+        }
+        f32 GetCursorZ() const {
+            return mCursorPos.z;
+        }
 
         // Originally private
         
-        s32 _0;
-        s32 _4;
-        s32 _8;
-        s32 _C;
-        s32 _10;
-        s32 _14;
-        s32 _18;
-        s32 _1C;
-        s32 _20;
-        s32 _24;
-        s32 _28;
-        s32 _2C;
-        s32 _30;
-        s32 _34;
-        s32 _38;
-        s32 _3C;
-        s32 _40;
-        s32 _44;
-        s32 _48;
+        struct ColorMapping
+        {
+            Color min;
+            Color max;
+        };
+        
+        struct TextColor {
+            Color start;
+            Color end;
+            GradationMode gradationMode;
+        };
+
+        struct VertexColor {
+            Color lu;
+            Color ru;
+            Color ld;
+            Color rd;
+        };
+
+        class TextureFilter {
+            public:
+            GXTexFilter atSmall;
+            GXTexFilter atLarge;
+            bool operator!=(const TextureFilter& rhs) {
+                return (atSmall != rhs.atSmall)
+                || (atLarge != rhs.atLarge);
+            }
+        };
+
+        class LoadingTexture {
+            public:
+            GXTexMapID slot;
+            const void* texture;
+            TextureFilter filter;
+            bool operator!=(const LoadingTexture& rhs) {
+                return (slot != rhs.slot)
+                || (texture != rhs.texture)
+                || (filter != rhs.filter);
+            }
+            void Reset() {
+                slot = GX_TEXMAP_NULL;
+                texture = NULL;
+            }
+        };
+
+        static LoadingTexture mLoadingTexture;
+        ColorMapping mColorMapping;
+        VertexColor mVertexColor;
+        TextColor mTextColor;
+        nw4r::math::VEC2 mScale;
+        nw4r::math::VEC3 mCursorPos;
+        TextureFilter mFilter;
+        u8 padding_[2];
+        u8 mAlpha;
+        bool mIsWidthFixed;
+        f32 mFixedWidth;
+        const Font* mFont;
+
+        static void SetupGXDefault();
+        static void SetupGXWithColorMapping(Color min, Color max);
+        static void SetupGXForRGBA();
+        static void SetupGXForI();
+        static void SetupVertexFormat();
+        void PrintGlyph(f32 x, f32 y, f32 z, const Glyph& glyph);
+        void UpdateVertexColor();
+        void LoadTexture(const Glyph& glyph, GXTexMapID slot);
     };
 }
