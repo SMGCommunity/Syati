@@ -3,6 +3,7 @@
 #include "revolution.h"
 #include "fontResourceFormat.h"
 #include "revolution\gx.h"
+#include "CharStrmReader.h"
 
 namespace nw4r {
 
