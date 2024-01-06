@@ -1,9 +1,9 @@
 #pragma once
 
 #include "revolution.h"
-#include "CharWriter.h"
-#include "TagProcessorBase.h"
-#include "Rect.h"
+#include "nw4r/ut/CharWriter.h"
+#include "nw4r/ut/TagProcessorBase.h"
+#include "nw4r/ut/Rect.h"
 
 namespace nw4r {
 	namespace ut {
