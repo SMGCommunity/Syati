@@ -1,6 +1,7 @@
 #pragma once
 
 #include "revolution\types.h"
+#include "c_stdlib.h"
 
 namespace nw4r {
         namespace math {
@@ -11,6 +12,19 @@ namespace nw4r {
             f32 x, y, z;
         };
 
+        struct _MTX34 {
+            union 
+            {
+                struct {
+                    f32 _00, _01, _02, _03;
+                    f32 _10, _11, _12, _13;
+                    f32 _20, _21, _22, _23;
+                };
+                f32 m[3][4];
+                f32 a[12];
+                Mtx mtx;
+            };
+        };     
 
         struct VEC2: public _VEC2 {
             public:
@@ -126,6 +140,53 @@ namespace nw4r {
             }
 
             f32 LenSq() const { return x * x + y * y + z * z; }
+
+            void Report(bool bNewline = true, const char* name = NULL) const;
+        };
+
+        struct MTX34 : public _MTX34 {
+            public:
+            typedef MTX34 self_type;
+            typedef f32 value_type;
+            typedef const f32(*ConstMtxPtr)[4];
+
+            MTX34() {}
+            MTX34(const f32* p);
+            MTX34(const Mtx& rhs);
+            MTX34(f32 x00, f32 x01, f32 x02, f32 x03,
+            f32 x10, f32 x11, f32 x12, f32 x13,
+            f32 x20, f32 x21, f32 x22, f32 x23) {
+                _00 = x00; _01 = x01; _02 = x02; _03 = x03;
+                _10 = x10; _11 = x11; _12 = x12; _13 = x13;
+                _20 = x20; _21 = x21; _22 = x22; _23 = x23;
+            }
+
+            operator f32*() { return &_00; }
+            operator const f32*() const { return &_00; }
+            operator MtxPtr() { return (MtxPtr)&_00; }
+            operator ConstMtxPtr() const { return (ConstMtxPtr)&_00; }
+
+            self_type& operator+=(const self_type& rhs);
+            self_type& operator-=(const self_type& rhs);
+            self_type& operator*=(f32 f);
+            self_type& operator/=(f32 f) { return operator*=(1.f / f); }
+            self_type operator+() const { return *this; }
+            self_type operator-() const {
+                return self_type(-_00, -_01, -_02, -_03,
+                -_10, -_11, -_12, -_13,
+                -_20, -_21, -_22, -_23);
+            }
+            self_type operator*(f32 f) const;
+            self_type operator/(f32 f) const {
+                return *this * (1.f / f);
+            }
+            
+            bool operator==(const self_type& rhs) const {
+                return memcmp(this, &rhs, sizeof(self_type)) == 0;
+            }
+            bool operator!=(const self_type& rhs) const {
+                return memcmp(this, &rhs, sizeof(self_type)) != 0;
+            }
 
             void Report(bool bNewline = true, const char* name = NULL) const;
         };
