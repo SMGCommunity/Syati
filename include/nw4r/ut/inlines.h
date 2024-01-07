@@ -18,7 +18,14 @@ namespace nw4r {
                 return (a < b) ? b: a;
             }
 
-
+            class NonCopyable {
+                protected:
+                NonCopyable() {}
+                ~NonCopyable() {}
+                private:
+                NonCopyable(const NonCopyable&);
+                const NonCopyable& operator=(const NonCopyable&);
+            };
         };
     };
 };
