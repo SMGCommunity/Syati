@@ -23582,6 +23582,7 @@ startSlider__5MarioFv=0x803A7450
 lockGroundCheck__5MarioFPvb=0x803A8A20
 playSoundJ__5MarioFPCcl=0x803A9390
 stopSoundJ__5MarioFPCcUl=0x803A9540
+playSoundTrampleCombo__5MarioFUc=0x803A9780
 updateOnimasu__5MarioFv=0x803A98A0
 isDossun__5MarioCFPC8Triangle=0x803AA1E0
 isNoWalkFallOnDossun__5MarioCFv=0x803AA240
