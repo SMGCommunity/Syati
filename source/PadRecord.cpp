@@ -86,6 +86,19 @@ namespace pad {
     }
 
     void updateFrame() {
+        if (PadRecorderInfo::sInstance.mReadDataInfo == NULL)
+        {
+            register GameSystem* pGameSystem = SingletonHolder<GameSystem>::sInstance;
+            register WPadReadDataInfo* readDataInfo;
+            register u32 TEMP;
+            __asm {
+                lwz TEMP, 0x20(pGameSystem); //Get the GameSystemObjHolder
+                lwz TEMP, 0x24(TEMP); //Get the WPadHolder
+                lwz readDataInfo, 0xC(TEMP); //Get the WPadReadDataInfo
+            }
+
+            pad::PadRecorderInfo::sInstance.mReadDataInfo = readDataInfo;
+        }
         PadRecorderInfo::sInstance.mUpdateFrame++;
     }
 
@@ -207,16 +220,6 @@ namespace pad {
 }
 
 namespace {
-    WPadHolder* registerWPadReadDataInfo(register WPadHolder *wpadHolder) {
-        register WPadReadDataInfo* readDataInfo;
-        __asm {
-            lwz readDataInfo, 0xC(wpadHolder);
-        }
-
-        pad::PadRecorderInfo::sInstance.mReadDataInfo = readDataInfo;
-        return wpadHolder;
-    }
-
     // Dreamer, SuperDreamer and GhostAttackGhost shouldn't appear while recording
     kmCall(0x80348E80, pad::isDisableDreamerByPadRecord); // check by Dreamer
     kmCall(0x803618B0, pad::isDisableDreamerByPadRecord); // check by SuperDreamer
@@ -227,15 +230,10 @@ namespace {
     kmCall(0x804D80EC, pad::isDisableDreamerByPadRecord);
 #endif
 
-#if defined(PAL) || defined(USA) || defined(JPN)
-    // Registers WPadReadDataInfo after WPadHolder::ctor
-    kmBranch(0x804CF830, registerWPadReadDataInfo);
-
     // Updates frame after calling WPadHolder::update
+#if defined(PAL) || defined(USA) || defined(JPN)
     kmBranch(0x804CFAAC, pad::updateFrame);
 #elif defined(TWN) || defined(KOR)
-    kmBranch(0x804CF8C0, registerWPadReadDataInfo);
-
     kmBranch(0x804CFB3C, pad::updateFrame);
 #endif
 }
