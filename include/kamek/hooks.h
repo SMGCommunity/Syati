@@ -85,8 +85,10 @@
 // kmNopRange
 // Inserts NOPs from a start address to an end address
 #define kmNopRange(startAddr, endAddr) \
-	for (int cur = startAddr; cur < endAddr; cur += 4) {\
-		kmWrite32(cur, 0x60000000); \
-	}
+	inline void patchNops() { \
+		for (int cur = startAddr; cur < endAddr; cur += 4) {\
+			kmWrite32(cur, 0x60000000); \
+		}	\
+	} \
 
 #endif
