@@ -3,10 +3,10 @@
 #include "revolution.h"
 
 namespace JGeometry {
-    void negateInternal(const f32 *rSrc, f32 *rDest);
+    void negateInternal(const float *rSrc, float *rDest);
 
     template<typename T>
-    struct TVec2<T> {
+    class TVec2 {
         /* Constructors */
         inline TVec2() { }
         TVec2(const TVec2<T> &);
@@ -44,74 +44,74 @@ namespace JGeometry {
         T y;
     };
 
-    template<template T>
-    class TVec3<T> {
+    template <typename T>
+    class TVec3 {
         /* Constructors */
         inline TVec3() { }
 
         TVec3(const TVec3<T> &rOther) {
-            x = rOther.x;
-            y = rOther.y;
-            z = rOther.z;
+            this->x = rOther.x;
+            this->y = rOther.y;
+            this->z = rOther.z;
         }
 
         TVec3(const Vec &rOther) {
-            x = rOther.x;
-            y = rOther.y;
-            z = rOther.z;
+            this->x = rOther.x;
+            this->y = rOther.y;
+            this->z = rOther.z;
         }
 
         TVec3(T val) {
-            x = val;
-            y = val;
-            z = val;
+            this->x = val;
+            this->y = val;
+            this->z = val;
         }
 
         template<typename T>
         TVec3(T _x, T _y, T _z) {
-            x = _x;
-            y = _y;
-            z = _z;
+            this->x = _x;
+            this->y = _y;
+            this->z = _z;
         }
 
         /* Getters and setters */
         void set(const Vec &rOther) {
-            x = rOther.x;
-            y = rOther.y;
-            z = rOther.z;
+            this-> x = rOther.x;
+            this->y = rOther.y;
+            this->z = rOther.z;
         }
 
         template<typename T>
         void set(const TVec3<T> &rOther) {
-            x = rOther.x;
-            y = rOther.y;
-            z = rOther.z;
+            this->x = rOther.x;
+            this->y = rOther.y;
+            this->z = rOther.z;
         }
 
         template<typename T>
         void set(T _x, T _y, T _z) {
-            x = _x;
-            y = _y;
-            z = _z;
+            this->x = _x;
+            this->y = _y;
+            this->z = _z;
         }
 
         template<typename T>
         void setAll(T val) {
-            x = val;
-            y = val;
-            z = val;
+            this->x = val;
+            this->y = val;
+            this->z = val;
         }
 
         void zero() {
-            x = 0;
-            y = 0;
-            z = 0;
+            this->x = 0;
+            this->y = 0;
+            this->z = 0;
         }
 
         void negate() {
-            x = -x;
-            y = -y;
-            z = -z;
+            this->x = -this->x;
+            this->y = -this->y;
+            this->z = -this->z;
         }
 
         void negate(const TVec3<T> &);
@@ -163,7 +163,7 @@ namespace JGeometry {
     };
 
     template<typename T>
-    struct TVec4<T> {
+    class TVec4 {
         /* Constructors */
         inline TVec4() { }
 
@@ -187,8 +187,8 @@ namespace JGeometry {
     };
 };
 
-typedef JGeometry::TVec2<f32> TVec2f;
-typedef JGeometry::TVec3<s8> TVec3c;
-typedef JGeometry::TVec3<f32> TVec3f;
-typedef JGeometry::TVec3<s16> TVec3s;
-typedef JGeometry::TVec4<f32> TVec4f;
+typedef JGeometry::TVec2<float> TVec2f;
+typedef JGeometry::TVec3<signed char> TVec3c;
+typedef JGeometry::TVec3<float> TVec3f;
+typedef JGeometry::TVec3<short> TVec3s;
+typedef JGeometry::TVec4<float> TVec4f;
