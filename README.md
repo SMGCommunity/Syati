@@ -2,7 +2,7 @@
 **Syati** provides C++ headers and symbols for writing custom code injections in **Super Mario Galaxy 2**. With this, you can write code, compile code, link to existing functions and structures in the game and load the actual changes.
 
 # What is supplied
-Syati provides C++ headers, symbols and the CustomCode loader. Examples can be found[**here,**](https://github.com/SMGCommunity/Syati-Examples)
+Syati provides C++ headers, symbols and the CustomCode loader. Examples can be found [**here.**](https://github.com/SMGCommunity/Syati-Examples)
 
 # Future Plans
 The loader currently only supports ``Kamek`` version 1, which is outdated. Support for new hooks and the general format should be implemented in future versions.
