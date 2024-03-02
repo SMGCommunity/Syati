@@ -7,6 +7,7 @@ namespace JGeometry {
 
     template<typename T>
     class TVec2 {
+    public:
         /* Constructors */
         inline TVec2() { }
         TVec2(const TVec2<T> &);
@@ -46,6 +47,7 @@ namespace JGeometry {
 
     template <typename T>
     class TVec3 {
+    public:
         /* Constructors */
         inline TVec3() { }
 
@@ -164,6 +166,7 @@ namespace JGeometry {
 
     template<typename T>
     class TVec4 {
+    public:
         /* Constructors */
         inline TVec4() { }
 
