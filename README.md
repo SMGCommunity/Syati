@@ -1,5 +1,5 @@
 # Syati
-**Syati** provides C++ headers and symbols for writing custom code injections in **Super Mario Galaxy 2**. With this, you can write code, compile code, link to existing functions and structures in the game and load the actual changes. It was originally created by **shibbo**, however, the original repository has been deleted.
+**Syati** provides C++ headers and symbols for writing custom code injections in **Super Mario Galaxy 2**. With this, you can write code, compile code, link to existing functions and structures in the game and load the actual changes.
 
 # What is supplied
 Syati provides C++ headers, symbols, the CustomCode loader and six sample C++ code files.
