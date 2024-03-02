@@ -6,31 +6,10 @@ namespace JGeometry {
     void negateInternal(const f32 *rSrc, f32 *rDest);
 
     template<typename T>
-    struct TVec2 {
-        T x;
-        T y;
-    };
-
-    template<typename T>
-    struct TVec3 {
-        T x;
-        T y;
-        T z;
-    };
-
-    template<typename T>
-    struct TVec4 {
-        T x;
-        T y;
-        T z;
-        T w;
-    };
-
-    template<>
-    struct TVec2<f32> {
+    struct TVec2<T> {
         /* Constructors */
         inline TVec2() { }
-        TVec2(const TVec2<f32> &);
+        TVec2(const TVec2<T> &);
 
         template<typename T>
         TVec2(T, T);
@@ -42,134 +21,149 @@ namespace JGeometry {
         template<typename T>
         void set(T, T);
 
-        void setMin(const TVec2<f32> &);
-        void setMax(const TVec2<f32> &);
+        void setMin(const TVec2<T> &);
+        void setMax(const TVec2<T> &);
 
         void zero();
 
         /* Arithmetic and algebraic operations */
-        void sub(const TVec2<f32> &);
+        void sub(const TVec2<T> &);
 
-        f32 distance(const TVec2<f32> &) const;
-        f32 length() const;
-        f32 squared(const TVec2<f32> &) const;
-        f32 dot(const TVec2<f32> &) const;
+        T distance(const TVec2<T> &) const;
+        T length() const;
+        T squared(const TVec2<T> &) const;
+        T dot(const TVec2<T> &) const;
 
         /* Operators */
-        void operator=(const TVec2<f32> &);
-        TVec2<f32> operator+(const TVec2<f32> &) const;
-        TVec2<f32> operator-(const TVec2<f32> &) const;
-        TVec2<f32> operator*(f32) const;
+        void operator=(const TVec2<T> &);
+        TVec2<T> operator+(const TVec2<T> &) const;
+        TVec2<T> operator-(const TVec2<T> &) const;
+        TVec2<T> operator*(T) const;
 
-        f32 x;
-        f32 y;
+        T x;
+        T y;
     };
 
-    template<>
-    struct TVec3<f32> {
+    template<template T>
+    class TVec3<T> {
         /* Constructors */
         inline TVec3() { }
-        TVec3(const TVec3<f32> &);
-        TVec3(const Vec &);
-        TVec3(f32);
+
+        TVec3(const TVec3<T> &rOther) {
+            x = rOther.x;
+            y = rOther.y;
+            z = rOther.z;
+        }
+
+        TVec3(const Vec &rOther) {
+            x = rOther.x;
+            y = rOther.y;
+            z = rOther.z;
+        }
+
+        TVec3(T val) {
+            x = val;
+            y = val;
+            z = val;
+        }
 
         template<typename T>
-        TVec3(T, T, T); // supports int and f32
+        TVec3(T _x, T _y, T _z) {
+            x = _x;
+            y = _y;
+            z = _z;
+        }
 
         /* Getters and setters */
-        void set(const Vec &);
+        void set(const Vec &rOther) {
+            x = rOther.x;
+            y = rOther.y;
+            z = rOther.z;
+        }
 
         template<typename T>
-        void set(const TVec3<T> &);
+        void set(const TVec3<T> &rOther) {
+            x = rOther.x;
+            y = rOther.y;
+            z = rOther.z;
+        }
 
         template<typename T>
-        void set(T, T, T); // supports int and f32
+        void set(T _x, T _y, T _z) {
+            x = _x;
+            y = _y;
+            z = _z;
+        }
 
         template<typename T>
-        void setAll(T);
+        void setAll(T val) {
+            x = val;
+            y = val;
+            z = val;
+        }
 
-        void zero();
-        void negate();
-        void negate(const TVec3<f32> &);
+        void zero() {
+            x = 0;
+            y = 0;
+            z = 0;
+        }
+
+        void negate() {
+            x = -x;
+            y = -y;
+            z = -z;
+        }
+
+        void negate(const TVec3<T> &);
 
         /* Arithmetic and algebraic operations */
-        void add(const TVec3<f32> &);
-        void add(const TVec3<f32> &, const TVec3<f32> &);
-        void sub(const TVec3<f32> &);
-        void sub(const TVec3<f32> &, const TVec3<f32> &);
-        void mul(const TVec3<f32> &);
-        void mul(const TVec3<f32> &, const TVec3<f32> &);
-        void scale(f32);
-        void scale(f32, const TVec3<f32> &);
+        void add(const TVec3<T> &);
+        void add(const TVec3<T> &, const TVec3<T> &);
+        void sub(const TVec3<T> &);
+        void sub(const TVec3<T> &, const TVec3<T> &);
+        void mul(const TVec3<T> &);
+        void mul(const TVec3<T> &, const TVec3<T> &);
+        void scale(T);
+        void scale(T, const TVec3<T> &);
 
-        void setLength(f32);
-        void setLength(const TVec3<f32> &, f32);
+        void setLength(T);
+        void setLength(const TVec3<T> &, T);
 
-        f32 squared() const;
-        f32 squared(const TVec3<f32> &) const;
-        f32 dot(const TVec3<f32> &) const;
-        f32 normalize(const TVec3<f32> &);
+        T squared() const;
+        T squared(const TVec3<T> &) const;
+        T dot(const TVec3<T> &) const;
+        T normalize(const TVec3<T> &);
 
-        f32 angle(const TVec3<f32> &) const;
+        T angle(const TVec3<T> &) const;
 
         /* Checkers */
-        bool epsilonEquals(const TVec3<f32> &, f32) const;
+        bool epsilonEquals(const TVec3<T> &, T) const;
         bool isZero() const;
 
         /* Operators */
-        void operator=(const TVec3<f32> &);
-        TVec3<f32> operator+(const TVec3<f32> &) const;
-        void operator+=(const TVec3<f32> &);
-        TVec3<f32> operator-(const TVec3<f32> &) const;
-        TVec3<f32> operator-() const;
-        void operator-=(const TVec3<f32> &);
-        TVec3<f32> operator*(f32) const;
-        void operator*=(f32);
-        TVec3<f32>operator/(f32) const;
-        bool operator==(const TVec3<f32> &) const;
+        void operator=(const TVec3<T> &);
+        TVec3<T> operator+(const TVec3<T> &) const;
+        void operator+=(const TVec3<T> &);
+        TVec3<T> operator-(const TVec3<T> &) const;
+        TVec3<T> operator-() const;
+        void operator-=(const TVec3<T> &);
+        TVec3<T> operator*(T) const;
+        void operator*=(T);
+        TVec3<T> operator/(T) const;
+        bool operator==(const TVec3<T> &) const;
 
         inline operator Vec*() { return (Vec*)&x; }
         inline operator const Vec*() const { return (Vec*)&x; }
         inline operator f32*() { return (f32*)&x; }
         inline operator const f32*() const { return (f32*)&x; }
 
-        f32 x;
-        f32 y;
-        f32 z;
+        T x;
+        T y;
+        T z;
     };
 
-    template<>
-    struct TVec3<s8> {
-        /* Constructors */
-        inline TVec3() { }
-
-        template<typename T>
-        TVec3(T);
-
-        s8 x;
-        s8 y;
-        s8 z;
-    };
-
-    template<>
-    struct TVec3<s16> {
-        /* Constructors */
-        inline TVec3() { }
-
-        template<typename T>
-        TVec3(T, T, T);
-
-        /* Operators */
-        inline operator S16Vec*() { return (S16Vec*)&x; }
-        inline operator const S16Vec*() const { return (S16Vec*)&x; }
-
-        s16 x;
-        s16 y;
-        s16 z;
-    };
-
-    template<>
-    struct TVec4<f32> {
+    template<typename T>
+    struct TVec4<T> {
         /* Constructors */
         inline TVec4() { }
 
@@ -184,12 +178,12 @@ namespace JGeometry {
         void set(T, T, T, T);
 
         /* Arithmetic and algebraic operations */
-        void scale(f32);
+        void scale(T);
 
-        f32 x;
-        f32 y;
-        f32 z;
-        f32 w;
+        T x;
+        T y;
+        T z;
+        T w;
     };
 };
 
