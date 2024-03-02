@@ -119,19 +119,51 @@ namespace JGeometry {
         void negate(const TVec3<T> &);
 
         /* Arithmetic and algebraic operations */
-        void add(const TVec3<T> &);
+        void add(const TVec3<T> &rOther) {
+            this->x += rOther.x;
+            this->y += rOther.y;
+            this->z += rOther.z;
+        }
+    
         void add(const TVec3<T> &, const TVec3<T> &);
-        void sub(const TVec3<T> &);
+
+        void sub(const TVec3<T> &rOther) {
+            this->x -= rOther.x;
+            this->y -= rOther.y;
+            this->z -= rOther.z;
+        }
+
         void sub(const TVec3<T> &, const TVec3<T> &);
-        void mul(const TVec3<T> &);
+    
+        void mul(const TVec3<T> &rOther) {
+            this->x *= rOther.x;
+            this->y *= rOther.y;
+            this->z *= rOther.z;
+        }
+
         void mul(const TVec3<T> &, const TVec3<T> &);
-        void scale(T);
+
+        void div(const TVec3<T> &rOther) {
+            this->x /= rOther.x;
+            this->y /= rOther.y;
+            this->z /= rOther.z;
+        }
+
+        void scale(T scalar) {
+            this->x *= scalar;
+            this->y *= scalar;
+            this->z *= scalar;
+        }
+
         void scale(T, const TVec3<T> &);
 
-        void setLength(T);
-        void setLength(const TVec3<T> &, T);
+        void setLength(float);
+        void setLength(const TVec3<float> &, float);
 
-        T squared() const;
+        T squared() const {
+            return (this->x * this->x) + (this->y * this->y) + (this->z * this->z);
+        }
+
         T squared(const TVec3<T> &) const;
         T dot(const TVec3<T> &) const;
         T normalize(const TVec3<T> &);
@@ -143,14 +175,40 @@ namespace JGeometry {
         bool isZero() const;
 
         /* Operators */
-        void operator=(const TVec3<T> &);
-        TVec3<T> operator+(const TVec3<T> &) const;
+        void operator=(const TVec3<T> &rhs) {
+            this->x = rhs.x;
+            this->y = rhs.y;
+            this->z = rhs.z;
+        }
+
+        TVec3<T> operator+(const TVec3<T> &rhs) const {
+            this->x += rhs.x;
+            this->y += rhs.y;
+            this->z += rhs.z;
+        }
+
         void operator+=(const TVec3<T> &);
-        TVec3<T> operator-(const TVec3<T> &) const;
-        TVec3<T> operator-() const;
+
+        TVec3<T> operator-(const TVec3<T> &rhs) const {
+            this->x -= rhs.x;
+            this->y -= rhs.y;
+            this->z -= rhs.z;
+        }
+
+        TVec3<T> operator-() const {
+            negate();
+        }
+
         void operator-=(const TVec3<T> &);
-        TVec3<T> operator*(T) const;
-        void operator*=(T);
+
+        TVec3<T> operator*(T val) const {
+            scale(val);
+        }
+
+        void operator*=(T rhs) {
+            mul(rhs);
+        }
+
         TVec3<T> operator/(T) const;
         bool operator==(const TVec3<T> &) const;
 
