@@ -189,7 +189,7 @@ namespace JGeometry {
 
         void operator+=(const TVec3<T> &);
 
-        TVec3<T> operator-(const TVec3<T> &rhs) const {
+        TVec3<T> operator-(const TVec3<T> &rhs) {
             this->x -= rhs.x;
             this->y -= rhs.y;
             this->z -= rhs.z;
