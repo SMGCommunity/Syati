@@ -181,35 +181,70 @@ namespace JGeometry {
             this->z = rhs.z;
         }
 
-        TVec3<T> operator+(const TVec3<T> &rhs) const {
-            this->x += rhs.x;
-            this->y += rhs.y;
-            this->z += rhs.z;
+        TVec3<T> operator+(const TVec3<T>& rhs) const {
+            TVec3<T> ret = *this;
+            ret.x = ret.x + rhs.x;
+            ret.y = ret.y + rhs.y;
+            ret.z = ret.z + rhs.z;
+            return ret;
         }
 
-        void operator+=(const TVec3<T> &);
+        TVec3<T>& operator+=(const TVec3<T>& rhs) {
+            this->x = this->x + rhs.x;
+            this->y = this->y + rhs.y;
+            this->z = this->z + rhs.z;
+            return *this;
+        }
 
-        TVec3<T> operator-(const TVec3<T> &rhs) {
-            this->x -= rhs.x;
-            this->y -= rhs.y;
-            this->z -= rhs.z;
+        TVec3<T> operator-(const TVec3<T> &rhs) const {
+            TVec3<T> ret = *this;
+            ret.x = ret.x - rhs.x;
+            ret.y = ret.y - rhs.y;
+            ret.z = ret.z - rhs.z;
+            return ret;
         }
 
         TVec3<T> operator-() const {
-            negate();
+            TVec3<T> ret = *this;
+            ret.negate();
+            return ret;
         }
 
-        void operator-=(const TVec3<T> &);
+        TVec3<T>& operator-=(const TVec3<T>& rhs) {
+            this->x = this->x - rhs.x;
+            this->y = this->y - rhs.y;
+            this->z = this->z - rhs.z;
+            return *this;
+        }
 
         TVec3<T> operator*(T val) const {
-            scale(val);
+            TVec3<T> ret = *this;
+            ret.scale(val);
+            return ret;
         }
 
-        void operator*=(T rhs) {
-            mul(rhs);
+        TVec3<T>& operator*=(const TVec3<T>& rhs) {
+            this->x = this->x * rhs.x;
+            this->y = this->y * rhs.y;
+            this->z = this->z * rhs.z;
+            return *this;
         }
 
-        TVec3<T> operator/(T) const;
+        TVec3<T> operator/(T rhs) const {
+            TVec3<T> ret = *this;
+            ret.x = ret.x / rhs;
+            ret.y = ret.y / rhs;
+            ret.z = ret.z / rhs;
+            return ret;
+        }
+
+        TVec3<T>& operator/=(const TVec3<T>& rhs) {
+            this->x = this->x / rhs.x;
+            this->y = this->y / rhs.y;
+            this->z = this->z / rhs.z;
+            return *this;
+        }
+
         bool operator==(const TVec3<T> &) const;
 
         inline operator Vec*() { return (Vec*)&x; }
