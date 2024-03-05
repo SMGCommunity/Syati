@@ -1,6 +1,7 @@
 #pragma once
 
 #include "revolution.h"
+#include "JSystem\JMath.h"
 
 namespace JGeometry {
     void negateInternal(const float *rSrc, float *rDest);
@@ -182,31 +183,44 @@ namespace JGeometry {
         }
 
         TVec3<T> operator+(const TVec3<T> &rhs) const {
-            this->x += rhs.x;
-            this->y += rhs.y;
-            this->z += rhs.z;
+            TVec3<T> vec = *this;
+            JMathInlineVEC::PSVECAdd(vec.toCVec(), rhs.toCVec(), vec.toVec());
+            return vec;
         }
 
-        void operator+=(const TVec3<T> &);
+        TVec3<T>& operator+=(const TVec3<T> & rhs) {
+            JMathInlineVEC::PSVECAdd(toCVec(), rhs.toCVec(), toVec());
+            return *this;
+        }
 
-        TVec3<T> operator-(const TVec3<T> &rhs) {
-            this->x -= rhs.x;
-            this->y -= rhs.y;
-            this->z -= rhs.z;
+        TVec3<T> operator-(const TVec3<T> &rhs) const {
+            TVec3<T> vec = *this;
+            JMathInlineVEC::PSVECSubtract(vec.toCVec(), rhs.toCVec(), vec.toVec());
+            return vec;
         }
 
         TVec3<T> operator-() const {
-            negate();
+            // TODO: Function uses paired singles in Petari, should be recreated.
+            //! THIS IS A BAND-AID IMPLEMENTATION. THIS WILL CHANGE!!!
+            TVec3<T> vec = *this;
+            vec.negate();
+            return vec;
         }
 
-        void operator-=(const TVec3<T> &);
+        TVec3<T>& operator-=(const TVec3<T> & rhs) {
+            JMathInlineVEC::PSVECSubtract(toCVec(), rhs.toCVec(), toVec());
+            return *this;
+        }
 
         TVec3<T> operator*(T val) const {
-            scale(val);
+            TVec3<T> vec = this*;
+            vec.scale(val);
+            return vec;
         }
 
-        void operator*=(T rhs) {
+        TVec3<T>& operator*=(T rhs) {
             mul(rhs);
+            return *this;
         }
 
         TVec3<T> operator/(T) const;
@@ -216,6 +230,14 @@ namespace JGeometry {
         inline operator const Vec*() const { return (Vec*)&x; }
         inline operator f32*() { return (f32*)&x; }
         inline operator const f32*() const { return (f32*)&x; }
+
+        inline Vec* toVec() {
+            return (Vec*)this;
+        }
+
+        inline const Vec* toCVec() const {
+            return (const Vec*)this;
+        }
 
         T x;
         T y;
