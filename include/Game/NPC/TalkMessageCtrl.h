@@ -34,7 +34,7 @@ public:
     void startCamera(s32);
     void rootNodePre(bool);
     void rootNodePst();
-    void isCurrentNodeContinue() const;
+    bool isCurrentNodeContinue() const;
     void rootNodeEve();
     void rootNodeSel(bool);
     void setMessageArg(const CustomTagArg&);

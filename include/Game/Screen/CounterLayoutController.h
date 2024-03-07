@@ -10,7 +10,6 @@
 #include "Game/Screen/CometMedalCounter.h"
 
 class MarioMeter;
-class BlueCoinCounter;
 
 class CounterLayoutController : public LayoutActor {
 public:

@@ -1,8 +1,6 @@
 #pragma once
 
 #include "syati.h"
-#include "pt/MapObj/BlueCoinSystem/BlueCoin.h"
-
 
 class SamboHead : public LiveActor {
 public:
