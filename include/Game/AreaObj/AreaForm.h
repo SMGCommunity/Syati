@@ -19,7 +19,7 @@ public:
 	virtual void init(const JMapInfoIter &rIter) = 0;
 	virtual bool isInVolume(const TVec3f &rTranslation) const = 0;
 
-	TMtx34f* mFollowMtx; // _4
+	MtxPtr mFollowMtx; // _4
 };
 
 class AreaFormCube : public AreaForm {

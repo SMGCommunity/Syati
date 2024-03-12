@@ -17,7 +17,7 @@ public:
 	virtual void makeActorAppeared();
 	virtual void kill();
 	virtual void makeActorDead();
-	virtual TMtx34f* getBaseMtx() const;
+	virtual MtxPtr getBaseMtx() const;
 	virtual void startClipped();
 	virtual void control();
 	virtual void calcAndSetBaseMtx();

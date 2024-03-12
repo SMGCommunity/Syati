@@ -20,7 +20,7 @@ public:
 
 namespace MR {
 	CoinRotater* createCoinRotater();
-	TMtx34f* getCoinRotateYMatrix();
-	TMtx34f* getCoinHiSpeedRotateYMatrix();
-	TMtx34f* getCoinInWaterRotateYMatrix();
+	MtxPtr getCoinRotateYMatrix();
+	MtxPtr getCoinHiSpeedRotateYMatrix();
+	MtxPtr getCoinInWaterRotateYMatrix();
 };

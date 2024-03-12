@@ -50,8 +50,8 @@ public:
     virtual void kill();
     virtual void makeActorDead();
     virtual bool receiveMessage(u32 msg, HitSensor *pSender, HitSensor *pReceiver);
-    virtual TMtx34f* getBaseMtx() const;
-    virtual TMtx34f* getTakingMtx() const;
+    virtual MtxPtr getBaseMtx() const;
+    virtual MtxPtr getTakingMtx() const;
     virtual void startClipped();
     virtual void endClipped();
     virtual void control();
