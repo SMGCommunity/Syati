@@ -5,15 +5,15 @@
 class StarCounter : public LayoutActor {
 public: 
     StarCounter();
+    virtual ~StarCounter();
     virtual void init(const JMapInfoIter&);
     virtual void appear();
     virtual void kill();
+    virtual void control();
     void disappear();
     bool isWait() const;
-    virtual void control();
     void exeCountUp();
     void exeDisappear();
-    virtual ~StarCounter();
 
     s32 mPowerStarNum; // 0x2C
     CounterLayoutAppearer* mAppearer; // 0x30

@@ -5,10 +5,15 @@
 class SamboHead : public LiveActor {
 public:
     SamboHead(const char*);
+    virtual ~SamboHead();
     virtual void init(const JMapInfoIter&);
     virtual void appear();
     virtual void kill();
     virtual void control();
+    virtual void attackSensor(HitSensor*, HitSensor*);
+    virtual bool receiveMsgPlayerAttack(u32, HitSensor*, HitSensor*);
+    virtual bool receiveMsgPush(HitSensor*, HitSensor*);
+    virtual bool receiveOtherMsg(u32, HitSensor*, HitSensor*);
     void exeWaitUnderGround();
     void exeHide();
     void exeAppear();
@@ -24,14 +29,9 @@ public:
     void exeBuryDeath();
     void exeBindStarPointer();
     void exeBindStarPointerEnd();
-    virtual void attackSensor(HitSensor*, HitSensor*);
-    virtual bool receiveMsgPlayerAttack(u32, HitSensor*, HitSensor*);
-    virtual bool receiveMsgPush(HitSensor*, HitSensor*);
-    virtual bool receiveOtherMsg(u32, HitSensor*, HitSensor*);
     void calcAndSetBaseMtx();
     void isNerveTypeDead() const;
     void isStarPointerBindable() const;
-    virtual ~SamboHead();
 
     SpinHitController* mSpinHitController; // 0x90
     AnimScaleController* mAnimScaleController; // 0x94

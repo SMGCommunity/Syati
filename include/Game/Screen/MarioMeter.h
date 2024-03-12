@@ -7,6 +7,7 @@ class SuddenDeathMeter;
 
 class MarioMeter : public NameObj {
     MarioMeter(const char*);
+    virtual ~MarioMeter();
     virtual void init(const JMapInfoIter&);
     void initLifeCount(s32);
     void setLifeCount(s32);
@@ -16,8 +17,7 @@ class MarioMeter : public NameObj {
     void requestPlayerStopped();
     void activate();
     void deactivate();
-    virtual ~MarioMeter();
-    
+
     MeterLayout* mMeterLayout;
     SuddenDeathMeter* mSuddenDeathMeter;
     bool _1C;

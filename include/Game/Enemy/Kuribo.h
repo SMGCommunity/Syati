@@ -6,10 +6,9 @@ class Kuribo : public LiveActor {
     public:
 
     Kuribo(const char*);
+    virtual ~Kuribo();
     virtual void init(const JMapInfoIter&);
     virtual void initAfterPlacement();
-    void initState();
-    void initAppearState(const JMapInfoIter&);
     virtual void makeActorAppeared();
     virtual void makeActorDead();
     virtual void kill();
@@ -20,6 +19,8 @@ class Kuribo : public LiveActor {
     virtual bool receiveMsgEnemyAttack(u32, HitSensor*, HitSensor*);
     virtual bool receiveMsgPush(HitSensor*, HitSensor*);
     virtual bool receiveOtherMsg(u32, HitSensor*, HitSensor*);
+    void initState();
+    void initAppearState(const JMapInfoIter&);
     bool requestDead();
     bool requestFlatDown(HitSensor*, HitSensor*);
     bool requestHipDropDown(HitSensor*, HitSensor*);
@@ -58,7 +59,6 @@ class Kuribo : public LiveActor {
     bool isEnableAttack() const;
     bool isEnableStamp() const;
     bool isEnablePushMove() const;
-    virtual ~Kuribo();
 
     AnimScaleController* mAnimScaleController; // 0x90
     s32 _94;

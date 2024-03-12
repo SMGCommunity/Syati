@@ -58,7 +58,7 @@ public:
     void capture(int, int, _GXTexFmt, bool, u8);
     void setEmbPaletteDelFlag(bool);
 
-    GXTexObj mTexObj; // _0 if someone can tell me what a GXTexObj is then I can get rid of this terrible line
+    GXTexObj mTexObj; // _0
     ResTIMG* _20;
     ResTIMG* _24;
     JUTPalette* _28;

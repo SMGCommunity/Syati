@@ -12,6 +12,7 @@ class SaveIcon;
 class SaveDataHandleSequence : public NerveExecutor {
 public:
 	SaveDataHandleSequence();
+	virtual ~SaveDataHandleSequence();
 	void initAfterResourceLoaded();
 	void startPreLoad();
 	void startCreateUserFile(int);
@@ -47,7 +48,6 @@ public:
 	bool isEnablePointer() const;
 	void executeSaveFinish(bool*, const Nerve*);
 	void syncNoSaveFlagsFromErrorSequence();
-	~SaveDataHandleSequence();
 
 	SysConfigFile* mSysConfigFile; // 8
 	UserFile* mCurrentUserFile; // 0xC

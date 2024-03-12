@@ -5,6 +5,7 @@
 class CometMedalCounter : public LayoutActor {
 public:
     CometMedalCounter();
+    virtual ~CometMedalCounter();
     virtual void init(const JMapInfoIter&);
     virtual void appear();
     void forceAppear();
@@ -16,7 +17,6 @@ public:
     void exeWait();
     void exeFlash();
     void exeDisappear();
-    virtual ~CometMedalCounter();
 
     s32 _2C;
     CounterLayoutAppearer* mAppearer; // 0x30;

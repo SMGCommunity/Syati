@@ -5,11 +5,11 @@
 class PauseBlur : public NameObj {
 public:
     PauseBlur(const char*);
+    virtual ~PauseBlur();
     virtual void init(const JMapInfoIter&);
     virtual void movement();
     virtual void draw();
     virtual void calcAnim();
-    virtual ~PauseBlur();
 
     s32 _14;
     s32 _18;

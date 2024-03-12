@@ -5,6 +5,7 @@
 class MeterLayout : public LayoutActor {
 public:
     MeterLayout(const char*, const char*);
+    virtual ~MeterLayout();
     virtual void init(const JMapInfoIter&);
     virtual void control();
     void requestActive();
@@ -31,7 +32,6 @@ public:
     void setAnimBase();
     void setCountAnimFrame();
     void setRecoveryCountAnimFrame();
-    virtual ~MeterLayout();
 
     CountUpPaneRumbler* mPaneRumbler; // 0x2C
     s32 _30;

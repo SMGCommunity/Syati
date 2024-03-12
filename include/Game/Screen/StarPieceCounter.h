@@ -5,10 +5,11 @@
 class StarPieceCounter : public LayoutActor {
 public: 
     StarPieceCounter(const char*);
+    virtual ~StarPieceCounter();
     virtual void init(const JMapInfoIter&);
     virtual void appear();
     void forceAppear(bool);
-    virtual void disappear(bool);
+    void disappear(bool);
     bool isWait() const;
     void forceSync();
     bool tryOnModeTicoEat(bool);
@@ -22,7 +23,6 @@ public:
     void exeAppear();
     void exeWait();
     void exeDisappear();
-    virtual ~StarPieceCounter();
 
     s32 mStarPieceNum; // 0x2C
     s32 mDisplayStarPieceNum; // 0x30
