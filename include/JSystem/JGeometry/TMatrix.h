@@ -47,15 +47,15 @@ namespace JGeometry {
     public:
         void identity33();
 
-        void getXDir(TVec3f &rDest) const NO_INLINE {
+        void getXDir(TVec3f &rDest) const  {
             rDest.set<f32>(mMtx[0][0], mMtx[1][0], mMtx[2][0]);
         };
 
-        void getYDir(TVec3f &rDest) const NO_INLINE {
+        void getYDir(TVec3f &rDest) const  {
             rDest.set<f32>(mMtx[0][1], mMtx[1][1], mMtx[2][1]);
         };
 
-        void getZDir(TVec3f &rDest) const NO_INLINE {
+        void getZDir(TVec3f &rDest) const  {
             rDest.set<f32>(mMtx[0][2], mMtx[1][2], mMtx[2][2]);
         };
 
