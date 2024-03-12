@@ -92,6 +92,27 @@ namespace JGeometry {
             rDest.set(x, y, z);
         }
     };
+
+    template<class T>
+    struct TPosition3 : public TRotation3<T> {
+    public:
+        void getTrans(TVec3f &rDest) const;
+        void setTrans(const TVec3f &rSrc);
+        void setTrans(f32 x, f32 y, f32 z);
+        void zeroTrans();
+
+        void makeRotate(const TVec3f &, f32);
+        void makeQuat(const TQuat4f &rSrc);
+        void setPositionFromLookAt(const TPosition3<T> &rLookAt);
+        void setQT(const TQuat4f &rSrcQuat, const TVec3f &rSrcTrans);
+
+        inline void getTransInline(TVec3f &rDest) const {
+            f32 z = mMtx[2][3];
+            f32 y = mMtx[1][3];
+            f32 x = mMtx[0][3];
+            rDest.set(x, y, z);
+        }
+    };
 }
 
 typedef JGeometry::SMatrix34C<f32> TSMtxf;
