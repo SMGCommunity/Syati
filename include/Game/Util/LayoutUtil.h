@@ -88,6 +88,11 @@ namespace MR {
 	void pauseOffEffectAll(LayoutActor *);
 	bool isRegisteredEffect(const LayoutActor *, const char *);
 
+	void setFollowPos(const TVec2f*, const LayoutActor*, const char*);
+	void setFollowTypeReplace(const LayoutActor* pLayout, const char* pStr);
+	void copyPaneTrans(TVec2f*, const LayoutActor*, const char*);
+
+	bool isStep(const LayoutActor *pLayout, s32 step);
 	bool isFirstStep(const LayoutActor *pLayout);
 	bool isLessStep(const LayoutActor *pLayout, s32 step);
 	bool isGreaterStep(const LayoutActor *pLayout, s32 step);

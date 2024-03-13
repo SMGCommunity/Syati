@@ -99,3 +99,17 @@ namespace MR {
 	bool isStarPointer1PInvalid2PValidMode();
 	void setStarPointerDrawSyncToken();
 };
+
+// Most of these names are unknown.
+namespace StarPointerUtil {
+    bool sub_8005E720(LayoutActor*, bool);
+    TVec2f* getDefaultButtonOffsetVec2();
+    void addStarPointerMovePositionFromPane(LayoutActor*, const char*, TVec2f*);
+    void sub_8005E940(LayoutActor*);
+    void sub_8005E790(LayoutActor*);
+    void setConnectionMovePositionRight2Way(const char*, const char*);
+    void setConnectionMovePositionDown2Way(const char*, const char*);
+    void setConnectionMovePositionRight(const char*, const char*);
+    void setConnectionMovePositionDown(const char*, const char*);
+    void setDefaultAllMovePosition(const char*);
+};

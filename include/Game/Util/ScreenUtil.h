@@ -56,8 +56,9 @@ namespace MR {
 
 	void closeSystemWipeCircleWithCaptureScreen(s32);
 	void closeSystemWipeFadeWithCaptureScreen(s32);
+	void startSystemWipeCircleWithCaptureScreen(s32);
 	void setWipeCircleCenterPos(const TVec3f &);
-
+	
 	void requestMovementOnImageEffect();
 	void setImageEffectControlAuto();
 	void turnOffDOFInSubjective();
