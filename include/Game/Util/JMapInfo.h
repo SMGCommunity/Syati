@@ -49,6 +49,7 @@ public:
 
 class JMapInfoIter {
 public:
+    inline JMapInfoIter() { }
     inline JMapInfoIter(const JMapInfo* pInfo, int index) : mInfo(pInfo), mIndex(index) { }
 
     bool isValid() const;
