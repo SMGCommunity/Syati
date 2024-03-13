@@ -3,6 +3,7 @@
 #include "revolution.h"
 #include "JSystem.h"
 #include "Game/Util/Functor.h"
+#include "Game/Util/Color8.h"
 
 class BenefitItemLifeUp;
 class BenefitItemOneUp;
