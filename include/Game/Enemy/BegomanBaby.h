@@ -35,7 +35,7 @@ public:
     void exeInWater();
 
     bool receiveMsgTrample(HitSensor *pSender, HitSensor *pReceiver);
-    bool calcHeadJoint(TMtx34f *pMtx, const JointControllerInfo &rJointCtrlInfo);
+    bool calcHeadJoint(MtxPtr pMtx, const JointControllerInfo &rJointCtrlInfo);
 
     JointController* mJointCtrl; // _10C
     TMtx34f mWaterColumnMtx;     // _110

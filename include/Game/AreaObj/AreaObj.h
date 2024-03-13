@@ -34,7 +34,7 @@ public:
     bool isValidSwitchA() const;
     bool isValidSwitchB() const;
 
-    void setFollowMtx(const TMtx34f *pFollowMtx);
+    void setFollowMtx(const MtxPtr pFollowMtx);
     MtxPtr getFollowMtx() const;
 
     AreaForm* mAreaForm;               // _14

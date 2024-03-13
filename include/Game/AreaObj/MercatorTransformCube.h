@@ -11,7 +11,7 @@ public:
 	virtual ~MercatorTransformCube();
 	virtual void init(const JMapInfoIter &rIter);
 
-	void convertTransAndRotate(TVec3f *, TMtx34f *, const TVec3f &, bool) const;
+	void convertTransAndRotate(TVec3f *, MtxPtr , const TVec3f &, bool) const;
 	f32 getSphereRadius() const;
 	void calcUV(TVec2f * pUV, const TVec3f &) const;
 	void calcLocalBoxSize(TVec3f *pLocalBoxSize) const;

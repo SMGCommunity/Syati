@@ -27,9 +27,9 @@ public:
     const TVec3f *calcAndGetPos(int);
     void calcForceMovePower(TVec3f *, const TVec3f &) const;
     JMapInfoIter getAttributes() const;
-    TMtx34f *getBaseMtx() const;
-    TMtx34f *getBaseInvMtx() const;
-    TMtx34f *getPrevBaseMtx() const;
+    MtxPtr getBaseMtx() const;
+    MtxPtr getBaseInvMtx() const;
+    MtxPtr getPrevBaseMtx() const;
 
     CollisionParts* mColParts; // _0
     u32 mIndex;                // _4

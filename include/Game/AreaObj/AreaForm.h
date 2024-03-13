@@ -35,7 +35,7 @@ public:
 
 	f32 getBaseSize();
 	void updateBoxParam();
-	void calcWorldMtx(TMtx34f *pWorldMtx) const;
+	void calcWorldMtx(MtxPtr pWorldMtx) const;
 
 	int mCentered;       // _8
 	TVec3f mTranslation; // _C
