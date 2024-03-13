@@ -155,8 +155,8 @@ namespace MR {
 	void endBindAndPlayerFreezeDamage(LiveActor *);
 	void endBindAndPlayerFireDamage(LiveActor *);
 	void endBindAndPlayerElectricDamage(LiveActor *);
-	void getCurrentRushActor();
-	HitSensor* getCurrentRushSensor();
+	LiveActor *getCurrentRushActor();
+	HitSensor *getCurrentRushSensor();
 	void tryPlayerCoinPull();
 	void tryPlayerPullActor(HitSensor *);
 	void tryPlayerDropTakingActor();

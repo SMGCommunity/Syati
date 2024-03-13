@@ -41,7 +41,7 @@ class CameraTargetObj : public NameObj
     virtual void disableCameraWall();
     virtual void setCameraWall(bool);
     virtual bool isDebugMode() const;
-    virtual TMtx34f* getMapBaseMtx() const;
+    virtual MtxPtr getMapBaseMtx() const;
     virtual void resetStatus();
 
     bool mCameraWall;   // _C

@@ -11,7 +11,7 @@ public:
     virtual ~ClipArea();
     virtual void init(const JMapInfoIter &rIter);
     virtual void draw() const;
-    virtual TMtx34f* getBaseMtx() const;
+    virtual MtxPtr getBaseMtx() const;
     virtual bool isInArea(const TVec3f &, f32) const;
 
     void initBaseMatrix(const JMapInfoIter &rIter);

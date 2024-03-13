@@ -31,7 +31,7 @@ public:
 
     virtual void init(const JMapInfoIter &rIter);
     virtual void movement();
-    virtual TMtx34f* getBaseMtx() const;
+    virtual MtxPtr getBaseMtx() const;
 
     MtxPtr mMtx; // _90
 };
