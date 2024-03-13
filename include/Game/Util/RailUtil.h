@@ -39,7 +39,7 @@ namespace MR {
 	void calcMovingDirectionAlongRailH(LiveActor *, TVec3f *, const TVec3f &, f32, bool *);
 	void calcRailClippingInfo(TVec3f *, f32 *, const LiveActor *, f32, f32);
 	void initAndSetRailClipping(TVec3f *, LiveActor *, f32, f32);
-	void calcNearestRailCoord(const LiveActor *, const TVec3f &);
+	f64 calcNearestRailCoord(const LiveActor *, const TVec3f &);
 	void calcNearestRailPos(TVec3f *, const LiveActor *, const TVec3f &);
 	void calcNearestRailDirection(TVec3f *, const LiveActor *, const TVec3f &);
 	void calcNearestRailPosAndDirection(TVec3f *, TVec3f *, const LiveActor *, const TVec3f &);
@@ -76,10 +76,10 @@ namespace MR {
 	f32 getRailTotalLength(const LiveActor *);
 	f32 getRailPartLength(const LiveActor *, int);
 	f32 getRailPointCoord(const LiveActor *, int);
-	TVec3f* getRailPos(const LiveActor *);
-	TVec3f* getRailPointPosStart(const LiveActor *);
-	TVec3f* getRailPointPosEnd(const LiveActor *);
-	TVec3f* getRailDirection(const LiveActor *);
+	TVec3f& getRailPos(const LiveActor *);
+	TVec3f& getRailPointPosStart(const LiveActor *);
+	TVec3f& getRailPointPosEnd(const LiveActor *);
+	TVec3f& getRailDirection(const LiveActor *);
 	f32 getRailCoord(const LiveActor *);
 	f32 getRailCoordSpeed(const LiveActor *);
 	void setRailCoord(LiveActor *, f32);
