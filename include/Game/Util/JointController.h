@@ -25,8 +25,8 @@ class JointController {
 public:
 	JointController();
 
-	virtual bool calcJointMatrix(MtxPtr , const JointControllerInfo &);
-	virtual bool calcJointMatrixAfterChild(MtxPtr , const JointControllerInfo &);
+	virtual bool calcJointMatrix(TPos3f*, const JointControllerInfo &);
+	virtual bool calcJointMatrixAfterChild(TPos3f*, const JointControllerInfo &);
 
 	void registerCallBack();
 	void calcJointMatrixAndSetSystem(J3DJoint *);
@@ -45,11 +45,11 @@ namespace MR {
 template<typename T>
 class JointControlDelegator : public JointController {
 public:
-	typedef bool (T::*CalcJointMtxFunc)(MtxPtr , const JointControllerInfo &);
+	typedef bool (T::*CalcJointMtxFunc)(TPos3f*, const JointControllerInfo &);
 
 	inline JointControlDelegator() : JointController() {}
 
-	virtual bool calcJointMatrix(MtxPtr  pMtx, const JointControllerInfo & rInfo) {
+	virtual bool calcJointMatrix(TPos3f* pMtx, const JointControllerInfo & rInfo) {
 		if (mCalcJointMtxFunc) {
 			return (mObjPtr->*mCalcJointMtxFunc)(pMtx, rInfo);
 		}
@@ -58,7 +58,7 @@ public:
 		}
 	}
 
-	virtual bool calcJointMatrixAfterChild(MtxPtr  pMtx, const JointControllerInfo & rInfo) {
+	virtual bool calcJointMatrixAfterChild(TPos3f* pMtx, const JointControllerInfo & rInfo) {
 		if (mCalcJointMtxAfterChildFunc) {
 			return (mObjPtr->*mCalcJointMtxAfterChildFunc)(pMtx, rInfo);
 		}

@@ -70,7 +70,7 @@ namespace MR {
     bool isInvalidClipping(const LiveActor *pActor);
 
     void setBaseTRMtx(LiveActor *pActor, MtxPtr pTRMtx);
-    void setBaseTRMtx(LiveActor *pActor, const TMtx34f &rMtx);
+    void setBaseTRMtx(LiveActor *pActor, const TPos3f &rMtx);
     void setBaseTRMtx(LiveActor *pActor, const TQuat4f &rQuat);
     // setBaseTRMtx operating on some unknown struct
     void setBaseScale(LiveActor *pActor, const TVec3f &rScale);
