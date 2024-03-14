@@ -38,7 +38,7 @@ public:
     void equipment(const NPCActorItem &, bool);
     void initTalkCtrl(const JMapInfoIter &, const char *, const TVec3f &, MtxPtr);
     void initTalkCtrlDirect(const JMapInfoIter &, const char *, const TVec3f &, MtxPtr);
-    void calcJointScale(TMtx34f *, const JointControllerInfo &);
+    void calcJointScale(MtxPtr , const JointControllerInfo &);
     void turnToPlayer();
     void turnToPlayer(f32);
     void turnToPlayer(f32, f32, f32);

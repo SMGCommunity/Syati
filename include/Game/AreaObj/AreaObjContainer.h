@@ -9,7 +9,7 @@
 struct ManagerEntry {
     const char* pManagerName; // _0
 	s32 mMaxAreas; // _4
-    NameObj* (*mCreationFunc)(const char *); // _8
+    AreaObjMgr* (*mCreationFunc)(s32, const char *); // _8
 };
 
 class AreaObjContainer : public NameObj {
@@ -25,7 +25,7 @@ public:
 	bool isExistAreaObj(const char *pName) const;
 
     template<typename T>
-    NameObj* createManager(s32 size, const char *pName);
+    static AreaObjMgr* createManager(s32 size, const char *pName);
 
 	static ManagerEntry cCreateTable[95];
 

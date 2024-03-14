@@ -3,6 +3,7 @@
 #include "revolution.h"
 #include "JSystem.h"
 #include "Game/Util/Functor.h"
+#include "Game/Util/Color8.h"
 
 class BenefitItemLifeUp;
 class BenefitItemOneUp;
@@ -214,6 +215,10 @@ namespace MR {
     bool isName(const NameObj *pObj, const char *pName);
     bool isSame(const NameObj *pObjA, const NameObj *pObjB);
 
+    void suspendAllSceneNameObj();
+    void resumeAllSceneNameObj();
+
+    void requestPointLight(const LiveActor*, TVec3f, Color8, f32, s32);
     bool registerNamePosLinkObj(const NameObj *pLinkedObj, const JMapInfoIter &rIter, const char *pPosName);
     bool tryRegisterNamePosLinkObj(const NameObj *pLinkedObj, const JMapInfoIter &rIter, const char *pPosName);
     bool findNamePos(const char *pPosName, MtxPtr pMtx);

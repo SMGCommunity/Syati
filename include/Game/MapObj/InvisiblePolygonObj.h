@@ -9,7 +9,7 @@ public:
 
 	virtual ~InvisiblePolygonObj();
 	virtual void init(const JMapInfoIter &);
-	virtual TMtx34f* getBaseMtx() const;
+	virtual MtxPtr getBaseMtx() const;
 
 	void initBaseMtx();
 	void initCollision(const JMapInfoIter &);

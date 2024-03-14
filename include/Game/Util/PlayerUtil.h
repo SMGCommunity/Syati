@@ -208,8 +208,8 @@ namespace MR {
 
 	MarioActor* getPlayerDemoActor();
 
-	void calcPlayerJointMtx(TMtx34f *, const char *);
-	void concatWithPlayerJointMtx(TMtx34f *, const char *);
+	void calcPlayerJointMtx(MtxPtr , const char *);
+	void concatWithPlayerJointMtx(MtxPtr , const char *);
 
 	void pushPlayer(const TVec3f &);
 	void pushPlayerFromArea(const TVec3f &);

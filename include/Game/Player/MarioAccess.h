@@ -52,7 +52,7 @@ public:
 	static void getStarPieceDirect(); // dummied-out
 	static void scatterStarPiece(u32);
 	static MtxPtr getJointMtx(const char *);
-	static void concatWithJointMtx(TMtx34f *, const char *);
+	static void concatWithJointMtx(MtxPtr , const char *);
 	static TVec3f* getVelocity();
 	static TVec3f* getLastMove();
 	static void hide(bool);
