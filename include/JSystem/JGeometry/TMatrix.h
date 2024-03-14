@@ -7,7 +7,7 @@ namespace JGeometry {
     template<typename T>
     struct SMatrix34C {
     public:
-        void set(const MtxPtr);
+        void set(const float (*)[4]);
         void set(const SMatrix34C<T> &rSrc);
         void set(T rxx, T ryx, T rzx, T tx, T rxy, T ryy, T rzy, T ty, T rxz, T ryz, T rzz, T tz);
 
