@@ -153,4 +153,11 @@ namespace MR {
 
 	s32 clamp(s32 val, s32 min, s32 max);
 	f32 clamp(f32 val, f32 min, f32 max);
+
+
+
+	inline f32 modAndSubtract(f32 a1, f32 a3, f32 a4) {
+		f32 mod = fmod((a3 + (a1 - a4)), a3);
+		return a4 + mod;
+	}
 };
