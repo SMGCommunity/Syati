@@ -34,7 +34,7 @@ public:
 	const char *getHostName() const;
 	s32 getPlacementZoneID() const;
 	void checkStrikePoint(HitInfo *, const TVec3f &);
-	void checkStrikeBall(HitInfo *, u32, const TVec3f &, f32, bool, const TriangleFilterBase *);
+	bool checkStrikeBall(HitInfo *, u32, const TVec3f &, f32, bool, const TriangleFilterBase *);
 	void checkStrikeBallCore(HitInfo *, u32, const TVec3f &, const TVec3f &, f32, f32, f32, KC_PrismData **, f32 *, u8 *, const TriangleFilterBase *, const TVec3f *);
 	void checkStrikeBallWithThickness(HitInfo *, u32, const TVec3f &, f32, f32, const TriangleFilterBase *);
 	void calcCollidePosition(TVec3f *, const KC_PrismData &, u8);
