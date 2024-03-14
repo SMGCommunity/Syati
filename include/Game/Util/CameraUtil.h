@@ -59,7 +59,7 @@ namespace MR {
     bool calcScreenPosition(TVec3f*, const TVec3f&);
 
     bool createActorCameraInfoIfExist(const JMapInfoIter&, ActorCameraInfo**);
-    void endActorCamera(const LiveActor*, const ActorCameraInfo*, bool, s32);
+    bool endActorCamera(const LiveActor*, const ActorCameraInfo*, bool, s32);
 
     bool isStartAnimCameraEnd();
 
