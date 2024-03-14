@@ -20,7 +20,7 @@ namespace MR {
 
 	void startSpinHitSound(const LiveActor *);
 	void startBlowHitSound(const LiveActor *);
-	void startDPDHitSound(const LiveActor *); // dummied-out
+	void startDPDHitSound(); // dummied-out
 	void startDPDFreezeLevelSound(const LiveActor *);
 	void start2PJumpAssistSound();
 	void start2PJumpAssistJustSound();
