@@ -5,8 +5,21 @@
 
 class J3DJoint;
 class J3DModel;
-class JointControllerInfo;
 class LiveActor;
+
+struct UnkStruct {
+	u32 _0;
+	u32 _4;
+	u32 _8;
+	u32 _C;
+	u32 _10;
+	u16 _14;
+};
+
+struct JointControllerInfo {
+	u32 _0;
+	UnkStruct* _4;
+};
 
 class JointController {
 public:
