@@ -24,7 +24,7 @@ public:
 	void resetAllMtx(const TMtx34f &);
 	void resetAllMtx();
 	void resetAllMtxPrivate(const TMtx34f &);
-	void setMtx(const TMtx34f &);
+	void setMtx(const TPos3f &);
 	void setMtx();
 	void updateMtx();
 	f32 makeEqualScale(MtxPtr);

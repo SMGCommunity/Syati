@@ -31,7 +31,7 @@ namespace MR {
 	void blendMtxRotate(MtxPtr, MtxPtr, f32, MtxPtr);
 	void blendMtxRotateSlerp(MtxPtr, MtxPtr, f32, MtxPtr);
 	void blendMtx(MtxPtr, MtxPtr, f32, MtxPtr);
-	void makeMtxWithoutScale(TPos3f*, const TMtx34f &);
+	void makeMtxWithoutScale(TPos3f*, const TPos3f &);
 	void makeSRTFromMtxPtr(TVec3f *pTranslate, TVec3f *pEuler, TVec3f *pScale, MtxPtr pMtx, bool);
 	void makeRTFromMtxPtr(TVec3f *pTranslate, TVec3f *pEuler, MtxPtr pMtx, bool);
 	void makeMtxSideUp(TPos3f*, const TVec3f &, const TVec3f &);

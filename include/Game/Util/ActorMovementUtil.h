@@ -65,8 +65,8 @@ namespace MR {
 	void makeMtxTRS(MtxPtr, const LiveActor *);
 	void makeMtxTransRotateY(MtxPtr, const LiveActor *);
 
-	void calcMtxFromGravityAndZAxis(MtxPtr , const LiveActor *, const TVec3f &, const TVec3f &);
-	void calcMtxFromGravityAndZAxis(MtxPtr , const LiveActor *, const TVec3f &);
+	void calcMtxFromGravityAndZAxis(TPos3f*, const LiveActor *, const TVec3f &, const TVec3f &);
+	void calcMtxFromGravityAndZAxis(TPos3f*, const LiveActor *, const TVec3f &);
 	void calcAndSetBaseTRMtxFromGravityAndZAxis(LiveActor *pActor, const TVec3f &rZAxis);
 
 	void calcActorAxis(TVec3f *, TVec3f *, TVec3f *, const LiveActor *);
