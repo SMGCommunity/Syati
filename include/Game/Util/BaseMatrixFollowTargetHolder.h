@@ -64,5 +64,5 @@ public:
 namespace MR {
 	bool isValidFollowID(const JMapInfoIter &);
 	void addBaseMatrixFollower(BaseMatrixFollower *);
-	void addBaseMatrixFollowTarget(LiveActor *, const JMapInfoIter &, const MtxPtr , BaseMatrixFollowValidater *);
+	void addBaseMatrixFollowTarget(LiveActor *, const JMapInfoIter &, const TPos3f*, BaseMatrixFollowValidater *);
 };

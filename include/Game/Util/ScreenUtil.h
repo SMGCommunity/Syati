@@ -67,8 +67,8 @@ namespace MR {
 	void turnOnDepthOfField(bool);
 	void turnOffImageEffect();
 	BloomEffect* createNormalBloom();
-	void isNormalBloomOn();
-	void isNormalBloomForEachModel();
+	bool isNormalBloomOn();
+	bool isNormalBloomForEachModel();
 	void setNormalBloomIntensity(u8);
 	void setNormalBloomThreshold(u8);
 	void setNormalBloomBlurIntensity1(u8);

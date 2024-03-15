@@ -160,4 +160,17 @@ namespace MR {
 		f32 mod = fmod((a3 + (a1 - a4)), a3);
 		return a4 + mod;
 	}
+
+	/* there's a couple of issues with stack ordering when it comes to vectors being created and scaled
+	 * this function automates this and resolves most issues
+	 */
+	inline TVec3f createVecAndScale(const TVec3f& rSrc, f32 scalar) {
+		TVec3f vec(rSrc);
+		vec.scale(scalar);
+		return vec;
+	}
+
+	inline f32 getZero() {
+		return 0.0f;
+	}
 };

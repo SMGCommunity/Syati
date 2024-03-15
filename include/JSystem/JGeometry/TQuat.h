@@ -28,7 +28,7 @@ namespace JGeometry {
         void setRotate(const TVec3<f32> &, const TVec3<f32> &, f32);
 
         /* Arithmetic and algebraic operations */
-        void transform(const TVec3<f32> &) const;
+        void transform(TVec3<f32> &) const;
         void transform(const TVec3<f32> &, const TVec3<f32> &) const;
 
         void rotate(const TVec3<f32> &) const;
