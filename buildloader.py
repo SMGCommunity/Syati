@@ -36,7 +36,9 @@ def build(region: str):
                   f"-i include -I- -i loader -D{region} loader/loader.cpp -o loader/loader.o"
 
     kamek_cmd = f"{KAMEK} loader/loader.o -static=0x80001800 -externals={SYMBOLS}/{region}.txt " \
-                f"-output-riiv=bin/riivo_{region}.xml"
+                f"-output-riiv=loader/riivo_{region}.xml " \
+                f"-output-kamek=loader/Loader{getregionletter(region)}.bin " \
+                f"-output-dolphin=loader/Dolphin{getregionletter(region)}.ini"
 
     print(f"Building target {region}!")
 
