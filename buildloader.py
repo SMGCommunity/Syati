@@ -22,6 +22,12 @@ def prepare_bin():
         shutil.rmtree("bin")
     os.makedirs("bin")
 
+def getregionletter(region: str):
+    for i in range(0, len(REGIONS)):
+        reg = REGIONS[i]
+        if region == reg:
+            return LETTERS[i]
+
 
 REGIONS = ["PAL", "USA", "JPN", "TWN", "KOR"]
 
