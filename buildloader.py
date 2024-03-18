@@ -22,19 +22,19 @@ def prepare_bin():
         shutil.rmtree("bin")
     os.makedirs("bin")
 
-def getregionletter(region: str):
-    for i in range(0, len(REGIONS)):
-        reg = REGIONS[i]
-        if region == reg:
-            return LETTERS[i]
-
 
 REGIONS = ["PAL", "USA", "JPN", "TWN", "KOR"]
+LETTERS = ['P', 'E', 'J', 'W', 'K']
 
 MWCCEPPC = dep("deps/CodeWarrior/mwcceppc.exe", "CodeWarrior compiler")
 KAMEK = dep("deps/Kamek/Kamek.exe", "Kamek linker")
 SYMBOLS = dep("symbols", "Symbols folder")
 
+def getregionletter(region: str):
+    for i in range(0, len(REGIONS)):
+        reg = REGIONS[i]
+        if region == reg:
+            return LETTERS[i]
 
 def build(region: str):
     compile_cmd = f"{MWCCEPPC} -c -Cpp_exceptions off -nodefaults -proc gekko -fp hard -lang=c++ -O4,s -inline on " \
