@@ -5,7 +5,7 @@
 Syati provides C++ headers, symbols and the CustomCode loader. Examples can be found [**here.**](https://github.com/SMGCommunity/Syati-Examples)
 
 # Future Plans
-The loader currently only supports ``Kamek`` version 1, which is outdated. Support for new hooks and the general format should be implemented in future versions.
+Switching to a module system, so only specific code can be compiled at will.
 
 # Requirements
 In order to use this toolkit, you need to prepare some software and skills:
