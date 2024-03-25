@@ -2,6 +2,7 @@
 
 #include "revolution.h"
 #include "JSystem.h"
+#include "Game/Util.h"
 
 class ActorCameraInfo {
 public:
