@@ -9,6 +9,7 @@ public:
 	RailMoveObj(const char *);
 
 	virtual ~RailMoveObj();
+	virtual void init(const JMapInfoIter &);
 
 	virtual void startClipped();
 	virtual void endClipped();
