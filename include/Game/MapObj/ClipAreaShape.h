@@ -38,7 +38,7 @@ public:
     virtual bool isInArea(const TVec3f &rPosition) const;
     virtual void calcVolumeMatrix(MtxPtr pVolumeMtx, const TVec3f &, const TVec3f &) const;
 
-    f32 mRadious; // _8
+    f32 mRadius; // _8
     f32 mHeight; // _12
 };
 
