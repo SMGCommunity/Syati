@@ -154,11 +154,13 @@ namespace {
 		// ------------------------------------------------------------------------------------------------------------
 		// Verify Kamek format & get info from header
 
+		size_t additonal_size = 0UL;
+
 		if (kamekHeader->magic1 != 'Kame' || kamekHeader->magic2 != 'k\0') {
 			SyatiError("SYA_ERR\n\nInvalid header\n");
 		}
-		if (kamekHeader->version != 1) {
-			SyatiError("SYA_ERR\n\nIncompatible version\n");
+		if (kamekHeader->version != 1 && kamekHeader->version == 2) {
+			additonal_size = sizeof(KamekExtra);
 		}
 
 		u32 codeSize = kamekHeader->codeSize;
@@ -179,7 +181,7 @@ namespace {
 		u8* bssStart = codeEnd;
 		u8* bssEnd = bssStart + bssSize;
 
-		u8* srcPtr = binary + sizeof(KamekHeader);
+		u8* srcPtr = binary + sizeof(KamekHeader) + additonal_size;
 
 		while (codeStart < codeEnd) {
 			*codeStart++ = *srcPtr++;

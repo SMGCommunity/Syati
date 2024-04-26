@@ -33,8 +33,8 @@ namespace MR {
 
 	bool tryDeleteEffect(LiveActor *pActor, const char *pEffectName);
 	bool tryForceDeleteEffect(LiveActor *pActor, const char *pEffectName);
-	bool tryDeleteEffectall(LiveActor *pActor);
-	bool tryForceDeleteEffectall(LiveActor *pActor);
+	bool tryDeleteEffectAll(LiveActor *pActor);
+	bool tryForceDeleteEffectAll(LiveActor *pActor);
 	void deleteEffect(LiveActor *pActor, const char *pEffectName);
 	void forceDeleteEffect(LiveActor *pActor, const char *pEffectName);
 	void deleteEffectAll(LiveActor *pActor);

@@ -24,7 +24,7 @@ public:
 	void resetAllMtx(const TMtx34f &);
 	void resetAllMtx();
 	void resetAllMtxPrivate(const TMtx34f &);
-	void setMtx(const TMtx34f &);
+	void setMtx(const TPos3f &);
 	void setMtx();
 	void updateMtx();
 	f32 makeEqualScale(MtxPtr);
@@ -34,7 +34,7 @@ public:
 	const char *getHostName() const;
 	s32 getPlacementZoneID() const;
 	void checkStrikePoint(HitInfo *, const TVec3f &);
-	void checkStrikeBall(HitInfo *, u32, const TVec3f &, f32, bool, const TriangleFilterBase *);
+	bool checkStrikeBall(HitInfo *, u32, const TVec3f &, f32, bool, const TriangleFilterBase *);
 	void checkStrikeBallCore(HitInfo *, u32, const TVec3f &, const TVec3f &, f32, f32, f32, KC_PrismData **, f32 *, u8 *, const TriangleFilterBase *, const TVec3f *);
 	void checkStrikeBallWithThickness(HitInfo *, u32, const TVec3f &, f32, f32, const TriangleFilterBase *);
 	void calcCollidePosition(TVec3f *, const KC_PrismData &, u8);
@@ -44,7 +44,7 @@ public:
 	void createAreaPolygonListArray(Triangle *, u32, TVec3f *, u32);
 	void calcForceMovePower(TVec3f *, const TVec3f &) const;
 
-	TMtx34f *_0;
+	MtxPtr _0;
 	TMtx34f mMatrix;            // _4
 	TMtx34f mBaseMatrix;        // _34
 	TMtx34f mInvBaseMatrix;     // _64

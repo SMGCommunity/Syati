@@ -14,5 +14,7 @@ public:
     bool isStatusActive(u32 statusCode) const;
     void closeStatus(MarioState*);
 
+    void playSoundTrampleCombo(u8);
+
     u8 _0[0xA9C];
 };

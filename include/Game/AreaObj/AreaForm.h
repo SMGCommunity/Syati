@@ -19,7 +19,7 @@ public:
 	virtual void init(const JMapInfoIter &rIter) = 0;
 	virtual bool isInVolume(const TVec3f &rTranslation) const = 0;
 
-	TMtx34f* mFollowMtx; // _4
+	MtxPtr mFollowMtx; // _4
 };
 
 class AreaFormCube : public AreaForm {
@@ -35,7 +35,7 @@ public:
 
 	f32 getBaseSize();
 	void updateBoxParam();
-	void calcWorldMtx(TMtx34f *pWorldMtx) const;
+	void calcWorldMtx(MtxPtr pWorldMtx) const;
 
 	int mCentered;       // _8
 	TVec3f mTranslation; // _C

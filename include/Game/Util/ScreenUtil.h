@@ -56,8 +56,9 @@ namespace MR {
 
 	void closeSystemWipeCircleWithCaptureScreen(s32);
 	void closeSystemWipeFadeWithCaptureScreen(s32);
+	void startSystemWipeCircleWithCaptureScreen(s32);
 	void setWipeCircleCenterPos(const TVec3f &);
-
+	
 	void requestMovementOnImageEffect();
 	void setImageEffectControlAuto();
 	void turnOffDOFInSubjective();
@@ -66,8 +67,8 @@ namespace MR {
 	void turnOnDepthOfField(bool);
 	void turnOffImageEffect();
 	BloomEffect* createNormalBloom();
-	void isNormalBloomOn();
-	void isNormalBloomForEachModel();
+	bool isNormalBloomOn();
+	bool isNormalBloomForEachModel();
 	void setNormalBloomIntensity(u8);
 	void setNormalBloomThreshold(u8);
 	void setNormalBloomBlurIntensity1(u8);

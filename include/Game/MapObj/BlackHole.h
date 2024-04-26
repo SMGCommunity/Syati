@@ -37,7 +37,7 @@ public:
 };
 
 namespace NrvBlackHole {
-    NERVE(BlackHoleWait);
-    NERVE(BlackHoleDemo);
-    NERVE(BlackHoleDisappear);
+    NERVE(BlackHoleNrvWait);
+    NERVE(BlackHoleNrvDemo);
+    NERVE(BlackHoleNrvDisappear);
 };

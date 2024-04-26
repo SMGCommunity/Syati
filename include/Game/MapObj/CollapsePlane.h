@@ -11,7 +11,7 @@ public:
     void exeDPDStop();
     virtual void calcAndSetBaseMtx();
     virtual void control();
-    void calcJointPlane(TMtx34f* pMtx, const JointControllerInfo& info);
+    void calcJointPlane(MtxPtr pMtx, const JointControllerInfo& info);
     bool tryDPDStop();
     virtual ~CollapsePlane();
 

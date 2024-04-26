@@ -6,6 +6,7 @@
 class PauseMenu : public LayoutActor {
 public:
     PauseMenu();
+    virtual ~PauseMenu();
     virtual void init(const JMapInfoIter& rIter);
     virtual void appear();
     virtual void kill();
@@ -16,7 +17,6 @@ public:
     void exeDisappear();
     void exeConfirm();
     void exeGameDataSave();
-    virtual ~PauseMenu();
 
     ButtonPaneController* mButtonTop; // 0x2C
     ButtonPaneController* mButtonBottom; // 0x30

@@ -155,8 +155,8 @@ namespace MR {
 	void endBindAndPlayerFreezeDamage(LiveActor *);
 	void endBindAndPlayerFireDamage(LiveActor *);
 	void endBindAndPlayerElectricDamage(LiveActor *);
-	void getCurrentRushActor();
-	void getCurrentRushSensor();
+	LiveActor *getCurrentRushActor();
+	HitSensor *getCurrentRushSensor();
 	void tryPlayerCoinPull();
 	void tryPlayerPullActor(HitSensor *);
 	void tryPlayerDropTakingActor();
@@ -208,8 +208,8 @@ namespace MR {
 
 	MarioActor* getPlayerDemoActor();
 
-	void calcPlayerJointMtx(TMtx34f *, const char *);
-	void concatWithPlayerJointMtx(TMtx34f *, const char *);
+	void calcPlayerJointMtx(MtxPtr , const char *);
+	void concatWithPlayerJointMtx(MtxPtr , const char *);
 
 	void pushPlayer(const TVec3f &);
 	void pushPlayerFromArea(const TVec3f &);

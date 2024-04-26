@@ -65,8 +65,8 @@ namespace MR {
 	void makeMtxTRS(MtxPtr, const LiveActor *);
 	void makeMtxTransRotateY(MtxPtr, const LiveActor *);
 
-	void calcMtxFromGravityAndZAxis(TMtx34f *, const LiveActor *, const TVec3f &, const TVec3f &);
-	void calcMtxFromGravityAndZAxis(TMtx34f *, const LiveActor *, const TVec3f &);
+	void calcMtxFromGravityAndZAxis(TPos3f*, const LiveActor *, const TVec3f &, const TVec3f &);
+	void calcMtxFromGravityAndZAxis(TPos3f*, const LiveActor *, const TVec3f &);
 	void calcAndSetBaseTRMtxFromGravityAndZAxis(LiveActor *pActor, const TVec3f &rZAxis);
 
 	void calcActorAxis(TVec3f *, TVec3f *, TVec3f *, const LiveActor *);
@@ -86,7 +86,7 @@ namespace MR {
 	void resetPosition(LiveActor *);
 	void resetPosition(LiveActor *, const TVec3f &);
 	void resetPosition(LiveActor *, const char *);
-	void makeMtxOnMapCollision(TMtx34f *, LiveActor *, f32);
+	void makeMtxOnMapCollision(MtxPtr , LiveActor *, f32);
 
 	void calcVelocityMoveToDirectionHorizon(TVec3f *, const LiveActor *, const TVec3f &, f32);
 	void calcVelocityMoveToDirectionHorizon(TVec3f *, const LiveActor *, const TVec3f &, f32, f32, f32, f32);

@@ -32,26 +32,26 @@ public:
     };
 
     SysInfoWindow(SysInfoWindowType, SysInfoExecuteType);
+    virtual ~SysInfoWindow();
     virtual void init(const JMapInfoIter&);
     virtual void movement();
     virtual void calcAnim();
     virtual void draw() const;
     virtual void appear();
+    virtual void kill();
+    virtual void control();
     void appear(const char*, SysInfoType, SysInfoTextPos, SysInfoMessageType);
     void disappear();
-    virtual void kill();
     void forceKill();
     bool isWait() const;
     bool isSelectedYes() const;
     bool isDisappear() const;
-    virtual void control();
     const char* getLayoutName() const;
     void exeWait();
     void exeDisappear();
     void setYesNoSelectorSE(const char*, const char*, const char*);
     void resetYesNoSelectorSE();
     void setTextBoxArgString(const wchar_t*, s32);
-    virtual ~SysInfoWindow();
 
     s32 _2C;
     s32 _30;

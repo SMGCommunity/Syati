@@ -17,7 +17,7 @@ class BaseMatrixFollowTarget {
 public:
 	BaseMatrixFollowTarget(const JMapLinkInfo *);
 
-	void set(LiveActor *, const TMtx34f &, const TMtx34f *, BaseMatrixFollowValidater *);
+	void set(LiveActor *, const TMtx34f &, const MtxPtr , BaseMatrixFollowValidater *);
 	MtxPtr getHostBaseMtx() const;
 
 	TMtx34f mMtx;                          // _0
@@ -35,7 +35,7 @@ public:
 	virtual void update();
 
 	NameObj* getFollowTargetActor() const;
-	void calcFollowMatrix(TMtx34f *) const;
+	void calcFollowMatrix(MtxPtr ) const;
 	bool isEnableFollow() const;
 	bool isValid() const;
 
@@ -53,7 +53,7 @@ public:
 	virtual void movement();
 
 	void addFollower(BaseMatrixFollower *);
-	void setFollowTargetInfo(LiveActor *, const JMapInfoIter &, const TMtx34f *, BaseMatrixFollowValidater *);
+	void setFollowTargetInfo(LiveActor *, const JMapInfoIter &, const MtxPtr , BaseMatrixFollowValidater *);
 	BaseMatrixFollowTarget* findFollowTarget(const JMapLinkInfo *);
 	BaseMatrixFollowTarget* findFollowTarget(const BaseMatrixFollower *);
 
@@ -64,5 +64,5 @@ public:
 namespace MR {
 	bool isValidFollowID(const JMapInfoIter &);
 	void addBaseMatrixFollower(BaseMatrixFollower *);
-	void addBaseMatrixFollowTarget(LiveActor *, const JMapInfoIter &, const TMtx34f *, BaseMatrixFollowValidater *);
+	void addBaseMatrixFollowTarget(LiveActor *, const JMapInfoIter &, const TPos3f*, BaseMatrixFollowValidater *);
 };

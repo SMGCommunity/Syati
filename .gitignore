@@ -19,3 +19,7 @@ CustomCode*.bin
 *.id2
 *.nam
 *.til
+
+loader/*.bin
+loader/*.ini
+loader/*.xml

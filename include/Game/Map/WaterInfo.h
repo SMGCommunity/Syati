@@ -10,6 +10,7 @@ class WaterArea;
 class WaterStream;
 
 class WaterInfo {
+public:
     WaterInfo();
 
     bool isInWater() const;

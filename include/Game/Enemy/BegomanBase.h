@@ -85,10 +85,10 @@ public:
     void preventSwingby(f32);
     void preventSlopeBlow(f32);
     void dampingVerticalAndParallelVelocity(f32, f32);
-    bool isInWaterAndSetWaterNerve(const Nerve *, TMtx34f *);
+    bool isInWaterAndSetWaterNerve(const Nerve *, MtxPtr );
     void calcBlowReaction(const TVec3f &, const TVec3f &, f32, f32);
-    void calcAnimCore(TMtx34f *);
-    bool calcJointLocator1(TMtx34f *, const JointControllerInfo &);
+    void calcAnimCore(MtxPtr );
+    bool calcJointLocator1(MtxPtr , const JointControllerInfo &);
 
     s32 _98;
     TVec3f _9C;
