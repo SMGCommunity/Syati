@@ -11,8 +11,7 @@ class PlayResultInStageHolder;
 class SaveDataHandleSequence;
 class UserFile;
 
-class GameSequenceFunction {
-public:
+namespace GameSequenceFunction {
 	// -------------------------------------------------------------------------------------------------------------------
 	// (Anonymous) helper functions
 
