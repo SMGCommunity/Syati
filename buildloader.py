@@ -36,15 +36,15 @@ def getregionletter(region: str):
         if region == reg:
             return LETTERS[i]
 
-def build(region: str):
+def build(region: str, outputPath):
     compile_cmd = f"{MWCCEPPC} -c -Cpp_exceptions off -nodefaults -proc gekko -fp hard -lang=c++ -O4,s -inline on " \
                   f"-rtti off -sdata 0 -sdata2 0 -align powerpc -func_align 4 -str pool -enum int -DGEKKO " \
                   f"-i include -I- -i loader -D{region} loader/loader.cpp -o loader/loader.o"
 
     kamek_cmd = f"{KAMEK} loader/loader.o -static=0x80001800 -externals={SYMBOLS}/{region}.txt " \
-                f"-output-riiv=loader/riivo_{region}.xml " \
-                f"-output-kamek=loader/Loader{getregionletter(region)}.bin " \
-                f"-output-dolphin=loader/Dolphin{getregionletter(region)}.ini"
+                f"-output-riiv={outputPath}/riivo_{region}.xml " \
+                f"-output-kamek={outputPath}/Loader{getregionletter(region)}.bin " \
+                f"-output-dolphin={outputPath}/Dolphin{getregionletter(region)}.ini"
 
     print(f"Building target {region}!")
 
@@ -61,19 +61,24 @@ def build(region: str):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        print("Did not specify a target region, building all targets!")
-
+    isNextArgOutput = False
+    outputPath = ""
+    region = ""
+    for currentArg in sys.argv:
+        if (currentArg == "buildloader.py"):
+            continue
+        if (isNextArgOutput):
+            outputPath = currentArg
+            isNextArgOutput = False
+        elif (currentArg == "-o"):
+            isNextArgOutput = True
+        else:
+            region = currentArg
+    if region not in REGIONS:
+        print("Did not specify a (valid) target region, building all targets!")
         prepare_bin()
-
         for region in REGIONS:
-            build(region)
-
+            build(region, outputPath or "loader/")
     else:
-        region = sys.argv[1]
-
-        if region not in REGIONS:
-            err(f"Invalid build target found: {region}")
-
         prepare_bin()
-        build(region)
+        build(region, outputPath or "loader/")
