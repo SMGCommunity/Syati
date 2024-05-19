@@ -36,7 +36,7 @@ def getregionletter(region: str):
         if region == reg:
             return LETTERS[i]
 
-def build(region: str, outputPath):
+def build(region: str, outputPath: str, buildFullXML: bool):
     compile_cmd = f"{MWCCEPPC} -c -Cpp_exceptions off -nodefaults -proc gekko -fp hard -lang=c++ -O4,s -inline on " \
                   f"-rtti off -sdata 0 -sdata2 0 -align powerpc -func_align 4 -str pool -enum int -DGEKKO " \
                   f"-i include -I- -i loader -D{region} loader/loader.cpp -o loader/loader.o"
@@ -57,11 +57,31 @@ def build(region: str, outputPath):
     if subprocess.call(kamek_cmd, shell=True) != 0:
         err("Linking failed.")
 
+    if buildFullXML:
+        loaderPatches = open(f"{outputPath}/riivo_{region}.xml", "r").read()
+        fullXMLBody = f"""<wiidisc version="1">
+	<id game="SB4" />
+	<options>
+		<section name="Syati Loader">
+			<option name="Super Mario Galaxy 2">
+				<choice name="Enabled">
+					<patch id="syati" />
+				</choice>
+			</option>
+		</section>
+	</options>
+	<patch id="syati">
+		{loaderPatches}
+	</patch>
+</wiidisc>"""
+        open(f"{outputPath}/riivo_{region}.xml", "w").write(fullXMLBody)
+
     print("Done!")
 
 
 if __name__ == '__main__':
     isNextArgOutput = False
+    buildFullXML = False
     outputPath = ""
     region = ""
     for currentArg in sys.argv:
@@ -72,13 +92,15 @@ if __name__ == '__main__':
             isNextArgOutput = False
         elif (currentArg == "-o"):
             isNextArgOutput = True
+        elif (currentArg == "--full-xml"):
+            buildFullXML = True
         else:
             region = currentArg
     if region not in REGIONS:
         print("Did not specify a (valid) target region, building all targets!")
         prepare_bin()
         for region in REGIONS:
-            build(region, outputPath or "loader/")
+            build(region, outputPath or "loader/", buildFullXML)
     else:
         prepare_bin()
-        build(region, outputPath or "loader/")
+        build(region, outputPath or "loader/", buildFullXML)
