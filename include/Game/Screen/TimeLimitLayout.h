@@ -4,7 +4,7 @@
 
 class TimeLimitLayout : public LayoutActor {
 public:
-    TimeLimitLayout(u32 unk);
+    TimeLimitLayout();
     virtual ~TimeLimitLayout();
     virtual void init(const JMapInfoIter& rIter);
     virtual void appear();
@@ -24,13 +24,12 @@ public:
     s32 getCurrentTiming() const;
     void updateNormal();
 
-    
-    s32 _2C;
-    s32 _30;
-    ValueControl* mValueControl;
-    s32 _38;
+    u32 mTime; // 0x2C
+    u32 mInitialTime; // 0x30
+    ValueControl* mValueControl; // 0x34
+    ValueControl* mValueControl2; // 0x38
     s32 _3C;
-    bool mIsPaused;
-    bool mDisplayMode;
+    bool mIsPaused; // 0x40
+    bool mDisplayMode; // 0x41
 };
 
