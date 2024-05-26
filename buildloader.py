@@ -60,7 +60,7 @@ def build(region: str, outputPath: str, buildFullXML: bool):
     if buildFullXML:
         loaderPatches = open(f"{outputPath}/riivo_{region}.xml", "r").read()
         fullXMLBody = f"""<wiidisc version="1">
-	<id game="SB4" />
+	<id game="SB4{getregionletter(region)}" />
 	<options>
 		<section name="Syati Loader">
 			<option name="Super Mario Galaxy 2">
