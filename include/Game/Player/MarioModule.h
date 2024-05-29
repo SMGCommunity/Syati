@@ -7,9 +7,10 @@ class MarioActor;
 
 class MarioModule {
 public:
-	virtual f32 getStickY() const;
-	virtual void addVelocity(const TVec3f &) const;
-	virtual void addVelocity(const TVec3f &, f32);
+	f32 getStickY() const;
+	void addVelocity(const TVec3f &) const;
+	void addVelocity(const TVec3f &, f32);
+    void changeAnimation(const char *, const char *);
 
 	MarioActor* mMarioActor; // _4
 };
