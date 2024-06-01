@@ -24,6 +24,13 @@ namespace MR {
     void startEventCamera(const ActorCameraInfo*, const char*, const CameraTargetArg&, long);
     void startEventCameraNoTarget(const ActorCameraInfo*, const char*, s32);
 
+    bool isCameraInterpolatingNearlyEnd();
+    bool isFirstPersonCamera();
+    bool isPossibleToShiftToFirstPersonCamera();
+    bool isCameraPossibleToRoundLeft();
+    bool isCameraPossibleToRoundRight();
+    bool isCameraControlNG();
+
     f32 getAspect();
     f32 getNearZ();
     f32 getFarZ();

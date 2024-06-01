@@ -15,6 +15,9 @@ public:
     void closeStatus(MarioState*);
 
     void playSoundTrampleCombo(u8);
+    
+    void tryJump();
+    void trySquatJump();
 
     u8 _0[0xA9C];
 };
