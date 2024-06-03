@@ -46,4 +46,5 @@ namespace MR {
     
     const wchar_t* getScenarioNameOnCurrentLanguage(const char*, s32);
     const wchar_t* getGalaxyNameOnCurrentLanguage(const char*);
+    const wchar_t* getCurrentGalaxyNameOnCurrentLanguage();
 };

@@ -55,3 +55,23 @@ public:
 	MsgSharedGroup* mGroups[32]; // _14
 	s32 mNumGroups;              // _94
 };
+
+template<typename T>
+class DeriveActorGroup : public LiveActorGroup {
+public:
+    inline DeriveActorGroup(const char *pName, int maxCount) : LiveActorGroup(pName, maxCount) {
+
+    }
+
+    T* getDeadMember() const {
+        if (getDeadActor()) {
+            return reinterpret_cast<T*>(getDeadActor());
+        }
+
+        return NULL;
+    }
+
+    ~DeriveActorGroup() {
+
+    }
+};

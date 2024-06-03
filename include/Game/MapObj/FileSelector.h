@@ -88,7 +88,7 @@ public:
 
     FileSelectCameraController* mFileSelectCameraController; // 0x90
     s32 _94;
-    LiveActorGroup* mLiveActorGroup; // 0x98 (Might be DeriveActorGroup)
+    DeriveActorGroup<FileSelector>* mLiveActorGroup; // 0x98
     s32 _9C;
     FileSelectButton* mFileSelectButton; // 0xA0
     BackButtonCancelB* mBackButtonCancelB; // 0xA4
@@ -99,8 +99,8 @@ public:
     s32 _B8;
     s32 _BC;
     FileSelectInfo* mFileSelectInfo; // 0xC0
-    s32 _C4; // UserFile related
-    s32 _C8;
+    UserFile** mUserFileArray; // 0xC4
+    s32** _C8;
     TitleSequenceProduct* mTitleSequenceProduct; // 0xCC
     MiiSelect* mMiiSelect; // 0xD0
     MiiConfirmIcon* mMiiConfirmIcon; // 0xD4
@@ -118,4 +118,4 @@ public:
     s32 _104;
 };
 
-const size_t test = sizeof(FileSelector);
+//const size_t test = sizeof(UserFile);
