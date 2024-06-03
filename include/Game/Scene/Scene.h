@@ -12,7 +12,8 @@ public:
 	virtual ~Scene();
 	virtual void init();
 	virtual void start();
-	virtual void update() const;
+	virtual void update();
+	virtual void draw() const;
 	virtual void calcAnim();
 
 	void initNameObjListExecutor();
