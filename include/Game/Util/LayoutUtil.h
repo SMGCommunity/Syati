@@ -43,7 +43,7 @@ namespace MR {
 	void showPaneRecursive(LayoutActor *pLayout, const char *pPaneName);
 	void hidePane(LayoutActor *pLayout, const char *pPaneName);
 	void hidePaneRecursive(LayoutActor *pLayout, const char *pPaneName);
-	bool isHiddenPane(LayoutActor *pLayout, const char *pPaneName);
+	bool isHiddenPane(const LayoutActor *pLayout, const char *pPaneName);
 	void showScreen(LayoutActor *pLayout);
 	void hideScreen(LayoutActor *pLayout);
 
