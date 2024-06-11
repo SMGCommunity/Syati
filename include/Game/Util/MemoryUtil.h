@@ -21,8 +21,8 @@ namespace MR {
     JKRHeap* getWorldMapHeap();
     JKRHeap* getFileCacheHeap();
 
-    JKRHeap* getHeapNapa();
-    JKRHeap* getHeapGDDR3();
+    JKRHeap* getHeapNapa(const JKRHeap *);
+    JKRHeap* getHeapGDDR3(const JKRHeap *);
     JKRHeap* becomeCurrentHeap(JKRHeap *);
     bool isEqualCurrentHeap(JKRHeap *);
     //void adjustHeapSize(JKRExpHeap *);
