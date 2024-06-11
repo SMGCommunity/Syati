@@ -20,7 +20,7 @@ public:
 	virtual void initCaseNoUseSwitchB(const MapObjActorInitInfo &);
 
 	virtual void initDemoAction();
-	virtual void setupInitInfo(const JMapInfoIter &, MapObjActorInitInfo &);
+	virtual void setupInitInfo(const JMapInfoIter &, MapObjActorInitInfo *);
 	virtual void tryStartMove();
 	virtual void startMoveInner();
 	virtual void move();
