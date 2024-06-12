@@ -25,6 +25,11 @@ public:
     virtual s32 do_getMaxFreeBlock() = 0;
     virtual s32 do_getTotalFreeSize() = 0;
 
+    u32 getSize(void*);
+    u32 getFreeSize();
+    u32 getMaxFreeBlock();
+    u32 getTotalFreeSize();
+
     u32 initArena(char **, u32 *, s32);
     JKRHeap* becomeSystemHeap();
     JKRHeap* becomeCurrentHeap();
