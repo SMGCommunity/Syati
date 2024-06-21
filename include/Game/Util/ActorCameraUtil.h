@@ -37,7 +37,7 @@ namespace MR {
 	bool startMultiActorCameraTargetOther(const LiveActor *pActor, const ActorCameraInfo *pInfo, const char *pClassifier, const CameraTargetArg &rTargetArg, s32);
 	void startAnimCameraTargetPlayer(const LiveActor *pActor, const ActorCameraInfo *pInfo, const char *pAnimCameraName, s32, bool, f32);
 	void startAnimCameraTargetSelf(const LiveActor *pActor, const ActorCameraInfo *pInfo, const char *pAnimCameraName, s32, bool, f32);
-	void startAnimCameraTargetOther(const LiveActor *pActor, const ActorCameraInfo *pInfo, const char *pAnimCameraName, const CameraTargetArg &rTargetArg, s32, s32, f32);
+	void startAnimCameraTargetOther(const LiveActor *pActor, const ActorCameraInfo *pInfo, const char *pAnimCameraName, const CameraTargetArg &rTargetArg, s32, bool, f32);
 	void startActorCameraProgrammable(const LiveActor *pActor, s32);
 
 	bool endActorCamera(const LiveActor *pActor, const ActorCameraInfo *pInfo, bool, s32);
