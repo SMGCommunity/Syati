@@ -2,12 +2,13 @@
 
 #include "revolution.h"
 
-void JMASinRadian(f32);
-void JMASinDegree(f32);
-void JMACosRadian(f32);
-void JMACosDegree(f32);
-void JMAACosRadian(f32);
-void JMASqrt(f32);
+f64 JMASinRadian(f32);
+f64 JMASinDegree(f32);
+f64 JMACosRadian(f32);
+f64 JMACosDegree(f32);
+f64 JMAACosRadian(f32);
+f64 JMASqrt(f32);
+f64 JMAAsinRadian(f32);
 
 void JMAEulerToQuat(s16 eulerX, s16 eulerY, s16 eulerZ, Quaternion *dest);
 void JMAQuatLerp(const Quaternion *srcA, const Quaternion *srcB, f32 interpolant, Quaternion *dest);
