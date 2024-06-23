@@ -12,6 +12,7 @@
 #include "Game/System/NerveExecutor.h"
 #include "Game/System/PlayResultInStageHolder.h"
 #include "Game/System/ResourceHolder.h"
+#include "Game/System/ResourceHolderManager.h"
 #include "Game/System/ResourceInfo.h"
 #include "Game/System/ScenarioDataParser.h"
 
