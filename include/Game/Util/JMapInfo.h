@@ -33,7 +33,10 @@ public:
     const char* getName() const;
 
     template<typename T>
-    void getValue(s32 index, const char *pField, T *pDest) const;
+    const bool getValue(int index, const char *pField, T *pDest) const;
+
+    template<typename T>
+    JMapInfoIter findElement(const char *, const char *, int) const;
 
     s32 getValueFast(s32, s32, const char **pDest) const;
     s32 getValueFast(s32, s32, u32 *pDest) const;
