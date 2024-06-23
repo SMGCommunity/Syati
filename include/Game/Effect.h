@@ -7,6 +7,7 @@
 #include "Game/Effect/EffectObjR1000F50.h"
 #include "Game/Effect/EffectObjR1500F400.h"
 #include "Game/Effect/EffectObjR500F50.h"
+#include "Game/Effect/EffectSystemUtil.h"
 #include "Game/Effect/RandomEffectObj.h"
 #include "Game/Effect/SimpleEffectObj.h"
 #include "Game/Effect/WaterFortressRain.h"

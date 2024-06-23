@@ -4,6 +4,7 @@
 #include "Game/LiveActor/LiveActor.h"
 #include "Game/LiveActor/Binder.h"
 #include "Game/System/ResourceHolder.h"
+#include "Game/Util/HashUtil.h"
 
 class EffectKeeper {
 public:
@@ -27,10 +28,15 @@ public:
 
     void update();
 
-    u8 _0[0x18];
-    u32* _18; // HashSortTable*
+    const char* _0;
+    const char* _4;
+    ResourceHolder* mResourceHolder; // _8
+    u32 **_C;
+    u32 _10;
+    u32 _14;
+    HashSortTable* _18; // HashSortTable*
     u32 _1C;
-    u32* _20; // SyncBckEffectCHecker*
+    u32* _20; // SyncBckEffectChecker*
     Binder* mBinder; // _24
     u32 _28;
     u32 _2C;
