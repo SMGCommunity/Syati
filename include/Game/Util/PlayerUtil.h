@@ -118,6 +118,9 @@ namespace MR {
 	bool isPlayerElementModeCloud();
 	bool isPlayerElementModeRock();
 	bool isPlayerElementModeNormal();
+	bool isPlayerElementModeYoshi();
+	bool isPlayerElementModeYoshiDash();
+	bool isPlayerElementModeYoshiLight();
 	void changePlayerModeBee();
 	void changePlayerModeHopper();
 	void changePlayerModeTeresa();
