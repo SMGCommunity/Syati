@@ -70,6 +70,8 @@ public:
 	// three more virtual functions
 
 	// todo: tons of functions to be documented
+	void getRealPos(const char *, TVec3f *) const;
+	void getRealMtx(f32 (*)[4], const char *) const;
 	TVec3f* getGravityVec() const;
 	void setPlayerMode(u16, bool, bool);
 	void changeDisplayMode(u8);
