@@ -30,4 +30,6 @@ namespace MR {
 	void limitedStarPieceHitSound();
 	void startStarGetJingle();
 	void startGrandStarGetJingle();
+
+	void startAtmosphereSE(const char*, s32, s32);
 };

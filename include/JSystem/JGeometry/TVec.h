@@ -160,6 +160,19 @@ namespace JGeometry {
         void setLength(float);
         void setLength(const TVec3<float> &, float);
 
+        // Implementation from HeadPenguin.
+        // Works properly 99% of the time
+        // Intended to be the Cubic function that was included in SMG1, but excluded from SMG2 since nothing used it
+        void cubic(const TVec3<T>& rv1, const TVec3<T>& rv2, const TVec3<T>& rv3, const TVec3<T>& rv4, T a) {
+            TVec3f StackA = rv3 * (a * a * a - a * a);
+            TVec3f StackB = rv2 * (a + a * a * a - 2 * a * a);
+            TVec3f StackC = rv1 * (1 + 2 * a * a * a - 3 * a * a);
+            TVec3f StackD = rv4 * (3 * a * a - 2 * a * a * a);
+            TVec3f Stack = StackA + StackB + StackC + StackD;
+
+            set(Stack);
+        }
+
         T squared() const {
             return (this->x * this->x) + (this->y * this->y) + (this->z * this->z);
         }
@@ -258,7 +271,7 @@ namespace JGeometry {
     };
 
     template<typename T>
-    class TVec4 {
+    class TVec4 : public TVec3<T> {
     public:
         /* Constructors */
         inline TVec4() { }
@@ -273,12 +286,6 @@ namespace JGeometry {
         template<typename T>
         void set(T, T, T, T);
 
-        /* Arithmetic and algebraic operations */
-        void scale(T);
-
-        T x;
-        T y;
-        T z;
         T w;
     };
 };

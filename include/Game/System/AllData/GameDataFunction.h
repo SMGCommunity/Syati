@@ -79,7 +79,7 @@ public:
 	static s32 getPlayerLeft();
 	static void addPlayerLeft(int);
 
-	static s32 getStocketStarPieceNum();
+	static s32 getStockedStarPieceNum();
 	static s32 tryOnGameEventFlagStarPieceCounterStop(int);
 	static s32 getStockedCoinNum();
 	static s32 tryOnGameEventFlagCoinCounterStop(int);

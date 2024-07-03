@@ -109,3 +109,8 @@ namespace MR {
 	Triangle* getCameraPolyFast(const TVec3f &, const TVec3f &, const HitSensor *);
 	bool getFirstPolyOnLineBFast(const TVec3f &, const TVec3f &, TVec3f *, Triangle *);
 };
+
+namespace Collision
+{
+	bool checkStrikeLineToMap(const TVec3f &, const TVec3f &, s32, const CollisionPartsFilterBase*, const TriangleFilterBase*);
+};
