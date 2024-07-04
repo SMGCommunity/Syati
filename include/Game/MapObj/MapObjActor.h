@@ -39,7 +39,7 @@ public:
 	virtual bool tryDeleteWaitEffect();
 
 	void initialize(const JMapInfoIter &, const MapObjActorInitInfo &);
-	void isObjectName(const char *) const;
+	bool isObjectName(const char *) const;
 	bool tryCreateBreakModel(const MapObjActorInitInfo &);
 	bool initStageEffectCamera();
 	bool initStageEffectPad();
