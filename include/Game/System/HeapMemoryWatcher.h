@@ -39,16 +39,16 @@ public:
 
     static JKRHeap* sRootHeapGDDR3;
 
-    JKRHeap *mStationedHeapNapa;
-    JKRHeap *mStationedHeapGDDR3;
-    JKRHeap *mHeapNapa;
-    JKRHeap *mHeapGDDR3;
-    JKRHeap *mWorldMapHeap;
-    JKRHeap *mFileCacheHeap;
-    JKRHeap *_18;
-    JKRHeap *mSceneHeapNapa;
-    JKRHeap *mSceneHeapGDDR3;
-    JKRHeap *mWPadHeap;
-    JKRHeap *mHomeButtonLayoutHeap;
+    JKRHeap *mStationedHeapNapa; // 0
+    JKRHeap *mStationedHeapGDDR3; // 4
+    JKRHeap *mHeapNapa; // 8
+    JKRHeap *mHeapGDDR3; // 0xC
+    JKRHeap *mWorldMapHeap; // 0x10
+    JKRHeap *mFileCacheHeap; // 0x14
+    JKRHeap *_18; // 0x18
+    JKRHeap *mSceneHeapNapa; // 0x1C
+    JKRHeap *mSceneHeapGDDR3; // 0x20
+    JKRHeap *mWPadHeap; // 0x24
+    JKRHeap *mHomeButtonLayoutHeap; // 0x28
     JKRHeap *_2C;
 };
