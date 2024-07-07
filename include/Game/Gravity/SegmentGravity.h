@@ -25,6 +25,6 @@ public:
 	f32 mSegmentLength;              // _88
 	f32 mValidSideDegree;            // _8C
 	f32 mValidSideCos;               // _90
-	f32 _94[2];
+	f32 mHemisphereExtension[2];     // _94
 	bool mValidEdges[2];             // _9C
 };
