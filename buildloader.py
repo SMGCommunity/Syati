@@ -26,7 +26,7 @@ def prepare_bin():
 REGIONS = ["PAL", "USA", "JPN", "TWN", "KOR"]
 LETTERS = ['P', 'E', 'J', 'W', 'K']
 
-MWCCEPPC = dep("deps/CodeWarrior/mwcceppc.exe", "CodeWarrior compiler")
+MWCCEPPC = dep("deps/CodeWarrior/mwcceppc.exe" if sys.platform == "win32" else "deps/CodeWarrior/mwcceppc", "CodeWarrior compiler")
 KAMEK = dep("deps/Kamek/Kamek.exe", "Kamek linker")
 SYMBOLS = dep("symbols", "Symbols folder")
 

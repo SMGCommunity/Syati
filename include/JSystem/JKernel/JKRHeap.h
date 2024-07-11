@@ -49,7 +49,26 @@ public:
     static void copyMemory(void *dest, void *src, u32 len);
     static void* setErrorHandler(void (*)(void *, u32, s32));
 
-    u8 _C[0x5C-0xC];
+    u32 _C;
+    u32 _10;
+    u32 _14;
+    u32 _18;
+    u32 _1C;
+    u32 _20;
+    u32 _24;
+    u32 _28;
+    u32 _2C;
+    u32 _30;
+    u32 _34;
+    u32 _38;
+    u32 _3C;
+    u32 _40;
+    u32 _44;
+    u32 _48;
+    u32 _4C;
+    u32 _50;
+    u32 _54;
+    u32 _58;
     JSUPtrList mPtrList; // _5C
 
     static void* mCodeStart;

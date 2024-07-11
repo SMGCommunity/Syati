@@ -72,8 +72,8 @@ public:
     bool isNearInitPos();
     bool trySetReturnNerve();
     bool incAndCheckTiredCounter();
-    void launchBegomanCore(LiveActor *, BegomanBase **, s32, f32, f32, f32, const TVec3f *);
-    void launchBegomanBabyLauncher(LiveActor *, BegomanBaby **, s32, f32, f32, f32, const TVec3f *);
+    static void launchBegomanCore(LiveActor *, BegomanBase **, s32, f32, f32, f32, const TVec3f *);
+    static void launchBegomanBabyLauncher(LiveActor *, BegomanBaby **, s32, f32, f32, f32, const TVec3f *);
     void updateRotateY(f32, f32);
     void updateTargetVec();
     bool reboundPlaneWithEffect(const TVec3f &, f32, f32, const char *);
