@@ -18,6 +18,7 @@ public:
     
     void tryJump();
     void trySquatJump();
+    void resetSleepTimer();
 
     u8 _0[0xA9C];
 };

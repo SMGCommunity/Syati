@@ -9,7 +9,7 @@ class BckCtrl;
 
 class ResourceHolder {
 public:
-    ResourceHolder(JKRArchive &);
+    ResourceHolder(JKRArchive &, const char *);
 
     const char* getResName(u32) const;
     bool isExistMaterialAnim();
