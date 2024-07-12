@@ -33,6 +33,7 @@
 #include "Game/MapObj/SpinDriverPathDrawer.h"
 #include "Game/MapObj/StarLightAreaHolder.h"
 #include "Game/MapObj/StarPiece.h"
+#include "Game/MapObj/StarPieceMother.h"
 #include "Game/MapObj/SuperSpinDriver.h"
 #include "Game/MapObj/YellowChip.h"
 #include "Game/MapObj/MapParts/FloaterFloatingForce.h"
