@@ -1,6 +1,5 @@
 #pragma once
 
-#include "syati.h"
 #include "revolution.h"
 #include "Game/NPC/TalkMessageFunc.h"
 class TalkNodeCtrl;
