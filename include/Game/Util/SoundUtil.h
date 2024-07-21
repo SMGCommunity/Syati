@@ -32,4 +32,5 @@ namespace MR {
 	void startGrandStarGetJingle();
 
 	void startAtmosphereSE(const char*, s32, s32);
+	void startAtmosphereLevelSE(const char*, s32, s32);
 };
