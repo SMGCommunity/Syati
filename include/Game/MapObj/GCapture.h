@@ -1,8 +1,11 @@
 #pragma once
 
 #include "Game/LiveActor/LiveActor.h"
+#include "Game/Util/SpringValue.h"
 
 class GCaptureTargetable;
+class GCaptureRibbon;
+class CameraTargetMtx;
 
 class GCapture : public LiveActor
 {
@@ -60,6 +63,28 @@ public:
     void releaseTractTarget();
     void endStarPointerMode();
     void updateCameraTargetMatrix();
+
+    TPos3f _90;
+    TQuat4f _C0;
+    TVec3f _D0;
+    TVec3f _DC;
+    TVec3f _E8;
+    TVec3f _F4;
+    TVec3f _100;
+    LiveActor* _10C;
+    s32 _110;
+    s32 _114;
+    GCaptureRibbon* mRibbon; // _118
+    CameraTargetMtx* mCameraTargetMtx; //_11C
+    SpringValue* mSpringValue; // _120
+    f32 _124;
+    f32 _128;
+    f32 _12C;
+    s32 _130;
+    f32 _134;
+    s32 mGuidanceTimer; //_138
+    bool mIsPointed; //_13C
+    bool _13D; //_13D
 };
 
 namespace MR {
@@ -67,4 +92,14 @@ namespace MR {
     bool isRequestedGCaptureTarget(GCaptureTargetable *);
     void noticeInTouchableRange();
     bool isPlayerGCaptured();
+}
+
+namespace NrvGCapture {
+    NERVE(GCaptureNrvWait);
+    ENDABLE_NERVE(GCaptureNrvCapture);
+    ENDABLE_NERVE(GCaptureNrvRecapture);
+    NERVE(GCaptureNrvTraction);
+    NERVE(GCaptureNrvHold);
+    NERVE(GCaptureNrvBreak);
+    NERVE(GCaptureNrvCoolDown);
 }
