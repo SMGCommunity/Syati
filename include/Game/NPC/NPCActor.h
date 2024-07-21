@@ -32,7 +32,7 @@ public:
     virtual bool isReactionNerve() const;
     virtual bool isSensorSpinCloudBlock(const HitSensor *pSensor) const;
 
-    void setBaseMtx(const TMtx34f &);
+    void setBaseMtx(const TPos3f &);
     void setInitPose();
     void initialize(const JMapInfoIter &, const NPCActorCaps &, const char *, const char *, bool);
     void equipment(const NPCActorItem &, bool);
