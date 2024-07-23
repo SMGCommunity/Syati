@@ -200,9 +200,9 @@ namespace MR {
 	void receiveItemShowMsg(u32 msg, HitSensor *pSender, HitSensor *pReceiver);
 	void receiveItemHideMsg(u32 msg, HitSensor *pSender, HitSensor *pReceiver);
 
-	void getGroundSensor(const LiveActor *pActor);
-	void getRoofSensor(const LiveActor *pActor);
-	void getWallSensor(const LiveActor *pActor);
+	HitSensor* getGroundSensor(const LiveActor *pActor);
+	HitSensor* getRoofSensor(const LiveActor *pActor);
+	HitSensor* getWallSensor(const LiveActor *pActor);
 	LiveActor* getGroundActor(const LiveActor *pActor);
 
 	bool isMsgPlayerHitAll(u32 msg);
