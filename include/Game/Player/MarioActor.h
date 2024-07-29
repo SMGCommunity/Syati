@@ -80,6 +80,8 @@ public:
 
 	bool isEnableNerveChange() const;
 
+	void setRasterScroll(s32, s32, s32);
+
 	u8 _90;
 	s32 _94;
 	s32 _98[64];
