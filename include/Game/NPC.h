@@ -9,3 +9,4 @@
 #include "Game/NPC/TalkMessageFunc.h"
 #include "Game/NPC/Tico.h"
 #include "Game/NPC/TicoEat.h"
+#include "Game/NPC/TalkTextFormer.h"
