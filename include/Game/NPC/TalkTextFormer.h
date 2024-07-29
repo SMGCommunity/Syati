@@ -21,5 +21,5 @@ public:
 	const char* mPaneName;      // _C
 };
 
-// Is this placed in the right spot to make an @unnamed@?
-getTextBoxPane(LayoutActor*, const char*);
+// Needs to be added somehow...
+//getTextBoxPane(LayoutActor*, const char*);
