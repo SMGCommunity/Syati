@@ -5,7 +5,7 @@
 
 class SimpleLayout : public LayoutActor {
 public:
-	SimpleLayout(const char* FileName, const char* ManagerName, u32, int);
+	SimpleLayout(const char* pName, const char* pArchive, u32, int drawType);
 
 	~SimpleLayout();
 };
