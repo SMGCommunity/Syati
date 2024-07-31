@@ -29,6 +29,7 @@ public:
 	virtual bool receiveOtherMsg(u32 msg, HitSensor *pSender, HitSensor *pReceiver);
 
 	// Various functions...
+	bool receiveFireBall(HitSensor*, HitSensor*);
 
 	KaninaType mKaninaType; // _90
 	u32* _94;

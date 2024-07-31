@@ -11,4 +11,5 @@
 #include "Game/Screen/StageResultInformer.h"
 #include "Game/Screen/StarPointerTarget.h"
 #include "Game/Screen/SwitchingScreenEffect.h"
+#include "Game/Screen/SimpleLayout.h"
 #include "Game/Screen/TimeStopScreenEffect.h"
