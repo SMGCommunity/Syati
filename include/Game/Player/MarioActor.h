@@ -78,7 +78,21 @@ public:
 	void incLife(u32);
 	void decLife(u16);
 
+	void initFireMario();
+	void initBeeMario();
+	void initHopperMario();
+	void initIceMario();
+	void initInvincibleMario();
+	void initTeresaMario();
+	void initTornadoMario();
+	void initBoneMario();
+	void initYoshi();
+	void initCloudMario();
+	void initRockMario();
+
 	bool isEnableNerveChange() const;
+
+	void setRasterScroll(s32, s32, s32);
 
 	u8 _90;
 	s32 _94;
