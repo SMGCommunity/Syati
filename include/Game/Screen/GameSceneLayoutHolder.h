@@ -25,6 +25,12 @@ public:
     void requestAppear();
     void requestFrameIn();
     void requestFrameOut();
+
+    u8 _20;
+    u8 _21;
+    u16 _22;
+    u16 _24;
+    u16 _26;
 };
 
 class MarioSubMeter : public NameObj {
@@ -41,9 +47,9 @@ public:
     void activate();
     void deactivate();
 
-    SubMeterLayout* mBeeMeter;
-    SubMeterLayout* mAirMeter;
-    s32 _1C;
+    SubMeterLayout* mBeeMeter;     // 0x14
+    SubMeterLayout* mAirMeter;     // 0x18
+    SubMeterLayout* mCurrentMeter; // 0x1C
 };
 
 class GameSceneLayoutHolder : public NameObj {

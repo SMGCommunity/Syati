@@ -20,5 +20,8 @@ public:
     void trySquatJump();
     void resetSleepTimer();
 
+    void updateCubeCode();
+    void updateCometCode();
+
     u8 _0[0xA9C];
 };

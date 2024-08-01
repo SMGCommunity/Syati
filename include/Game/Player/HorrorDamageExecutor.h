@@ -20,3 +20,9 @@ public:
 	s32 mBreakTime; // _C
 	bool mIsBreakEnd; // _10
 };
+
+namespace NrvHorrorDamageExecutor {
+	NERVE(HorrorDamageExecutorNrvBoneBreakStart);
+	NERVE(HorrorDamageExecutorNrvBoneBreakWait);
+	NERVE(HorrorDamageExecutorNrvBoneBreakEnd);
+}
