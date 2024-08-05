@@ -93,6 +93,10 @@ public:
 	bool isEnableNerveChange() const;
 
 	void setRasterScroll(s32, s32, s32);
+	void updateFireSpin();
+	void shootFireBall();
+	void killAllFireBall(); //SMG2 exclusive
+	s32 selectAction(const char*) const;
 
 	u8 _90;
 	s32 _94;

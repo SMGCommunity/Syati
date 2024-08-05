@@ -1,11 +1,12 @@
 #pragma once
 
 #include "revolution.h"
+#include "Game/Player/MarioModule.h"
 
 class MarioActor;
 class MarioState;
 
-class Mario {
+class Mario : public MarioModule {
 public:
     Mario(MarioActor *pMarioActor);
 
@@ -22,6 +23,11 @@ public:
 
     void updateCubeCode();
     void updateCometCode();
+    void updateOnSand();
+    void updateOnPoison();
+
+    bool isCurrentFloorSink() const;
+    bool checkCurrentFloorCodeSevere(u32) const;
 
     u8 _0[0xA9C];
 };
