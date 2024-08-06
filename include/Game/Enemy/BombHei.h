@@ -16,7 +16,7 @@ public:
     virtual void attackSensor(HitSensor *, HitSensor *);
     virtual bool receiveMsgPlayerAttack(u32, HitSensor *, HitSensor *);
     virtual bool receiveMsgEnemyAttack(u32, HitSensor *, HitSensor *);
-    virtual bool receiveMsgPush(u32, HitSensor *, HitSensor *);
+    virtual bool receiveMsgPush(HitSensor *, HitSensor *);
     virtual bool receiveOtherMsg(u32, HitSensor *, HitSensor *);
     bool receiveMsgThrow(HitSensor *, HitSensor *);
 
