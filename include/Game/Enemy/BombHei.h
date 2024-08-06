@@ -38,6 +38,7 @@ public:
     void exeExplode();
     void calcJoint(TPos3f *, JointControllerInfo &);
     void startBoundSound();
+    u8 _90[0x58];
 };
 
 namespace NrvBombHei {
