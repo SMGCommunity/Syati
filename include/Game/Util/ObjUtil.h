@@ -144,6 +144,15 @@ namespace MR {
 
     bool hasCsvItem(const JMapInfo *, const char *pItemName);
     bool hasCsvDataItem(const JMapInfo *, const char *pItemName, const char *pDataName);
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="pDest">The output</param>
+    /// <param name="pCsvData">The BCSV to look through</param>
+    /// <param name="pItemName">The BCSV Column to find pDataName in</param>
+    /// <param name="pDataName">The value to find the first row of inside the pItemName Column</param>
+    /// <param name="pElementName">The BCSV Column to get the data from using the index of the row found for pDataName</param>
+    void getCsvDataStrByElement(const char **pDest, const JMapInfo *pCsvData, const char * pItemName, const char* pDataName, const char* pElementName);
     // more csv functions...
 
     void declarePowerStar(const NameObj *pHost);
