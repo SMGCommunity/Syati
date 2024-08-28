@@ -3,6 +3,7 @@
 #include "Game/Player.h"
 
 class MarioSwim : public MarioState {
+public:
     MarioSwim(MarioActor *);
 
     virtual void init();
