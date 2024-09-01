@@ -47,6 +47,8 @@
 #define PLAYER_MODEL_FLAG_CLOUD 0x1000
 #define PLAYER_MODEL_FLAG_ROCK 0x2000
 
+class MarioAnimator;
+
 class MarioActor : public LiveActor {
 public:
 	MarioActor(const char *);
@@ -172,7 +174,7 @@ public:
 	u8 _57C;
 	u32* mCollisionShadow; // _580
 	Mario* mMario; // _584
-	u32* mMarioAnimator; // _588
+	MarioAnimator* mMarioAnimator; // _588
 	u32* mMarioEffect; // _58C
 	s32 _590;
 	TVec3f _594;

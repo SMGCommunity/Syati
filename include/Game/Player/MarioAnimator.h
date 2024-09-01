@@ -5,6 +5,26 @@
 class MarioAnimator {
 public:
     MarioAnimator(MarioActor *);
+    void init();
+    void initCallbackTable();
+    
+    bool isDefaultAnimationRun(const char *) const;
+    bool isMirrorAnimation(const HitSensor *);
+
+    void change(const char *);
+    void changeUpper(const char *);
+    void changeDefault(const char *);
+    void changeTrackAnim(u8, const char *);
+    void stopUpper(const char *);
+    
+    void setSpeed(f32);
+    void setUpperRotateY(f32);
+    void addRumblePower(f32, u32);
+    void clearAllJointTransform();
+    void switchMirrorMode();
+    void updateTakingAnimation(const HitSensor *);
+    void changeThrowAnimation(const HitSensor *);
+    void waterToGround();
 
     MarioActor *mMarioActor; // _0
     XanimeResourceTable *mResourceTable; // _4
