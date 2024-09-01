@@ -58,6 +58,7 @@ public:
     
     bool isStatusActive(u32 statusCode) const;
     void closeStatus(MarioState*);
+    u32 getCurrentStatus() const;
 
     void playSoundTrampleCombo(u8);
     
@@ -528,7 +529,7 @@ public:
     u32 _974;
     u32 _978;
     u32 _97C;
-    u32 _980;
+    MarioState *mMarioState;
     u32 _984;
     u32 _988;
     u32 _98C;
