@@ -210,7 +210,7 @@ public:
 	f32 _6A4;
 	s16 _6A8;
 	s32 _6AC;
-	s32 _6B0;
+	s32 mLifeNum;
 	s32 _6B4;
 	s16 _6B8;
 	s32 _6BC;
