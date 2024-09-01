@@ -168,7 +168,7 @@ namespace MR {
 	bool isPlayerCarryAny();
 	LiveActor* getPlayerCarrySensorHost();
 
-	void startSoundPlayer(const char *, s32);
+	void startSoundPlayer(const char *, s32, s32);
 
 	void startLevelSoundPlayer(const char *, s32, s32);
 
