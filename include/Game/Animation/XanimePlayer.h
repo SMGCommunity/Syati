@@ -23,6 +23,8 @@ public:
 	void changeSpeed(f32);
 	void changeInterpoleFrame(s32);
 	bool changeTrackWeight(s32, f32);
+	void changeTrackAnimation(u8, const char *);
+	void changeTrackAnimation(u8, u32);
 	void calcAnm(u16);
 	void setModel(J3DModel*);
 	void overWriteMtxCalc(u16);
