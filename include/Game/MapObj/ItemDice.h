@@ -47,6 +47,22 @@ public:
 	bool _109;
 };
 
+class ItemDice : public DiceBase {
+public:
+	ItemDice(const char *pName);
+	~ItemDice();
+
+	virtual const char* getModelName();
+	virtual void initItems();
+	virtual void setAnimFrame();
+	virtual void setResultFrame(u32);
+	virtual bool makeResult(u32);
+	virtual bool isGoodResult(u32) const;
+
+	u32 _10C;
+	u32 _110;
+};
+
 class MultipleChoiceDice : public DiceBase {
 public:
 	inline MultipleChoiceDice(const char* pName) : DiceBase(pName) {}
