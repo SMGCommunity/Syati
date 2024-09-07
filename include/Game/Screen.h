@@ -8,6 +8,7 @@
 #include "Game/Screen/InformationMessage.h"
 #include "Game/Screen/InformationObserver.h"
 #include "Game/Screen/LayoutActor.h"
+#include "Game/Screen/NoteCounter.h"
 #include "Game/Screen/StageResultInformer.h"
 #include "Game/Screen/StarPointerTarget.h"
 #include "Game/Screen/SwitchingScreenEffect.h"
