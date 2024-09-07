@@ -38,7 +38,7 @@ public:
     void equipment(const NPCActorItem &, bool);
     void initTalkCtrl(const JMapInfoIter &, const char *, const TVec3f &, MtxPtr);
     void initTalkCtrlDirect(const JMapInfoIter &, const char *, const TVec3f &, MtxPtr);
-    void calcJointScale(MtxPtr , const JointControllerInfo &);
+    void calcJointScale(TPos3f*, const JointControllerInfo &);
     void turnToPlayer();
     void turnToPlayer(f32);
     void turnToPlayer(f32, f32, f32);
@@ -102,7 +102,7 @@ public:
     bool _129; // unused
     bool _12A; // unused
     bool _12B; // unused
-    bool _12C;
+    bool _12C; // AnimScale related. (NPCActor::updateScaleCtrl)
     f32 _130;
     const char* mActionSpinName;           // _134
     const char* mActionTrampledName;       // _138
