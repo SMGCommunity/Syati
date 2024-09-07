@@ -97,7 +97,7 @@ public:
     f32 _118;
     f32 _11C;
     const char* _120;
-    const char* _124;
+    const char* _124;  // Walk animation name?
     bool _128;
     bool _129; // unused
     bool _12A; // unused
@@ -127,7 +127,7 @@ namespace NrvNPCActor {
 
 class NPCActorItem {
 public:
-    inline NPCActorItem(const char *pName, u32* __4, u32* __8, const char *__C, u32 *__10) {
+    inline NPCActorItem(const char *pName, const char* __4, const char* __8, const char *__C, const char* __10) {
         mName = pName;
         _4 = __4;
         _8 = __8;
@@ -136,10 +136,10 @@ public:
     }
 
     const char* mName;  // _0
-    u32* _4;
-    u32* _8;
+    const char* _4;
+    const char* _8;
     const char* _C;
-    u32* _10;
+    const char* _10;
 };
 
 class NPCActorCaps {
