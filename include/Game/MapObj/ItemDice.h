@@ -52,7 +52,7 @@ public:
 	ItemDice(const char *pName);
 	~ItemDice();
 
-	virtual const char* getModelName();
+	virtual const char* getModelName() const;
 	virtual void initItems();
 	virtual void setAnimFrame();
 	virtual void setResultFrame(u32);
