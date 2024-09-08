@@ -6,7 +6,7 @@ f64 JMASinRadian(f32);
 f64 JMASinDegree(f32);
 f64 JMACosRadian(f32);
 f64 JMACosDegree(f32);
-f64 JMAACosRadian(f32);
+f64 JMAAcosRadian(f32);
 f64 JMASqrt(f32);
 f64 JMAAsinRadian(f32);
 
