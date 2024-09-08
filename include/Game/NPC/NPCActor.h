@@ -38,7 +38,7 @@ public:
     void equipment(const NPCActorItem &, bool);
     void initTalkCtrl(const JMapInfoIter &, const char *, const TVec3f &, MtxPtr);
     void initTalkCtrlDirect(const JMapInfoIter &, const char *, const TVec3f &, MtxPtr);
-    void calcJointScale(MtxPtr , const JointControllerInfo &);
+    bool calcJointScale(TPos3f*, const JointControllerInfo &);
     void turnToPlayer();
     void turnToPlayer(f32);
     void turnToPlayer(f32, f32, f32);
@@ -97,12 +97,12 @@ public:
     f32 _118;
     f32 _11C;
     const char* _120;
-    const char* _124;
+    const char* _124;  // Walk animation name?
     bool _128;
     bool _129; // unused
     bool _12A; // unused
     bool _12B; // unused
-    bool _12C;
+    bool _12C; // AnimScale related. (NPCActor::updateScaleCtrl)
     f32 _130;
     const char* mActionSpinName;           // _134
     const char* mActionTrampledName;       // _138
@@ -127,7 +127,7 @@ namespace NrvNPCActor {
 
 class NPCActorItem {
 public:
-    inline NPCActorItem(const char *pName, u32* __4, u32* __8, const char *__C, u32 *__10) {
+    inline NPCActorItem(const char *pName, const char* __4, const char* __8, const char *__C, const char* __10) {
         mName = pName;
         _4 = __4;
         _8 = __8;
@@ -136,10 +136,10 @@ public:
     }
 
     const char* mName;  // _0
-    u32* _4;
-    u32* _8;
+    const char* _4;
+    const char* _8;
     const char* _C;
-    u32* _10;
+    const char* _10;
 };
 
 class NPCActorCaps {

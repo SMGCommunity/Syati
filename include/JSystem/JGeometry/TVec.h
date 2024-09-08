@@ -177,6 +177,21 @@ namespace JGeometry {
             return (this->x * this->x) + (this->y * this->y) + (this->z * this->z);
         }
 
+        inline T squaredInline() const
+        {
+            register const JGeometry::TVec3<f32>* this_vec = this;
+            register f32 _xy, _z;
+
+            __asm {
+                psq_l _xy, 0(this_vec), 0, 0
+                lfs _z, 8(this_vec)
+                ps_mul _xy, _xy, _xy
+                ps_madd _z, _z, _z, _xy
+                ps_sum0 _z, _z, _xy, _xy
+            };
+            return _z;
+        }
+
         T squared(const TVec3<T> &) const;
         T dot(const TVec3<T> &) const;
         T normalize(const TVec3<T> &);
