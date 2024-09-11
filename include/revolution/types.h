@@ -28,6 +28,8 @@ typedef volatile f64 vf64;
 // Null-pointer alias
 #define NULL 0
 
+typedef int BOOL;
+
 // 32-bit floating point 3D vector
 typedef struct {
 	f32 x, y, z;

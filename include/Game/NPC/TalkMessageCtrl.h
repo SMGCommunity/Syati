@@ -56,7 +56,7 @@ public:
     s32 _2C;
     MtxPtr _30;
     TVec3f _34;
-    s32 _40;
+    f32 _40;
     bool mAlreadyDoneFlag; // 0x44
     s32 _48; // Used at 0x8037B584,
     bool _4C;
