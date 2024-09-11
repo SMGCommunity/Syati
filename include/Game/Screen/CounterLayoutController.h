@@ -22,7 +22,7 @@ public:
 	void setHPMeter(MarioMeter*);
 	void requestedTicoEat(bool);
 	bool isInvalidSystemStateShowCounter();
-	bool isWaitToDisappearCounter(const LayoutActor* pLayout);
+	static bool isWaitToDisappearCounter(const LayoutActor* pLayout);
 	void showAllLayout();
 	void hideAllLayout();
 	bool isHiddenOrWaitAllLayout() const;
