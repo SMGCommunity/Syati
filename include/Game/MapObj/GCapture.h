@@ -3,11 +3,21 @@
 #include "Game/LiveActor/LiveActor.h"
 #include "Game/Util/SpringValue.h"
 
-class GCaptureTargetable;
 class GCaptureRibbon;
 class CameraTargetMtx;
 
-class GCapture : public LiveActor
+class GCaptureTargetable {
+public:
+    virtual void decideTarget() = 0;
+    virtual void releaseTarget() = 0;
+    virtual void getTargetPosition(TVec3f*) = 0;
+    virtual bool canEndHold() const;
+    virtual bool isReleaseForce() const;
+    virtual f32 releaseDistance() const;
+    virtual f32 getPointableRange() const;
+};
+
+class GCapture : public LiveActor, public GCaptureTargetable
 {
 public:
     GCapture(const char *pName);
@@ -19,6 +29,15 @@ public:
     virtual bool receiveMsgEnemyAttack(u32, HitSensor *, HitSensor *);
     virtual bool receiveOtherMsg(u32, HitSensor *, HitSensor *);
     
+    virtual void decideTarget();
+    virtual void releaseTarget();
+    virtual void getTargetPosition(TVec3f*);
+
+    virtual bool isReleaseForce() const;
+    virtual f32 getPointableRange() const;
+    virtual f32 releaseDistance() const;
+
+
     bool requestBind(HitSensor *);
     bool requestCancelBind();
     bool requestDamageCancel(u32);
@@ -72,7 +91,7 @@ public:
     TVec3f _F4;
     TVec3f _100;
     LiveActor* _10C;
-    s32 _110;
+    GCaptureTargetable* _110;
     s32 _114;
     GCaptureRibbon* mRibbon; // _118
     CameraTargetMtx* mCameraTargetMtx; //_11C

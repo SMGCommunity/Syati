@@ -15,6 +15,7 @@
 #include "Game/MapObj/DummyDisplayModel.h"
 #include "Game/MapObj/ElectricRailFunction.h"
 #include "Game/MapObj/FallOutFieldDraw.h"
+#include "Game/MapObj/GCapture.h"
 #include "Game/MapObj/InvisiblePolygonObj.h"
 #include "Game/MapObj/ItemDice.h"
 #include "Game/MapObj/JetTurtle.h"
