@@ -33,3 +33,12 @@ public:
     bool mDisplayMode; // 0x41
 };
 
+namespace NrvTimeLimitLayout {
+    NERVE(TimeLimitLayoutAppear);
+    NERVE(TimeLimitLayoutCountDown);
+    NERVE(TimeLimitLayoutScaleUp);
+    NERVE(TimeLimitLayoutScaleKeep);
+    NERVE(TimeLimitLayoutScaleDown);
+    NERVE(TimeLimitLayoutFadeout);
+    NERVE(TimeLimitLayoutTimeUpReady);
+}
