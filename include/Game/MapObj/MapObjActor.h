@@ -89,8 +89,8 @@ namespace MapObjActorUtil {
 	void resetRailMoverToInitPos(const MapObjActor *);
 	bool tryStartBreak(const MapObjActor*);
 	bool isBreakStopped(const MapObjActor *);
-	void killBloomModel(const MapObjActor *);
-	void appearBloomModel(const MapObjActor *);
+	void killBloomModel(MapObjActor *);
+	void appearBloomModel(MapObjActor *);
 };
 
 namespace NrvMapObjActor {
