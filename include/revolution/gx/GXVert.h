@@ -1,3 +1,5 @@
+/*
+This header needs PPCWGPipe, which I will add later
 #ifndef GXVERT_H
 #define GXVERT_H
 
@@ -5,12 +7,12 @@
 extern "C" {
 #endif
 
-#include <revolution/base/PPCWGPipe.h>
+//#include "revolution/base/PPCWGPipe.h"
 
 #ifdef __MWERKS__
-volatile PPCWGPipe GXWGFifo : 0xCC008000;
+volatile u32 GXWGFifo : 0xCC008000; // PPCWGPipe
 #else
-volatile PPCWGPipe GXWGFifo;
+volatile u32 GXWGFifo; // PPCWGPipe
 #endif
 
 #define __GXCDEF(prfx,n,t)  __GXCDEF##n(prfx##n##t,t,t)
@@ -58,4 +60,4 @@ __GXCDEFX(GXTexCoord1x8,  1, u8)
 }
 #endif
 
-#endif // GXVERT_H
+#endif // GXVERT_H*/

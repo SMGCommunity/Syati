@@ -5,9 +5,9 @@
 extern "C" {
 #endif
 
-#include <revolution/types.h>
-#include <revolution/gx/GXEnum.h>
-#include <revolution/vi/vitypes.h>
+#include "revolution/types.h"
+#include "revolution/gx/GXEnum.h"
+// #include "revolution/vi/vitypes.h"
 
 typedef struct _GXColor {
     u8 r, g, b, a;
@@ -38,7 +38,7 @@ typedef struct _GXTlutRegion {
 } GXTlutRegion;
 
 typedef struct _GXRenderModeObj {
-    VITVMode viTVmode;
+    u32 viTVmode; // VITVMode
     u16 fbWidth;
     u16 efbHeight;
     u16 xfbHeight;
@@ -46,7 +46,7 @@ typedef struct _GXRenderModeObj {
     u16 viYOrigin;
     u16 viWidth;
     u16 viHeight;
-    VIXFBMode  xFBmode;
+    u32 xFBmode; // VIXFBMode
     u8 field_rendering;
     u8 aa;
     u8 sample_pattern[12][2];

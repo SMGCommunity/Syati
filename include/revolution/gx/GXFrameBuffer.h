@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-#include <revolution/gx.h>
+#include "revolution/gx.h"
 
 void GXSetTexCopySrc(u16, u16, u16, u16);
 

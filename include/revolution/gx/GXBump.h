@@ -5,8 +5,8 @@
 extern "C" {
 #endif
 
-#include <revolution/types.h>
-#include <revolution/gx/GXEnum.h>
+#include "revolution/types.h"
+#include "revolution/gx/GXEnum.h"
 
 extern void GXSetNumIndStages(u8);
 extern void GXSetIndTexOrder(GXIndTexStageID, GXTexCoordID, GXTexMapID);

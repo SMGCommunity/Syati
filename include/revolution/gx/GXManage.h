@@ -5,10 +5,10 @@
 extern "C" {
 #endif
 
-#include <revolution/types.h>
-#include <revolution/gx/GXEnum.h>
-#include <revolution/gx/GXStruct.h>
-#include <revolution/gx/GXFifo.h>
+#include "revolution/types.h"
+#include "revolution/gx/GXEnum.h"
+#include "revolution/gx/GXStruct.h"
+#include "revolution/gx/GXFifo.h"
 
 typedef void (*GXDrawSyncCallback)(u16 token);
 typedef void (*GXDrawDoneCallback)(void);
