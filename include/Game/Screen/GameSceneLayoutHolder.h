@@ -67,9 +67,8 @@ public:
     void activateDefaultGameLayout();
     void deactivateDefaultGameLayout();
     void createPurpleCoinCounter();
-    PurpleCoinCounter* getPurpleCoinCounter();
+    PurpleCoinCounter* getPurpleCoinCounter() const;
     void requestOneUp(s32);
-    LayoutActor* getPurpleCoinCounter() const;
 
     InformationMessage* mInformationMessage; // 0x14
     YesNoLayout* mYesNoLayout; // 0x18
