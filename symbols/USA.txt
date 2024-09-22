@@ -16087,6 +16087,7 @@ __dt__32DeriveActorGroup<12ClipAreaDrop>Fv=0x80286090
 createClipAreaDropHolder__2MRFv=0x802860F0
 getDeadClipAreaDrop__2MRFv=0x80286100
 appearClipAreaDrop__2MRFRCQ29JGeometry8TVec3<f>f=0x80286150
+killClipAreaDrop__2MRFRCQ29JGeometry8TVec3<f>lllf=0x802861E0
 __ct__14ClipAreaHolderFPCc=0x802862F0
 __dt__27DeriveActorGroup<8ClipArea>Fv=0x80286360
 init__14ClipAreaHolderFRC12JMapInfoIter=0x802863C0
