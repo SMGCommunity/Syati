@@ -84,6 +84,7 @@ public:
 	static s32 getStockedCoinNum();
 	static s32 tryOnGameEventFlagCoinCounterStop(int);
 
+	static u32 getStageSavedBestTime(const char*, s32);
 	static void incCumulativePlayTime();
 	static s32 getCumulativePlayTime();
 	static void resetAllGameData();

@@ -41987,3 +41987,4 @@ typeInfo__Q34nw4r3lyt7TextBox=0x807D5DC0
 typeInfo__Q34nw4r3lyt6Window=0x807D5DC8
 typeInfo__Q34nw4r3lyt8Bounding=0x807D5DD0
 __DVDLayoutFormat=0x807D60D8
+getStageSavedBestTime__16GameDataFunctionFPCcl=0x804D3D10
