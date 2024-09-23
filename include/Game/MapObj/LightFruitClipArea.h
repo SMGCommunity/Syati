@@ -13,6 +13,9 @@ public:
     void exeAppear();
     void exeDisappear();
     void playTimerSound();
+
+    ClipAreaShapeCylinder* _C4;
+    
 };
 
 namespace MR {

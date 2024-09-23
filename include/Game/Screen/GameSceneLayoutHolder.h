@@ -3,6 +3,7 @@
 #include "syati.h"
 #include "Game/NameObj.h"
 #include "Game/Screen/LayoutActor.h"
+#include "Game/Screen/PurpleCoinCounter.h"
 
 class InformationMessage;
 class YesNoLayout;
@@ -66,8 +67,8 @@ public:
     void activateDefaultGameLayout();
     void deactivateDefaultGameLayout();
     void createPurpleCoinCounter();
+    PurpleCoinCounter* getPurpleCoinCounter() const;
     void requestOneUp(s32);
-    LayoutActor* getPurpleCoinCounter() const;
 
     InformationMessage* mInformationMessage; // 0x14
     YesNoLayout* mYesNoLayout; // 0x18
@@ -78,6 +79,7 @@ public:
     OneUpBoard* mOneUpBoard; // 0x2C
     NoteCounter* mNoteCounter; // 0x30
     CounterLayoutController* mCounterLayoutController; // 0x34
+    PurpleCoinCounter* mPurpleCoinCounter; // 0x38
     s32 _3C;
     bool _40;
     s32 _44;

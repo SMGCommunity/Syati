@@ -11,6 +11,7 @@ class PostOutline;
 
 namespace MR {
 	s32 getScreenWidth();
+	s32 getScreenHeight();
 	s32 getSafetyFrameWidth();
 	s32 getSafetyFrameLeft();
 	s32 getSafetyFrameRight();
