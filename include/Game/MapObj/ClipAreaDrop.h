@@ -7,6 +7,8 @@ class ClipAreaDrop : ClipArea {
     public:
         ClipAreaDrop(const char *, const char *);
 
+        f32 setBaseSize(f32);
+
         const char *_C4;
         u32 _C8;
         f32 _CC;
