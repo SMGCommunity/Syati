@@ -37,5 +37,7 @@ namespace MR {
     void initSwitches(LiveActor *pActor, const JMapInfoIter &rIter, const char *pModelName, const char *pFuncName);
 
     ResTIMG* loadTexFromArc(const char*, const char*, ResTIMG*);
-    ResTIMG* loadTexFromArc(LiveActor*, const char*, const char*);
+    ResTIMG* loadTexFromArc(const char*, ResourceHolder*);
+    JUTTexture* loadTexFromArc(LiveActor*, const char*);
+    JUTTexture* loadTexFromArc(LiveActor*, const char*, const char*);
 };
