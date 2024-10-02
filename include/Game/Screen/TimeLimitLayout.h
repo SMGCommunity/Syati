@@ -10,6 +10,9 @@ public:
     virtual void appear();
     virtual void kill();
     virtual void control();
+    void pause();
+    void resume();
+    void addTimeLimit(s32 time);
     void setTimeLimit(u32 time);
     void setDisplayModeOnNormal(bool);
     bool isReadyToTimeUp() const;
