@@ -5,6 +5,7 @@
 #include "Game/Boss.h"
 #include "Game/Effect.h"
 #include "Game/Enemy.h"
+#include "Game/GameAudio.h"
 #include "Game/Gravity.h"
 #include "Game/LiveActor.h"
 #include "Game/Map.h"
