@@ -19,8 +19,8 @@ namespace MR {
     void copyString(char *pDest, const char *pSrc, u32 length);
     void copyString(wchar_t *pDest, const wchar_t *pSrc, u32 length);
 
-    void addPictureFontCode(wchar_t *pDest, int pictureId);
-    void addNewLine(wchar_t *pDest);
+    wchar_t* addPictureFontCode(wchar_t *pDest, int pictureId);
+    wchar_t* addNewLine(wchar_t *pDest);
 
     const char* getBaseName(const char *pString);
     void removeExtensionString(char *pDest, u32 length, const char *pSrc);
