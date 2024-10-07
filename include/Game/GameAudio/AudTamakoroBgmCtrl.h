@@ -8,7 +8,7 @@ class AudTamakoroBgmCtrl {
 public:
 	AudTamakoroBgmCtrl();
 
-	void init();
+	void init(const char* name);
 	void control(f32, bool, s32);
 	void modifyTempo(JAISoundHandle*, f32);
 	void modifyPitch(JAISoundHandle*, f32);
