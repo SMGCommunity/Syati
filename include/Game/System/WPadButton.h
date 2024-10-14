@@ -37,8 +37,8 @@ public:
     bool isChangeAnyState() const;
 
     const WPad* mPad;       // _0
-    u32 mHold;              // _4
-    u32 _8;
+    u32 mButton;            // _4
+    u32 mTrigger;           // _8
     u32 mRelease;           // _C
     u32 _10;
     f32 mDelaySec;          // _14
