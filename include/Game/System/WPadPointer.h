@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Game/System/WPad.h"
-#include "JSystem/JGeometry.h
+#include "JSystem/JGeometry.h"
 
 class WPadPointer {
 public:
