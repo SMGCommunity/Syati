@@ -4,12 +4,17 @@
 
 class LiveActor;
 
+struct JAISoundID {
+	s32 id;
+};
+
 namespace MR {
 	bool isDestroySceneKeepAllSound();
 	void onDestroySceneKeepAllSound();
 	void offDestroySceneKeepAllSound();
 
 	void startSystemSE(const char *, s32, s32);
+	void startSystemSE(JAISoundID, s32, s32);
 	void startSystemLevelSE(const char *, s32, s32);
 	void stopSystemSE(const char *, u32);
 
