@@ -17,7 +17,7 @@ public:
     TMtx34f _90;
     f32 _C0;
     f32 _C4;
-    J3DJoint *_C8;
+    J3DJoint *mArrowJoint;
     u32 _CC;
     TMtx34f _D0;
     f32 _100;

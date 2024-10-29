@@ -12,15 +12,15 @@ class YoshiHolder {
 public:
     YoshiHolder(Mario *);
 
-    Yoshi *_0;
+    Yoshi *mYoshi; // _0
     u32 _4;
-    YoshiTongueAction *_8;
-    YoshiLockOnManager *_C;
+    YoshiTongueAction *mYoshiTongueAction; // _8
+    YoshiLockOnManager *mYoshiLockOnManager; // _C
     u32 *_10; // 8041BF10
-    YoshiArrow *_14;
+    YoshiArrow *mYoshiArrow; // _14
     PartsModel *mYoshiBalloon; // _18
-    YoshiDashStep *_1C;
-    YoshiFruitCounter *_20;
+    YoshiDashStep *mYoshiDashStep; // _1C
+    YoshiFruitCounter *mYoshiFruitCounter; // _20
     u32 *_24[64];
     u32 _28;
     u32 _2C;

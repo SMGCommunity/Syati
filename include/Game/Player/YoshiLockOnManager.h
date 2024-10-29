@@ -20,7 +20,7 @@ public:
     MR::BothDirPtrList _20;
     MR::BothDirPtrList _2C;
     MR::BothDirPtrList _38;
-    YoshiTargetMark **_44;
+    YoshiTargetMark **mYoshiTargetMarks; // _44
     u32 _48;
     u8 _4C;
 };

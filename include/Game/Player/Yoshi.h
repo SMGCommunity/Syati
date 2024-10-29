@@ -33,7 +33,7 @@ public:
     u32 _E0;
     u32 _E4;
     TVec3f _E8;
-    YoshiTongue *_F4;
+    YoshiTongue *mYoshiTongue; // _F4
     u32 *_F8; // 80417D40
     u32 *_FC; // 8041A9A0
     u32 *_100; // 8040B440
@@ -56,7 +56,7 @@ public:
     u32 _140;
     u8 _144;
     u8 _145;
-    WaterInfo *_148;
+    WaterInfo *mWaterInfo; // _148
     f32 _14C;
     f32 _150;
     f32 _154;
@@ -73,7 +73,7 @@ public:
     f32 _190;
     f32 _194;
     u8 _198;
-    YoshiSilhouette *_19C;
+    YoshiSilhouette *mYoshiSilhouette; // _19C
     u8 _1A0;
     u8 _1A1;
     u8 _1A2;
