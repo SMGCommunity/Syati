@@ -7,7 +7,7 @@
 #include "Game/Map/BezierRail.h"                 // unfinished
 // Butterfly
 #include "Game/Map/CollisionCategorizedKeeper.h" // unfinished
-// Collisioncode
+#include "Game/Map/CollisionCode.h"
 // CollisionDirector
 #include "Game/Map/CollisionParts.h"             // unfinished
 // FileSelectCameraController
@@ -58,7 +58,7 @@
 // SwitchWatcher
 // SwitchWatcherHolder
 // TimerSwitch
-// WaterAreaHolder
+#include "Game/Map/WaterAreaHolder.h"
 #include "Game/Map/WaterInfo.h"                 // unfinished
 // WaterPlant
 // WaterStream
