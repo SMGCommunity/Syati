@@ -58,7 +58,7 @@
 // SwitchWatcher
 // SwitchWatcherHolder
 // TimerSwitch
-#include "Game/Map/WaterAreaHolder.h"
+//#include "Game/Map/WaterAreaHolder.h"
 #include "Game/Map/WaterInfo.h"                 // unfinished
 // WaterPlant
 // WaterStream
