@@ -92,7 +92,7 @@ namespace MR {
 	bool isPowerStarGreenInCurrentStage(s32 powerStarId);
 	bool isPowerStarBronzeInCurrentStage(s32 powerStarId);
 	bool isGrandStarInCurrentStage(s32 powerStarId);
-	bool hasPowerStarInCurrentStageWithDeclared(const char *pDeclarer, s32 powerStarId);
+	bool hasPowerStarInCurrentStageWithDeclarer(const char *pDeclarer, s32 powerStarId);
 	bool isPowerStarGreenInCurrentStageWithDeclarer(const char *pDeclarer, s32 powerStarId);
 	bool isPowerStarBronzeInCurrentStageWithDeclarer(const char *pDeclarer, s32 powerStarId);
 	bool isGrandStarInCurrentStageWithDeclarer(const char *pDeclarer, s32 powerStarId);

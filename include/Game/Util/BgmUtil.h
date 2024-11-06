@@ -12,7 +12,8 @@ namespace MR {
 	void unlockStageBGM();
 	void moveVolumeStageBGM(f32, u32);
 	void moveVolumeStageBGMForNoteFairy(f32, u32);
-
+	void startCurrentStageBGM();
+	void startLastStageBGM();
 	bool isPlayingStageBgm();
 	bool isPlayingStageBgmID(u32);
 	bool isPlayingStageBgmName(const char *);
