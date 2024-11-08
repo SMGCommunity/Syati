@@ -85,3 +85,27 @@ namespace MR {
 	bool isNormalTalking();
 	LiveActor* getTalkingActor();
 };
+
+namespace DemoStartInfo {
+	enum DemoType {
+		DEMOTYPE_0,
+	};
+
+	enum CinemaFrameType {
+		CINEMAFRAMETYPE_0,
+		CINEMAFRAMETYPE_1,
+	};
+
+	enum StarPointerType {
+		STARPOINTERTYPE_0,
+	};
+
+	enum DeleteEffectType {
+		DELETEEFFECTYPE_0,
+		DELETEEFFECTYPE_1,
+	};
+}
+
+namespace DemoStartRequestUtil {
+	void startDemoSystem(LiveActor*, const char*, s32, DemoStartInfo::DemoType, DemoStartInfo::CinemaFrameType, DemoStartInfo::StarPointerType, DemoStartInfo::DeleteEffectType, const char*);
+};
