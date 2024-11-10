@@ -5,7 +5,7 @@
 class JAISoundHandle;
 
 struct TamakoroBgmParamEntry {
-    const char* mName;
+    const char* mName; // 0
     u32 _4;
     u32 _8;
     u32 _C;
@@ -37,7 +37,7 @@ public:
 	f32 _14;
 	s32 _18;
 	s32 _1C;
-	TamakoroBgmParamEntry* mBgmParam;
+	TamakoroBgmParamEntry* mBgmParam; // 0x20
 	s32 _24;
 	s32 _28;
 };
