@@ -107,5 +107,7 @@ namespace DemoStartInfo {
 }
 
 namespace DemoStartRequestUtil {
-	void startDemoSystem(LiveActor*, const char*, s32, DemoStartInfo::DemoType, DemoStartInfo::CinemaFrameType, DemoStartInfo::StarPointerType, DemoStartInfo::DeleteEffectType, const char*);
+	void startDemoSystem(LiveActor* pOwner, const char* demoName, s32 marioMode, DemoStartInfo::DemoType, DemoStartInfo::CinemaFrameType, DemoStartInfo::StarPointerType, DemoStartInfo::DeleteEffectType, const char*);
+	void startDemoSystem(LayoutActor* pOwner, const char* demoName, s32 marioMode, DemoStartInfo::DemoType, DemoStartInfo::CinemaFrameType, DemoStartInfo::StarPointerType, DemoStartInfo::DeleteEffectType, const char*);
+	void startDemoSystem(NameObj* pOwner, const char* demoName, s32 marioMode, DemoStartInfo::DemoType, DemoStartInfo::CinemaFrameType, DemoStartInfo::StarPointerType, DemoStartInfo::DeleteEffectType, const char*);
 };
