@@ -2175,6 +2175,7 @@ sign__2MRFf=0x8003DA40
 swap__10J2DPictureFRfRf=0x8003DA70
 floatToFixed16__2MRFPQ29JGeometry8TVec3<s>RCQ29JGeometry8TVec3<f>Uc=0x8003DA90
 fixed16ToFloat__2MRFPQ29JGeometry8TVec3<f>RCQ29JGeometry8TVec3<s>Uc=0x8003DB10
+normalizeClamp__2MRFfff=0x8003DBB0
 clampVecAngleDeg__2MRFPQ29JGeometry8TVec3<f>RCQ29JGeometry8TVec3<f>f=0x8003DBE0
 JMACosDegree__Ff=0x8003DCE0
 clampLength__2MRFPQ29JGeometry8TVec3<f>RCQ29JGeometry8TVec3<f>f=0x8003DD30

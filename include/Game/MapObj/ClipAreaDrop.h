@@ -3,18 +3,19 @@
 #include "Game/LiveActor/LiveActor.h"
 #include "Game/MapObj/ClipArea.h"
 
-class ClipAreaDrop : ClipArea {
+class ClipAreaDrop : public ClipArea {
     public:
         ClipAreaDrop(const char *, const char *);
 
-        f32 setBaseSize(f32);
+        void setBaseSize(f32);
+        void setOpeningAndClosure(s32, s32);
 
         const char *_C4;
-        u32 _C8;
-        f32 _CC;
+        ClipAreaShapeSphere* mSphere; //_C8
+        f32 mRadius; //_CC
         s32 _D0;
         s32 _D4;
         s32 _D8;
-        u32 _DC;
+        s32 mTime; //_DC
         bool _E0;
 };

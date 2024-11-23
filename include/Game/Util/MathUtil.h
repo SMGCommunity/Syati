@@ -66,7 +66,7 @@ namespace MR {
 	f32 sign(f32);
 	void f32ToFixed16(TVec3s *, const TVec3f &, u8);
 	void fixed16Tof32(TVec3f *, const TVec3s &, u8);
-
+	f32 normalizeClamp(f32, f32, f32);
 	void clampVecAngleDeg(TVec3f *, const TVec3f &, f32);
 	void clampLength(TVec3f *, const TVec3f &, f32);
 	f32 convergeRadian(f32, f32, f32);
