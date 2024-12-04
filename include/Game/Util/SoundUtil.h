@@ -16,6 +16,7 @@ namespace MR {
 	void startSystemSE(const char *, s32, s32);
 	void startSystemSE(JAISoundID, s32, s32);
 	void startSystemLevelSE(const char *, s32, s32);
+	void stopSystemSE(JAISoundID, u32);
 	void stopSystemSE(const char *, u32);
 
 	void startSound(const LiveActor *, const char *, s32, s32);
