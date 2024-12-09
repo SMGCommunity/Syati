@@ -11,10 +11,10 @@ struct JMapItem {
 };
 
 struct JMapData {
-    s32 _0;
+    s32 mNumEntries;
     s32 mNumData;      // _4
     s32 mDataOffset;   // _8
-    u32 _C;
+    u32 mEntrySize;
     JMapItem* mItems;  // _10
 };
 
