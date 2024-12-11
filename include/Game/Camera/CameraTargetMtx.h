@@ -23,7 +23,11 @@ public:
 
     void invalidateLastMove();
 
+    #ifdef __MWERKS__
     void setMtx(register MtxPtr mtx);
+    #else
+    void setMtx(MtxPtr mtx);
+    #endif
 
     TMtx34f mMatrix;                // _10
     TVec3f mPosition;               // _40

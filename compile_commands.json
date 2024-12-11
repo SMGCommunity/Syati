@@ -19,6 +19,7 @@
             "-Iinclude/nw4r",
             "-Iinclude/revolution",
             "-Iinclude",
+            "-DSYATICLANGD",
             "-c"
         ]
     }

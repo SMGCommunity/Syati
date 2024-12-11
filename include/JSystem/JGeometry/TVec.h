@@ -12,14 +12,11 @@ namespace JGeometry {
         inline TVec2() { }
         TVec2(const TVec2<T> &);
 
-        template<typename T>
         TVec2(T, T);
 
         /* Getters and setters */
-        template<typename T>
         void set(const TVec2<T> &);
 
-        template<typename T>
         void set(T, T);
 
         void setMin(const TVec2<T> &);
@@ -69,7 +66,6 @@ namespace JGeometry {
             this->z = val;
         }
 
-        template<typename T>
         TVec3(T _x, T _y, T _z) {
             this->x = _x;
             this->y = _y;
@@ -83,21 +79,18 @@ namespace JGeometry {
             this->z = rOther.z;
         }
 
-        template<typename T>
         void set(const TVec3<T> &rOther) {
             this->x = rOther.x;
             this->y = rOther.y;
             this->z = rOther.z;
         }
 
-        template<typename T>
         void set(T _x, T _y, T _z) {
             this->x = _x;
             this->y = _y;
             this->z = _z;
         }
 
-        template<typename T>
         void setAll(T val) {
             this->x = val;
             this->y = val;
@@ -164,11 +157,11 @@ namespace JGeometry {
         // Works properly 99% of the time
         // Intended to be the Cubic function that was included in SMG1, but excluded from SMG2 since nothing used it
         void cubic(const TVec3<T>& rv1, const TVec3<T>& rv2, const TVec3<T>& rv3, const TVec3<T>& rv4, T a) {
-            TVec3f StackA = rv3 * (a * a * a - a * a);
-            TVec3f StackB = rv2 * (a + a * a * a - 2 * a * a);
-            TVec3f StackC = rv1 * (1 + 2 * a * a * a - 3 * a * a);
-            TVec3f StackD = rv4 * (3 * a * a - 2 * a * a * a);
-            TVec3f Stack = StackA + StackB + StackC + StackD;
+            TVec3 StackA = rv3 * (a * a * a - a * a);
+            TVec3 StackB = rv2 * (a + a * a * a - 2 * a * a);
+            TVec3 StackC = rv1 * (1 + 2 * a * a * a - 3 * a * a);
+            TVec3 StackD = rv4 * (3 * a * a - 2 * a * a * a);
+            TVec3 Stack = StackA + StackB + StackC + StackD;
 
             set(Stack);
         }
@@ -179,6 +172,7 @@ namespace JGeometry {
 
         inline T squaredInline() const
         {
+            #ifdef __MWERKS__
             register const JGeometry::TVec3<f32>* this_vec = this;
             register f32 _xy, _z;
 
@@ -190,6 +184,7 @@ namespace JGeometry {
                 ps_sum0 _z, _z, _xy, _xy
             };
             return _z;
+            #endif
         }
 
         T squared(const TVec3<T> &) const;
@@ -291,14 +286,11 @@ namespace JGeometry {
         /* Constructors */
         inline TVec4() { }
 
-        template<typename T>
         TVec4(T, T, T, T);
 
         /* Getters and setters */
-        template<typename T>
         void set(const TVec4<T> &);
 
-        template<typename T>
         void set(T, T, T, T);
 
         T w;

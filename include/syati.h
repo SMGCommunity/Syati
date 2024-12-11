@@ -1,6 +1,6 @@
 #pragma once
 
-#ifndef __MWERKS__
+#if !defined(__MWERKS__) && !defined(SYATICLANGD)
 #error "Kamek requires the CodeWarrior compiler!"
 #endif
 
