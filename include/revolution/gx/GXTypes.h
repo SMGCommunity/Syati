@@ -1,6 +1,10 @@
 #ifndef GXTYPES_H
 #define GXTYPES_H
 
+#include "types.h"
+#include "revolution/gx/GXEnum.h"
+#include "revolution/gx/GXStruct.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif

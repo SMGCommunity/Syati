@@ -7,7 +7,11 @@ extern "C" {
 
 #include "revolution/base/PPCWGPipe.h"
 
+#ifdef __MWERKS__
 extern volatile PPCWGPipe gxfifo : 0xCC008000;
+#else
+extern volatile PPCWGPipe gxfifo;
+#endif
 extern volatile void	*__piReg;
 extern volatile void	*__cpReg;
 extern volatile void	*__peReg;

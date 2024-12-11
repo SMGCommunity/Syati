@@ -1,0 +1,25 @@
+[
+    {
+        "directory": "C:/Users/super/Hacking/Syati",
+        "file": "do/not/touch/me/please.cpp",
+
+        "arguments": [
+            "clang",
+            "-nostdinc",
+            "-fno-builtin",
+            "--target=powerpc-eabi",
+            "fno-short-enums",
+            "-fno-cxx-exceptions",
+            "-fno-rtti",
+            "-Iinclude/cpp",
+            "-Iinclude/Game",
+            "-Iinclude/JSystem",
+            "-Iinclude/kamek",
+            "-Iinclude/LMS",
+            "-Iinclude/nw4r",
+            "-Iinclude/revolution",
+            "-Iinclude",
+            "-c"
+        ]
+    }
+]
