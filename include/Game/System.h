@@ -16,6 +16,7 @@
 #include "Game/System/ResourceHolderManager.h"
 #include "Game/System/ResourceInfo.h"
 #include "Game/System/ScenarioDataParser.h"
+#include "Game/System/WPadHolder.h"
 
 #include "Game/System/AllData/GalaxyStatusAccessor.h"
 #include "Game/System/AllData/GameDataFunction.h"
