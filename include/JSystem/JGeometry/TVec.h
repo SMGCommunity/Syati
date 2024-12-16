@@ -12,7 +12,10 @@ namespace JGeometry {
         inline TVec2() { }
         TVec2(const TVec2<T> &);
 
-        TVec2(T, T);
+        TVec2(T _x, T _y) {
+            this->x = _x;
+            this->y = _y;
+        };
 
         /* Getters and setters */
         void set(const TVec2<T> &);
