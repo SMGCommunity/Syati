@@ -6,12 +6,14 @@
 class LiveActor;
 class NameObj;
 class JMapLinkInfo;
+class GameSystemSceneController;
 
 namespace MR {
 	s32 getCurrentScenarioNo();
 	s32 getCurrentSelectedScenarioNo();
 	void setCurrentScenarioNo(s32, s32);
 	bool isScenarioDecided();
+	GameSystemSceneController* getSceneController();
 
 	const char* getCurrentStageName();
 	bool isEqualSceneName(const char *);

@@ -44,8 +44,9 @@ namespace MR {
     void scanu8x4(const char *pString, const char *pField, u8 *pDest);
     void scanf32x4(const char *pString, const char *pField, f32 *pDest);
     
-    const wchar_t* getScenarioNameOnCurrentLanguage(const char*, s32);
-    const wchar_t* getGalaxyNameOnCurrentLanguage(const char*);
+    const wchar_t* getScenarioNameOnCurrentLanguage(const char* pGalaxyName, s32 scenario);
+    const wchar_t* getGalaxyNameOnCurrentLanguage(const char* pGalaxyName);
+    const wchar_t* getGalaxyNameShortOnCurrentLanguage(const char* pGalaxyName);
     const wchar_t* getCurrentGalaxyNameOnCurrentLanguage();
     const wchar_t* getCurrentScenarioNameOnCurrentLanguage();
 };
