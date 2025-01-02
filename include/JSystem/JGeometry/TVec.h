@@ -289,11 +289,14 @@ namespace JGeometry {
         /* Constructors */
         inline TVec4() { }
 
+        template<typename T>
         TVec4(T, T, T, T);
 
         /* Getters and setters */
+        template<typename T>
         void set(const TVec4<T> &);
 
+        template<typename T>
         void set(T, T, T, T);
 
         T w;
