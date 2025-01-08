@@ -28,6 +28,8 @@ struct NANDFileInfo {
 s32 NANDOpen(const char*, NANDFileInfo*, u8);
 s32 NANDGetLength(NANDFileInfo*, u32*);
 s32 NANDCreate(const char*, u8, u8);
+s32 NANDPrivateCreate(const char *, u8, u8);
+s32 NANDDelete(const char *);
 // void* must be aligned to 32 byte boundary
 s32 NANDRead(NANDFileInfo*, void*, u32);
 // const void* must be aligned to 32 byte boundary
