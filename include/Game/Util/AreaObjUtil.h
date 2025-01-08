@@ -54,6 +54,6 @@ namespace MR {
 	bool isInPlaneModeCube(const TVec3f &rPosition);
 	bool isInTowerModeCylinder(const TVec3f &rPosition, TVec3f *pCenterPos, TVec3f *pUpVec, f32 *pRadius);
 
-	void getAreaFrontVec(TVec3f *pFrontVec, const AreaObj *pArea);
+	void getAreaFrontVec(TVec3f *pFrontVec, const AreaObj *pArea, const TVec3f &rOffset);
 	void getAreaCenterPos(TVec3f *pCenterPos, const AreaObj *pArea);
 };
