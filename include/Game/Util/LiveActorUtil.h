@@ -120,6 +120,9 @@ namespace MR {
     void reflectBckCtrlData(LiveActor *pActor, const BckCtrlData &rData);
     // one unknown function
 
+
+    s32 getLightNumMax(const LiveActor* pActor);
+
     void initLightCtrl(LiveActor *pActor);
     void initLightCtrlForPlayer(LiveActor *pActor);
     void updateLightCtrl(LiveActor *pActor);
