@@ -169,8 +169,8 @@ namespace MR {
 	LiveActor* getPlayerCarrySensorHost();
 
 	void startSoundPlayer(const char *, s32, s32);
-
 	void startLevelSoundPlayer(const char *, s32, s32);
+	void startLevelSoundPlayerOrYoshi(const char *pPlayerSoundName, const char *pYoshiSoundName, s32 unk);
 
 	void stopSoundPlayer(const char *, u32);
 	void startSoundPlayerJ(const char *);

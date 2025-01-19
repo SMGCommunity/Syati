@@ -19,6 +19,7 @@
 #include "Game/MapObj/InvisiblePolygonObj.h"
 #include "Game/MapObj/ItemDice.h"
 #include "Game/MapObj/JetTurtle.h"
+#include "Game/MapObj/JumpStandAuto.h"
 #include "Game/MapObj/LightFruitClipArea.h"
 #include "Game/MapObj/MapObjActor.h"
 #include "Game/MapObj/MapObjActorInitInfo.h"
