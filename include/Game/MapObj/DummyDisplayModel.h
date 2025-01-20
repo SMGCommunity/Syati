@@ -24,9 +24,9 @@ public:
 
     DummyDisplayModelInfo* mModelInfo; // _A0
     s32 mModelId;                      // _A4
-    s32 _A8;
-    s32 _AC;
-    u8 _B0;
+    s32 mColorFrame;                   // _A8
+    LodCtrl* mLodCtrl;                 // _AC
+    bool mIsCrystalItem;               // _B0
 };
 
 namespace MR {
