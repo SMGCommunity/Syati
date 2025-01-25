@@ -81,6 +81,10 @@ public:
     void initSound();
     u32 initSoundTable(SoundList *, u32);
     void initTask();
+    void initActiveJumpVec();
+
+    f32 sub_803B1BA0();
+    void sub_80396BF0();
 
     u8 _8;
     u8 _9;
@@ -171,15 +175,11 @@ public:
     f32 _1C4;
     f32 _1C8;
     TVec3f _1CC;
-    f32 _1D8;
-    f32 _1DC;
-    f32 _1E0;
+    TVec3f _1D8;
     TVec3f _1E4;
     TVec3f _1F0;
     TVec3f _1FC;
-    f32 _208;
-    f32 _20C;
-    f32 _210;
+    TVec3f _208;
     f32 _214;
     f32 _218;
     f32 _21C;
@@ -197,7 +197,7 @@ public:
     f32 _27C;
     f32 _280;
     TVec3f _284;
-    TVec3f _290;
+    f32 _290;
     u32 _294;
     u32 _298;
     TVec3f _29C;
