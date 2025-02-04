@@ -2,9 +2,9 @@
 
 #include "revolution.h"
 #include "Game/LiveActor/ActionBgmCtrl.h"
+#include "Game/LiveActor/ActorAnimKeeper.h"
 
 class LiveActor;
-class ActorAnimKeeper;
 class ActionFlagCtrl;
 class ActorPadAndCameraCtrl;
 class ActorHitReactionCtrl;
