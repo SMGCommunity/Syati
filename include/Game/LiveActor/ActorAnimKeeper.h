@@ -1,7 +1,8 @@
 #pragma once
 
-#include "Game/LiveActor/LiveActor.h"
 #include "revolution.h"
+
+class LiveActor;
 
 class ActorAnimDataInfo {
 public:
