@@ -26,9 +26,9 @@ public:
     TVec2f mButtonBottomFollowPos; // 0x44
     TVec2f mButtonStarListFollowPos; // 0x4C
     SysInfoWindow* mSysInfoWindow; // 0x54
-    bool unk1; // 0x58
-    bool unk2; // 0x59
-    s32 unk3; // 0x5C
+    bool _58;
+    bool _59;
+    s32 _5C;
 };
 
 namespace NrvPauseMenu {
@@ -37,4 +37,5 @@ namespace NrvPauseMenu {
     NERVE(PauseMenuNrvDisappear);
     NERVE(PauseMenuNrvConfirm);
     NERVE(PauseMenuNrvGameDataSave);
+    NERVE(PauseMenuNrvAllStarList);
 };
