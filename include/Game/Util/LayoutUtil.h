@@ -37,6 +37,8 @@ namespace MR {
 	void clearTextBoxMessageRecursive(LayoutActor* pLayout, const char* pPaneName);
 	void updateClearTimeTextBox(LayoutActor* pLayout, const char*, u32);
 	void updateMinuteAndSecondTextBox(LayoutActor* pLayout, const char*, u32);
+
+	void calcTextBoxRectRecursive(TBox2f*, const LayoutActor*, const char*);
 	// setTextBoxFontRecursive
 
 	void showPane(LayoutActor* pLayout, const char* pPaneName);
