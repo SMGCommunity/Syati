@@ -13,6 +13,8 @@
 #include "Game/MapObj/CoinHolder.h"
 #include "Game/MapObj/CoinRotater.h"
 #include "Game/MapObj/DummyDisplayModel.h"
+#include "Game/MapObj/EarthenPipe.h"
+#include "Game/MapObj/EarthenPipeMediator.h"
 #include "Game/MapObj/ElectricRailFunction.h"
 #include "Game/MapObj/FallOutFieldDraw.h"
 #include "Game/MapObj/GCapture.h"
