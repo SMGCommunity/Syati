@@ -18,6 +18,7 @@ namespace MR {
 	void followRailPose(NPCActor*, f32, f32);
 	void setDefaultPose(NPCActor*);
 	void tryStartReactionAndPopNerve(NPCActor*);
+	void registerMarioFaceShipNpc(LiveActor *, const JMapInfoIter &);
 };
 
 class TakeOutStar : public NerveExecutor {

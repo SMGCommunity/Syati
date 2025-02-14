@@ -55,6 +55,7 @@ namespace MR {
 	void calcRailDirection(TVec3f *, const LiveActor *);
 	void calcRailDirectionAtCoord(TVec3f *, const LiveActor *, f32);
 	void calcRailDirectionAtNextPoint(TVec3f *, const LiveActor *);
+	void sub_800531B0(TVec3f *, const LiveActor *, f32);
 
 	void calcRailPosAndDirectionAtCoord(TVec3f *, TVec3f *, const LiveActor *, f32);
 	void calcRailStartPos(TVec3f *, const LiveActor *);
