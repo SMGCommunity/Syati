@@ -73,5 +73,3 @@ public:
     bool mIsProhibit; // 0x20C
     FileSelectIconID* mFileSelectIconID;
 };
-
-const size_t test = sizeof(MiiSelect);

@@ -117,5 +117,3 @@ public:
     s32 _100;
     s32 _104;
 };
-
-//const size_t test = sizeof(UserFile);

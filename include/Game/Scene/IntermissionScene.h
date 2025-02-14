@@ -13,5 +13,3 @@ public:
     u8 _unk[64];
     s32 _54;
 };
-
-const s32 test = sizeof(IntermissionScene);
