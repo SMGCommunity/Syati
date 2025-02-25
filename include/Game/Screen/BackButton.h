@@ -11,7 +11,7 @@ public:
     virtual void appear();
     virtual void control();
     void disappear();
-    bool isHidden();
+    bool isHidden() const;
     bool isAppearing();
     bool isDisappearing();
     bool isPointing();
