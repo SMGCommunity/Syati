@@ -98,6 +98,8 @@ namespace DemoStartInfo {
 
 	enum StarPointerType {
 		STARPOINTERTYPE_0,
+		STARPOINTERTYPE_1,
+		STARPOINTERTYPE_2,
 	};
 
 	enum DeleteEffectType {
