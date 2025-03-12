@@ -141,7 +141,7 @@ namespace MR {
 	f32 vecKillElement(const TVec3f &, const TVec3f &, TVec3f *);
 	void vecRotAxis(const TVec3f &, const TVec3f &, const TVec3f &, const TVec3f *, f32);
 	void rotAxisVecRad(const TVec3f &, const TVec3f &, const TVec3f *, f32);
-	void getFootPoint(const TVec3f &, const TVec3f &, const TVec3f &, const TVec3f *);
+	f32 getFootPoint(const TVec3f &, const TVec3f &, const TVec3f &, const TVec3f *);
 	f32 sin(f32);
 	f32 sinDegree(f32);
 	f32 cos(f32);
