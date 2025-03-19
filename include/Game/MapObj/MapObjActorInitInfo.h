@@ -21,7 +21,7 @@ public:
     void setupNerve(const Nerve *pNerve);
     void setupState(s32 stateCount);
     void setupShadow(const char *pShadowName);
-    void setGroupClipping(s32 clippingGroupSize);
+    void setupGroupClipping(s32 clippingGroupSize);
     void setupClippingRadius(f32 radius);
     void setupFarClipping(f32 distance);
     void setupProjmapMtx(bool, bool);
