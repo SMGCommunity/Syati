@@ -92,7 +92,7 @@ namespace MR {
     // four unknown model-related functions
 
     void initMirrorReflection(LiveActor *pActor);
-    void setMirrorReflectionInfoFromMtxYUp(const TMtx34f &rMtx);
+    void setMirrorReflectionInfoFromMtxYUp(const TPos3f &rMtx);
     void setMirrorReflectionInfoFromModel(LiveActor *pActor);
 
     // changeModelDataTexAll
