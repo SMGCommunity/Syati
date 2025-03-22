@@ -98,8 +98,12 @@ public:
 	void updateFireSpin();
 	void shootFireBall();
 	void killAllFireBall(); //SMG2 exclusive
-	s32 selectAction(const char*) const;
-	void playEffect(const char*);
+	s32 selectAction(const char *) const;
+	void playEffect(const char *);
+	bool isActionOk(const char *) const;
+	bool tryGetItem(HitSensor *);
+	bool tryPullTrans(TVec3f *, const TVec3f &);
+	bool tryCoinPullOne(HitSensor *);
 
 	u8 _90;
 	s32 _94;
@@ -242,7 +246,7 @@ public:
 	u8 _706;
 	u8 _707;
 	s32 _708;
-	s32 _70C;
+	HitSensor *_70C;
 	HitSensor* _710[16];
 	s32 _750;
 	s32 _754;
@@ -269,7 +273,7 @@ public:
 	f32 _7A4;
 	TVec3f _7A8;
 	TVec3f _7B4;
-	s32 _7C0[128]; // is this a pointer array?
+	HitSensor *_7C0[128];
 	u8 _9C0;
 	f32 _9C4;
 	f32 _9C8;

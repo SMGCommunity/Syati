@@ -85,6 +85,7 @@ public:
 
     f32 sub_803B1BA0();
     void sub_80396BF0();
+    bool isSwimming() const;
 
     u8 _8;
     u8 _9;
