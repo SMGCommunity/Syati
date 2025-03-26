@@ -22,3 +22,4 @@
 #include "Game/Player/ModelHolder.h"
 #include "Game/Player/TornadoMario.h"
 #include "Game/Player/YoshiLockOnTarget.h"
+#include "Game/Player/YoshiFunction.h"
