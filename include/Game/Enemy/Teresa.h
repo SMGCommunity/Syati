@@ -2,6 +2,7 @@
 
 #include "syati.h"
 
+class DummyDisplayModel;
 class KeySwitch;
 
 class Teresa : public LiveActor {
@@ -18,8 +19,8 @@ public:
     virtual void calcAndSetBaseMtx();
     virtual void attackSensor(HitSensor*, HitSensor*);
     virtual bool receiveMsgPush(HitSensor*, HitSensor*);
-    virtual bool receiveMsgPlayerAttack(unsigned long, HitSensor*, HitSensor*);
-    virtual bool receiveOtherMsg(unsigned long, HitSensor*, HitSensor*);
+    virtual bool receiveMsgPlayerAttack(u32, HitSensor*, HitSensor*);
+    virtual bool receiveOtherMsg(u32, HitSensor*, HitSensor*);
     void filterBind(const Triangle*);
     void requestAttack(HitSensor*, HitSensor*);
     void requestDrift();
