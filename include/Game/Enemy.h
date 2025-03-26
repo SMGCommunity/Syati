@@ -12,6 +12,7 @@
 #include "Game/Enemy/Kameck.h"
 #include "Game/Enemy/Kanina.h"
 #include "Game/Enemy/RingBeam.h"
+#include "Game/Enemy/SamboHead.h"
 #include "Game/Enemy/SpinHitController.h"
 #include "Game/Enemy/Teresa.h"
 #include "Game/Enemy/TeresaAtomic.h"

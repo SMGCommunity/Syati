@@ -30,8 +30,8 @@ public:
     void exeBindStarPointer();
     void exeBindStarPointerEnd();
     void calcAndSetBaseMtx();
-    void isNerveTypeDead() const;
-    void isStarPointerBindable() const;
+    bool isNerveTypeDead() const;
+    bool isStarPointerBindable() const;
 
     SpinHitController* mSpinHitController; // 0x90
     AnimScaleController* mAnimScaleController; // 0x94
