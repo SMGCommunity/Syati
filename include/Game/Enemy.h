@@ -2,6 +2,7 @@
 
 #include "Game/Enemy/AnimScaleController.h"
 #include "Game/Enemy/AnimStampController.h"
+#include "Game/Enemy/BasaBasa.h"
 #include "Game/Enemy/BegomanBaby.h"
 #include "Game/Enemy/BegomanBase.h"
 #include "Game/Enemy/BegomanSpike.h"
