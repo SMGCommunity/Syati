@@ -5,6 +5,7 @@
 #include "Game/NPC/Rabbit.h"
 #include "Game/NPC/Rosetta.h"
 #include "Game/NPC/ScoreAttackCounter.h"
+#include "Game/NPC/TalkBalloon.h"
 #include "Game/NPC/TalkMessageCtrl.h"
 #include "Game/NPC/TalkMessageInfo.h"
 #include "Game/NPC/TalkMessageFunc.h"
