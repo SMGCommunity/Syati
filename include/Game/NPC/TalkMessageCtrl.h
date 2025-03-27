@@ -2,6 +2,8 @@
 
 #include "revolution.h"
 #include "Game/NPC/TalkMessageFunc.h"
+#include "Game/NPC/TalkMessageInfo.h"
+
 class TalkNodeCtrl;
 
 struct CustomTagArg {
@@ -79,3 +81,18 @@ public:
     s32 _78;
     s32 _7C;
 };    
+
+namespace TalkFunction {
+    bool isShortTalk(const TalkMessageCtrl*);
+    bool isGlobalEventTalk(const TalkMessageCtrl*);
+    bool isSelectTalk(const TalkMessageCtrl*);
+    bool isEventNode(const TalkMessageCtrl*);
+    bool isForwardNode(const TalkMessageCtrl*);
+    void onTalkStateNone(TalkMessageCtrl*);
+    void onTalkStateEntry(TalkMessageCtrl*);
+    void onTalkStateEnableStart(TalkMessageCtrl*);
+    void onTalkStateTalking(TalkMessageCtrl*);
+    void onTalkStateEnableEnd(TalkMessageCtrl*);
+    TalkMessageInfo* getMessageInfo(const TalkMessageCtrl*);
+    const wchar_t* getMessage(const TalkMessageCtrl*);
+}
