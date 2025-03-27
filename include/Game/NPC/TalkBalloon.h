@@ -106,7 +106,7 @@ public:
 	void update();
 	bool isActiveBalloonShort() const;
 
-	TalkBalloonShort* mTalkBalloonShorts[4]; // 0x00
+	TalkBalloonShort (*mTalkBalloonShorts)[4]; // 0x00
 	TalkBalloonEvent* mTalkBalloonEvent; // 0x04
 	TalkBalloonSign* mTalkBalloonSign; // 0x08
 	TalkBalloonIcon* mTalkBalloonIcon; // 0x0C
