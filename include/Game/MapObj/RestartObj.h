@@ -23,13 +23,13 @@ public:
     void exeAfter();
     void changeTexture();
 
-    JMapIdInfo mRestartId;
+    JMapIdInfo mRestartId; // 0x90
 };
 
 namespace NrvRestartObj {
-    NERVE(RestartObjNrvWait)
-    NERVE(RestartObjNrvCollect)
-    NERVE(RestartObjNrvCollectAfter)
-    NERVE(RestartObjNrvShake)
-    NERVE(RestartObjNrvAfter)
-}
+    NERVE(RestartObjNrvWait);
+    NERVE(RestartObjNrvCollect);
+    NERVE(RestartObjNrvCollectAfter);
+    NERVE(RestartObjNrvShake);
+    NERVE(RestartObjNrvAfter);
+};
