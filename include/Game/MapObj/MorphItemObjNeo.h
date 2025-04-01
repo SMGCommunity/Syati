@@ -63,3 +63,14 @@ public:
 	f32 _DC;
 	f32 _E0;
 };
+
+namespace NrvMorphItemObjNeo {
+	NERVE(MorphItemObjNeoNrvWait);
+	NERVE(MorphItemObjNeoNrvWait2);
+	NERVE(MorphItemObjNeoNrvAppear);
+	NERVE(MorphItemObjNeoNrvFly);
+	NERVE(MorphItemObjNeoNrvDemo);
+	// unknown nerve at 802D43D4 
+	NERVE(MorphItemObjNeoNrvHidden);
+};
+// sInstance__Q218NrvMorphItemObjNeo24MorphItemObjNeoNrvHidden=0x807D96E4
