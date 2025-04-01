@@ -233,12 +233,12 @@ public:
 	u8 _6E5;
 	TVec3f _6E8;
 	s16 _6F4;
-	s16 mModelFlags; // _6F6
-	u16 mPlayerMode; // _6F8
+	s16 mModelFlags;    // _6F6
+	u16 mPlayerMode;    // _6F8
 	s16 _6FA;
 	s16 _6FC;
 	s16 _6FE;
-	s16 _700;
+	s16 mMorphTimer;    // _700
 	u8 _702;
 	u8 _703;
 	u8 _704;
