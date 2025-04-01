@@ -16,6 +16,7 @@ namespace MR {
     void hideMaterial(const LiveActor *, const char *);
     void showMaterial(J3DModel *, const char *);
     void showMaterial(const LiveActor *, const char *);
+    void updateModelDiffDL(LiveActor *);
 
     XanimeResourceTable* newXanimeResourceTable(ResourceHolder*);
 };

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Game/LiveActor.h"
-#include "YoshiTongue.h"
-#include "YoshiSilhouette.h"
+#include "Game/Player/YoshiTongue.h"
+#include "Game/Player/YoshiSilhouette.h"
 
 class Yoshi : public LiveActor {
 public:

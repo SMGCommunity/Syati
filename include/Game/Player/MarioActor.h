@@ -11,6 +11,7 @@
 #include "Game/Player/MarioSearchLight.h"
 #include "Game/Player/ModelHolder.h"
 #include "Game/Player/TornadoMario.h"
+#include "Game/Player/YoshiHolder.h"
 #include "Game/Util/Color8.h"
 
 #define PLAYER_MODE_NORMAL 0
@@ -48,6 +49,13 @@
 #define PLAYER_MODEL_FLAG_ROCK 0x2000
 
 class MarioAnimator;
+
+struct unk_803E26E0 {
+	u32 _0;
+	u32 _4;
+	u32 _8;
+	u32 _C;
+};
 
 class MarioActor : public LiveActor {
 public:
@@ -100,10 +108,13 @@ public:
 	void killAllFireBall(); //SMG2 exclusive
 	s32 selectAction(const char *) const;
 	void playEffect(const char *);
+    void stopEffect(const char *);
+
 	bool isActionOk(const char *) const;
 	bool tryGetItem(HitSensor *);
 	bool tryPullTrans(TVec3f *, const TVec3f &);
 	bool tryCoinPullOne(HitSensor *);
+    void initHand();
 
 	u8 _90;
 	s32 _94;
@@ -148,7 +159,7 @@ public:
 	Mtx _4E4;
 	u8 _514;
 	u8 _515;
-	u8 _516;
+	bool mIsTransformationDemo; // _516
 	s32 _518;
 	s16 _51C;
 	u8 _51E;
@@ -180,7 +191,7 @@ public:
 	Mario* mMario; // _584
 	MarioAnimator* mMarioAnimator; // _588
 	u32* mMarioEffect; // _58C
-	s32 _590;
+	unk_803E26E0 *_590;
 	TVec3f _594;
 	f32 _5A0;
 	f32 _5A4;
@@ -329,7 +340,7 @@ public:
 	TVec3f _ED0;
 	ModelHolder* mHopperModel; // _EDC
 	ModelHolder* mBoneModel; // _EE0
-	u32* mYoshiHolder; // _EE4
+	YoshiHolder* mYoshiHolder; // _EE4
 	ModelHolder* mHorrorModel; // _EE8
 	ModelHolder* mCloudModel; // _EEC
 	u32* mCloudMarioHat; // _EF0

@@ -106,12 +106,7 @@ namespace JGeometry {
             this->z = 0;
         }
 
-        void negate() {
-            this->x = -this->x;
-            this->y = -this->y;
-            this->z = -this->z;
-        }
-
+        void negate();
         void negate(const TVec3<T> &);
 
         /* Arithmetic and algebraic operations */

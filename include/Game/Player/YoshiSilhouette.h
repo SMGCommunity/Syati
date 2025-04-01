@@ -1,7 +1,8 @@
 #pragma once
 
 #include "Game/LiveActor.h"
-#include "Yoshi.h"
+
+class Yoshi;
 
 class YoshiSilhouette : public LiveActor {
 public:

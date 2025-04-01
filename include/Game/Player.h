@@ -21,5 +21,6 @@
 #include "Game/Player/MatrixValueGetter.h"
 #include "Game/Player/ModelHolder.h"
 #include "Game/Player/TornadoMario.h"
+#include "Game/Player/Yoshi.h"
 #include "Game/Player/YoshiLockOnTarget.h"
 #include "Game/Player/YoshiFunction.h"

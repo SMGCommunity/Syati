@@ -1,8 +1,9 @@
 #pragma once
 
 #include "Game/NameObj.h"
-#include "Yoshi.h"
-#include "YoshiTargetMark.h"
+#include "Game/Player/Yoshi.h"
+#include "Game/Player/YoshiTargetMark.h"
+#include "Game/Util/BothDirPtrList.h"
 
 class YoshiLockOnManager : public NameObj {
 public:

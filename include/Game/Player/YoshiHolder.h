@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Yoshi.h"
-#include "YoshiLockOnManager.h"
-#include "YoshiArrow.h"
-#include "YoshiDashStep.h"
-#include "YoshiFruitCounter.h"
+#include "Game/Player/Yoshi.h"
+#include "Game/Player/YoshiLockOnManager.h"
+#include "Game/Player/YoshiArrow.h"
+#include "Game/Player/YoshiDashStep.h"
+#include "Game/Player/YoshiFruitCounter.h"
 
 class YoshiTongueAction;
 

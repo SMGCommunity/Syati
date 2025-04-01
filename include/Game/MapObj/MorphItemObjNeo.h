@@ -53,7 +53,7 @@ public:
 	f32 _AC;
 	TVec3f _B0;
 	u32 _BC;
-	u32 _C0;
+	ModelObj *_C0;
 	u32 _C4;
 	u32 _C8;
 	f32 _CC;

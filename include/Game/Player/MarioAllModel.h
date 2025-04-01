@@ -8,7 +8,7 @@
 #define MARIO_ALL_MODEL_BEE 2
 #define MARIO_ALL_MODEL_ICE 3
 #define MARIO_ALL_MODEL_INVINCIBLE 4
-#define MARIO_ALL_MODEL_HOPPER 5
+#define MARIO_ALL_MODEL_HOPPER 5 
 #define MARIO_ALL_MODEL_HORROR 6
 #define MARIO_ALL_MODEL_CLOUD 7
 #define MARIO_ALL_MODEL_ROCK 8
@@ -21,6 +21,8 @@ public:
 
 	void registerModel(s32, LiveActor *, bool, bool);
 	// more methods here
+	void displayModelIndex(u32);
+	// even more methods here
 	J3DModel* getJ3DModel() const;
 	// even more methods here
 
@@ -29,4 +31,5 @@ public:
 	s32 mNextModel; // _8
 	J3DModel* mModels[9]; // _C
 	u32* _30[9];
+	u16 _54;
 };

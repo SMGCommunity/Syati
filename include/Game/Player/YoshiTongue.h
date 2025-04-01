@@ -1,7 +1,8 @@
 #pragma once
 
 #include "syati.h"
-#include "Yoshi.h"
+
+class Yoshi;
 
 class YoshiTongue : public LiveActor {
 public:
