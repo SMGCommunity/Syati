@@ -2,7 +2,6 @@
 
 #include "revolution.h"
 #include "Game/Player/MarioActor.h"
-#include "Game/Util/JMapInfo.h"
 
 class MarioHolder : public NameObj {
 public:

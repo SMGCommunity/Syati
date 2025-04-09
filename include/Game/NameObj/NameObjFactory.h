@@ -2,7 +2,6 @@
 
 #include "revolution.h"
 #include "Game/NameObj/NameObj.h"
-#include "Game/Player/MarioHolder.h"
 
 /* FINISHED */
 
