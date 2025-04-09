@@ -44,6 +44,7 @@ namespace MR {
 	void enablePlayerResourceRock();
 	void enablePlayerResourceHairAndHead();
 	void enablePlayerResourceFreezeIce();
+	void enablePlayerResourceMorph(const JMapInfoIter&);
 	bool isCreatePlayerResourceBee();
 	bool isCreatePlayerResourceHopper();
 	bool isCreatePlayerResourceFire();
