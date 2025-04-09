@@ -2,6 +2,7 @@
 
 #include "revolution.h"
 #include "Game/Player/MarioActor.h"
+#include "Game/Util/JMapInfo.h"
 
 class MarioHolder : public NameObj {
 public:
@@ -29,24 +30,23 @@ public:
 	bool mCreateFreezeIce; // _25
 };
 
+// NOTE: Some enablePlayerResourceX functions have an overload that takes in a 'const JMapInfoIter &' for NameObjFactory::cPostCreationTable entries. These overloads are yet to be documented.
 namespace MR {
 	MarioHolder* getMarioHolder();
 	void enablePlayerResourceBee();
-	void enablePlayerResourceHopper(const JMapInfoIter&);
+	void enablePlayerResourceHopper();
 	void enablePlayerResourceFire();
 	void enablePlayerResourceIce();
-	void enablePlayerResourceInvincible(const JMapInfoIter&);
+	void enablePlayerResourceInvincible();
 	void enablePlayerResourceTeresa();
-	void enablePlayerResourceTornado(const JMapInfoIter&);
-	void enablePlayerResourceYoshi(const JMapInfoIter&);
-	void enablePlayerResourceYoshiBaloon(const JMapInfoIter&);
-	void enablePlayerResourceCloud(const JMapInfoIter&);
+	void enablePlayerResourceTornado();
+	void enablePlayerResourceYoshi();
+	void enablePlayerResourceYoshiBaloon();
+	void enablePlayerResourceCloud();
 	void enablePlayerResourceRock();
-	void enablePlayerResourceHairAndHead(const JMapInfoIter&);
-	void enablePlayerResourceFreezeIce(const JMapInfoIter&);
-	void enablePlayerResourceMorph(const JMapInfoIter&);
-	void enablePlayerResourceMeramera(const JMapInfoIter&); // unconfirmed name
-	void enablePlayerResourceBasaBasa(const JMapInfoIter&); // unconfirmed name
+	void enablePlayerResourceHairAndHead();
+	void enablePlayerResourceFreezeIce();
+	void enablePlayerResourceMorph(const JMapInfoIter &);
 	bool isCreatePlayerResourceBee();
 	bool isCreatePlayerResourceHopper();
 	bool isCreatePlayerResourceFire();
