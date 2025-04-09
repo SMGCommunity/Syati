@@ -2,6 +2,7 @@
 
 #include "revolution.h"
 #include "Game/NameObj/NameObj.h"
+#include "Game/Player/MarioHolder.h"
 
 /* FINISHED */
 
@@ -28,17 +29,27 @@ public:
     static PostCreationEntry cPostCreationTable[27];
 
     template<typename T>
-    static NameObj* createNameObj(const char *pName);
+    static NameObj* createNameObj(const char *pName) {
+        return new T(pName);
+    }
 
     template<typename T>
-    static NameObj* createBaseOriginCube(const char *pName);
+    static NameObj* createBaseOriginCube(const char *pName) {
+        return new T(1, pName);
+    }
 
     template<typename T>
-    static NameObj* createCenterOriginCube(const char *pName);
+    static NameObj* createCenterOriginCube(const char *pName) {
+        return new T(0, pName);
+    }
 
     template<typename T>
-    static NameObj* createSphere(const char *pName);
+    static NameObj* createSphere(const char *pName) {
+        return new T(2, pName);
+    }
 
     template<typename T>
-    static NameObj* createBaseOriginCylinder(const char *pName);
+    static NameObj* createBaseOriginCylinder(const char *pName) {
+        return new T(3, pName);
+    }
 };

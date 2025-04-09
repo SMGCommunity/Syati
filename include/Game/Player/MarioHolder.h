@@ -32,19 +32,21 @@ public:
 namespace MR {
 	MarioHolder* getMarioHolder();
 	void enablePlayerResourceBee();
-	void enablePlayerResourceHopper();
+	void enablePlayerResourceHopper(const JMapInfoIter&);
 	void enablePlayerResourceFire();
 	void enablePlayerResourceIce();
-	void enablePlayerResourceInvincible();
+	void enablePlayerResourceInvincible(const JMapInfoIter&);
 	void enablePlayerResourceTeresa();
-	void enablePlayerResourceTornado();
-	void enablePlayerResourceYoshi();
-	void enablePlayerResourceYoshiBaloon();
-	void enablePlayerResourceCloud();
+	void enablePlayerResourceTornado(const JMapInfoIter&);
+	void enablePlayerResourceYoshi(const JMapInfoIter&);
+	void enablePlayerResourceYoshiBaloon(const JMapInfoIter&);
+	void enablePlayerResourceCloud(const JMapInfoIter&);
 	void enablePlayerResourceRock();
-	void enablePlayerResourceHairAndHead();
-	void enablePlayerResourceFreezeIce();
+	void enablePlayerResourceHairAndHead(const JMapInfoIter&);
+	void enablePlayerResourceFreezeIce(const JMapInfoIter&);
 	void enablePlayerResourceMorph(const JMapInfoIter&);
+	void enablePlayerResourceMeramera(const JMapInfoIter&); // unconfirmed name
+	void enablePlayerResourceBasaBasa(const JMapInfoIter&); // unconfirmed name
 	bool isCreatePlayerResourceBee();
 	bool isCreatePlayerResourceHopper();
 	bool isCreatePlayerResourceFire();
