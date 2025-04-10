@@ -28,27 +28,17 @@ public:
     static PostCreationEntry cPostCreationTable[27];
 
     template<typename T>
-    static NameObj* createNameObj(const char *pName) {
-        return new T(pName);
-    }
+    static NameObj* createNameObj(const char *pName);
 
     template<typename T>
-    static NameObj* createBaseOriginCube(const char *pName) {
-        return new T(1, pName);
-    }
+    static NameObj* createBaseOriginCube(const char *pName);
 
     template<typename T>
-    static NameObj* createCenterOriginCube(const char *pName) {
-        return new T(0, pName);
-    }
+    static NameObj* createCenterOriginCube(const char *pName);
 
     template<typename T>
-    static NameObj* createSphere(const char *pName) {
-        return new T(2, pName);
-    }
+    static NameObj* createSphere(const char *pName);
 
     template<typename T>
-    static NameObj* createBaseOriginCylinder(const char *pName) {
-        return new T(3, pName);
-    }
+    static NameObj* createBaseOriginCylinder(const char *pName);
 };
