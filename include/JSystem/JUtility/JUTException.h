@@ -11,7 +11,7 @@ public:
         EINFOPAGE_1
     };
 
-    static void panic_f(const char *, s32, const char *, ...);
+    static void panic_f(const char *, int, const char *, ...);
     void printDebugInfo(EInfoPage, u16, OSContext*, u32, u32);
     void showSRR0Map(OSContext*);
 
