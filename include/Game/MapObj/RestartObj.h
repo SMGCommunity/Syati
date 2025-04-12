@@ -2,6 +2,7 @@
 
 #include "revolution.h"
 #include "Game/LiveActor/LiveActor.h"
+#include "Game/MapObj/MapObjConnector.h"
 #include "Game/Player/YoshiLockOnTarget.h"
 #include "Game/Util/JMapIdInfo.h"
 
@@ -24,7 +25,8 @@ public:
     void exeAfter();
     void changeTexture();
 
-    JMapIdInfo mRestartId;           // 0x90
+    JMapIdInfo* mRestartId;          // 0x90
+    MapObjConnector* mConnector;     // 0x94
     YoshiLockOnTarget* mYoshiTarget; // 0x98
 };
 
