@@ -23,7 +23,8 @@ public:
     void exeAfter();
     void changeTexture();
 
-    JMapIdInfo mRestartId; // 0x90
+    JMapIdInfo mRestartId;           // 0x90
+    YoshiLockOnTarget* mYoshiTarget; // 0x98
 };
 
 namespace NrvRestartObj {
