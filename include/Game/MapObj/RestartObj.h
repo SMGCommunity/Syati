@@ -2,6 +2,7 @@
 
 #include "revolution.h"
 #include "Game/LiveActor/LiveActor.h"
+#include "Game/Player/YoshiLockOnTarget.h"
 #include "Game/Util/JMapIdInfo.h"
 
 class RestartObj : public LiveActor {
