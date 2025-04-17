@@ -9,7 +9,7 @@ public:
 
     virtual ~NerveExecutor();
 
-    void initNerve(const Nerve *pNerve);
+    void initNerve(const Nerve *pNerve, s32);
     void updateNerve();
     void setNerve(const Nerve *pNerve);
     bool isNerve(const Nerve *pNerve) const;
