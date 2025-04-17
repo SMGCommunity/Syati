@@ -1,11 +1,14 @@
 #pragma once
 
 #include "Game/LiveActor/LiveActor.h"
+#include "Game/Player/CloudMarioHat.h"
+#include "Game/Player/CollisionShadow.h"
 #include "Game/Player/FireMarioBall.h"
-#include "Game/Player/MarioMessenger.h"
 #include "Game/Player/JetTurtleShadow.h"
 #include "Game/Player/Mario.h"
 #include "Game/Player/MarioAllModel.h"
+#include "Game/Player/MarioAnimator.h"
+#include "Game/Player/MarioMessenger.h"
 #include "Game/Player/MarioNullBck.h"
 #include "Game/Player/MarioParts.h"
 #include "Game/Player/MarioSearchLight.h"
@@ -13,6 +16,7 @@
 #include "Game/Player/TornadoMario.h"
 #include "Game/Player/YoshiHolder.h"
 #include "Game/Util/Color8.h"
+#include "Game/Util/FurMulti.h"
 
 #define PLAYER_MODE_NORMAL 0
 #define PLAYER_MODE_RAINBOW 1
@@ -48,13 +52,18 @@
 #define PLAYER_MODEL_FLAG_CLOUD 0x1000
 #define PLAYER_MODEL_FLAG_ROCK 0x2000
 
-class MarioAnimator;
-
 struct unk_803E26E0 {
 	u32 _0;
 	u32 _4;
 	u32 _8;
 	u32 _C;
+};
+
+struct unk_803BF430 {
+	u8 _0;
+	u32 _4;
+	f32 _8;
+	u16 _C;
 };
 
 class MarioActor : public LiveActor {
@@ -114,15 +123,20 @@ public:
 	bool tryGetItem(HitSensor *);
 	bool tryPullTrans(TVec3f *, const TVec3f &);
 	bool tryCoinPullOne(HitSensor *);
-    void initHand();
+    
+	void initHand();
+	void updateHandAtMorph();
+	void calcAnimPlayerMode();
+	void calcAnimHorrorBone();
+	void updateHand();
+	void updateFace();
 
 	u8 _90;
 	s32 _94;
 	s32 _98[64];
-	s32 _198;
-	s32 _19C;
-	s32 _1A0;
-	u8 _1A4;
+	u8 *mDL[2];	// _198
+	u32 mDLSize; // _1A0
+	u8 mCurrentDL; // _1A4
 	u8 _1A5;
 	f32 _1A8;
 	s32 _1AC;
@@ -187,7 +201,7 @@ public:
 	u32* _574;
 	s32 _578;
 	u8 _57C;
-	u32* mCollisionShadow; // _580
+	CollisionShadow* mCollisionShadow; // _580
 	Mario* mMario; // _584
 	MarioAnimator* mMarioAnimator; // _588
 	u32* mMarioEffect; // _58C
@@ -246,8 +260,8 @@ public:
 	s16 _6F4;
 	s16 mModelFlags;    // _6F6
 	u16 mPlayerMode;    // _6F8
-	s16 _6FA;
-	s16 _6FC;
+	u16 _6FA;
+	u16 _6FC;
 	s16 _6FE;
 	s16 mMorphTimer;    // _700
 	u8 _702;
@@ -333,7 +347,7 @@ public:
 	TVec3f _EB4;
 	ModelHolder* mBeeModel; // _EC0
 	MarioParts* mBeeWingModel; // _EC4
-	u32* mBeeFur; // _EC8
+	FurMulti* mBeeFur; // _EC8
 	u8 _ECC;
 	u8 _ECD;
 	s16 _ECE;
@@ -343,7 +357,7 @@ public:
 	YoshiHolder* mYoshiHolder; // _EE4
 	ModelHolder* mHorrorModel; // _EE8
 	ModelHolder* mCloudModel; // _EEC
-	u32* mCloudMarioHat; // _EF0
+	CloudMarioHat* mCloudMarioHat; // _EF0
 	ModelHolder* mRockModel; // _EF4
 	u8 _EF8;
 	u8 _EF9;
@@ -357,19 +371,19 @@ public:
 	TVec3f _F0C;
 	u8 _F18;
 	u8 _F19;
-	s32 _F1C;
-	s32 _F20;
-	s32 _F24;
-	s32 _F28;
-	s32 _F2C;
-	s32 _F30;
+	ModelHolder *mIceMarioHandL; // _F1C
+	ModelHolder *mIceMarioHandR; // _F20
+	ModelHolder *mMarioHandL; // _F24
+	ModelHolder *mMarioHandR; // _F28
+	ModelHolder *mInvincibleMarioHandL; // _F2C
+	ModelHolder *mInvincibleMarioHandR; // _F30
 	u8 _F34;
 	u8 _F35;
 	u8 _F36;
 	u8 _F37;
 	s32 _F38;
 	u8 _F3C;
-	s32 _F40;
+	unk_803BF430 *_F40;
 	TVec3f _F44;
 	f32 _F50;
 	f32 _F54;

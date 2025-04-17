@@ -11,4 +11,7 @@ public:
     virtual void appear();
     virtual void control();
     virtual void calcAndSetBaseMtx();
+
+    bool _90;
+    bool _91;
 };

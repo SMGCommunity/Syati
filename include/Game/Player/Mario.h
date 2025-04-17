@@ -212,9 +212,7 @@ public:
     TVec3f _2EC;
     TVec3f _2F8;
     TVec3f _304;
-    f32 _310;
-    f32 _314;
-    f32 _318;
+    TVec3f _310;
     TVec3f _31C;
     TVec3f _328;
     TVec3f _334;
