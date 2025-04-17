@@ -7,6 +7,20 @@
 extern "C" {
 #endif
 
+typedef struct DVDDiskID DVDDiskID;
+
+struct DVDDiskID {
+    char gameName[4];
+    char company[2];
+    u8 diskNumber;
+    u8 gameVersion;
+    u8 streaming;
+    u8 streamingBufSize;
+    u8 padding[14];
+    u32 rvlMagic;
+    u32 gcMagic;
+};
+
 struct DVDCommandBlock {
     DVDCommandBlock* mNext;
     DVDCommandBlock* mPrev;
