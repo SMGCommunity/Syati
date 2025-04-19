@@ -23,7 +23,7 @@ public:
     void exeCollect();
     void exeShake();
     void exeAfter();
-    void changeTexture();
+    void changeTexture(bool);
 
     JMapIdInfo* mRestartId;          // 0x90
     MapObjConnector* mConnector;     // 0x94
