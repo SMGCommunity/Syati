@@ -26,11 +26,7 @@ void ICInvalidateRange(void *, u32);
 void ICFlashInvalidate(void);
 void ICEnable(void);
 
-void LCEnable(void);
 void LCDisable(void);
-void LCStoreBlocks(void *, void *, u32);
-u32 LCStoreData(void *, void *, u32);
-void LCQueueWait(u32);
 
 void DMAErrorHandler(OSError, OSContext *, ...);
 

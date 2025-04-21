@@ -23,14 +23,14 @@
 #include "Game/Util/CSSoundUtil.h"
 // "unknown JKRHeap implementation"
 #include "Game/Util/DemoUtil.h"                     // unfinished
-// DrawUtil
+#include "Game/Util/DrawUtil.h"
 #include "Game/Util/EffectUtil.h"
 #include "Game/Util/EventUtil.h"                    // unfinished
 #include "Game/Util/FileUtil.h"                     // unfinished
 // FootPrint
 // FurCtrl
 // FurDrawer
-#include "Game/Util/FurMulti.h"
+//#include "Game/Util/FurMulti.h"
 // FurShader
 #include "Game/Util/GamePadUtil.h"                  // unfinished
 #include "Game/Util/GravityUtil.h"
@@ -68,7 +68,7 @@
 #include "Game/Util/SupportPlayUtil.h"
 // "two unknown functions"
 // SwitchEventFunctorListener
-// SystemUtil
+#include "Game/Util/SystemUtil.h"                     // unfinished
 #include "Game/Util/TalkUtil.h"                     // unfinished
 
 #include "Game/Util/AreaObjUtil.h"                  // unfinished

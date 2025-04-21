@@ -3,6 +3,8 @@
 #include "revolution.h"
 #include "Game/NPC/TalkMessageFunc.h"
 #include "Game/NPC/TalkMessageInfo.h"
+#include "Game/NameObj.h"
+#include "Game/LiveActor.h"
 
 class TalkNodeCtrl;
 

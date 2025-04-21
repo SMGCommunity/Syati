@@ -57,6 +57,7 @@ namespace MR {
 
 	s32 getStartPosNum();
 	s32 getCurrentStartZoneId();
+	JMapIdInfo& getInitializeStartIdInfo();
 	
 	s32 getGeneralPosNum();
 	void getGeneralPosData(const char **, TVec3f *, TVec3f *, JMapLinkInfo **, int);

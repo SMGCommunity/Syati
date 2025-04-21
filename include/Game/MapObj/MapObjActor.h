@@ -53,25 +53,25 @@ public:
 	void exeWait();
 	void exeMove();
 
-	const char* mObjName;
-	LodCtrl* mLodCtrl;
-	ModelObj* mBloomModel;
+	const char* mObjName;						// _90
+	LodCtrl* mLodCtrl;							// _94
+	ModelObj* mBloomModel;						// _98
 	u32* _9C;
-	u32* mProjmapEffectMtxSetter;
-	MapPartsRailMover* mRailMover;
-	MapPartsRotator* mRotator;
-	MapPartsRailRotator* mRailRotator;
-	MapPartsRailPosture* mRailPosture;
-	MapPartsRailGuideDrawer* mRailGuideDrawer;
+	u32* mProjmapEffectMtxSetter;				// _A0
+	MapPartsRailMover* mRailMover;				// _A4
+	MapPartsRotator* mRotator;					// _A8
+	MapPartsRailRotator* mRailRotator;			// _AC
+	MapPartsRailPosture* mRailPosture;			// _B0
+	MapPartsRailGuideDrawer* mRailGuideDrawer;	// _B4
 	bool _B8;
 	bool _B9;
-	bool mUseMirrorReflectionModelInfo;
-	bool mPlayAppearSe;
-	Nerve* mNrvWait;
-	Nerve* mNrvMove;
-	Nerve* mNrvDone;
+	bool mUseMirrorReflectionModelInfo;			// _BA
+	bool mPlayAppearSe;							// _BB
+	Nerve* mNrvWait;							// _BC
+	Nerve* mNrvMove;							// _C0
+	Nerve* mNrvDone;							// _C4
 	s32 _C8;
-	int mLodModelMovementList;
+	int mLodModelMovementList;					// _CC
 };
 
 namespace MapObjActorUtil {

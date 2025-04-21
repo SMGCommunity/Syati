@@ -98,6 +98,8 @@ namespace MR {
 	void tryFrameToScreenCinemaFrame();
 	void forceToFrameCinemaFrame();
 	void forceToBlankCinemaFrame();
+	s32 getFrameBufferHeight();
+    s32 getFrameBufferWidth();
 	bool isStopCinemaFrame();
 
 	void appearInformationMessageUp(const char *pMessageName, bool);

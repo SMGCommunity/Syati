@@ -25,6 +25,17 @@ namespace JMath {
 
 	void gekko_ps_copy12(void *dest, const void *src);
 	void gekko_ps_copy16(void *dest, const void *src);
+
+	class TRandom_fast_ {
+	public:
+		TRandom_fast_(u32);
+
+		inline u32 rand() {
+			return mSeed = 0x19660D * mSeed + 0x3C6EF35F;
+		}
+
+		u32 mSeed;
+	};
 };
 
 namespace JMathInlineVEC {

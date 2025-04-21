@@ -6,6 +6,12 @@ namespace JGeometry {
     template<typename T>
     struct TBox2 {
         inline TBox2() { }
+        TBox2(T a1, T a2, T a3, T a4) {
+            mPointMin.x = a1;
+            mPointMin.y = a2;
+            mPointMax.x = a3;
+            mPointMax.y = a4;
+        }
 
         TVec2<T> mPointMin;
         TVec2<T> mPointMax;
@@ -47,6 +53,7 @@ namespace JGeometry {
     };
 };
 
+typedef JGeometry::TBox2<s16> TBox2s;
 typedef JGeometry::TBox2<f32> TBox2f;
 typedef JGeometry::TBox3<f32> TBox3f;
 typedef JGeometry::TDirBox3<f32> TDirBox3f;

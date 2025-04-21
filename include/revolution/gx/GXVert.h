@@ -1,5 +1,3 @@
-/*
-This header needs PPCWGPipe, which I will add later
 #ifndef GXVERT_H
 #define GXVERT_H
 
@@ -7,26 +5,26 @@ This header needs PPCWGPipe, which I will add later
 extern "C" {
 #endif
 
-//#include "revolution/base/PPCWGPipe.h"
+#include "revolution/base/PPCWGPipe.h"
 
 #ifdef __MWERKS__
-volatile u32 GXWGFifo : 0xCC008000; // PPCWGPipe
+volatile PPCWGPipe GXWGFifo : 0xCC008000;
 #else
-volatile u32 GXWGFifo; // PPCWGPipe
+volatile PPCWGPipe GXWGFifo;
 #endif
 
 #define __GXCDEF(prfx,n,t)  __GXCDEF##n(prfx##n##t,t,t)
 #define __GXCDEFX(func,n,t) __GXCDEF##n(func,t,t)
 
 #define __GXCDEF1(func,ts,td) \
-    static inline void func(const ts x) \
+    static void func(const ts x) \
     {                         \
         GXWGFifo.td = (td) x; \
         return;               \
     }
 
 #define __GXCDEF2(func,ts,td) \
-    static inline void func(const ts x, const ts y) \
+    static void func(const ts x, const ts y) \
     {                         \
         GXWGFifo.td = (td) x; \
         GXWGFifo.td = (td) y; \
@@ -34,7 +32,7 @@ volatile u32 GXWGFifo; // PPCWGPipe
     }
 
 #define __GXCDEF3(func,ts,td) \
-    static inline void func(const ts x, const ts y, const ts z) \
+    static void func(const ts x, const ts y, const ts z) \
     {                         \
         GXWGFifo.td = (td) x; \
         GXWGFifo.td = (td) y; \
@@ -60,4 +58,4 @@ __GXCDEFX(GXTexCoord1x8,  1, u8)
 }
 #endif
 
-#endif // GXVERT_H*/
+#endif // GXVERT_H

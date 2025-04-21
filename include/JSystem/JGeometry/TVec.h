@@ -298,8 +298,9 @@ namespace JGeometry {
     };
 };
 
-typedef JGeometry::TVec2<float> TVec2f;
-typedef JGeometry::TVec3<signed char> TVec3c;
-typedef JGeometry::TVec3<float> TVec3f;
-typedef JGeometry::TVec3<short> TVec3s;
-typedef JGeometry::TVec4<float> TVec4f;
+typedef JGeometry::TVec2<s16> TVec2s;
+typedef JGeometry::TVec2<f32> TVec2f;
+typedef JGeometry::TVec3<s8> TVec3c;
+typedef JGeometry::TVec3<f32> TVec3f;
+typedef JGeometry::TVec3<s16> TVec3s;
+typedef JGeometry::TVec4<f32> TVec4f;

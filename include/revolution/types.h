@@ -30,6 +30,14 @@ typedef volatile f64 vf64;
 
 typedef int BOOL;
 
+#ifndef TRUE
+#define TRUE 1
+#endif
+
+#ifndef FALSE
+#define FALSE 0
+#endif
+
 // 32-bit floating point 3D vector
 typedef struct {
 	f32 x, y, z;

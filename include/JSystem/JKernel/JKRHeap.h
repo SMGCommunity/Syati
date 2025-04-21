@@ -5,6 +5,13 @@
 
 class JKRHeap : public JKRDisposer {
 public:
+    
+    class TState {
+    public:
+        u32 _0;
+        u32 _4;
+    };
+
     JKRHeap(void *, u32, JKRHeap *, bool);
 
     virtual ~JKRHeap();
@@ -33,7 +40,7 @@ public:
     u32 initArena(char **, u32 *, s32);
     JKRHeap* becomeSystemHeap();
     JKRHeap* becomeCurrentHeap();
-    void destroy(JKRHeap *);
+    static void destroy(JKRHeap *);
     static void* alloc(u32, int, JKRHeap *);
     static void free(void *, JKRHeap *);
     void free(void *);
