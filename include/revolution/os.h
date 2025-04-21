@@ -1,5 +1,5 @@
-#ifndef OS_H
-#define OS_H
+#ifndef __REVOLUTION_OS_H
+#define __REVOLUTION_OS_H
 
 #include "revolution/types.h"
 #include "c_stdlib.h"
@@ -7,8 +7,6 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-#define OSHalt(msg) OSPanic(__FILE__, __LINE__, msg)
 
 typedef s64         OSTime;
 typedef u32         OSTick;
@@ -40,9 +38,6 @@ u32 __MEM2End = 0x80003128;
 #define OSSecondsToTicks(sec) ((sec)  * OS_TIMER_CLOCK)
 #define OSMillisecondsToTicks(msec) ((msec) * (OS_TIMER_CLOCK / 1000))
 #define OSMicrosecondsToTicks(usec) (((usec) * (OS_TIMER_CLOCK / 125000)) / 8)
-
-void* OSPhysicalToUncached(u32);
-u32 OSCachedToPhysical(const void* caddr);
 
 #define OS_CACHED_REGION_PREFIX 0x8000
 #define OS_UNCACHED_REGION_PREFIX 0xC000
@@ -107,9 +102,6 @@ u16* OSUTF16to32(const u16 *, u32 *);
 u8 OSUTF32toANSI(u32);
 u16 OSUTF32toSJIS(u32);
 
-extern void __RAS_OSDisableInterrupts_begin(void);
-extern void __RAS_OSDisableInterrupts_end(void);
-
 #ifndef ASSERT
 #define ASSERT(exp) ((void) 0)
 #endif
@@ -154,7 +146,7 @@ int __OSInitSTM(void);
 void __OSInitNet(void);
 void __OSPromoteThread(OSThread *, OSPriority);
 
-void OSFatal(GXColor, GXColor, const char *);
+void OSFatal(u32 *backgroundColor, u32 *foregroundColor, const char *message);
 
 #ifdef __cplusplus
 }
