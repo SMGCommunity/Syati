@@ -362,8 +362,8 @@ case k##name: input = kHandle##name(input, text, address); break
 	/*Helper functions                                                                                               */
 	/*****************************************************************************************************************/
 	void SyatiError(const char *msg) {
-		u32 fg = 0xFFFFFFFF;
-		u32 bg = 0x00000000;
-		OSFatal(&fg, &bg, msg);
+		GXColor bg = { 0, 0, 0, 0 };
+		GXColor fg = { 255, 255, 255, 255 };
+		OSFatal(fg, bg, msg);
 	}
 }
