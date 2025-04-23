@@ -170,7 +170,7 @@ namespace {
 		// ------------------------------------------------------------------------------------------------------------
 		// Allocate text & BSS memory
 
-		u8* customCodeLinked = new (JKRHeap::sSystemHeap, 4) u8[sCustomCodeSize];
+		u8* customCodeLinked = new (JKRHeap::sSystemHeap, 32) u8[sCustomCodeSize];
 
 
 		// ------------------------------------------------------------------------------------------------------------
