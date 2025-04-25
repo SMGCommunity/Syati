@@ -160,26 +160,18 @@ extern VIMacroVisionObj VIZeroACPType;
 
 typedef void (*VIPositionCallback)(s16, s16);
 
-void __VIGetCurrentPosition(s16 *, s16 *);
-u32 VIGetDTVStatus(void);
+extern "C" {
+    BOOL VIResetDimmingCount();
 
-BOOL VIResetDimmingCount();
+    u32 VIGetTvFormat();
 
-u32 VIGetTvFormat();
+    void VISetBlack(BOOL);
+    void VIFlush();
+    void VIWaitForRetrace();
+    u32 VIGetRetraceCount(void);
 
-u32 VIGetCurrentLine();
-u32 VIGetScanMode(void);
-
-void VISetBlack(BOOL);
-void VIFlush();
-void VIWaitForRetrace();
-u32 VIGetRetraceCount(void);
-void VISetNextFrameBuffer(void *);
-
-void VIConfigure(const GXRenderModeObj *);
-void VIConfigurePan(u16, u16, u16, u16);
-
-void __VISetRevolutionModeSimple();
+    void __VISetRevolutionModeSimple();
+}
 
 typedef u8 VIBool;
 #define VI_FALSE ((VIBool)0) 
