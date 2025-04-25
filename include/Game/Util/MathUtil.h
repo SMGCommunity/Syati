@@ -85,8 +85,8 @@ namespace MR {
 	bool normalizeOrZero(TVec2f *);
 	bool normalizeOrZero(TVec3f *);
 	bool normalizeOrZero(const TVec3f &, TVec3f *);
-	void normalize(f32, f32, f32);
-	void normalizeAbs(f32, f32, f32);
+	f32 normalize(f32, f32, f32);
+	f32 normalizeAbs(f32, f32, f32);
 	void normalizeAngleAbs(f32);
 	void separateScalarAndDirection(f32 *, TVec2f *, const TVec2f &);
 	void separateScalarAndDirection(f32 *, TVec3f *, const TVec3f &);
