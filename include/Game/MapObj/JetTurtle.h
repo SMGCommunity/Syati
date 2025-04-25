@@ -3,6 +3,8 @@
 #include "revolution.h"
 #include "Game/LiveActor/LiveActor.h"
 
+class YoshiLockOnTarget;
+
 class JetTurtle : public LiveActor {
 public:
 	JetTurtle(const char *);
@@ -54,7 +56,7 @@ public:
 	u8 _E5;
 	u8 _E6;
 	u8 _E7;
-	u32* _E8;
+	YoshiLockOnTarget* mYoshiLockOnTarget; // 0xE8
 	u8 _EC;
 };
 
@@ -68,3 +70,9 @@ public:
 	virtual void resetPosition();
 	virtual void reset(u32);
 };
+
+namespace NrvJetTurtle {
+	ENDABLE_NERVE(JetTurtleNrvWait);
+	ENDABLE_NERVE(JetTurtleNrvWait2);
+	// TODO: More here...
+}

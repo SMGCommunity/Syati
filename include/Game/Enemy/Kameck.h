@@ -34,6 +34,9 @@ public:
     void initJMapParam(const JMapInfoIter &rIter);
     void initDemo(const JMapInfoIter &rIter);
 
+    void resetBeam();
+    void startDemoAppear();
+
     s32 _90;
     KameckBeamHolder* mBeamHolder;                // _94
     KameckBeamEventListener* mEventListener;      // _98

@@ -11,6 +11,7 @@
 #include "Game/Enemy/GliderShooterBullet.h"
 #include "Game/Enemy/JumpEmitter.h"
 #include "Game/Enemy/Kameck.h"
+#include "Game/Enemy/KameckTurtle.h"
 #include "Game/Enemy/Kanina.h"
 #include "Game/Enemy/RingBeam.h"
 #include "Game/Enemy/SamboHead.h"
