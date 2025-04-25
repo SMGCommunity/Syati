@@ -3,6 +3,7 @@
 #include "Game/LiveActor/ActionBgmCtrl.h"
 #include "Game/LiveActor/ActorActionKeeper.h"
 #include "Game/LiveActor/ActorCameraInfo.h"
+#include "Game/LiveActor/ActorJointCtrl.h"
 #include "Game/LiveActor/ActorLightCtrl.h"
 #include "Game/LiveActor/ActorPadAndCameraCtrl.h"
 #include "Game/LiveActor/ActorSoundHolder.h"
