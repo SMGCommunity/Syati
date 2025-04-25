@@ -102,6 +102,8 @@ namespace MR {
 	void addVelocityMoveToTarget(LiveActor *, const TVec3f &, f32);
 	void addVelocityMoveToTarget(LiveActor *, const TVec3f &, f32, f32, f32, f32);
 	
+	void addVelocityAwayFromTarget(LiveActor*, const TVec3f&, float);
+
 	void addVelocityClockwiseToTarget(LiveActor *, const TVec3f &, f32);
 	void addVelocityClockwiseToTarget(LiveActor *, f32);
 	void addVelocityJump(LiveActor *, f32);
@@ -111,6 +113,7 @@ namespace MR {
 	void addVelocityToGravityOrGround(LiveActor *, f32);
 	void addVelocityToCollisionNormal(LiveActor *, f32);
 	void addVelocityKeepHeight(LiveActor *, const TVec3f &, f32, f32);
+	void addVelocityKeepHeight(LiveActor *, const TVec3f &, f32, f32, f32);
 	void addVelocityKeepHeightUseShadow(LiveActor *, f32, f32, f32, const char *);
 	void addVelocityKeepHeightUseShadow(LiveActor *, f32, f32, f32, f32, const char *);
 	void addVelocitySeparateHV(LiveActor *, const TVec3f &, f32, f32);
