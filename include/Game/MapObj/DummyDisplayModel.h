@@ -2,6 +2,8 @@
 
 #include "Game/LiveActor/PartsModel.h"
 
+class LodCtrl;
+
 struct DummyDisplayModelInfo {
     const char* mModelName; // _0
     const char* mInitName;  // _4
