@@ -25,7 +25,7 @@ namespace MR {
     bool getJMapInfoRotateLocal(const JMapInfoIter &rIter, TVec3f *pDest);
     bool getJMapInfoRotate(const JMapInfoIter &rIter, TVec3f *pDest);
     bool getJMapInfoScale(const JMapInfoIter &rIter, TVec3f *pDest);
-    bool getJMapInfoMatrixFromRT(const JMapInfoIter &rIter, MtxPtr pDest);
+    bool getJMapInfoMatrixFromRT(const JMapInfoIter &rIter, TPos3f *pDest);
     bool getJMapInfoV3f(const JMapInfoIter &rIter, const char *, TVec3f *pDest);
 
     bool getJMapInfoArg0WithInit(const JMapInfoIter &rIter, s32 *pDest);
