@@ -3,12 +3,32 @@
 #include "revolution.h"
 #include "JSystem.h"
 
+#include "Game/GameAudio/AudTalkSoundData.h"
+
+class JAISoundHandle;
+
 class JAUSoundObject {
 public:
-    u32 _0;
+    JAISoundHandle* mHandles;   // 0x0
     u32 _4;
-    u32 _8;
-    u32 _C;
+
+    JAUSoundObject();
+    ~JAUSoundObject();
+
+    virtual void process();
+    virtual void dispose();
+    virtual void stopOK(JAISoundHandle&);
+    virtual void startSound(JAISoundID);
+    virtual void startSoundIndex(JAISoundID, unsigned char);
+    virtual void startLevelSound(JAISoundID);
+    virtual void startLevelSoundIndex(JAISoundID, unsigned char);
+
+    void stopSound(JAISoundID, unsigned long);
+    void getLowPrioSound(JAISoundID);
+    void getFreeHandleNotReserved();
+
+    bool _C;
+    u8 _D[3];
     u32 _10;
     TVec3f* _14;
 };

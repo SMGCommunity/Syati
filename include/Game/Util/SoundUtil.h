@@ -1,12 +1,10 @@
 #pragma once
 
 #include "revolution.h"
+#include "Game/GameAudio/AudTalkSoundData.h"
 
 class LiveActor;
 
-struct JAISoundID {
-	s32 id;
-};
 
 namespace MR {
 	bool isDestroySceneKeepAllSound();
