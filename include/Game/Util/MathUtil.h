@@ -7,6 +7,10 @@ void PSVECKillElement(const Vec *, const Vec *, const Vec *);
 
 namespace MR {
 	void initAcosTable();
+
+	template<typename T>
+	T sqrt(T val);
+
 	f32 acosEx(f32);
 	f32 getRandom();
 	f32 getRandom(f32, f32);
@@ -172,5 +176,19 @@ namespace MR {
 
 	inline f32 getZero() {
 		return 0.0f;
+	}
+
+	inline f32 speedySqrtf(register f32 x) {
+		register f32 recip;
+
+		if (x > 0.0f) {
+			__asm { frsqrte recip, x }
+			f32 v = recip * x;
+			recip = -((v * recip) - 3.0f);
+			recip = (recip * v);
+			recip *= 0.5f;
+			return recip;
+		}
+		return x;
 	}
 };
