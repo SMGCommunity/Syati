@@ -35,7 +35,23 @@ namespace JMath
             }
         }
 
+        inline f32 sinLap2(f32 v)
+        {
+            if (v < 0.0f) {
+                f32 tmp = v * -(0x3FFF+1);
+                return -table[(u16)tmp & 0x3FFF].a1;
+            }
+            else {
+                f32 tmp = v * (0x3FFF+1);
+                return table[(u16)tmp & 0x3FFF].a1;
+            }
+        }
+
         inline f32 get(f32 v) {
+            return table[(u16)v & 0x3FFF].b1;
+        }
+        inline f32 getMult(f32 v) {
+            v *= (0x3FFF+1);
             return table[(u16)v & 0x3FFF].b1;
         }
     };
