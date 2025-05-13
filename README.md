@@ -15,14 +15,8 @@ In order to use this toolkit, you need to prepare some software and skills:
 - Knowledge of **C** / **C++** / **PowerPC**.
 - **Python 3.7** or newer.
 
-# Building
-Setup is easy. Put the CodeWarrior files (*mwcceppc.exe*, etc.) in ``deps/CodeWarrior`` and the Kamek files in ``deps/Kamek``. Now, try to run the build scripts to check if they recognize the tools.
-
-Provided you have all the requirements set up, building is very easy. To build a binary of your new custom code, run:
-```python build.py REGION```, where REGION is the game's target region to build for.
-
-To build the loader, run this instead:
-```python buildloader.py REGION```, where REGION is, again, the target region to build for.
+# Setup
+Setup is easy. Put the CodeWarrior files (*mwcceppc.exe*, etc.) in ``deps/CodeWarrior`` and the Kamek files in ``deps/Kamek``.
 
 The following region targets exist:
 - **PAL**: European/Australian releases
