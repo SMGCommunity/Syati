@@ -86,6 +86,7 @@ public:
 	virtual bool receiveMsgPush(HitSensor *, HitSensor *);
 	virtual bool receiveMsgEnemyAttack(u32, HitSensor *, HitSensor *);
 	virtual bool receiveMsgOtherAttack(u32, HitSensor *, HitSensor *);
+	virtual void getFrontVec(TVec3f *) const;
 	// three more virtual functions
 
 	// todo: tons of functions to be documented
@@ -110,6 +111,7 @@ public:
 	void initRockMario();
 
 	bool isEnableNerveChange() const;
+	void initShadow();
 
 	void setRasterScroll(s32, s32, s32);
 	void updateFireSpin();
