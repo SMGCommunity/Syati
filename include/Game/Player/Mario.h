@@ -2,10 +2,10 @@
 
 #include "revolution.h"
 #include "Game/Player/MarioModule.h"
+#include "Game/Player/MarioSwim.h"
 
 class MarioActor;
 class MarioState;
-class MarioSwim;
 class FloorCode;
 // Undocumented
 class MarioFlow;
@@ -86,6 +86,9 @@ public:
     f32 sub_803B1BA0();
     void sub_80396BF0();
     bool isSwimming() const;
+    bool isEnableAddDamage() const;
+    bool doFlipRot(const TVec3f &);
+    bool isDamaging() const;
 
     u8 _8;
     u8 _9;
@@ -180,7 +183,7 @@ public:
     TVec3f _1E4;
     TVec3f _1F0;
     TVec3f _1FC;
-    TVec3f _208;
+    TVec3f mFrontVec;    // _208
     f32 _214;
     f32 _218;
     f32 _21C;

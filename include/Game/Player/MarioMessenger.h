@@ -5,6 +5,7 @@
 #include "Game/LiveActor/HitSensor.h"
 
 class MarioMessenger : public NameObj {
+public:
 	MarioMessenger(HitSensor *);
 
 	virtual ~MarioMessenger();
