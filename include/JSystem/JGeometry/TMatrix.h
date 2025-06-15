@@ -25,6 +25,44 @@ namespace JGeometry {
             return (MtxPtr)mMtx;
         }
 
+        inline f32 dot() const {
+            return(
+                (this->mMtx[1][0] * this->mMtx[1][0]) +
+                (this->mMtx[0][0] * this->mMtx[0][0]) +
+                (this->mMtx[2][0] * this->mMtx[2][0]) +
+                (this->mMtx[0][1] * this->mMtx[0][1]) +
+                (this->mMtx[1][1] * this->mMtx[1][1]) +
+                (this->mMtx[2][1] * this->mMtx[2][1]) +
+                (this->mMtx[0][2] * this->mMtx[0][2]) +
+                (this->mMtx[1][2] * this->mMtx[1][2]) +
+                (this->mMtx[2][2] * this->mMtx[2][2])
+                );
+        }
+
+        inline f32 dotX() const {
+            f32 _10 = this->mMtx[1][0] * this->mMtx[1][0];
+            f32 _20 = this->mMtx[2][0] * this->mMtx[2][0];
+            f32 _00 = this->mMtx[0][0] * this->mMtx[0][0];
+
+            return _10 + _00 + _20;
+        }
+
+        inline f32 dotY() const {
+            f32 _11 = this->mMtx[1][1] * this->mMtx[1][1];
+            f32 _21 = this->mMtx[2][1] * this->mMtx[2][1];
+            f32 _01 = this->mMtx[0][1] * this->mMtx[0][1];
+
+            return _11 + _01 + _21;
+        }
+
+        inline f32 dotZ() const {
+            f32 _12 = this->mMtx[1][2] * this->mMtx[1][2];
+            f32 _22 = this->mMtx[2][2] * this->mMtx[2][2];
+            f32 _02 = this->mMtx[0][2] * this->mMtx[0][2];
+
+            return _12 + _02 + _22;
+        }
+
         T mMtx[3][4];
     };
 
@@ -61,11 +99,11 @@ namespace JGeometry {
 
         void getXYZDir(TVec3f &rDestX, TVec3f &rDestY, TVec3f &rDestZ) const;
         void setXDir(const TVec3f &rSrc);
-        void setXDir(f32 x, f32 y, f32 z);
+        //void setXDir(f32 x, f32 y, f32 z); // Not present in SMG2
         void setYDir(const TVec3f &rSrc);
-        void setYDir(f32 x, f32 y, f32 z);
+        //void setYDir(f32 x, f32 y, f32 z);
         void setZDir(const TVec3f &rSrc);
-        void setZDir(f32 x, f32 y, f32 z);
+        //void setZDir(f32 x, f32 y, f32 z);
         void setXYZDir(const TVec3f &rSrcX, const TVec3f &rSrcY, const TVec3f &rSrcZ);
 
         void getEuler(TVec3f &rDest) const;
@@ -98,7 +136,7 @@ namespace JGeometry {
     public:
         void getTrans(TVec3f &rDest) const;
         void setTrans(const TVec3f &rSrc);
-        void setTrans(f32 x, f32 y, f32 z);
+        //void setTrans(f32 x, f32 y, f32 z); // Doesn't exist in SMG2
         void zeroTrans();
 
         void makeRotate(const TVec3f &, f32);

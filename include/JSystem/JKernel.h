@@ -9,6 +9,8 @@
 #include "JSystem/JKernel/JKRFileLoader.h"
 #include "JSystem/JKernel/JKRArchive.h"
 #include "JSystem/JKernel/JKRHeap.h"
+#include "JSystem/JKernel/JKRSolidHeap.h"
+#include "JSystem/JKernel/JKRExpHeap.h"
 #include "JSystem/JKernel/JKRMemArchive.h"
 #include "JSystem/JKernel/JKRAramArchive.h"
 #include "JSystem/JKernel/JKRDecomp.h"

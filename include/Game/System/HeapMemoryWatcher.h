@@ -31,24 +31,24 @@ public:
     void destroyFileCache();
     void destroySceneHeap();
     void createRootHeap();
-    HeapMemoryWatcher* createHeaps();
+    void createHeaps();
     void createGameHeap();
 
     void memoryErrorCallback(void *, u32, int);
     void checkRestMemory();
 
-    static JKRHeap* sRootHeapGDDR3;
+    static JKRExpHeap* sRootHeapGDDR3;
 
-    JKRHeap *mStationedHeapNapa; // 0
-    JKRHeap *mStationedHeapGDDR3; // 4
-    JKRHeap *mHeapNapa; // 8
-    JKRHeap *mHeapGDDR3; // 0xC
-    JKRHeap *mWorldMapHeap; // 0x10
-    JKRHeap *mFileCacheHeap; // 0x14
-    JKRHeap *_18; // 0x18
-    JKRHeap *mSceneHeapNapa; // 0x1C
-    JKRHeap *mSceneHeapGDDR3; // 0x20
-    JKRHeap *mWPadHeap; // 0x24
-    JKRHeap *mHomeButtonLayoutHeap; // 0x28
-    JKRHeap *_2C;
+    JKRExpHeap *mStationedHeapNapa; // 0
+    JKRExpHeap *mStationedHeapGDDR3; // 4
+    JKRExpHeap *mHeapNapa; // 8
+    JKRExpHeap *mHeapGDDR3; // 0xC
+    JKRSolidHeap *mWorldMapHeap; // 0x10
+    JKRSolidHeap *mFileCacheHeap; // 0x14
+    JKRHeap *_18; // 0x18 appears to be some sort of SMG2 exclusive JKRHeap child class?
+    JKRSolidHeap *mSceneHeapNapa; // 0x1C
+    JKRSolidHeap *mSceneHeapGDDR3; // 0x20
+    JKRExpHeap *mWPadHeap; // 0x24
+    JKRExpHeap *mHomeButtonLayoutHeap; // 0x28
+    JKRSolidHeap *_2C;
 };

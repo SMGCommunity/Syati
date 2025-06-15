@@ -3,6 +3,15 @@
 #include "JSystem/JGeometry/TVec.h"
 
 namespace JGeometry {
+    template <class T>
+    struct TBox {
+        TBox() : mPointMin(), mPointMax() {}
+
+        void extend(const TVec3f&);
+
+        T mPointMin, mPointMax;
+    };
+
     template<typename T>
     struct TBox2 {
         inline TBox2() { }
@@ -20,6 +29,8 @@ namespace JGeometry {
     template<typename T>
     struct TBox3 {
         inline TBox3() { }
+
+        void extend(const TVec3f&);
 
         TVec3<T> mPointMin;
         TVec3<T> mPointMax;
@@ -56,4 +67,5 @@ namespace JGeometry {
 typedef JGeometry::TBox2<s16> TBox2s;
 typedef JGeometry::TBox2<f32> TBox2f;
 typedef JGeometry::TBox3<f32> TBox3f;
+typedef JGeometry::TBox<TVec3f> TBoxVec3f;
 typedef JGeometry::TDirBox3<f32> TDirBox3f;

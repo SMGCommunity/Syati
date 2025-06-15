@@ -295,7 +295,7 @@ namespace MR {
     ModelObj* createModelObjPlayerDecoration(const char *pName, const char *pModelName, MtxPtr pMtx);
     ModelObj* createModelObjEnemy(const char *pName, const char *pModelName, MtxPtr pMtx);
     ModelObj* createModelObjNPC(const char *pName, const char *pModelName, MtxPtr pMtx);
-    ModelObj* createModelObjBloomModel(const char *pName, const char *pModelName, MtxPtr pMtx);
+    ModelObj* createModelObjBloomModel(const char *pName, const char *pModelName, MtxPtr pMtx, bool);
 
     CollisionObj* createCollisionObj(LiveActor *pHost, const char *pCollisionName, bool noInitBodySensor, MtxPtr pMtx);
 
@@ -340,4 +340,7 @@ namespace MR {
 
     HitSensor* getBodySensor(LiveActor *pActor);
     void setBodySensorType(LiveActor *pActor, u32 sensorType);
+
+
+    void calcModelBoundingBox(TBox3f* pDest, const LiveActor* pActor);
 };
