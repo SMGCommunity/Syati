@@ -9,6 +9,7 @@
 #include "Game/MapObj/ChipHolder.h"
 #include "Game/MapObj/ClipArea.h"
 #include "Game/MapObj/ClipAreaShape.h"
+#include "Game/MapObj/CocoNut.h"
 #include "Game/MapObj/Coin.h"
 #include "Game/MapObj/CoinHolder.h"
 #include "Game/MapObj/CoinRotater.h"
