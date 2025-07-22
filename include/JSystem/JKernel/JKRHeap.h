@@ -92,6 +92,10 @@ public:
 
 void JKRDefaultMemoryErrorRoutine(void *, u32, s32);
 
+#ifdef INTELLISENSE_FIX
+#define new(...) new
+#endif
+
 void* operator new(size_t);
 void* operator new(size_t, int);
 void* operator new(size_t, JKRHeap*, int);

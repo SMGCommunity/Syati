@@ -67,4 +67,20 @@ namespace JMathInlineVEC {
 
         return sqdist;
     }
+
+    __attribute__((always_inline))
+    inline void PSVECAdd2(register const Vec* vec1, register const Vec* vec2, register Vec* dst) {
+        register f32 v2z, d1z, v1z, v2xy, v1xy, d1xy;
+        
+        __asm {            
+            psq_l     v1xy, 0(vec1), 0, 0
+            psq_l     v2xy, 0(vec2), 0, 0
+            ps_add    d1xy, v1xy, v2xy
+            psq_l     v1z,   8(vec1), 1, 0
+            psq_l     v2z,   8(vec2), 1, 0
+            ps_add    d1z, v1z, v2z
+            psq_st    d1xy, 0(dst), 0, 0
+            psq_st    d1z,  8(dst), 1, 0
+        }
+    }
 };

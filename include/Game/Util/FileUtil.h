@@ -5,6 +5,7 @@
 
 namespace MR {
     bool isFileExist(const char *, bool);
+    u32 getFileSize(const char*, bool);
 
     // int should be JKRDvdRipper::EAllocDirection but whatever
     JKRArchive* loadToMainRAM(const char *, u8 *, JKRHeap *, int);

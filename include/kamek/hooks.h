@@ -19,16 +19,24 @@
 
 // general hook definition macros
 // TODO: debugging data (file, line, ...) for diagnostic use by Kamek maybe? :3
+#ifndef INTELLISENSE_FIX // If added to c_cpp_properties.json, makes it so intellisense ignores kamek hooks. Usefull since intellisense does not think this is valid syntax.
 #define kmHook0(type) \
-	kmHookInt(__COUNTER__)[2] = { 0, (type) }
+    kmHookInt(__COUNTER__)[2] = { 0, (type) }
 #define kmHook1(type, arg0) \
-	kmHookInt(__COUNTER__)[3] = { 1, (type), (u32)(arg0) }
+    kmHookInt(__COUNTER__)[3] = { 1, (type), (u32)(arg0) }
 #define kmHook2(type, arg0, arg1) \
-	kmHookInt(__COUNTER__)[4] = { 2, (type), (u32)(arg0), (u32)(arg1) }
+    kmHookInt(__COUNTER__)[4] = { 2, (type), (u32)(arg0), (u32)(arg1) }
 #define kmHook3(type, arg0, arg1, arg2) \
-	kmHookInt(__COUNTER__)[5] = { 3, (type), (u32)(arg0), (u32)(arg1), (u32)(arg2) }
+    kmHookInt(__COUNTER__)[5] = { 3, (type), (u32)(arg0), (u32)(arg1), (u32)(arg2) }
 #define kmHook4(type, arg0, arg1, arg2, arg3) \
-	kmHookInt(__COUNTER__)[6] = { 4, (type), (u32)(arg0), (u32)(arg1), (u32)(arg2), (u32)(arg3) }
+    kmHookInt(__COUNTER__)[6] = { 4, (type), (u32)(arg0), (u32)(arg1), (u32)(arg2), (u32)(arg3) }
+#else
+#define kmHook0(type) 
+#define kmHook1(type, arg0) 
+#define kmHook2(type, arg0, arg1) 
+#define kmHook3(type, arg0, arg1, arg2) 
+#define kmHook4(type, arg0, arg1, arg2, arg3) 
+#endif
 
 // kmCondWrite
 //   Write value to address, conditionally
