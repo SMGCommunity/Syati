@@ -41,33 +41,32 @@ namespace JMath {
 namespace JMathInlineVEC {
 	void PSVECAdd(const Vec *srcA, const Vec *srcB, Vec *dest);
 	void PSVECSubtract(const Vec *srcA, const Vec *srcB, Vec *dest);
-
-
+    #ifdef __MWERKS__
     __attribute__((always_inline))
-        inline f32 PSVECSquareDistance(const register Vec* a, const register Vec* b)
+    inline f32 PSVECSquareDistance(const register Vec* a, const register Vec* b)
     {
-
+        
         register f32 dyz, dxy, sqdist;
         register f32 v0xy, v1yz, v0yz, v1xy;
-
+        
         asm
         {
             psq_l    v0yz, 4(a), 0, 0
             psq_l    v1yz, 4(b), 0, 0
             ps_sub   dyz, v0yz, v1yz
-
+            
             psq_l    v0xy, 0(a), 0, 0
             psq_l    v1xy, 0(b), 0, 0
             ps_mul   dyz, dyz, dyz
             ps_sub   dxy, v0xy, v1xy
-
+            
             ps_madd  sqdist, dxy, dxy, dyz
             ps_sum0  sqdist, sqdist, dyz, dyz
         }
-
+        
         return sqdist;
     }
-
+    
     __attribute__((always_inline))
     inline void PSVECAdd2(register const Vec* vec1, register const Vec* vec2, register Vec* dst) {
         register f32 v2z, d1z, v1z, v2xy, v1xy, d1xy;
@@ -83,4 +82,8 @@ namespace JMathInlineVEC {
             psq_st    d1z,  8(dst), 1, 0
         }
     }
+    #else
+    f32 PSVECSquareDistance(const register Vec* a, const register Vec* b);
+    void PSVECAdd2(register const Vec* vec1, register const Vec* vec2, register Vec* dst);
+    #endif
 };
