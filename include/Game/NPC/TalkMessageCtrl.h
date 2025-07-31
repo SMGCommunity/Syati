@@ -47,7 +47,7 @@ public:
     void registerAnimeFunc(const TalkMessageFuncBase&);
     void registerKillFunc(const TalkMessageFuncBase&);
     void readMessage();
-    bool isSelectYesNo();
+    bool isSelectYesNo() const;
     const char* getBranchID() const;
     bool isExistNextNode() const;
 
@@ -98,3 +98,9 @@ namespace TalkFunction {
     TalkMessageInfo* getMessageInfo(const TalkMessageCtrl*);
     const wchar_t* getMessage(const TalkMessageCtrl*);
 }
+
+// This does not go here
+class MessageEditorMessageTag {
+    public:
+    u32* _0;
+};
