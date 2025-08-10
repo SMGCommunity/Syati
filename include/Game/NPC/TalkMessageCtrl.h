@@ -103,4 +103,7 @@ namespace TalkFunction {
 class MessageEditorMessageTag {
     public:
     u32* _0;
+
+    u8 getParam8(int) const;
+    u16 getParam16(int) const;
 };

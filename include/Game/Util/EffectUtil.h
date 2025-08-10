@@ -21,7 +21,7 @@ namespace MR {
 
 	void addEffect(LiveActor *pActor, const char *pEffectName);
 	void getEffect(const LiveActor *pActor, const char *pEffectName);
-	void getEffect(const LayoutActor *pLayout, const char *pEffectName);
+	void* getEffect(const LayoutActor *pLayout, const char *pEffectName);
 	bool isExistEffectKeeper(const LiveActor *pActor);
 	bool isExistEffectKeeper(const LayoutActor *pLayout);
 
