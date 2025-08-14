@@ -30,7 +30,7 @@
 // FootPrint
 // FurCtrl
 // FurDrawer
-//#include "Game/Util/FurMulti.h"
+#include "Game/Util/FurMulti.h"
 // FurShader
 #include "Game/Util/GamePadUtil.h"                  // unfinished
 #include "Game/Util/GravityUtil.h"

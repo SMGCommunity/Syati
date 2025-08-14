@@ -32,7 +32,7 @@ namespace MR {
     void copyMemory(void *pDest, const void *pSrc, u32 length);
     void fillMemory(void *pDest, u8 fill, u32 length);
     void zeroMemory(void *pDest, u32 length);
-    void calcCheckSum(const void *pSrc, u32 length);
+    u32 calcCheckSum(const void *pSrc, u32 length);
     void* allocFromWPadHeap(u32 length);
     void freeFromWPadHeap(void *pAllocated);
 };
