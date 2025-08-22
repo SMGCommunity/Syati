@@ -16,7 +16,6 @@
 #include "Game/Player/TornadoMario.h"
 #include "Game/Player/YoshiHolder.h"
 #include "Game/Util/Color8.h"
-#include "Game/Util/FurMulti.h"
 
 #define PLAYER_MODE_NORMAL 0
 #define PLAYER_MODE_RAINBOW 1
@@ -51,6 +50,8 @@
 #define PLAYER_MODEL_FLAG_HORROR 0x800
 #define PLAYER_MODEL_FLAG_CLOUD 0x1000
 #define PLAYER_MODEL_FLAG_ROCK 0x2000
+
+class FurMulti;
 
 struct unk_803E26E0 {
 	u32 _0;
@@ -112,6 +113,7 @@ public:
 
 	bool isEnableNerveChange() const;
 	void initShadow();
+	bool isJumping() const;
 
 	void setRasterScroll(s32, s32, s32);
 	void updateFireSpin();
