@@ -33,7 +33,7 @@ public:
     s32 _A8;
     Mtx _AC;
     Mtx _DC;
-    ActorCameraInfo* mCameraInfo;
+    s32 _10C; // Possible ActorCameraInfo* mCameraInfo
 };
 
 namespace NrvBlackHole {
