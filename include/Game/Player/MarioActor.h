@@ -182,7 +182,7 @@ public:
 	s16 _51C;
 	u8 _51E;
 	s32 _520;
-	s32 _524;
+	BlackHole* _524;
 	TVec3f _528;
 	TVec3f _534;
 	TVec3f _540;
@@ -472,4 +472,9 @@ public:
 	u32* _108C;
 	s32 _1090;
 	s32 _1094;
+
 };
+
+namespace NrvMarioActor {
+    NERVE(MarioActorNrvWait);
+}

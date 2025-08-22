@@ -78,6 +78,7 @@ namespace MR {
 
     bool hasStartAnimCamera();
 
+    void startStartAnimCamera();
     void endStartAnimCamera();
 
     void pauseOffCameraDirector();
