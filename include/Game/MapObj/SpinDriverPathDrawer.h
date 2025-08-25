@@ -1,6 +1,5 @@
 #pragma once
 
-#include "revolution.h"
 #include "Game/LiveActor/LiveActor.h"
 #include "JSystem/JUtility/JUTTexture.h"
 
@@ -51,7 +50,7 @@ public:
 	void setFadeScale(f32);
 	void sendPoint(const TVec3f &, f32, f32) const;
 
-	s32 _90;
+	SpinDriverShootPath* _90;
 	s32 _94;
 	s32 _98;
 	s32 _9C;

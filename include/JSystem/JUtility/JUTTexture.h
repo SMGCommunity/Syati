@@ -1,6 +1,6 @@
 #pragma once
 
-#include "syati.h"
+#include "revolution/types.h"
 #include "revolution/gx.h"
 
 struct ResTIMG {
