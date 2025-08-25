@@ -57,3 +57,9 @@ public:
 	u8 _1B6;
 	u8 _1B7;
 };
+
+namespace MR {
+	NameObj* createSuperSpinDriverYellow(const char*);
+	//NameObj* createSuperSpinDriverGreen(const char*); // Not present in SMG2
+	NameObj* createSuperSpinDriverPink(const char*);
+};
