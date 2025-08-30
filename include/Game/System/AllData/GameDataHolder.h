@@ -40,4 +40,5 @@ public:
     GameDataTicoFatStorage* mTicoFatStorage;       // _10
     GameDataWorldMapStorage* mWorldMapStorage;     // _14
     BinaryDataChunkHolder* mBinaryDataChunkHolder; // _18
+    u8 _1C[16];
 };
