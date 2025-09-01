@@ -7,7 +7,7 @@ public:
 	virtual u32 makeHeaderHashCode() const = 0;
 	virtual u32 getSignature() const = 0;
 	virtual u32 serialize(u8 *, u32) const = 0;
-	virtual u32 deserialize(const u8 *, u32) const = 0;
+	virtual u32 deserialize(const u8 *, u32) = 0;
 	virtual void initializeData() = 0;
 };
 
