@@ -95,7 +95,7 @@ namespace MR {
 	void calcVelocityMoveToDirection(TVec3f *, const LiveActor *, const TVec3f &, f32, f32, f32, f32);
 	void calcVelocityMoveToTarget(TVec3f *, const LiveActor *, const TVec3f &, f32);
 
-	void addVelocityMoveToDirection(LiveActor *, const TVec3f, f32);
+	void addVelocityMoveToDirection(LiveActor *, const TVec3f &, f32);
 
 	void addVelocityMoveToTargetHorizon(LiveActor *, const TVec3f &, f32);
 	void addVelocityMoveToTargetHorizon(LiveActor *, const TVec3f &, f32, f32, f32, f32);
