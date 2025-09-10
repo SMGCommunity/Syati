@@ -89,6 +89,7 @@ namespace MR {
 namespace DemoStartInfo {
 	enum DemoType {
 		DEMOTYPE_0,
+		DEMOTYPE_1,
 	};
 
 	enum CinemaFrameType {

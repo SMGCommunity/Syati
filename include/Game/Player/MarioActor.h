@@ -115,6 +115,9 @@ public:
 	void initShadow();
 	bool isJumping() const;
 
+	void updateControllerSwing();
+	void updateControllerSwingLeft();
+
 	void setRasterScroll(s32, s32, s32);
 	void updateFireSpin();
 	void shootFireBall();
