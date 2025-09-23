@@ -7,6 +7,7 @@ class LiveActor;
 class NameObj;
 class JMapLinkInfo;
 class GameSystemSceneController;
+class JMapIdInfo;
 
 namespace MR {
 	s32 getCurrentScenarioNo();
