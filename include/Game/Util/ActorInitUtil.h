@@ -10,6 +10,7 @@ class JMapInfoIter;
 class JUTTexture;
 class LiveActor;
 class ResTIMG;
+class ResourceHolder;
 
 namespace MR {
     bool isInitFunctionBoolSet(const JMapInfo *pCsvData, const char *pIdentifier);
