@@ -700,6 +700,17 @@ typedef enum _GXPrimitive {
     GX_QUADS         = 0x80
 } GXPrimitive;
 
+typedef enum _GXTexOffset {
+    GX_TO_ZERO,
+    GX_TO_SIXTEENTH,
+    GX_TO_EIGHTH,
+    GX_TO_FOURTH,
+    GX_TO_HALF,
+    GX_TO_ONE,
+    GX_MAX_TEXOFFSET
+} GXTexOffset;
+
+
 typedef enum _GXPerf0 {
     GX_PERF0_VERTICES,
     GX_PERF0_CLIP_VTX,

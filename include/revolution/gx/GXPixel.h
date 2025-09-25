@@ -9,6 +9,7 @@ extern "C" {
 #include "revolution/gx/GXEnum.h"
 #include "revolution/gx/GXStruct.h"
 
+void GXSetLineWidth(u8, GXTexOffset);
 void GXSetFog(GXFogType, f32, f32, f32, f32, GXColor);
 void GXSetFogRangeAdj(GXBool, u16, const GXFogAdjTable *);
 void GXSetBlendMode(GXBlendMode, GXBlendFactor, GXBlendFactor, GXLogicOp);

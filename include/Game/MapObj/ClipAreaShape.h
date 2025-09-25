@@ -15,7 +15,7 @@ public:
 
 class ClipAreaShapeSphere : public ClipAreaShape {
 public:
-    ClipAreaShapeSphere();
+    ClipAreaShapeSphere(const char* pName);
 
     virtual bool isInArea(const TVec3f &rPosition) const;
     virtual void calcVolumeMatrix(MtxPtr pVolumeMtx, const TVec3f &, const TVec3f &) const;

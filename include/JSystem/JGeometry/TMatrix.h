@@ -25,6 +25,35 @@ namespace JGeometry {
             return (MtxPtr)mMtx;
         }
 
+        // From Petari
+        inline void setInline(const SMatrix34C<T> &rSrc) {
+            #ifdef __MWERKS__
+            register const SMatrix34C<T> *pSrc = &rSrc;
+            register SMatrix34C<T> *pDest = this;
+            register f32 rzztz;
+            register f32 rxzyz;
+            register f32 rzyty;
+            register f32 rxyyy;
+            register f32 rzxtx;
+            register f32 rxxyx;
+
+            __asm {
+                psq_l     rxxyx, 0(pSrc), 0, 0
+                psq_l     rzxtx, 8(pSrc), 0, 0
+                psq_l     rxyyy, 0x10(pSrc), 0, 0
+                psq_l     rzyty, 0x18(pSrc), 0, 0
+                psq_l     rxzyz, 0x20(pSrc), 0, 0
+                psq_l     rzztz, 0x28(pSrc), 0, 0
+                psq_st    rxxyx, 0(pDest), 0, 0
+                psq_st    rzxtx, 8(pDest), 0, 0
+                psq_st    rxyyy, 0x10(pDest), 0, 0
+                psq_st    rzyty, 0x18(pDest), 0, 0
+                psq_st    rxzyz, 0x20(pDest), 0, 0
+                psq_st    rzztz, 0x28(pDest), 0, 0
+            };
+            #endif
+        }
+
         inline f32 dot() const {
             return(
                 (this->mMtx[1][0] * this->mMtx[1][0]) +

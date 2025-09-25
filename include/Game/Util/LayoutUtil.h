@@ -91,6 +91,7 @@ namespace MR {
 
 	void setFollowPos(const TVec2f*, const LayoutActor*, const char*);
 	void setFollowTypeReplace(const LayoutActor* pLayout, const char* pStr);
+	void setFollowTypeAdd(const LayoutActor* pLayout, const char* pStr);
 	void copyPaneTrans(TVec2f*, const LayoutActor*, const char*);
 
 	bool isStep(const LayoutActor* pLayout, s32 step);
