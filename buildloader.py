@@ -39,12 +39,10 @@ def getregionletter(region: str):
 def build(region: str, outputPath: str, buildFullXML: bool):
     compile_cmd = f"{MWCCEPPC} -c -Cpp_exceptions off -nodefaults -proc gekko -fp hard -lang=c++ -O4,s -inline on " \
                   f"-rtti off -sdata 0 -sdata2 0 -align powerpc -func_align 4 -str pool -enum int -DGEKKO " \
-                  f"-i include -I- -i loader -D{region} loader/loader.cpp -o loader/loader.o"
+                  f"-i include -I- -i loader -D{region} loader/ModuleLoader.cpp -o loader/ModuleLoader.o"
 
-    kamek_cmd = f"{KAMEK} loader/loader.o -static=0x80001800 -externals={SYMBOLS}/{region}.txt " \
-                f"-output-riiv={outputPath}/riivo_{region}.xml " \
-                f"-output-kamek={outputPath}/Loader{getregionletter(region)}.bin " \
-                f"-output-dolphin={outputPath}/Dolphin{getregionletter(region)}.ini"
+    kamek_cmd = f"{KAMEK} loader/ModuleLoader.o -static=0x80001800 -externals={SYMBOLS}/{region}.txt " \
+                f"-output-riiv={outputPath}/riivo_{region}.xml -output-map={outputPath}/ModuleLoader{region}.map " \
 
     print(f"Building target {region}!")
 

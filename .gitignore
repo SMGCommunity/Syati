@@ -3,6 +3,7 @@ deps/Kamek/*
 
 /.private
 /.vs
+/.vscode
 /bin/
 /build/
 

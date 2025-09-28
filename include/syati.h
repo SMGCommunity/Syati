@@ -11,3 +11,4 @@
 #include "Game.h"
 #include "nw4r.h"
 #include "kamek/hooks.h"
+#include "rsm/hooks.h"
