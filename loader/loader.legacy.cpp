@@ -1,4 +1,4 @@
-#include "loader.h"
+#include "loader.legacy.h"
 
 /*
 * Custom code will be loaded into SystemHeap. However, the space that it provides is very limited, so the heaps need to
