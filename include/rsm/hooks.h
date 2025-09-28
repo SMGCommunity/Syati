@@ -53,9 +53,9 @@ struct rsmPatchBranch {
     rsmDeclarePatch(type, __COUNTER__) = { rsmPatchId##type, __VA_ARGS__ };
 
 // Data writing patches
-#define rsmWrite8(addr, val) rsmWritePatch(Write, (addr), (val), rsmPatchIdWrite_Data8)
-#define rsmWrite16(addr, val) rsmWritePatch(Write, (addr), (val), rsmPatchIdWrite_Data16)
-#define rsmWrite32(addr, val) rsmWritePatch(Write, (addr), (val), rsmPatchIdWrite_Data32)
+#define rsmWrite8(addr, val) rsmWritePatch(Write, (addr), (val), rsmPatchWriteType_u8)
+#define rsmWrite16(addr, val) rsmWritePatch(Write, (addr), (val), rsmPatchWriteType_u16)
+#define rsmWrite32(addr, val) rsmWritePatch(Write, (addr), (val), rsmPatchWriteType_u32)
 
 // Branch hooks
 #define rsmBranch(addr, ptr) rsmWritePatch(Branch, (addr), (u32)(ptr))
