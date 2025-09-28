@@ -1,11 +1,8 @@
-# Syati
-**Syati** provides C++ headers and symbols for writing custom code injections in **Super Mario Galaxy 2**. With this, you can write code, compile code, link to existing functions and structures in the game and load the actual changes.
+# Syati-Swap
+**Syati-Swap** is an experimental branch of Syati that implements relocatable code binaries. It provides C++ headers and symbols for writing custom code injections in **Super Mario Galaxy 2**. With this, you can write code, compile code, link to existing functions and structures in the game and load the actual changes.
 
-# What is supplied
-Syati provides C++ headers, symbols and the CustomCode loader. Examples can be found [**here.**](https://github.com/SMGCommunity/Syati-Examples)
-
-# Future Plans
-Switching to a module system, so only specific code can be compiled at will.
+# Code Binaries
+When compiling modules with Syati-Swap, multiple `.rsm` (Relocatable Syati Module) files will be generated. These files hold the compiled code, linking data and module dependencies.
 
 # Requirements
 In order to use this toolkit, you need to prepare some software and skills:
@@ -19,10 +16,10 @@ In order to use this toolkit, you need to prepare some software and skills:
 Setup is easy. Put the CodeWarrior files (*mwcceppc.exe*, etc.) in ``deps/CodeWarrior`` and the Kamek files in ``deps/Kamek``.
 
 The following region targets exist:
-- **PAL**: European/Australian releases
-- **USA**: American releases
-- **JPN**: Japanese releases
-- **TWN**: Taiwanese releases
-- **KOR**: Korean releases
-
-The generated XML patches for Riivolution can be found in the *bin* folder.
+|Name|Letter|Description
+|--- |---   |---
+|USA |E     |American releases
+|PAL |P     |European/Australian releases
+|JPN |J     |Japanese releases
+|TWN |W     |Taiwanese releases
+|KOR |K     |Korean releases
