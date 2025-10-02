@@ -14,7 +14,7 @@ public:
 	TMtx34f mMtxTR; // _90
 	TMtx34f mEffectMtx; // _C0
 	s32 _F0; //_F0
-	u32 mAddTime; //_F4
+	s32 mAddTime; //_F4
 };
 
 namespace NrvTimeAttackClock {

@@ -54,7 +54,7 @@ namespace MR {
 	void syncStageSwitchAppearAndSync(LiveActor *pActor, const JMapInfoIter &rIter);
 
 	void listenStageSwitchOnAppear(LiveActor *pActor, const MR::FunctorBase &rFunctor);
-	void listenStageSwitchOnOffAppear(LiveActor *pActor, const MR::FunctorBase &rFunctor);
+	void listenStageSwitchOnOffAppear(LiveActor *pActor, const MR::FunctorBase &rFunctorOn, const MR::FunctorBase &rFunctorOff);
 	void listenStageSwitchOnA(LiveActor *pActor, const MR::FunctorBase &rFunctor);
 	void listenStageSwitchOnOffA(LiveActor *pActor, const MR::FunctorBase &rFunctorOn, const MR::FunctorBase &rFunctorOff);
 	void listenStageSwitchOnB(LiveActor *pActor, const MR::FunctorBase &rFunctor);
