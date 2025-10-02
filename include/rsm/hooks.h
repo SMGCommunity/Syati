@@ -37,6 +37,7 @@ struct rsmPatchBranch {
     u32 addr;
     u32 ptr;
     s16 depEntry;
+    bool isCall;
 };
 
 // General macro definitions
@@ -58,8 +59,8 @@ struct rsmPatchBranch {
 #define rsmWrite32(addr, val) rsmWritePatch(Write, (addr), (val), rsmPatchWriteType_u32)
 
 // Branch hooks
-#define rsmBranch(addr, ptr) rsmWritePatch(Branch, (addr), (u32)(ptr))
-#define rsmCall(addr, ptr) rsmWritePatch(Branch, (addr) + 1, (u32)(ptr))
+#define rsmBranch(addr, ptr) rsmWritePatch(Branch, (addr), (u32)&(ptr), 0, false)
+#define rsmCall(addr, ptr) rsmWritePatch(Branch, (addr), (u32)&(ptr), 0, true)
 
 // Utility hooks
 #define rsmNop(addr) rsmWrite32(addr, 0x60000000)

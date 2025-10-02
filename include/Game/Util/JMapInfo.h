@@ -26,7 +26,7 @@ public:
     ~JMapInfo();
 
     bool attach(const void *pData);
-    s32 searchItemInfo(const char *) const;
+    int searchItemInfo(const char *) const;
     s32 getValueType(const char *pField) const;
 
     void setName(const char *pName);
@@ -38,9 +38,9 @@ public:
     template<typename T>
     JMapInfoIter findElement(const char *, const char *, int) const;
 
-    s32 getValueFast(s32, s32, const char **pDest) const;
-    s32 getValueFast(s32, s32, u32 *pDest) const;
-    s32 getValueFast(s32, s32, s32 *pDest) const;
+    s32 getValueFast(int, int, const char **pDest) const;
+    s32 getValueFast(int, int, u32 *pDest) const;
+    s32 getValueFast(int, int, s32 *pDest) const;
 
     template<typename T>
     JMapInfoIter findElement(const char *, s32, int) const;

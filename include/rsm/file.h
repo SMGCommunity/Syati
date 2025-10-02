@@ -6,11 +6,6 @@ typedef int RSMError;
 #define RSM_ERR_NOT_FOUND -2
 #define RSM_ERR_TOO_SMALL -3
 
-typedef int RSMLoadMode;
-#define RSM_LOAD_MODE_NORMAL 0
-#define RSM_LOAD_MODE_DEPENDENCY 1
-#define RSM_LOAD_MODE_STATIC 2
-
 #define RSM_MAGIC 'RSM\0'
 
 struct SectionInfo {
@@ -32,7 +27,8 @@ struct RSMFile {
 struct RSMLoadEntry {
     const char* name;
     RSMFile* code;
-    RSMLoadMode mode;
+    bool isStatic;
+    bool isPreserveForNextLoad;
     RSMLoadEntry* prev;
     RSMLoadEntry* next;
 };

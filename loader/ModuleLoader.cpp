@@ -1,19 +1,22 @@
 #include "ModuleLoader.h"
+#include "Game/Scene/SceneFunction.h"
+#include "Game/Scene/SceneObjHolder.h"
+#include "Game/Scene/StageDataHolder.h"
 #include "Game/Util/FileUtil.h"
+#include "Game/Util/ObjUtil.h"
+#include "JSystem/JKernel/JKRArchive.h"
 
 typedef void (*VoidFuncPtr)();
 
 static RSMLoadEntry* sModulesStart;
 static RSMLoadEntry* sModulesEnd;
 
-RSMError ModuleLoader::load(const char *pName) {
+// ********** Loading and Unloading ********** // 
+
+RSMError ModuleLoader::load(const char *pName, bool isStatic) {
     RSMLoadEntry *pEntry = findModule(pName);
     if (pEntry) {
-        if (pEntry->mode == RSM_LOAD_MODE_DEPENDENCY) {
-            pEntry->mode = RSM_LOAD_MODE_NORMAL;
-        }
-
-        OSReport("ModuleLoader: %s already loaded\n", pName);
+        pEntry->isStatic = isStatic;
         return RSM_ERR_OK;
     }
 
@@ -45,38 +48,39 @@ RSMError ModuleLoader::load(const char *pName) {
     loadAllDeps(pModule);
     patch(pModule);
     initStatic(pModule);
-    registerModule(pName, pModule);
+    registerModule(pName, pModule, isStatic);
     callOnLoad(pModule);
 
     OSReport("ModuleLoader: Loaded %s successfully\n", pName);
     return RSM_ERR_OK;
 }
 
-RSMError ModuleLoader::unload(const char *pName, bool depOnly) {
-    RSMLoadEntry *pEntry = findModule(pName);
+RSMError ModuleLoader::unload(const char *pName, bool unloadDeps) {
+    return unload(findModule(pName), unloadDeps);
+}
 
+RSMError ModuleLoader::unload(RSMLoadEntry *pEntry, bool unloadDeps) {
     if (!pEntry) {
-        OSReport("ModuleLoader: Module %s not found\n", pName);
+        OSReport("ModuleLoader: Module %s not found\n", pEntry->name);
         return RSM_ERR_NOT_FOUND;
     }
 
-    if (pEntry->mode == RSM_LOAD_MODE_STATIC) {
-        OSReport("ModuleLoader: Cannot unload static module %s\n", pName);
-        return RSM_ERR_INVALID;
-    }
-
-    if (depOnly && pEntry->mode == RSM_LOAD_MODE_NORMAL) {
-        OSReport("ModuleLoader: Cannot unload non-dependency module %s\n", pName);
+    if (pEntry->isStatic) {
+        OSReport("ModuleLoader: Cannot unload static module %s\n", pEntry->name);
         return RSM_ERR_INVALID;
     }
 
     RSMFile *pModule = pEntry->code;
     callOnUnload(pModule);
-    unloadAllDeps(pModule);
+
+    if (unloadDeps) {
+        unloadAllDeps(pModule);
+    }
+
     patch(pModule);
     unregisterModule(pEntry);
 
-    OSReport("ModuleLoader: Unloaded %s successfully\n", pName);
+    OSReport("ModuleLoader: Unloaded %s successfully\n", pEntry->name);
     return RSM_ERR_OK;
 }
 
@@ -87,7 +91,7 @@ void ModuleLoader::loadAllDeps(RSMFile *pModule) {
     for (s32 i = 0; i < depCount; i++) {
         const char *pDepName = stream.read<const char *>();
 
-        s32 ret = load(pDepName);
+        s32 ret = load(pDepName, false);
         if (ret < RSM_ERR_OK) {
             OSReport("ModuleLoader: Loading dependency '%s' failed with error code %d\n", pDepName, ret);
         }
@@ -107,6 +111,8 @@ void ModuleLoader::unloadAllDeps(RSMFile *pModule) {
         }
     }
 }
+
+// ********** Patching ********** // 
 
 void ModuleLoader::patch(RSMFile *pModule) {
     InlineDataStream stream(getPatchSection(pModule), pModule->patch.size);
@@ -180,15 +186,30 @@ void ModuleLoader::patchBranch(RSMFile *pModule, InlineDataStream *pStream) {
     }
 
     u32 oldValue = *(u32 *)addr;
-    u32 oldPtr = addr + (oldValue & 0x3FFFFFD);
-
-    u32 newValue = 0x48000000 | ((ptr - addr) & 0x3FFFFFD);
+    u32 oldPtr = addr + (oldValue & 0x3FFFFFC);
+    bool oldIsCall = oldValue & 1;
+    u32 newValue = 0x48000000 | ((ptr - addr) & 0x3FFFFFC) | (pBranchPatch->isCall);
 
     writeAsm<u32>((u32 *)ptr, newValue);
     pBranchPatch->ptr = oldPtr;
+    pBranchPatch->isCall = oldIsCall;
 
     pStream->skip(sizeof(rsmPatchBranch));
 }
+
+template<typename T>
+void ModuleLoader::writeAsm(T *addr, T value) {
+    *addr = value;
+
+    register u32 cacheAddr = (u32)addr;
+    asm {
+        dcbst r0, cacheAddr
+		sync
+		icbi r0, cacheAddr
+    }
+}
+
+// ********** Static initializing and module callback calls ********** // 
 
 void ModuleLoader::initStatic(RSMFile *pModule) {
     u8 *pFunc = getTextSection(pModule) + pModule->ctorLoc;
@@ -217,22 +238,13 @@ void ModuleLoader::callOnUnload(RSMFile *pModule) {
     ((VoidFuncPtr)(getTextSection(pModule) + offset))();
 }
 
-template<typename T>
-void ModuleLoader::writeAsm(T *addr, T value) {
-    *addr = value;
+// ********** Module Registry ********** // 
 
-    register u32 cacheAddr = (u32)addr;
-    asm {
-        dcbst r0, cacheAddr
-		sync
-		icbi r0, cacheAddr
-    }
-}
-
-void ModuleLoader::registerModule(const char *pName, RSMFile *pModule) {
+void ModuleLoader::registerModule(const char *pName, RSMFile *pModule, bool isStatic) {
     RSMLoadEntry *pEntry = new RSMLoadEntry();
     pEntry->name = pName;
     pEntry->code = pModule;
+    pEntry->isStatic = isStatic;
 
     if (!sModulesStart) {
         sModulesStart = pEntry;
@@ -256,7 +268,7 @@ void ModuleLoader::unregisterModule(RSMLoadEntry *pEntry) {
 }
 
 RSMLoadEntry* ModuleLoader::findModule(const char *pName) {
-    RSMLoadEntry *pCurrent = sModulesStart;
+    RSMLoadEntry *pCurrent = sModulesEnd; // reverse lookup because it's usually more efficient
     if (!pCurrent) {
         return NULL;
     }
@@ -266,14 +278,13 @@ RSMLoadEntry* ModuleLoader::findModule(const char *pName) {
             return pCurrent;
         }
     }
-    while (pCurrent = pCurrent->next);
+    while (pCurrent = pCurrent->prev);
     return NULL;
 }
 
 RSMLoadEntry* ModuleLoader::findModule(RSMFile *pModule, s16 depEntry) {
     InlineDataStream stream(getDepsSection(pModule), pModule->deps.size);
     u16 depCount = stream.read<u16>();
-
     if (depEntry >= depCount) {
         return NULL;
     }
@@ -281,3 +292,85 @@ RSMLoadEntry* ModuleLoader::findModule(RSMFile *pModule, s16 depEntry) {
     const char **pDeps = stream.dataAs<const char *>();
     return findModule(pDeps[depEntry]);
 }
+
+// ********** Stage UseResource Loading ********** // 
+
+void ModuleLoader::loadStageResource() {
+    StageDataHolder *pHolder = (StageDataHolder *)MR::getSceneObjHolder()->getObj(SCENE_OBJ_STAGE_DATA_HOLDER);
+    JKRArchive *pArc = (JKRArchive *)((u32)pHolder->_C4 + 0x10);
+    if (!pArc) {
+        return;
+    }
+
+    void *pRes = pArc->getResource("modules.bcsv");
+    if (!pRes) {
+        return;
+    }
+
+    JMapInfo info;
+    info.attach(pRes);
+
+    int resNameItemIdx = info.searchItemInfo("ResourceName");
+
+    for (s32 i = 0; i < info.mData->mNumEntries; i++) {
+        const char *pName = NULL;
+        info.getValueFast(i, resNameItemIdx, &pName);
+
+        if (!pName) {
+            continue;
+        }
+
+        RSMLoadEntry *pEntry = findModule(pName);
+
+        if (!pEntry) {
+            if (load(pName, false) < RSM_ERR_OK) {
+                continue;
+            }
+
+            pEntry = findModule(pName);
+        }
+        
+        pEntry->isPreserveForNextLoad = true;
+    }
+}
+
+void ModuleLoader::flushStageResource() {
+    RSMLoadEntry *pCurrent = sModulesStart;
+    if (!pCurrent) {
+        return;
+    }
+
+    RSMLoadEntry *pNext = pCurrent->next;
+    
+    do {
+        pNext = pCurrent->next; // Do this since pCurrent gets deleted in unload
+
+        if (!pCurrent->isPreserveForNextLoad && !pCurrent->isStatic) {
+            unload(pCurrent, false);
+            continue;
+        }
+
+        pCurrent->isPreserveForNextLoad = false;
+    }
+    while (pCurrent = pNext);
+}
+
+// ********** Hooks ********** // 
+
+void loadModuleStageResource() {
+    SceneFunction::startActorFileLoadCommon(); // restore call
+    ModuleLoader::loadStageResource();
+    ModuleLoader::flushStageResource();
+}
+
+extern rsmSymbol init__9GameSceneFv;
+rsmSymCall(init__9GameSceneFv, 0x158, loadModuleStageResource);
+
+extern rsmSymbol handleException__19GameSystemExceptionFUsP9OSContextUlUl;
+extern rsmSymbol __OSStopAudioSystem;
+
+#ifdef TARGET_SMG1
+rsmSymBranch(handleException__19GameSystemExceptionFUsP9OSContextUlUl, 0x114, __OSStopAudioSystem);
+#else
+rsmSymBranch(handleException__19GameSystemExceptionFUsP9OSContextUlUl, 0x11C, __OSStopAudioSystem);
+#endif
