@@ -6,6 +6,7 @@ class AudBgm;
 class AudBgmMgr;
 class AudSystem;
 class AudSceneMgr;
+class AudSoundObject;
 
 class AudWrap {
 public:
@@ -19,4 +20,6 @@ public:
     static void setNextIdStageBgm(u32);
 
     static void startStageBgm(u32, bool);
+
+    static AudSoundObject* getSystemSeObject();
 };

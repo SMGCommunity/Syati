@@ -18,7 +18,7 @@ public:
     virtual void process();
     virtual void dispose();
     virtual void stopOK(JAISoundHandle&);
-    virtual void startSound(JAISoundID);
+    virtual JAISoundHandle* startSound(JAISoundID);
     virtual void startSoundIndex(JAISoundID, unsigned char);
     virtual void startLevelSound(JAISoundID);
     virtual void startLevelSoundIndex(JAISoundID, unsigned char);

@@ -9,4 +9,6 @@ public:
 
     void addToSoundObjHolder();
     void setTrans(TVec3f *);
+
+    void writePort(JAISoundHandle* soundHandle, u32 portId, u16 value);
 };
