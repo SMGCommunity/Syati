@@ -28,6 +28,13 @@ typedef volatile f64 vf64;
 // Null-pointer alias
 #define NULL 0
 
+// Here because why not?
+#ifndef nullptr
+#ifdef __cplusplus
+#define nullptr 0
+#endif
+#endif
+
 typedef int BOOL;
 
 #ifndef TRUE
