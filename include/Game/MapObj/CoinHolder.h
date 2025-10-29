@@ -1,5 +1,5 @@
 #pragma once
-
+#include "syati.h"
 #include "Game/LiveActor/LiveActorGroup.h"
 
 class Coin;
@@ -14,7 +14,7 @@ public:
 	s32 mCollectedCount;  // _C
 };
 
-class CoinHolder : public LiveActorGroup {
+class CoinHolder : public DeriveActorGroup<Coin> {
 public:
 	CoinHolder(const char *pName);
 	
