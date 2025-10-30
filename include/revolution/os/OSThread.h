@@ -89,6 +89,7 @@ void OSWakeupThread(OSThreadQueue *);
 
 BOOL OSSetThreadPriority(OSThread *, OSPriority);
 OSPriority OSGetThreadPriority(OSThread *);
+void OSSleepTicks(OSTime);
 
 s32 OSDisableScheduler(void);
 s32 OSEnableScheduler(void);
