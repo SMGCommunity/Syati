@@ -4,8 +4,7 @@
 #include "Game/NameObj/NameObj.h"
 #include "JSystem/JGeometry.h"
 
-class CameraTargetObj : public NameObj
-{
+class CameraTargetObj : public NameObj {
     CameraTargetObj(const char*);
 
     virtual inline ~CameraTargetObj() {
