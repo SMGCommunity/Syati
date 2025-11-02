@@ -5,6 +5,7 @@
 #include "JSystem/JGeometry.h"
 
 class CameraTargetObj : public NameObj {
+public:
     CameraTargetObj(const char*);
 
     virtual inline ~CameraTargetObj() {

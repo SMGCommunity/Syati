@@ -22,6 +22,7 @@ public:
     virtual bool isInterpolationOff() const;
     virtual bool isCollisionOff() const;
     virtual bool isZeroFrameMoveOff() const;
+    virtual bool sub_80114870() const; // unknown and never used (?), always returns 0
     virtual bool isSubjectiveCameraOff() const;
     virtual bool isCorrectingErpPositionOff() const;
     virtual bool isEnableToReset() const;
