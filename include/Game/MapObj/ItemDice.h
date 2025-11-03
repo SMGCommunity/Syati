@@ -16,12 +16,18 @@ public:
 	virtual bool receiveMsgPush(HitSensor *, HitSensor *);
 	virtual bool receiveMsgPlayerAttack(u32, HitSensor *, HitSensor *);
 
-	virtual const char* getModelName() const = 0;
-	virtual void initItems() = 0;
-	virtual void setAnimFrame() = 0;
-	virtual void setResultFrame(u32) = 0;
-	virtual bool makeResult(u32) = 0;
-	virtual bool isGoodResult(u32) const = 0;
+	virtual const char* getModelName() const {
+		return 0;
+	};
+	virtual void initItems();
+	virtual void setAnimFrame();
+	virtual void setResultFrame(u32);
+	virtual bool makeResult(u32) {
+		return 0;
+	};
+	virtual bool isGoodResult(u32) const{
+		return 0;
+	};
 
 	// Todo: More class functions
 	void exeSpin();
@@ -73,4 +79,19 @@ public:
 	virtual void setResultFrame(u32);
 	virtual bool makeResult(u32);
 	virtual bool isGoodResult(u32) const;
+};
+
+class LuckyDice : public DiceBase {
+public:
+	inline LuckyDice(const char* pName) : DiceBase(pName) {}
+
+	virtual ~LuckyDice();
+	virtual const char* getModelName() const;
+	virtual void initItems();
+	virtual void setAnimFrame();
+	virtual void setResultFrame(u32);
+	virtual bool makeResult(u32);
+	virtual bool isGoodResult(u32) const;
+
+	u8 u[20];
 };
