@@ -79,9 +79,6 @@ public:
     TalkMessageFuncBase* mKillFunc; // 0x68
     s32 _6C;
     s32 _70;
-    s32 _74;
-    s32 _78;
-    s32 _7C;
 };    
 
 namespace TalkFunction {
