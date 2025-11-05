@@ -12,12 +12,10 @@ public:
 
     u32 _8;
     u32 _C;
-    u32 _10;
-    u32 _14;
-    u32 _18;
-    u32 _1C;
-    u32 _20;
-    u32 _24;
+    TicoEat* mHost;
+    Coin** mCoins;
+    s32  mAmount;
+    TVec3f _1C;
     u32 _28;
     u32 _2C;
 };
