@@ -2,6 +2,8 @@
 
 #include "syati.h"
 class TicoEat;
+class EatDemoCoin;
+
 class TicoStateEatCoin : public ActorStateBaseInterface {
 public:
     TicoStateEatCoin(TicoEat* pTicoEat, s32 amount);
@@ -13,7 +15,7 @@ public:
     u32 _8;
     u32 _C;
     TicoEat* mHost;
-    Coin** mCoins;
+    EatDemoCoin** mCoins;
     s32  mAmount;
     TVec3f _1C;
     u32 _28;
