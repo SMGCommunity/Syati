@@ -8,8 +8,8 @@ public:
     virtual ~PurpleCoinCounter();
     virtual void init(const JMapInfoIter&);
     virtual void appear();
-    void validate();
     virtual void control();
+    void validate();
     void updateCounter();
     void exeAppear();
 

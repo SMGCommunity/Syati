@@ -77,8 +77,7 @@ public:
     TalkMessageFuncBase* mEventFunc; // 0x60
     TalkMessageFuncBase* mAnimeFunc; // 0x64
     TalkMessageFuncBase* mKillFunc; // 0x68
-    s32 _6C;
-    s32 _70;
+    CustomTagArg mCustomTagArg;
 };    
 
 namespace TalkFunction {
