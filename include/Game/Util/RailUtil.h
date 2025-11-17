@@ -77,10 +77,10 @@ namespace MR {
 	f32 getRailTotalLength(const LiveActor *);
 	f32 getRailPartLength(const LiveActor *, int);
 	f32 getRailPointCoord(const LiveActor *, int);
-	TVec3f& getRailPos(const LiveActor *);
-	TVec3f& getRailPointPosStart(const LiveActor *);
-	TVec3f& getRailPointPosEnd(const LiveActor *);
-	TVec3f& getRailDirection(const LiveActor *);
+	const TVec3f& getRailPos(const LiveActor *);
+	const TVec3f& getRailPointPosStart(const LiveActor *);
+	const TVec3f& getRailPointPosEnd(const LiveActor *);
+	const TVec3f& getRailDirection(const LiveActor *);
 	f32 getRailCoord(const LiveActor *);
 	f32 getRailCoordSpeed(const LiveActor *);
 	void setRailCoord(LiveActor *, f32);

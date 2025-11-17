@@ -207,7 +207,7 @@ namespace MR {
 	void resetPlayerEffect();
 	void setPlayerBaseMtx(MtxPtr);
 
-	Mtx* getPlayerBaseMtx();
+	MtxPtr getPlayerBaseMtx();
 
 	MarioActor* getPlayerDemoActor();
 
