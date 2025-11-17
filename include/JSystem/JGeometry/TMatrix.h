@@ -7,7 +7,8 @@ namespace JGeometry {
     template<typename T>
     struct SMatrix34C {
     public:
-        void set(const float (*)[4]);
+        typedef f32 ArrType[4];
+        void set(const ArrType*); // float (*)[4]
         void set(const SMatrix34C<T> &rSrc);
         void set(T rxx, T ryx, T rzx, T tx, T rxy, T ryy, T rzy, T ty, T rxz, T ryz, T rzz, T tz);
 
@@ -23,6 +24,14 @@ namespace JGeometry {
 
         inline MtxPtr toMtxPtr() {
             return (MtxPtr)mMtx;
+        }
+
+        operator ArrType* () {
+            return mMtx;
+        }
+
+        operator const ArrType* () const {
+            return mMtx;
         }
 
         // From Petari
