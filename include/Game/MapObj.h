@@ -30,6 +30,7 @@
 #include "Game/MapObj/MapObjConnector.h"
 #include "Game/MapObj/MorphItemCollection.h"
 #include "Game/MapObj/MorphItemObjNeo.h"
+#include "Game/MapObj/PetitPorter.h"
 #include "Game/MapObj/PowerStar.h"
 #include "Game/MapObj/RailMoveObj.h"
 #include "Game/MapObj/RestartObj.h"
