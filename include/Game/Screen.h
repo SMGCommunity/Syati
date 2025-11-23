@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Game/Screen/BatteryInfo.h"
 #include "Game/Screen/ButtonPaneController.h"
 #include "Game/Screen/CounterLayoutAppearer.h"
 #include "Game/Screen/CounterLayoutController.h"
