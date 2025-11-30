@@ -48,8 +48,8 @@ public:
 	bool requestEndControl();
 	bool requestMove();
 	bool requestThrow();
-	void requestShow();
-	void requestHide();
+	bool requestShow();
+	bool requestHide();
 	void noticeGetCoin();
 
 	void setLife(s32 lifeTime);
