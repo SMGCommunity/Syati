@@ -159,7 +159,7 @@ namespace {
 		if (kamekHeader->magic1 != 'Kame' || kamekHeader->magic2 != 'k\0') {
 			SyatiError("SYA_ERR\n\nInvalid header\n");
 		}
-		if (kamekHeader->version != 1 && kamekHeader->version == 2) {
+		if (kamekHeader->version == 2) {
 			additonal_size = sizeof(KamekExtra);
 		}
 
@@ -197,7 +197,7 @@ namespace {
 		// ------------------------------------------------------------------------------------------------------------
 		// Linking
 
-		u32 linkingSize = binarySize - sizeof(KamekHeader) - codeSize;
+		u32 linkingSize = binarySize - (sizeof(KamekHeader)+additonal_size) - codeSize;
 		SyatiLink(customCodeLinked, sCustomCodeSize, srcPtr, linkingSize);
 
 
