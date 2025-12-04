@@ -6,6 +6,8 @@
 #include "Game/Player/GhostPacketReader.h"
 #include "Game/Player/GhostPacketSyncData.h"
 #include "Game/Player/HorrorDamageExecutor.h"
+#include "Game/Player/InfernoMario.h"
+#include "Game/Player/InfernoMarioGenerator.h"
 #include "Game/Player/JetTurtleShadow.h"
 #include "Game/Player/Mario.h"
 #include "Game/Player/MarioAccess.h"
