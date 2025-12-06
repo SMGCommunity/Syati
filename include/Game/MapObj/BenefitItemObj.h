@@ -17,12 +17,18 @@ public:
     virtual bool receiveOtherMsg(u32 msg, HitSensor *pSender, HitSensor *pReceiver);
     virtual void calcAndSetBaseMtx();
 
-    void doRotateY();
-    void initEscape();
-    void appearGround();
-    void appearThrowUp();
-    void appearThrowUpQuestionBox();
-    // sub_80277450, sub_802774A0, sub_80277530, sub_80277590, sub_802775A0
+    virtual void doRotateY();
+    virtual void initEscape();
+    virtual void appearGround();
+    virtual void appearThrowUp();
+    virtual void appearThrowUpQuestionBox();
+    virtual void doCatch();
+    virtual void sub_802774A0();
+    virtual void sub_80277530();
+    virtual void attachSupportTico();
+    virtual void exeCatch();
+    
+    // sub_80277590
     void exeWait();
     void exeShoot();
     void exeAppearGround();
@@ -31,11 +37,7 @@ public:
     // sub_802782A0, sub_80278300, sub_802784F0, sub_80278590
 
     u32 _90;
-    // Padding? Struct?
-    u32 _94;
-    u32 _98;
-    u32 _9C;
-    // 
+    TVec3f _94;
     f32 _A0;
     f32 _A4;
     f32 _A8;
