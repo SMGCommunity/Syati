@@ -19,6 +19,7 @@ namespace MR {
 	const char* getCurrentStageName();
 	bool isEqualSceneName(const char *);
 	bool isEqualStageName(const char *);
+	bool isValidZoneName(const char *);
 
 	bool isStageNoPauseMenuStars();
 	bool isStageMarioFaceShipAfterFinalKoopa();
