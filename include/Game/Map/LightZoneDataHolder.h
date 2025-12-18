@@ -20,7 +20,7 @@ class LightZoneInfo {
 public:
     LightZoneInfo();
 
-    const char* getAreaLightNameInZoneData(s64) const;
+    const char* getAreaLightNameInZoneData(s32) const;
 
     u32 _0;
     u32 _4;
