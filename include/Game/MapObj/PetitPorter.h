@@ -42,8 +42,8 @@ public:
     ActorCameraInfo* mCameraInfo; // 0x138
     CameraTargetMtx* mCameraTargetMtx; // 0x13C
     JointController* mJointController; // 0x140
-    u32 _144; // 0x144 (Music Related)
-    u32 _148; // 0x148 (Music Related)
+    const char* mPreviousBgmName; // 0x144
+    s32 mPreviousBgmState; // 0x148
 };
 
 class PetitPorterWarpPoint : public LiveActor {
