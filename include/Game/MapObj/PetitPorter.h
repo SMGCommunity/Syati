@@ -29,8 +29,8 @@ public:
 
 
     TMtx34f mBaseMatrix; // 0x90
-    u32 _C0; // 0xC0
-    u32 _C4; // 0xC4
+    PetitPorterExitPoint* mExitPoint; // 0xC0
+    PetitPorterWarpPoint* mWarpPoint; // 0xC4
     s32 mTimeLimit; // 0xC8
     f32 _CC; // 0xCC
     f32 _D0; // 0xD0
@@ -70,8 +70,8 @@ public:
 
     struct Entry {
         PetitPorter* mPetitPorter;        // 0x00
-        PetitPorterWarpPoint* mWarpPoint; // 0x04
-        PetitPorterExitPoint* mExitPoint; // 0x08
+        PetitPorterExitPoint* mExitPoint; // 0x04
+        PetitPorterWarpPoint* mWarpPoint; // 0x08
         s32 mId;                          // 0x0C
     };
 
@@ -93,7 +93,7 @@ namespace NrvPetitPorter {
     // 807D4084 -
     // 807D4088 -
     // 807D408C -
-    // 807D4090 -
+    // 807D4090 - Handles the particle effect on the player and the time limit sounds, but doesn't seem to exit itself out of the minigame...?
     // 807D4094 -
     // 807D4098 -
     // 807D409C - Return the player after the minigame
