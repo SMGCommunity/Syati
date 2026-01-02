@@ -9,6 +9,8 @@ class ActorCameraInfo;
 class CameraTargetMtx;
 class JointController;
 struct JointControllerInfo;
+class PetitPorterExitPoint;
+class PetitPorterWarpPoint;
 
 class PetitPorter : public LiveActor {
 public:
