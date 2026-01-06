@@ -11,12 +11,12 @@ namespace {
 	/*****************************************************************************************************************/
 	/* Enable crash debugger                                                                                         */
 	/*****************************************************************************************************************/
-#if defined(TWN) || defined(KOR)
+#if defined(SB4W) || defined(SB4K)
 	kmWrite32(0x804B7E00, 0x60000000);
 	kmWrite32(0x804B7EC4, 0x60000000);
 	kmWrite32(0x805B64A8, 0x60000000);
 	kmWrite32(0x805B67B4, 0x60000000);
-#else
+#elif defined (SB4E) || defined(SB4P) || defined(SB4J)
 	kmWrite32(0x804B7D90, 0x60000000);
 	kmWrite32(0x804B7E54, 0x60000000);
 	kmWrite32(0x805B63A8, 0x60000000);
@@ -60,9 +60,9 @@ namespace {
 		heapWatcher->createHeaps();
 	}
 
-#if defined(TWN) || defined(KOR)
+#if defined(SB4W) || defined(SB4K)
 	kmCall(0x804BD058, getCustomCodeSizeAndCreateHeaps);
-#else
+#elif defined (SB4E) || defined(SB4P) || defined(SB4J)
 	kmCall(0x804BCFE8, getCustomCodeSizeAndCreateHeaps);
 #endif
 
@@ -78,9 +78,9 @@ namespace {
 		return HeapMemoryWatcherFunction::createExpHeap(size, root, allocArg);
 	}
 
-#if defined(TWN) || defined(KOR)
+#if defined(SB4W) || defined(SB4K)
 	kmCall(0x804BCEE0, createSystemHeap);
-#else
+#elif defined (SB4E) || defined(SB4P) || defined(SB4J)
 	kmCall(0x804BCE70, createSystemHeap);
 #endif
 
@@ -101,10 +101,10 @@ namespace {
 		return allocatableSize;
 	}
 
-#if defined(TWN) || defined(KOR)
+#if defined(SB4W) || defined(SB4K)
 	kmCall(0x804BCF40, getStationedHeapNapaSize);
 	kmWrite32(0x804BCF44, 0x7C7F1B78);
-#else
+#elif defined (SB4E) || defined(SB4P) || defined(SB4J)
 	kmCall(0x804BCED0, getStationedHeapNapaSize);
 	kmWrite32(0x804BCED4, 0x7C7F1B78);
 #endif
@@ -113,9 +113,9 @@ namespace {
 	/*****************************************************************************************************************/
 	/* Load and link code from CustomCode binary                                                                     */
 	/*****************************************************************************************************************/
-#if defined(TWN) || defined(KOR)
+#if defined(SB4W) || defined(SB4K)
 	kmBranch(0x804B7DA8, SyatiInit);
-#else
+#elif defined (SB4E) || defined(SB4P) || defined(SB4J)
 	kmBranch(0x804B7D38, SyatiInit);
 #endif
 

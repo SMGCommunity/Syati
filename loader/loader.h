@@ -1,15 +1,15 @@
 #include "syati.h"
 
-#if defined(PAL)
-#define KAMEK_BINARY_NAME "/CustomCode/CustomCode_PAL.bin"
-#elif defined(USA)
-#define KAMEK_BINARY_NAME "/CustomCode/CustomCode_USA.bin"
-#elif defined(JPN)
-#define KAMEK_BINARY_NAME "/CustomCode/CustomCode_JPN.bin"
-#elif defined(TWN)
-#define KAMEK_BINARY_NAME "/CustomCode/CustomCode_TWN.bin"
-#elif defined(KOR)
-#define KAMEK_BINARY_NAME "/CustomCode/CustomCode_KOR.bin"
+#if defined(SB4P)
+#define KAMEK_BINARY_NAME "/CustomCode/CustomCode_SB4P.bin"
+#elif defined(SB4E)
+#define KAMEK_BINARY_NAME "/CustomCode/CustomCode_SB4E.bin"
+#elif defined(SB4J)
+#define KAMEK_BINARY_NAME "/CustomCode/CustomCode_SB4J.bin"
+#elif defined(SB4W)
+#define KAMEK_BINARY_NAME "/CustomCode/CustomCode_SB4W.bin"
+#elif defined(SB4K)
+#define KAMEK_BINARY_NAME "/CustomCode/CustomCode_SB4K.bin"
 #endif
 
 #define ALIGN_32(a) ((a + 31) & ~31)

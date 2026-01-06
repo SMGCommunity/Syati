@@ -23,18 +23,12 @@ def prepare_bin():
     os.makedirs("bin")
 
 
-REGIONS = ["PAL", "USA", "JPN", "TWN", "KOR"]
-LETTERS = ['P', 'E', 'J', 'W', 'K']
+# Supported regions by this loader
+REGIONS = ["SB4P", "SB4E", "SB4J", "SB4W", "SB4K"]
 
 MWCCEPPC = dep("deps/CodeWarrior/mwcceppc.exe" if sys.platform == "win32" else "deps/CodeWarrior/mwcceppc", "CodeWarrior compiler")
 KAMEK = dep("deps/Kamek/Kamek.exe", "Kamek linker")
 SYMBOLS = dep("symbols", "Symbols folder")
-
-def getregionletter(region: str):
-    for i in range(0, len(REGIONS)):
-        reg = REGIONS[i]
-        if region == reg:
-            return LETTERS[i]
 
 def build(region: str, outputPath: str, buildFullXML: bool):
     compile_cmd = f"{MWCCEPPC} -c -Cpp_exceptions off -nodefaults -proc gekko -fp hard -lang=c++ -O4,s -inline on " \
@@ -43,8 +37,8 @@ def build(region: str, outputPath: str, buildFullXML: bool):
 
     kamek_cmd = f"{KAMEK} loader/loader.o -static=0x80001800 -externals={SYMBOLS}/{region}.txt " \
                 f"-output-riiv={outputPath}/riivo_{region}.xml " \
-                f"-output-kamek={outputPath}/Loader{getregionletter(region)}.bin " \
-                f"-output-dolphin={outputPath}/Dolphin{getregionletter(region)}.ini"
+                f"-output-code={outputPath}/Loader{region}.bin " \
+                f"-output-dolphin={outputPath}/Dolphin{region}.ini"
 
     print(f"Building target {region}!")
 
@@ -60,10 +54,10 @@ def build(region: str, outputPath: str, buildFullXML: bool):
     if buildFullXML:
         loaderPatches = open(f"{outputPath}/riivo_{region}.xml", "r").read()
         fullXMLBody = f"""<wiidisc version="1">
-	<id game="SB4{getregionletter(region)}" />
+	<id game="{region}" />
 	<options>
 		<section name="Syati Loader">
-			<option name="Super Mario Galaxy 2">
+			<option name="Syati Loader setting">
 				<choice name="Enabled">
 					<patch id="syati" />
 				</choice>
