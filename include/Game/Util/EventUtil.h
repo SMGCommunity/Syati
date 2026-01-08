@@ -84,7 +84,10 @@ namespace MR {
 
 	bool isPreventDisplayInformationMessage();
 
-	// four unknown functions
+	bool setupAlreadyDoneFlag(int* outIndex, const char* name, const JMapInfoIter& rIter, bool useless);
+	void onAlreadyDoneFlag(const char* name);
+	void onAlreadyDoneFlag(int index);
+	bool isOnAlreadyDoneFlag(const char* name);
 
 	bool isAlreadyVisitedCurrentStageAndScenario();
 
