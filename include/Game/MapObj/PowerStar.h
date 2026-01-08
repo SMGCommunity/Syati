@@ -15,7 +15,7 @@ public:
     virtual void makeActorAppeared();
     void requestAppear();
     void setDemoAppearPos(const TVec3f&);
-    bool isEndAppearPos() const;
+    bool isEndAppearDemo() const;
     void offAppearDemo();
     void setupColor(const NameObj*, s32);
     void setupColorAtResultSequence(LiveActor*, bool);
