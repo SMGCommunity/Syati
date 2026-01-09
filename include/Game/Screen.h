@@ -5,6 +5,7 @@
 #include "Game/Screen/CounterLayoutAppearer.h"
 #include "Game/Screen/CounterLayoutController.h"
 #include "Game/Screen/FileSelectInfo.h"
+#include "Game/Screen/HeatHazeEffect.h"
 #include "Game/Screen/IconAButton.h"
 #include "Game/Screen/InformationMessage.h"
 #include "Game/Screen/InformationObserver.h"
