@@ -14,7 +14,7 @@ public:
     virtual void appear();
     virtual void control();
 
-    f32 _8C; // 0x90
+    f32 mDistanceFromCamera; // 0x90
 };
 
 class HeatHazeDirector : public NameObj {
