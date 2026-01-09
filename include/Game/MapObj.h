@@ -20,6 +20,7 @@
 #include "Game/MapObj/ElectricPressureBullet.h"
 #include "Game/MapObj/FallOutFieldDraw.h"
 #include "Game/MapObj/GCapture.h"
+#include "Game/MapObj/HipDropSwitch.h"
 #include "Game/MapObj/InvisiblePolygonObj.h"
 #include "Game/MapObj/ItemDice.h"
 #include "Game/MapObj/JetTurtle.h"
