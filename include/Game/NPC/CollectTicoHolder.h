@@ -6,9 +6,9 @@ class CollectTico;
 // Not sure if this belongs in Game/NPC
 
 // Holds every instance of CollectTico
-class StrayTicoTracker : public DeriveActorGroup<CollectTico> {
+class CollectTicoHolder : public DeriveActorGroup<CollectTico> {
 public:
-	StrayTicoTracker();
+	CollectTicoHolder();
 };
 
 namespace MR {
