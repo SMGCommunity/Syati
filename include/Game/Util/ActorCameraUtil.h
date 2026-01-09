@@ -20,9 +20,9 @@ namespace {
 namespace MR {
 	ActorCameraInfo* createActorCameraInfo(const JMapInfoIter &rIter);
 	bool createActorCameraInfoIfExist(const JMapInfoIter &rIter, ActorCameraInfo **pInfoDest);
-	void initActorCamera(const LiveActor *pActor, const JMapInfoIter &rIter, ActorCameraInfo **pInfoDest);
-	void initMultiActorCamera(const LiveActor* pActor, const JMapInfoIter& rIter, ActorCameraInfo** pInfoDest, const char* pName);
-	void initMultiActorCameraNoInit(const LiveActor *pActor, ActorCameraInfo *pInfo, const char *pClassifier);
+	bool initActorCamera(const LiveActor *pActor, const JMapInfoIter &rIter, ActorCameraInfo **pInfoDest);
+	bool initMultiActorCamera(const LiveActor* pActor, const JMapInfoIter& rIter, ActorCameraInfo** pInfoDest, const char* pName);
+	bool initMultiActorCameraNoInit(const LiveActor *pActor, ActorCameraInfo *pInfo, const char *pClassifier);
 	void initActorCameraProgrammable(const LiveActor *pActor);
 
 	bool startActorCameraNoTarget(const LiveActor *pActor, const ActorCameraInfo *pInfo, s32);
