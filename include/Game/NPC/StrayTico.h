@@ -52,6 +52,7 @@ public:
 	TVec3f _C0; // 0xC0
 	TVec3f _CC; // 0xCC
 	TVec3f _D8; // 0xD8
+	TVec3f _E4; // 0xE4
 	f32 _F0; // 0xF0
 	f32 _F4; // 0xF4
 };
