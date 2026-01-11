@@ -9,6 +9,7 @@ class ResourceHolder;
 
 namespace MR {
     bool isExistCollisionResource(const LiveActor *, const char *);
+    bool isExistModel(const char *);
 
     J3DModel* getJ3DModel(const LiveActor *);
 
