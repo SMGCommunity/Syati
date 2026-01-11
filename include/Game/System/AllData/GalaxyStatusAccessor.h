@@ -37,6 +37,7 @@ public:
 	s32 getWorldNo() const;
 	s32 getPowerStarNumOwned() const;
 	s32 getGreenStarNumOwned() const;
+	bool hasCometScenario() const;
 
 	ScenarioData* mScenarioData; // _0
 };
