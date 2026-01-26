@@ -175,7 +175,7 @@ namespace MR {
         DrawType_WoodLogBridge            = 0x21,
         DrawType_HipDropStarMove          = 0x22,
         DrawType_DynamicMapObj            = 0x23,
-        DrawType_24                       = 0x24,
+        DrawType_OceanBowlBloomDrawer     = 0x24,
         DrawType_Player                   = 0x25,
         DrawType_26                       = 0x26,
         DrawType_27                       = 0x27,
