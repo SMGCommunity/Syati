@@ -152,18 +152,11 @@ namespace MR {
 	f32 cosDegree(f32);
 	f32 min(f32, f32);
 	f32 max(f32, f32);
-	f32 repeat(f32, f32, f32);
+	f32 repeat(f32 value, f32 min, f32 max);
 	f32 mod(f32, f32);
 
 	s32 clamp(s32 val, s32 min, s32 max);
 	f32 clamp(f32 val, f32 min, f32 max);
-
-
-
-	inline f32 modAndSubtract(f32 a1, f32 a3, f32 a4) {
-		f32 mod = fmod((a3 + (a1 - a4)), a3);
-		return a4 + mod;
-	}
 
 	/* there's a couple of issues with stack ordering when it comes to vectors being created and scaled
 	 * this function automates this and resolves most issues
