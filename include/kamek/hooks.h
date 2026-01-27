@@ -90,4 +90,37 @@
 #define kmCallDefAsm(addr) \
 	kmCallDefInt(__COUNTER__, addr, asm void, )
 
+
+// Common instructions used in hooks
+#define PPC_B(offset) (0x48000000 | ((offset) & 0x0FFFFFFC))
+#define PPC_BL(offset) (PPC_B(offset) | 1)
+#define PPC_BLR 0x4E800020
+#define PPC_COND_GT 0x4181
+#define PPC_COND_LT 0x4180
+#define PPC_COND_EQ 0x4182
+#define PPC_COND_GEQ 0x4080
+#define PPC_COND_LEQ 0x4081
+#define PPC_COND_NE 0x4082
+#define PPC_COND_BRANCH(cond, off) ((cond << 16) | (off & 0xFFFC))
+
+#define PPC_NOP 0x60000000
+
+#define PPC_LI(reg, val) (0x38000000 + 0x200000 * reg + (val & 0xFFFF))
+#define PPC_LIS(reg, val) (0x3C000000 + 0x200000 * reg + (val & 0xFFFF))
+
+#define PPC_MR(dst, src) (0x7C000000 + (src << 21) + (dst << 16) + (src << 11) + (444 << 1))
+
+#define PPC_ADDI(dst, src, val) (0x38000000 + (dst << 21) + (src << 16) + (val & 0xFFFF))
+
+#define PPC_STW(src, off, dst) (0x90000000 + (src << 21) + (dst << 16) + (off & 0xFFFF))
+#define PPC_STH(src, off, dst) PPC_STW(src, off, dst) | (1 << 29)
+#define PPC_STB(src, off, dst) PPC_STW(src, off, dst) | (1 << 27)
+
+#define PPC_LWZ(dst, off, src) (0x80000000 + (dst << 21) + (src << 16) + (off & 0xFFFF))
+#define PPC_LHZ(dst, off, src) PPC_LWZ(dst, off, src) | (1 << 29)
+#define PPC_LBZ(dst, off, src) PPC_LWZ(dst, off, src) | (1 << 27)
+
+#define PPC_CMPWI(src, val) ((0x2C000000) + (src << 16) + (val & 0xFFFF))
+#define PPC_CMPLWI(src, val) (PPC_CMPWI(src, val) - 0x04000000)
+#define PPC_CMPW(src1, src2) ((0x7C000000) + (src1 << 16) + (src2 << 11))
 #endif
