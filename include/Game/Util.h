@@ -58,7 +58,7 @@
 #include "Game/Util/RailUtil.h"                     // unfinished
 // "unknown util functions"
 #include "Game/Util/SceneUtil.h"                    // unfinished
-// SchedulerUtil
+#include "Game/Util/SchedulerUtil.h"
 #include "Game/Util/ScreenUtil.h"                   // unfinished
 #include "Game/Util/SequenceUtil.h"
 // ShareUtil

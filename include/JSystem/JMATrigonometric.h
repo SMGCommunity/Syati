@@ -16,44 +16,50 @@ namespace std {
 
 namespace JMath
 {
-    template<s32 Len, typename T>
+    const f32 PI = 3.1415927f;
+    const f32 TWO_PI = 6.2831855f;
+
+    template < int Bits, typename T >
     class TSinCosTable {
     public:
-        std::pair<f32, f32> table[Len];
+        static const u32 LEN = 1 << Bits;
+        std::pair< T, T > table[LEN];
 
-        f32 sinShort(s8 v) const { return table[static_cast<u8>(v) >> 3].a1; }
-        f32 cosShort(s8 v) const { return table[static_cast<u8>(v) >> 3].b1; }
+        T sinShort(s16 v) const { return table[static_cast<u16>(v) >> (16U - Bits)].a1; }
+        T cosShort(s16 v) const { return table[static_cast<u16>(v) >> (16U - Bits)].b1; }
 
-        inline f32 sinLap(f32 v) {
+        inline f32 sinLapRad(f32 v) {
             if (v < 0.0f) {
-                v *= -2607.5945f;
-                return -table[(u16)v & 0x3FFF].a1;
+                f32 tmp = v * (-LEN / TWO_PI);
+                return -table[(u16)tmp & LEN - 1].a1;
             }
             else {
-                v *= 2607.5945f;
-                return table[(u16)v & 0x3FFF].a1;
+                f32 tmp = v * (LEN / TWO_PI);
+                return table[(u16)tmp & LEN - 1].a1;
             }
         }
 
-        inline f32 sinLap2(f32 v)
-        {
+        inline f32 cosLapRad(f32 v) {
             if (v < 0.0f) {
-                f32 tmp = v * -(0x3FFF+1);
-                return -table[(u16)tmp & 0x3FFF].a1;
+                v = -v;
             }
-            else {
-                f32 tmp = v * (0x3FFF+1);
-                return table[(u16)tmp & 0x3FFF].a1;
-            }
+
+            f32 tmp = v;
+            tmp *= (LEN / TWO_PI);
+            return table[(u16)tmp & LEN - 1].b1;
         }
 
-        inline f32 get(f32 v) {
-            return table[(u16)v & 0x3FFF].b1;
+        inline f32 cosLap(f32 v) {
+            if (v < 0.0f) {
+                v = -v;
+            }
+            // 45.511112f == LEN / TWO_PI * PI / 180
+            v = 45.511112f * v;
+
+            return table[(u16)v & LEN - 1].b1;
         }
-        inline f32 getMult(f32 v) {
-            v *= (0x3FFF+1);
-            return table[(u16)v & 0x3FFF].b1;
-        }
+
+        inline f32 get(f32 v) { return table[(u16)v & LEN - 1].b1; }
     };
 
     template<s32 Len, typename T>

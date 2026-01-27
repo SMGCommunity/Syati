@@ -8,6 +8,7 @@ class DepthOfFieldBlur;
 class CenterScreenBlur;
 class PostFog;
 class PostOutline;
+struct ResTIMG;
 
 namespace MR {
 	s32 getScreenWidth();
@@ -21,6 +22,7 @@ namespace MR {
 	void startToCaptureScreen(const char *);
 	void endToCaptureScreen(const char *);
 	void captureScreenIfAllow(const char *);
+	const ResTIMG* getScreenResTIMG();
 
 	void openWipeCircle(s32);
 	void closeWipeCircle(s32);

@@ -18,6 +18,7 @@ namespace MR {
 
     const MtxPtr getCameraViewMtx();
     TPos3f* getCameraInvViewMtx();
+    const Mtx44Ptr getCameraProjectionMtx();
 
     void loadViewMtx();
     void loadProjectionMtx();
@@ -90,4 +91,6 @@ namespace MR {
     bool isEventCameraActive(const ActorCameraInfo*, const char*);
 
     void endGlobalEventCamera(const char*, s32, bool);
+
+    TVec3f* getCameraWatchPos();
 };

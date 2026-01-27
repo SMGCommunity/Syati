@@ -11,6 +11,7 @@ namespace MR {
     void reinitGX();
 
     void setupShadowVolumeDraw();
+    void resetTextureCacheSize();
 
     void drawSimpleModel(J3DModelData*);
 

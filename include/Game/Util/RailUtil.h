@@ -45,7 +45,7 @@ namespace MR {
 	void calcNearestRailPosAndDirection(TVec3f *, TVec3f *, const LiveActor *, const TVec3f &);
 
 	// void calcBoundingBox(RailRider *, TBox3f *, f32);
-	// void calcBoundingBox(const LiveActor *, TBox3f *, f32);
+	void calcBoundingBox(const LiveActor *, TBox3f *, f32);
 
 	void calcDifferenceRailCoord(const LiveActor *, f32, f32);
 	void calcDifferenceRailCoord(const LiveActor *, f32);
