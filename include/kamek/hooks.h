@@ -92,7 +92,7 @@
 
 
 // Common instructions used in hooks
-#define PPC_B(offset) (0x48000000 | ((offset) & 0x0FFFFFFC))
+#define PPC_B(offset) (0x48000000 | ((offset) & 0x03FFFFFC))
 #define PPC_BL(offset) (PPC_B(offset) | 1)
 #define PPC_BLR 0x4E800020
 #define PPC_COND_GT 0x4181
@@ -115,10 +115,13 @@
 #define PPC_STW(src, off, dst) (0x90000000 + (src << 21) + (dst << 16) + (off & 0xFFFF))
 #define PPC_STH(src, off, dst) PPC_STW(src, off, dst) | (1 << 29)
 #define PPC_STB(src, off, dst) PPC_STW(src, off, dst) | (1 << 27)
+#define PPC_STFS(src, off, dst) PPC_STW(src, off, dst) | (1 << 30)
 
 #define PPC_LWZ(dst, off, src) (0x80000000 + (dst << 21) + (src << 16) + (off & 0xFFFF))
 #define PPC_LHZ(dst, off, src) PPC_LWZ(dst, off, src) | (1 << 29)
 #define PPC_LBZ(dst, off, src) PPC_LWZ(dst, off, src) | (1 << 27)
+#define PPC_LFS(dst, off, src) PPC_LWZ(dst, off, src) | (1 << 30)
+
 
 #define PPC_CMPWI(src, val) ((0x2C000000) + (src << 16) + (val & 0xFFFF))
 #define PPC_CMPLWI(src, val) (PPC_CMPWI(src, val) - 0x04000000)
