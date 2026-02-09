@@ -35,10 +35,10 @@ namespace JGeometry {
         }
 
         // From Petari
-        inline void setInline(const SMatrix34C<T> &rSrc) {
-            #ifdef __MWERKS__
-            register const SMatrix34C<T> *pSrc = &rSrc;
-            register SMatrix34C<T> *pDest = this;
+        inline void setInline(const MtxPtr rSrc) {
+#ifdef __MWERKS__
+            register const MtxPtr pSrc = rSrc;
+            register SMatrix34C< T >* pDest = this;
             register f32 rzztz;
             register f32 rxzyz;
             register f32 rzyty;
@@ -59,8 +59,9 @@ namespace JGeometry {
                 psq_st    rzyty, 0x18(pDest), 0, 0
                 psq_st    rxzyz, 0x20(pDest), 0, 0
                 psq_st    rzztz, 0x28(pDest), 0, 0
-            };
-            #endif
+            }
+            ;
+#endif
         }
 
         inline f32 dot() const {
@@ -116,6 +117,20 @@ namespace JGeometry {
 
         void multTranspose(const TVec3f &a1, const TVec3f &a2) const;
         
+        void scale(f32 scalar) {
+            this->mMtx[0][0] *= scalar;
+            this->mMtx[1][0] *= scalar;
+            this->mMtx[2][0] *= scalar;
+            this->mMtx[0][1] *= scalar;
+            this->mMtx[1][1] *= scalar;
+            this->mMtx[2][1] *= scalar;
+            this->mMtx[0][2] *= scalar;
+            this->mMtx[1][2] *= scalar;
+            this->mMtx[2][2] *= scalar;
+            this->mMtx[0][3] *= scalar;
+            this->mMtx[1][3] *= scalar;
+            this->mMtx[2][3] *= scalar;
+        }
     };
 
     template<class T>
