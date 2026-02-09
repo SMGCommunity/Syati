@@ -120,7 +120,7 @@ static inline u32 GDGetGDLObjOffset(const GDLObj* dl) {
     return (u32)(dl->ptr - dl->start);
 }
 
-void GDColor4u8(u8 r, u8 g, u8 b, u8 a) {
+static void GDColor4u8(u8 r, u8 g, u8 b, u8 a) {
     GDOverflowCheck(sizeof(u8));
     __GDWrite(r);
     GDOverflowCheck(sizeof(u8));
