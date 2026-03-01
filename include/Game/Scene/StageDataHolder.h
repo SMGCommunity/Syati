@@ -48,7 +48,7 @@ public:
     JMapInfo *mObjNameTbl;                  // _14
     u32 _18;
     StageDataHolder* mStageDataArray[0x18]; // _1C
-    const char *mName;                      // _7C
+    const char *mStageName;                 // _7C
     Mtx mPlacementMtx;                      // _80
     s32 _B0;
     bool _B4;
