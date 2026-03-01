@@ -137,6 +137,8 @@ public:
 	void calcAnimHorrorBone();
 	void updateHand();
 	void updateFace();
+	
+	void beginRush(HitSensor *);
 
 	u8 _90;
 	s32 _94;

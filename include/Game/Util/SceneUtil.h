@@ -84,4 +84,5 @@ namespace MR {
 	void setCurrentPlacementZoneId(s32);
 	void clearCurrentPlacementZoneId();
 	s32 getCurrentPlacementZoneId();
+	const JMapIdInfo& getCurrentMarioStartIdInfo();
 };

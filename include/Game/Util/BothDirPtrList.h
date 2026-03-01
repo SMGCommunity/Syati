@@ -8,6 +8,7 @@ namespace MR {
 	class BothDirPtrList;	
 
 	class BothDirPtrLink {
+	public:
 		BothDirPtrLink(void *pData);
 		~BothDirPtrLink();
 
@@ -18,6 +19,7 @@ namespace MR {
 	};
 
 	class BothDirPtrList {
+	public:
 		BothDirPtrList(bool doInit);
 		~BothDirPtrList();
 

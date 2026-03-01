@@ -226,4 +226,6 @@ namespace MR {
 
 	u16 getPlayerMovementTimer();
 	HitSensor* getPlayerBodySensor();
+
+	bool changePlayerAnimAndStartBvaIfExist(const char *);
 };

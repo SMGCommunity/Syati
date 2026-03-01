@@ -41,14 +41,14 @@ public:
     JMapInfoIter getStartJMapInfoIterFromStartDataIndex(int) const;
     void calcDataAddress();
     void updateDataAddress(const MR::AssignableArray<JMapInfo> *);
-    void createLocalStageDataHolder(const MR::AssignableArray<JMapInfo> &, bool);
+    void createLocalStageDataHolder(const MR::BothDirPtrList *, bool);
     void calcPlacementMtx(const JMapInfoIter &);
     void initLayerJmpInfo(MR::AssignableArray<JMapInfo> *, const char *, const char *, u32);
 
     JMapInfo *mObjNameTbl;                  // _14
     u32 _18;
     StageDataHolder* mStageDataArray[0x18]; // _1C
-    const char *_7C;
+    const char *mName;                      // _7C
     Mtx mPlacementMtx;                      // _80
     s32 _B0;
     bool _B4;

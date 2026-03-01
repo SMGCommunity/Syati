@@ -71,7 +71,17 @@ namespace MR {
             assign(pItem, mCount);
         }
 
-        T::Item* erase(T::Item *pItem);
+        // Taken from Petari
+        T::Item* erase (T::Item* pIter) {
+            if (end() - pIter - 1 > 0) {
+                for (T::Item* p = pIter; p + 1 != end(); p++) {
+                    *p = *(p + 1);
+                }
+            }
+            mCount--;
+
+            return pIter;
+        }
 
         void push_back(const T::Item &rItem) {
             u32 count = mCount;

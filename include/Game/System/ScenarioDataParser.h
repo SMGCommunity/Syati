@@ -60,9 +60,10 @@ public:
     ScenarioDataIter getScenarioDataIter(s32) const;
     void getScenarioString(const char*, s32, const char**);
 
-    /* 0x00 */ JMapInfo* mScenarioData;
-    /* 0x04 */ char* mGalaxyName;
+    /* 0x00 */ char* mGalaxyName;
+    /* 0x04 */ JMapInfo* mScenarioData;
     /* 0x08 */ JMapInfo* mZoneList;
+    /* 0x0C */ JMapInfo* mGalaxyInfo;
 };
 
 namespace ScenarioDataFunction {

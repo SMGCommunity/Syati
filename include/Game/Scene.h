@@ -6,3 +6,5 @@
 #include "Game/Scene/SceneNameObjMovementController.h"
 #include "Game/Scene/SceneObjHolder.h"
 #include "Game/Scene/SceneWipeHolderFunction.h"
+#include "Game/Scene/StageDataArchiveHolder.h"
+#include "Game/Scene/StageDataHolder.h"
