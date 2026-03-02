@@ -87,6 +87,7 @@ namespace GameSequenceFunction {
 	static bool isClearedIslandFleetGalaxyFirstTime();
 	static bool isClearedVsKoopaLv3GalaxyFirstTime();
 	static bool isClearedVsKoopaLv3Galaxy1();
+	static bool isStageStatePowerStarAppeared();
 	static PlayResultInStageHolder* getPlayResultInStageHolder();
 
 	// unknown functions

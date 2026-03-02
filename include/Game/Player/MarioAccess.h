@@ -45,6 +45,7 @@ public:
 	static void setTrans(const TVec3f &, u16);
 	static void endRush(const RushEndInfo *);
 
+	static s32 getLife();
 	static void incLife(u32);
 	static bool isConfrontDeath();
 	static void incOxygen(u32);

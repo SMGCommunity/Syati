@@ -139,6 +139,7 @@ public:
 	void updateFace();
 	
 	void beginRush(HitSensor *);
+	bool tryStandardRush();
 
 	u8 _90;
 	s32 _94;
@@ -250,7 +251,7 @@ public:
 	f32 _6A4;
 	s16 _6A8;
 	s32 _6AC;
-	s32 mLifeNum;
+	s32 mLifeNum;       // _6B0
 	s32 _6B4;
 	s16 _6B8;
 	s32 _6BC;
