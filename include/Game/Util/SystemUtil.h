@@ -4,6 +4,7 @@
 #include "Game/Util/JMapIdInfo.h"
 #include "Game/NameObj/NameObj.h"
 #include "Game/System/GameSystemObjHolder.h"
+#include "nw4r/ut/Font.h"
 
 class ParticleResourceHolder;
 
@@ -41,5 +42,7 @@ namespace MR {
     void callMethodAllSceneNameObj(MethodFunc);
 
     GameSystemObjHolder *getGameSystemObjHolder();
+
+    nw4r::ut::Font *getFontOnCurrentLanguage();
 
 };  // namespace MR

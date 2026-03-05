@@ -23,6 +23,8 @@ namespace MR {
 
     void fillScreenArea(const TVec2s &, const TVec2s &);
 
+    void setupDrawForNW4RLayout(f32);
+
     void clearZBuffer();
 
     void setDefaultViewportAndScissor();
