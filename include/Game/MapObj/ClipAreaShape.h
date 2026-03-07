@@ -20,7 +20,7 @@ public:
     virtual bool isInArea(const TVec3f &rPosition) const;
     virtual void calcVolumeMatrix(MtxPtr pVolumeMtx, const TVec3f &, const TVec3f &) const;
 
-    f32 mRadius; // _C
+    f32 mRadius; // _8
 };
 
 class ClipAreaShapeBox : public ClipAreaShape {
@@ -29,6 +29,8 @@ public:
 
     virtual bool isInArea(const TVec3f &rPosition) const;
     virtual void calcVolumeMatrix(MtxPtr pVolumeMtx, const TVec3f &, const TVec3f &) const;
+    f32 mRadius;
+    s32 _C;
 };
 
 class ClipAreaShapeCylinder : public ClipAreaShape {
