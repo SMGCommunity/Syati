@@ -13,6 +13,7 @@ public:
 	void init();
 	bool changeSimpleBck(const char*);
 	void changeAnimation(const char*);
+	void changeAnimationBck(const char*);
 	void changeAnimationByHash(u32);
 	void swapFrameCtrl(const XanimeGroupInfo*);
 	void changeAnimation(const XanimeGroupInfo*);
