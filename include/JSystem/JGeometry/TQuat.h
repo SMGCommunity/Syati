@@ -16,11 +16,11 @@ namespace JGeometry {
         TQuat4(T, T, T, T);
 
         /* Getters and setters */
-        void getXDir(const TVec3<f32> &) const;
-        void getYDir(const TVec3<f32> &) const;
-        void getZDir(const TVec3<f32> &) const;
+        void getXDir(TVec3<f32> &) const;
+        void getYDir(TVec3<f32> &) const;
+        void getZDir(TVec3<f32> &) const;
 
-        void getEuler(const TVec3<f32> &) const;
+        void getEuler(TVec3<f32> &) const;
         void setEuler(f32, f32, f32);
 
         void setRotate(const TVec3<f32> &, f32);

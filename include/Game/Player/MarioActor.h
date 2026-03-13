@@ -98,6 +98,7 @@ public:
 	void changeDisplayMode(u8);
 	void incLife(u32);
 	void decLife(u16);
+	void changeMaxLife(s32);
 
 	void initFireMario();
 	void initBeeMario();

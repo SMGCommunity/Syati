@@ -78,6 +78,7 @@ namespace MR {
 
     void declareCameraRegisterVec(const NameObj*, u32, TVec3f*);
 
+    void endStartPosCamera();
     bool hasStartAnimCamera();
 
     void startStartAnimCamera();

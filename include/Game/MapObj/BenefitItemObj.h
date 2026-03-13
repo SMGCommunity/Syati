@@ -7,6 +7,8 @@
 class BenefitItemObj : public LiveActor {
 public:
     BenefitItemObj(const char *pName, const char *pModelName);
+
+    virtual ~BenefitItemObj();
     virtual void init(const JMapInfoIter &rIter);
     virtual void appear();
     // sub_80276CD0, sub_80276CF0, sub_80276D10
@@ -19,6 +21,7 @@ public:
 
     virtual void doRotateY();
     virtual void initEscape();
+    virtual void doEscape();
     virtual void appearGround();
     virtual void appearThrowUp();
     virtual void appearThrowUpQuestionBox();
