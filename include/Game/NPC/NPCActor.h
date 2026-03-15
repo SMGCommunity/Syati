@@ -82,12 +82,12 @@ public:
     bool mRequestStarPieceAttack;    // _E9
     bool mRequestJetTurtleAttack;    // _EA
     bool mRequestSupportTicoSpin;    // _EB
-    bool _EC;
-    bool _ED;
-    f32 _F0;
-    f32 _F4; // turning-related
-    f32 _F8; // turning-related
-    f32 _FC; // turning-related
+    bool mEnableTurn;                // _EC
+    bool mEnableTalkTurn;            // _ED
+    f32 mTurnDist;                   // _F0 : How close to the NPC you have to be for it to rotate to face the player
+    f32 mTurnSpeed;                  // _F4 : How fast the NPC turns to face the player
+    f32 _F8;                         // _F8 : turning-related
+    f32 _FC;                         // _FC : turning-related
     const char* mActionWait;         // _100
     const char* mActionWaitTurn;     // _104
     const char* mActionTalk;         // _108
