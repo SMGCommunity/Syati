@@ -66,56 +66,56 @@ public:
     TQuat4f _B4;
     TVec3f _C4;
     TVec3f _D0;
-    bool mReactTrampleAttack;        // _DC
-    bool mReactSpinAttack;           // _DD
-    bool mReact2PPointerAttached;    // _DE
-    bool mReactStarPieceAttack;      // _DF
-    bool mReactJetTurtleAttack;      // _E0
-    bool mConsumedTrampleAttack;     // _E1
-    bool mConsumedSpinAttack;        // _E2
-    bool mConsumed2PPointerAttached; // _E3
-    bool mConsumedStarPieceAttack;   // _E4
-    bool mConsumedJetTurtleAttack;   // _E5
-    bool mRequestTrampleAttack;      // _E6
-    bool mRequestSpinAttack;         // _E7
-    bool mRequest2PPointerAttached;  // _E8
-    bool mRequestStarPieceAttack;    // _E9
-    bool mRequestJetTurtleAttack;    // _EA
-    bool mRequestSupportTicoSpin;    // _EB
-    bool mEnableTurn;                // _EC
-    bool mEnableTalkTurn;            // _ED
-    f32 mTurnDist;                   // _F0 : How close to the NPC you have to be for it to rotate to face the player
-    f32 mTurnSpeed;                  // _F4 : How fast the NPC turns to face the player
-    f32 _F8;                         // _F8 : turning-related
-    f32 _FC;                         // _FC : turning-related
-    const char* mActionWait;         // _100
-    const char* mActionWaitTurn;     // _104
-    const char* mActionTalk;         // _108
-    const char* mActionTalkTurn;     // _10C
-    f32 _110;
+    bool mReactTrampleAttack;        //  0xDC
+    bool mReactSpinAttack;           //  0xDD
+    bool mReact2PPointerAttached;    //  0xDE
+    bool mReactStarPieceAttack;      //  0xDF
+    bool mReactJetTurtleAttack;      //  0xE0
+    bool mConsumedTrampleAttack;     //  0xE1
+    bool mConsumedSpinAttack;        //  0xE2
+    bool mConsumed2PPointerAttached; //  0xE3
+    bool mConsumedStarPieceAttack;   //  0xE4
+    bool mConsumedJetTurtleAttack;   //  0xE5
+    bool mRequestTrampleAttack;      //  0xE6
+    bool mRequestSpinAttack;         //  0xE7
+    bool mRequest2PPointerAttached;  //  0xE8
+    bool mRequestStarPieceAttack;    //  0xE9
+    bool mRequestJetTurtleAttack;    //  0xEA
+    bool mRequestSupportTicoSpin;    //  0xEB
+    bool mEnableTurn;                //  0xEC
+    bool mEnableTalkTurn;            //  0xED
+    f32 mTurnDist;                   //  0xF0 : How close to the NPC you have to be for it to rotate to face the player
+    f32 mTurnSpeed;                  //  0xF4 : How fast the NPC turns to face the player
+    f32 _F8;                         //  0xF8 : turning-related
+    f32 _FC;                         //  0xFC : turning-related
+    const char* mActionWait;         // 0x100
+    const char* mActionWaitTurn;     // 0x104
+    const char* mActionTalk;         // 0x108
+    const char* mActionTalkTurn;     // 0x10C
+    f32 _110;                        // 0x110 : Walk speed, but changing this doesn't instantly change the speed, it interpolates
     f32 _114;
     f32 _118;
     f32 _11C;
-    const char* _120;
-    const char* _124;  // Walk animation name?
-    bool _128;
+    const char* mActionWalkName; // Walk Animation name
+    const char* mActionWalkTalkName; // Walk Talk animation name
+    bool mRailSnapToGround; // if true, the NPC is moved along the Rail at the nearest ground point
     bool _129; // unused
     bool _12A; // unused
     bool _12B; // unused
     bool _12C; // AnimScale related. (NPCActor::updateScaleCtrl)
-    f32 _130;
-    const char* mActionSpinName;           // _134
-    const char* mActionTrampledName;       // _138
-    const char* mActionPointingName;       // _13C
-    const char* mActionReactionName;       // _140
-    AnimScaleController* mAnimScaleCtrl;   // _144
-    JointController* mJointCtrlParam;      // _148
-    YoshiLockOnTarget* mYoshiLockOnTarget; // _14C
-    const Nerve* mPushedNerve;             // _150
-    const Nerve* mWaitNerve;               // _154
-    const Nerve* mTalkNerve;               // _158
-    const Nerve* mReactionNerve;           // _15C
-    s32 mReact2PPointerAttachedDelay;      // _160
+    f32 mSpinDist;                         // 0x130 : How close to the NPC you have to be to be able to spin them.
+    const char* mActionSpinName;           // 0x134
+    const char* mActionTrampledName;       // 0x138
+    const char* mActionPointingName;       // 0x13C
+    const char* mActionReactionName;       // 0x140
+    AnimScaleController* mAnimScaleCtrl;   // 0x144
+    JointController* mJointCtrlParam;      // 0x148
+    YoshiLockOnTarget* mYoshiLockOnTarget; // 0x14C
+    const Nerve* mPushedNerve;             // 0x150
+    const Nerve* mWaitNerve;               // 0x154
+    const Nerve* mTalkNerve;               // 0x158
+    const Nerve* mReactionNerve;           // 0x15C
+    s32 mReact2PPointerAttachedDelay;      // 0x160
 };
 
 namespace NrvNPCActor {
@@ -198,3 +198,9 @@ public:
     Nerve* mTalkNerve;                   // _9C
     Nerve* mReactionNerve;               // _A0
 };
+
+namespace MR {
+    void startMoveAction(NPCActor* actor);
+    bool tryStartReactionAndPushNerve(NPCActor* actor, const Nerve* nerve);
+    bool tryTalkNearPlayerAndStartMoveTalkAction(NPCActor* actor);
+}
