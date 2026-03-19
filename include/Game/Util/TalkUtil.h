@@ -9,6 +9,26 @@ class TalkMessageCtrl;
 class TalkMessageFuncBase;
 
 namespace MR {
+    // I (SuperHackio) strongly believe that this class actually has a ton more variables and functions.
+    //   All but twp functions got completely inlined in the final game (or maybe they were intentionally inlined)
+    //   As an engine dev it just doesn't make much sense to put such a limited amount of things inside here, when there's a lot of other related variables not in here...
+    class ActorTalkParam {
+    public:
+        void setNoTurnAction(const char*);
+        void setSingleAction(const char*);
+
+        bool mEnableTurn;            // 0x00 : If false, the NPC will not turn to face the player
+        bool mEnableTalkTurn;        // 0x01 : If false, the NPC will not turn to the player when being spoken to
+        f32 mTurnDist;               // 0x04 : How close to the NPC you have to be for it to rotate to face the player
+        f32 mTurnSpeed;              // 0x08 : How fast the NPC turns to face the player
+        f32 _C;                      // 0x0C : turning-related
+        f32 _10;                     // 0x10 : turning-related
+        const char* mActionWait;     // 0x14 : Animation to use by default just standing around
+        const char* mActionWaitTurn; // 0x18 : Animation to use when turning to face the player (or, if the player moves out of range, the animation to use when turning to default)
+        const char* mActionTalk;     // 0x1C : Animation to use when talking
+        const char* mActionTalkTurn; // 0x20 : Animation to use when turning while talking
+    };
+
     void registerBranchFunc(TalkMessageCtrl *pTalkCtrl, const TalkMessageFuncBase &rTalkFunc);
     void registerEventFunc(TalkMessageCtrl *pTalkCtrl, const TalkMessageFuncBase &rTalkFunc);
     void registerAnimeFunc(TalkMessageCtrl *pTalkCtrl, const TalkMessageFuncBase &rTalkFunc);

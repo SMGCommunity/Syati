@@ -7,6 +7,7 @@
 #include "Game/Enemy/AnimScaleController.h"
 #include "Game/Player/YoshiLockOnTarget.h"
 #include "Game/NPC/TalkMessageCtrl.h"
+#include "Game/Util/TalkUtil.h"
 
 class NPCActorItem;
 class NPCActorCaps;
@@ -57,57 +58,48 @@ public:
     void exeWait();
     void exeTalk();
 
-    LodCtrl* mLodCtrl;               // _90
-    TalkMessageCtrl* mTalkCtrl;      // _94
-    PartsModel* mGoodsModel0;        // _98
-    PartsModel* mGoodsModel1;        // _9C
-    s32 mTrampleAttackDelay;         // _A0
-    TQuat4f mTurnDir;                // _A4
-    TQuat4f _B4;
-    TVec3f _C4;
-    TVec3f _D0;
-    bool mReactTrampleAttack;        //  0xDC
-    bool mReactSpinAttack;           //  0xDD
-    bool mReact2PPointerAttached;    //  0xDE
-    bool mReactStarPieceAttack;      //  0xDF
-    bool mReactJetTurtleAttack;      //  0xE0
-    bool mConsumedTrampleAttack;     //  0xE1
-    bool mConsumedSpinAttack;        //  0xE2
-    bool mConsumed2PPointerAttached; //  0xE3
-    bool mConsumedStarPieceAttack;   //  0xE4
-    bool mConsumedJetTurtleAttack;   //  0xE5
-    bool mRequestTrampleAttack;      //  0xE6
-    bool mRequestSpinAttack;         //  0xE7
-    bool mRequest2PPointerAttached;  //  0xE8
-    bool mRequestStarPieceAttack;    //  0xE9
-    bool mRequestJetTurtleAttack;    //  0xEA
-    bool mRequestSupportTicoSpin;    //  0xEB
-    bool mEnableTurn;                //  0xEC
-    bool mEnableTalkTurn;            //  0xED
-    f32 mTurnDist;                   //  0xF0 : How close to the NPC you have to be for it to rotate to face the player
-    f32 mTurnSpeed;                  //  0xF4 : How fast the NPC turns to face the player
-    f32 _F8;                         //  0xF8 : turning-related
-    f32 _FC;                         //  0xFC : turning-related
-    const char* mActionWait;         // 0x100
-    const char* mActionWaitTurn;     // 0x104
-    const char* mActionTalk;         // 0x108
-    const char* mActionTalkTurn;     // 0x10C
-    f32 _110;                        // 0x110 : Walk speed, but changing this doesn't instantly change the speed, it interpolates
-    f32 _114;
-    f32 _118;
-    f32 _11C;
-    const char* mActionWalkName; // Walk Animation name
-    const char* mActionWalkTalkName; // Walk Talk animation name
-    bool mRailSnapToGround; // if true, the NPC is moved along the Rail at the nearest ground point
-    bool _129; // unused
-    bool _12A; // unused
-    bool _12B; // unused
-    bool _12C; // AnimScale related. (NPCActor::updateScaleCtrl)
+    LodCtrl* mLodCtrl;                     //  0x90
+    TalkMessageCtrl* mTalkCtrl;            //  0x94
+    PartsModel* mGoodsModel0;              //  0x98
+    PartsModel* mGoodsModel1;              //  0x9C
+    s32 mTrampleAttackDelay;               //  0xA0
+    TQuat4f mTurnDir;                      //  0xA4
+    TQuat4f _B4;                           //  0xB4
+    TVec3f _C4;                            //  0xC4
+    TVec3f _D0;                            //  0xD0
+    bool mReactTrampleAttack;              //  0xDC
+    bool mReactSpinAttack;                 //  0xDD
+    bool mReact2PPointerAttached;          //  0xDE
+    bool mReactStarPieceAttack;            //  0xDF
+    bool mReactJetTurtleAttack;            //  0xE0
+    bool mConsumedTrampleAttack;           //  0xE1
+    bool mConsumedSpinAttack;              //  0xE2
+    bool mConsumed2PPointerAttached;       //  0xE3
+    bool mConsumedStarPieceAttack;         //  0xE4
+    bool mConsumedJetTurtleAttack;         //  0xE5
+    bool mRequestTrampleAttack;            //  0xE6
+    bool mRequestSpinAttack;               //  0xE7
+    bool mRequest2PPointerAttached;        //  0xE8
+    bool mRequestStarPieceAttack;          //  0xE9
+    bool mRequestJetTurtleAttack;          //  0xEA
+    bool mRequestSupportTicoSpin;          //  0xEB
+    MR::ActorTalkParam mTalkParam;         //  0xEC : Various NPC Talk Parameters. I (SuperHackio) believe that ActorTalkParam may have a bunch more of the below variables inside it in reality, but have no way of proving that... It's just a hunch
+    f32 _110;                              // 0x110 : Walk speed, but changing this doesn't instantly change the speed, it interpolates
+    f32 _114;                              // 0x114 : Walk-speed-related
+    f32 _118;                              // 0x118
+    f32 _11C;                              // 0x11C
+    const char* mActionWalk;               // 0x120 : Walk animation name
+    const char* mActionWalkTalk;           // 0x124 : Talk while walking animation name
+    bool mRailSnapToGround;                // 0x128 : if true, the NPC is moved along the Rail at the nearest ground point
+    bool _129;                             // 0x129 : unused
+    bool _12A;                             // 0x12A : unused
+    bool _12B;                             // 0x12B : unused
+    bool _12C;                             // 0x12C : AnimScale related. (NPCActor::updateScaleCtrl)
     f32 mSpinDist;                         // 0x130 : How close to the NPC you have to be to be able to spin them.
-    const char* mActionSpinName;           // 0x134
-    const char* mActionTrampledName;       // 0x138
-    const char* mActionPointingName;       // 0x13C
-    const char* mActionReactionName;       // 0x140
+    const char* mActionSpin;               // 0x134 : Spin animation name (P1 or P2 spinning)
+    const char* mActionTrampled;           // 0x138 : Tramped animation name (being jumped on)
+    const char* mActionPointing;           // 0x13C : Pointing animation name (P2 Freezing)
+    const char* mActionReaction;           // 0x140 : Reaction animation name (being hit by other things, such as Starbits shot by the player, koopa shells, etc.)
     AnimScaleController* mAnimScaleCtrl;   // 0x144
     JointController* mJointCtrlParam;      // 0x148
     YoshiLockOnTarget* mYoshiLockOnTarget; // 0x14C
