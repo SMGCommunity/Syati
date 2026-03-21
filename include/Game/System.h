@@ -2,7 +2,9 @@
 
 #include "Game/System/ArchiveHolder.h"
 #include "Game/System/BinaryDataChunkHolder.h"
+#include "Game/System/FileHolder.h"
 #include "Game/System/FileLoader.h"
+#include "Game/System/FileLoaderThread.h"
 #include "Game/System/GameEventFlagTable.h"
 #include "Game/System/GameSystem.h"
 #include "Game/System/GameSystemDataHolder.h"
@@ -15,6 +17,7 @@
 #include "Game/System/Language.h"
 #include "Game/System/MainLoopFramework.h"
 #include "Game/System/NerveExecutor.h"
+#include "Game/System/OSThreadWrapper.h"
 #include "Game/System/PlayResultInStageHolder.h"
 #include "Game/System/ResourceHolder.h"
 #include "Game/System/ResourceHolderManager.h"
