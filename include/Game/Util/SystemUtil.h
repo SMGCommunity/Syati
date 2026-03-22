@@ -44,5 +44,7 @@ namespace MR {
     GameSystemObjHolder *getGameSystemObjHolder();
 
     nw4r::ut::Font *getFontOnCurrentLanguage();
+    nw4r::ut::Font *getMenuFontNW4R();
+    nw4r::ut::Font *getNumberFontNW4R();
 
 };  // namespace MR

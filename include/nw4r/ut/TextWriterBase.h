@@ -57,6 +57,7 @@ namespace nw4r {
             void SetTagProcessor(TagProcessorBase< CharT >* pProcessor) { mTagProcessor = pProcessor; }
             f32 CalcStringWidth(StreamType str, int length) const;
             void CalcStringRect(Rect* pRect, const CharT* pStr, int len) const;
+            f32 Printf(const wchar_t*, ...);
             bool CalcLineRectImpl(Rect*, StreamType*, int);
             void CalcStringRectImpl(Rect*, StreamType, int);
             f32 Print(StreamType str, int length);
