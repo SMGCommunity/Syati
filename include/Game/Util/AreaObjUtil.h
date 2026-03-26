@@ -26,6 +26,7 @@ namespace MR {
 
 	bool getWaterAreaObj(WaterInfo *pWaterInfo, const TVec3f &rPosition);
 	void getWaterAreaInfo(WaterInfo *pWaterInfo, const TVec3f &rPosition);
+	void getWaterAreaInfo(WaterInfo*, const TVec3f&, const TVec3f&, bool); // returns a AreaInfo
 	bool calcWhirlPoolAccelInfo(const TVec3f &rPosition, TVec3f *pAccel); // dummied-out
 	bool intersectsWaterAreaInfo(const WaterInfo *pWaterInfoA, const WaterInfo *pWaterInfoB);
 	bool hasNoWaterAreaCube(const WaterInfo *pWaterInfo);

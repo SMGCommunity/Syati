@@ -273,6 +273,10 @@ namespace JGeometry {
         inline operator f32*() { return (f32*)&x; }
         inline operator const f32*() const { return (f32*)&x; }
 
+        inline Vec* toVecPtr() {
+            return (Vec *)this;
+        }
+
         T x;
         T y;
         T z;

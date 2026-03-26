@@ -24,6 +24,7 @@ class RailObj;
 class ResTIMG;
 class ResourceHolder;
 class TriangleFilterBase;
+class ProjmapEffectMtxSetter;
 
 namespace MR {
     enum CollisionScaleType {
@@ -88,7 +89,7 @@ namespace MR {
     void initDLMakerMatColor0(LiveActor *pActor, const char *pMaterialName, const J3DGXColor *pMatColor);
     void initDLMakerChangeTex(LiveActor *pActor, const char *pTexName);
     void initDLMakerTexMtx(LiveActor *pActor, const char *pTexName);
-    void initDLMakerProjmapEffectMtxSetter(LiveActor *pActor);
+    ProjmapEffectMtxSetter* initDLMakerProjmapEffectMtxSetter(LiveActor *pActor);
     // four unknown model-related functions
 
     void initMirrorReflection(LiveActor *pActor);
