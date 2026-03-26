@@ -42,7 +42,7 @@ extern "C" {
      (((unsigned long)(diffuseatten)) << XF_COLOR0CNTRL_DIFFUSEATTEN_SHIFT) | (((unsigned long)(attenenable)) << XF_COLOR0CNTRL_ATTENENABLE_SHIFT) | \
      (((unsigned long)(attenselect)) << XF_COLOR0CNTRL_ATTENSELECT_SHIFT) | (((unsigned long)(light7654)) << XF_COLOR0CNTRL_LIGHT4_SHIFT))
 
-inline static u16 __GDLightID2Index(GXLightID id) {
+static inline u16 __GDLightID2Index(GXLightID id) {
     u16 idx;
 
     idx = 0x1F - __cntlzw(id);
@@ -52,7 +52,9 @@ inline static u16 __GDLightID2Index(GXLightID id) {
     return idx;
 }
 
-static u16 __GDLightID2Offset(GXLightID id);
+static inline u16 __GDLightID2Offset(GXLightID id) {
+    return __GDLightID2Index(id) * 16;
+}
 
 #ifdef __cplusplus
 }

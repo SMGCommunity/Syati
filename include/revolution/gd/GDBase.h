@@ -26,31 +26,81 @@ void GDPadCurr32();
 
 void GDOverflowed();
 
-static void GDOverflowCheck(u32 size);
+static inline void GDOverflowCheck(u32 size) {
+    if (__GDCurrentDL->ptr + size > __GDCurrentDL->top) {
+        GDOverflowed();
+    }
+}
 
-static void __GDWrite(u8 data);
+static inline void __GDWrite(u8 data) {
+    *__GDCurrentDL->ptr++ = data;
+}
 
-static void GDWrite_u8(u8 data);
+static inline void GDWrite_u8(u8 data) {
+    GDOverflowCheck(1);
+    __GDWrite(data);
+}
 
-static void GDWrite_u16(u16 data);
+static inline void GDWrite_u16(u16 data) {
+    GDOverflowCheck(2);
+    __GDWrite((u8)(data >> 8));
+    __GDWrite((u8)(data & 0xff));
+}
 
-static void GDWrite_u32(u32 data);
+static inline void GDWrite_u32(u32 data) {
+    GDOverflowCheck(4);
+    __GDWrite((u8)((data >> 24) & 0xff));
+    __GDWrite((u8)((data >> 16) & 0xff));
+    __GDWrite((u8)((data >> 8) & 0xff));
+    __GDWrite((u8)((data >> 0) & 0xff));
+}
 
-static void GDWrite_f32(f32 data);
+static inline void GDWrite_f32(f32 data) {
+    typedef union {
+        f32 f;
+        u32 u;
+    } _FloatInt;
 
-static inline void GDWriteBPCmd(u32 regval);
+    _FloatInt fid;
 
-static inline void GDWriteCPCmd(u8 addr, u32 val);
+    fid.f = data;
 
-static inline void GDWriteXFCmd(u16 addr, u32 val);
+    GDWrite_u32(fid.u);
+}
 
-static inline void GDWriteXFCmdHdr(u16 addr, u8 len);
+static inline void GDWriteBPCmd(u32 regval) {
+    GDWrite_u8(0x61);
+    GDWrite_u32(regval);
+}
+
+static inline void GDWriteCPCmd(u8 addr, u32 val) {
+    GDWrite_u8(8);
+    GDWrite_u8(addr);
+    GDWrite_u32(val);
+}
+
+static inline void GDWriteXFCmd(u16 addr, u32 val) {
+    GDWrite_u8(0x10);
+    GDWrite_u16(0);
+    GDWrite_u16(addr);
+    GDWrite_u32(val);
+}
+
+static inline void GDWriteXFCmdHdr(u16 addr, u8 len) {
+    GDWrite_u8(0x10);
+    GDWrite_u16((u16)((len)-1));
+    GDWrite_u16(addr);
+}
 
 void GDOverflowed(void);
 
-static void GDPosition3f32(f32 x, f32 y, f32 z);
+static inline void GDPosition3f32(f32 x, f32 y, f32 z) {
+    GDWrite_f32(x);
+    GDWrite_f32(y);
+    GDWrite_f32(z);
+}
 
-inline static void GDSetCurrent(GDLObj* dl) {
+static inline void GDSetCurrent(GDLObj* dl) {
     __GDCurrentDL = dl;
 }
 
@@ -70,7 +120,16 @@ static inline u32 GDGetGDLObjOffset(const GDLObj* dl) {
     return (u32)(dl->ptr - dl->start);
 }
 
-static void GDColor4u8(u8 r, u8 g, u8 b, u8 a);
+static inline void GDColor4u8(u8 r, u8 g, u8 b, u8 a) {
+    GDOverflowCheck(sizeof(u8));
+    __GDWrite(r);
+    GDOverflowCheck(sizeof(u8));
+    __GDWrite(g);
+    GDOverflowCheck(sizeof(u8));
+    __GDWrite(b);
+    GDOverflowCheck(sizeof(u8));
+    __GDWrite(a);
+}
 
 void GDFlushCurrToMem();
 

@@ -31,7 +31,9 @@ void GXSetClipMode(GXClipMode);
 
 void __GXSetMatrixIndex(GXAttr);
 
-static void GXSetViewportv(const f32* vp);
+static inline void GXSetViewportv(const f32* vp) {
+    GXSetViewport(vp[0], vp[1], vp[2], vp[3], vp[4], vp[5]);
+}
 
 #ifdef __cplusplus
 }

@@ -17,16 +17,37 @@ volatile PPCWGPipe GXWGFifo;
 #define __GXCDEFX(func,n,t) __GXCDEF##n(func,t,t)
 
 #define __GXCDEF1(func,ts,td) \
-    static void func(const ts x);
+    static inline void func(const ts x) \
+    {                         \
+        GXWGFifo.td = (td) x; \
+        return;               \
+    }
 
 #define __GXCDEF2(func,ts,td) \
-    static void func(const ts x, const ts y);
+    static inline void func(const ts x, const ts y) \
+    {                         \
+        GXWGFifo.td = (td) x; \
+        GXWGFifo.td = (td) y; \
+        return;               \
+    }
 
 #define __GXCDEF3(func,ts,td) \
-    static void func(const ts x, const ts y, const ts z);
+    static inline void func(const ts x, const ts y, const ts z) \
+    {                         \
+        GXWGFifo.td = (td) x; \
+        GXWGFifo.td = (td) y; \
+        GXWGFifo.td = (td) z; \
+        return;               \
+    }
 
-#define __GXCDEF4(func, ts, td) \
-    static void func(const ts x, const ts y, const ts z, const ts w);
+#define __GXCDEF4(func, ts, td)                                                                                                                      \
+    static inline void func(const ts x, const ts y, const ts z, const ts w) {                                                                               \
+        GXWGFifo.td = (td)x;                                                                                                                         \
+        GXWGFifo.td = (td)y;                                                                                                                         \
+        GXWGFifo.td = (td)z;                                                                                                                         \
+        GXWGFifo.td = (td)w;                                                                                                                         \
+        return;                                                                                                                                      \
+    }
 
 __GXCDEF(GXPosition, 2, f32)
 
