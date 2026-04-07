@@ -5,6 +5,7 @@
 #include "Game/AudioLib.h"
 #include "Game/Boss.h"
 #include "Game/Camera.h"
+#include "Game/Demo.h"
 #include "Game/Effect.h"
 #include "Game/Enemy.h"
 #include "Game/GameAudio.h"

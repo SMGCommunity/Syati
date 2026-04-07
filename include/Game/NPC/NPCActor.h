@@ -84,8 +84,8 @@ public:
     bool mRequestJetTurtleAttack;          //  0xEA
     bool mRequestSupportTicoSpin;          //  0xEB
     MR::ActorTalkParam mTalkParam;         //  0xEC : Various NPC Talk Parameters. I (SuperHackio) believe that ActorTalkParam may have a bunch more of the below variables inside it in reality, but have no way of proving that... It's just a hunch
-    f32 _110;                              // 0x110 : Walk speed, but changing this doesn't instantly change the speed, it interpolates
-    f32 _114;                              // 0x114 : Walk-speed-related
+    f32 _110;                              // 0x110 : Target Walk Speed
+    f32 _114;                              // 0x114 : Walk Acceleration, used to accelerate to the target walk speed
     f32 _118;                              // 0x118
     f32 _11C;                              // 0x11C
     const char* mActionWalk;               // 0x120 : Walk animation name
