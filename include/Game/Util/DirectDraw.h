@@ -17,7 +17,6 @@ public:
       * \param drawType The drawing type to use. 0 = No Textures. 1 = 1 Texture. 2 = 1 Texture w/ Alpha
       * \param blendType The drawing type to use. 0 = Opaque. 1 = Transparent. 2 = Transparent Grey???
       * \param projectionType The drawing type to use. 0 = Camera View. 1 = Projection Matrix. 2 = Screen (2D)
-      * \param time The number of frames it takes to change to the new speed
       *
      **/
     static void setup(u32 drawType, u32 blendType, u8 projectionType);
