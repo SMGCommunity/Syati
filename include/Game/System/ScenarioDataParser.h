@@ -47,6 +47,7 @@ public:
     s32 getNormalPowerStarNum() const;
     s32 getPowerStarNum() const;
     bool getValueString(const char*, s32, const char**) const;
+    bool getValueS32(const char*, s32, s32*) const;
 
     // I cannot verify the next two functions
 
