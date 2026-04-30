@@ -26,6 +26,7 @@ public:
 
 class ScenarioDataIter {
 public:
+    inline ScenarioDataIter() {} // This MUST exist because there are many occasions where the game will init the variable of an iter and then actually create it later.
     ScenarioDataIter(const ScenarioDataParser*, int);
 
     // there's a really weird virtual here that seems to detect if the world ID of a galaxy is greater than 0 but I don't know why this would be needed...
@@ -74,5 +75,5 @@ namespace ScenarioDataFunction {
 };  // namespace ScenarioDataFunction
 
 namespace MR {
-    ScenarioDataIter makeBeginScenarioDataIter();
+    void makeBeginScenarioDataIter(ScenarioDataIter* pOut);
 }
