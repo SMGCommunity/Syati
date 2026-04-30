@@ -22,6 +22,8 @@ namespace MR {
 	void startSound(const LiveActor *, s32 JAISoundID, s32, s32);
 	void startLevelSound(const LiveActor *, s32 JAISoundID, s32, s32, s32);
 	void startLevelSound(const LiveActor *, const char *, s32, s32, s32);
+	void stopSound(const LiveActor*, const char*, u32);
+	void stopSound(const LiveActor*, JAISoundID, u32);
 	void startSoundPlayer(const char *, s32, s32);
 
 	void startSpinHitSound(const LiveActor *);
@@ -37,4 +39,8 @@ namespace MR {
 
 	void startAtmosphereSE(const char*, s32, s32);
 	void startAtmosphereLevelSE(const char*, s32, s32);
+
+	// not positioned in order
+	void startSoundObject(AudSoundObject*, const char*);
+	void startSoundObjectLevel(AudSoundObject*, const char*, s32);
 };
