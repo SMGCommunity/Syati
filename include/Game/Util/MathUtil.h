@@ -153,6 +153,7 @@ namespace MR {
 	f32 min(f32, f32);
 	f32 max(f32, f32);
 	f32 repeat(f32 value, f32 min, f32 max);
+	f32 repeatDegree(f32* value);
 	f32 mod(f32, f32);
 
 	s32 clamp(s32 val, s32 min, s32 max);
