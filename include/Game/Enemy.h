@@ -9,6 +9,7 @@
 #include "Game/Enemy/BegomanSpring.h"
 #include "Game/Enemy/Dossun.h"
 #include "Game/Enemy/GliderShooterBullet.h"
+#include "Game/Enemy/HomingKiller.h"
 #include "Game/Enemy/JumpEmitter.h"
 #include "Game/Enemy/Kameck.h"
 #include "Game/Enemy/KameckTurtle.h"
