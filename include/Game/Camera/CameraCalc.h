@@ -1,0 +1,9 @@
+#pragma once
+
+#include "JSystem/JGeometry/TVec.h"
+
+namespace MR {
+    void polarToCross(const TVec3f&, TVec3f*, f32, f32, f32);
+    void crossToPolar(const TVec3f&, const TVec3f&, f32*, f32*, f32*);
+    void polarToCrossDegree(const TVec3f&, TVec3f*, f32, f32, f32);
+}  // namespace MR

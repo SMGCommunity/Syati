@@ -2,11 +2,30 @@
 
 #include "Game/NameObj/NameObj.h"
 
-class CameraTargetObj;
-class CamTranslatorBase;
-class CameraMan;
-class CameraPoseParam;
+class Camera;
 class CameraHeightArrange;
+class CameraMan;
+class CameraParamChunk;
+class CameraPoseParam;
+class CameraTargetObj;
+
+class CamTranslatorBase {
+public:
+    inline CamTranslatorBase() {}
+
+    virtual void setParam(const CameraParamChunk*) = 0;
+    virtual Camera* getCamera() const = 0;
+};
+
+class CamTranslatorDummy : public CamTranslatorBase {
+public:
+    inline CamTranslatorDummy(Camera* pCamera) { mCamera = pCamera; }
+
+    virtual void setParam(const CameraParamChunk*);
+    virtual Camera* getCamera() const;
+
+    Camera* mCamera;  // 0x4
+};
 
 class Camera : public NameObj {
 public:

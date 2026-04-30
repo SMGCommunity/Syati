@@ -2,6 +2,7 @@
 
 #include "JSystem/JGeometry/TVec.h"
 
+class CameraDirector;
 class CameraMan;
 class Camera;
 
