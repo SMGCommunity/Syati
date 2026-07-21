@@ -12,9 +12,9 @@ public:
 	void reset();
 	// unknown function here
 
-	f32 _0;
-	f32 _4;
-	f32 _8;
-	f32 _C;
-	f32 _10;
+	f32 mRestValue;   // 0x00
+	f32 mSpringValue; // 0x04
+	f32 mAccelFactor; // 0x08
+	f32 mDamping;     // 0x0C
+	f32 mVelocity;    // 0x10
 };
