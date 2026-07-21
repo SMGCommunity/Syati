@@ -10,4 +10,6 @@ public:
     ~FirePressureBulletHolder();
     virtual void init(const JMapInfoIter &rIter);
     FirePressureBullet* callEmptyBullet();
+
+    FirePressureBullet* mBullets[20];
 };
