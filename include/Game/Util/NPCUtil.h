@@ -17,6 +17,7 @@ namespace MR {
 	void tryStartTurnAction(NPCActor*);
 	void followRailPose(NPCActor*, f32, f32);
 	void setDefaultPose(NPCActor*);
+	bool tryStartReaction(NPCActor*);
 	void tryStartReactionAndPopNerve(NPCActor*);
 	void registerMarioFaceShipNpc(LiveActor *, const JMapInfoIter &);
 };
