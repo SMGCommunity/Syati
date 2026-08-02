@@ -43,4 +43,5 @@ namespace MR {
 	// not positioned in order
 	void startSoundObject(AudSoundObject*, const char*);
 	void startSoundObjectLevel(AudSoundObject*, const char*, s32);
+	void setSoundVolumeSetting(u32, u16);
 };

@@ -29,5 +29,5 @@ public:
     bool checkCloseWipeStart(u16);
     void init(u16,u16);
     void missLayoutOpen(u16,u16);
-    void sound(u16,u16);
+    void sound(u16, u16 time);
 };
