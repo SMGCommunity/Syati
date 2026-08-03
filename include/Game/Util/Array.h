@@ -125,6 +125,10 @@ namespace MR {
             }
         }
 
+        inline int indexOf(T* pItem) const {
+            return pItem - begin();
+        }
+
     private:
         /// @brief The array of elements.
         /* 0x0 */ T mArr[N];
