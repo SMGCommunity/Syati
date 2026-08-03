@@ -25,6 +25,7 @@ class ResTIMG;
 class ResourceHolder;
 class TriangleFilterBase;
 class ProjmapEffectMtxSetter;
+class XjointTransform;
 
 namespace MR {
     enum CollisionScaleType {
@@ -99,7 +100,7 @@ namespace MR {
     // changeModelDataTexAll
 
     void initJointTransform(const LiveActor *pActor);
-    // getJointTransform
+    XjointTransform* getJointTransform(const LiveActor* pActor, const char* jointname);
 
     f32 getBckFrame(const LiveActor *pActor);
     f32 getBtkFrame(const LiveActor *pActor);
