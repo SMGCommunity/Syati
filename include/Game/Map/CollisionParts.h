@@ -16,14 +16,14 @@ public:
 	CollisionParts();
 
 	TVec3f getTrans();
-	void init(const TMtx34f &, HitSensor *, const void *, const void *, s32, bool);
+	void init(const TPos3f&, HitSensor *, const void *, const void *, s32, bool);
 	void addToBelongZone();
 	void removeFromBelongZone();
-	void initWithAutoEqualScale(const TMtx34f &, HitSensor *, const void *, const void *, s32, bool);
-	void initWithNotUsingScale(const TMtx34f &, HitSensor *, const void *, const void *, s32, bool);
-	void resetAllMtx(const TMtx34f &);
+	void initWithAutoEqualScale(const TPos3f&, HitSensor *, const void *, const void *, s32, bool);
+	void initWithNotUsingScale(const TPos3f&, HitSensor *, const void *, const void *, s32, bool);
+	void resetAllMtx(const TPos3f&);
 	void resetAllMtx();
-	void resetAllMtxPrivate(const TMtx34f &);
+	void resetAllMtxPrivate(const TPos3f &);
 	void setMtx(const TPos3f &);
 	void setMtx();
 	void updateMtx();
