@@ -49,6 +49,7 @@
 #include "Game/MapObj/StarLightAreaHolder.h"
 #include "Game/MapObj/StarPiece.h"
 #include "Game/MapObj/StarPieceMother.h"
+#include "Game/MapObj/SpinDriver.h"
 #include "Game/MapObj/SuperSpinDriver.h"
 #include "Game/MapObj/TicoCoin.h"
 #include "Game/MapObj/TicoFatStarPiece.h"
