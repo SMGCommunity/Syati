@@ -182,6 +182,35 @@ namespace JGeometry {
             f32 x = mMtx[0][0];
             rDest.set(x, y, z);
         }
+
+        inline void setRotate(f32 rx, f32 ry, f32 rz) {
+            // NOTE: setEulerXYZ?
+            f32 sinX, sinY, sinZ;
+            f32 cosX, cosY, cosZ;
+
+            cosZ = cos(rz);
+            cosY = cos(ry);
+            cosX = cos(rx);
+            sinZ = sin(rz);
+            sinY = sin(ry);
+            sinX = sin(rx);
+
+            f32 sXsY = sinX * sinY;
+            f32 cXcZ = cosX * cosZ;
+            f32 cXsZ = cosX * sinZ;
+
+            mMtx[0][0] = cosY * cosZ;
+            mMtx[1][0] = cosY * sinZ;
+            mMtx[2][0] = -sinY;
+
+            mMtx[0][1] = sXsY * cosZ - cosX * sinZ;
+            mMtx[1][1] = cosX * cosZ + sXsY * sinZ;
+            mMtx[2][1] = sinX * cosY;
+
+            mMtx[0][2] = cXcZ * sinY + sinX * sinZ;
+            mMtx[1][2] = cXsZ * sinY - sinX * cosZ;
+            mMtx[2][2] = cosX * cosY;
+        }
     };
 
     template<class T>
