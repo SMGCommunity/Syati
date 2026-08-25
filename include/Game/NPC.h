@@ -2,6 +2,7 @@
 
 #include "Game/NPC/EventDirector.h"
 #include "Game/NPC/MarioFaceShipAttentionConversation.h"
+#include "Game/NPC/Meister.h"
 #include "Game/NPC/NPCActor.h"
 #include "Game/NPC/Rabbit.h"
 #include "Game/NPC/Rosetta.h"
