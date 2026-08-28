@@ -1,8 +1,5 @@
 #pragma once
 
-// == WIP ==
-// All addresses shown are USA
-
 #include "Game/LiveActor/LiveActor.h"
 
 class ActorCameraInfo;
@@ -26,9 +23,18 @@ public:
     bool calcJoint(TPos3f* pJointMtx, const JointControllerInfo& rJointControllerInfo);
 
     // Nerve EXE functions
+    void exeBeforeAppear();
+    void exeWait();
+    void exeStartPlayerToPoint();
+    void exePlayerToPoint();
+    void exeEndPlayerToPoint();
+    void exeMinigame();
+    void exeStartPlayerBack();
+    void exePlayerBack();
+    void exeEndPlayerBack();
 
-    // Likely const function at 802D9510
-
+    // Likely const
+    bool isPlayerTeleportActive() const;
 
     TMtx34f mBaseMatrix; // 0x90
     PetitPorterExitPoint* mExitPoint; // 0xC0
@@ -45,6 +51,20 @@ public:
     const char* mPreviousBgmName; // 0x144
     s32 mPreviousBgmState; // 0x148
 };
+
+namespace NrvPetitPorter {
+    NERVE(PetitPorterNrvBeforeAppear);          // PAL 807d9778
+    NERVE(PetitPorterNrvPlayerOn);              // PAL 807d977c
+    NERVE(PetitPorterNrvWait);                  // PAL 807d9780
+    NERVE(PetitPorterNrvStartPlayerToPoint);    // PAL 807d9784
+    NERVE(PetitPorterNrvPlayerToPoint);         // PAL 807d9788
+    NERVE(PetitPorterNrvEndPlayerToPoint);      // PAL 807d978c
+    NERVE(PetitPorterNrvMinigame);              // PAL 807d9790
+    NERVE(PetitPorterNrvStartPlayerBack);       // PAL 807d9794
+    NERVE(PetitPorterNrvPlayerBack);            // PAL 807d9798
+    NERVE(PetitPorterNrvEndPlayerBack);         // PAL 807d979c
+    NERVE(PetitPorterNrvDisabled);              // PAL 807d97a0
+}
 
 class PetitPorterWarpPoint : public LiveActor {
 public:
@@ -86,18 +106,3 @@ public:
     s32 mNumEntries; // 0x14
     Entry* mEntries; // 0x18 - Vanilla allocates 32 instances
 };
-
-// need to figure out what these do so they can be properly named
-namespace NrvPetitPorter {
-    // 807D4078 - Wait for SW_A (if applicable)
-    // 807D407C -
-    // 807D4080 -  [initNerve]
-    // 807D4084 -
-    // 807D4088 -
-    // 807D408C -
-    // 807D4090 - Handles the particle effect on the player and the time limit sounds, but doesn't seem to exit itself out of the minigame...?
-    // 807D4094 -
-    // 807D4098 -
-    // 807D409C - Return the player after the minigame
-    // 807D40A0 -  [NullSub]
-}
