@@ -53,17 +53,17 @@ public:
 };
 
 namespace NrvPetitPorter {
-    NERVE(PetitPorterNrvBeforeAppear);          // PAL 807d9778
-    NERVE(PetitPorterNrvPlayerOn);              // PAL 807d977c
-    NERVE(PetitPorterNrvWait);                  // PAL 807d9780
-    NERVE(PetitPorterNrvStartPlayerToPoint);    // PAL 807d9784
-    NERVE(PetitPorterNrvPlayerToPoint);         // PAL 807d9788
-    NERVE(PetitPorterNrvEndPlayerToPoint);      // PAL 807d978c
-    NERVE(PetitPorterNrvMinigame);              // PAL 807d9790
-    NERVE(PetitPorterNrvStartPlayerBack);       // PAL 807d9794
-    NERVE(PetitPorterNrvPlayerBack);            // PAL 807d9798
-    NERVE(PetitPorterNrvEndPlayerBack);         // PAL 807d979c
-    NERVE(PetitPorterNrvDisabled);              // PAL 807d97a0
+    NERVE(PetitPorterNrvBeforeAppear);
+    NERVE(PetitPorterNrvPlayerOn);
+    NERVE(PetitPorterNrvWait);
+    NERVE(PetitPorterNrvStartPlayerToPoint);
+    NERVE(PetitPorterNrvPlayerToPoint);
+    NERVE(PetitPorterNrvEndPlayerToPoint);
+    NERVE(PetitPorterNrvMinigame);
+    NERVE(PetitPorterNrvStartPlayerBack);
+    NERVE(PetitPorterNrvPlayerBack);
+    NERVE(PetitPorterNrvEndPlayerBack);
+    NERVE(PetitPorterNrvDisabled);
 }
 
 class PetitPorterWarpPoint : public LiveActor {

@@ -20,7 +20,7 @@ struct PostCreationEntry {
 
 class NameObjFactory {
 public:
-    static void* getCreator(const char *pName);
+    static CreateActorFunc* getCreator(const char *pName);
     static void callPostCreation(const char *pName, const JMapInfoIter &rIter);
     static NameObj* initChildObj(const JMapInfoIter &rIter, int index);
 
