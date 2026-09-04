@@ -6,6 +6,7 @@
 #include "Game/LiveActor/ActorJointCtrl.h"
 #include "Game/LiveActor/ActorLightCtrl.h"
 #include "Game/LiveActor/ActorPadAndCameraCtrl.h"
+#include "Game/LiveActor/ActorPoseTQ.h"
 #include "Game/LiveActor/ActorSoundHolder.h"
 #include "Game/LiveActor/ActorStateBase.h"
 #include "Game/LiveActor/ActorStateKeeper.h"

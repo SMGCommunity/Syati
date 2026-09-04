@@ -91,6 +91,7 @@ public:
     bool doFlipRot(const TVec3f &);
     bool isDamaging() const;
     bool doRecovery();
+    bool checkStartSwim();
 
     u8 _8;
     u8 _9;
@@ -429,12 +430,12 @@ public:
     f32 _768;
     u16 _76C;
     u16 _76E;
-    MarioRabbit *mMarioRabbit;
-    MarioFoo *mMarioFoo;
-    MarioSukekiyo *mMarioSukekiyo;
-    MarioBury *mMarioBury;
-    MarioWait *mMarioWait;
-    MarioClimb *mMarioClimb;
+    MarioRabbit *mMarioRabbit;              // _770
+    MarioFoo *mMarioFoo;                    // _774
+    MarioSukekiyo *mMarioSukekiyo;          // _778
+    MarioBury *mMarioBury;                  // _77C
+    MarioWait *mMarioWait;                  // _780
+    MarioClimb *mMarioClimb;                // _784
     TVec3f _788;
     MarioHang *mMarioHang;                  // _794
     MarioRecovery *mMarioRecovery;          // _798

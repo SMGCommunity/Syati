@@ -15,7 +15,6 @@ public:
 	};
 
 	Kanina(const char *pName);
-
 	virtual ~Kanina();
 	virtual void init(const JMapInfoIter &rIter);
 	virtual void initAfterPlacement();
@@ -23,34 +22,93 @@ public:
 	virtual void makeActorDead();
 	virtual void control();
 	virtual void calcAndSetBaseMtx();
-	void attackSensor(HitSensor *pSender, HitSensor *pReceiver);
+	virtual void attackSensor(HitSensor *pSender, HitSensor *pReceiver);
 	virtual bool receiveMsgPush(HitSensor *pSender, HitSensor *pReceiver);
 	virtual bool receiveMsgPlayerAttack(u32 msg, HitSensor *pSender, HitSensor *pReceiver);
 	virtual bool receiveOtherMsg(u32 msg, HitSensor *pSender, HitSensor *pReceiver);
 
-	// Various functions...
-	bool receiveFireBall(HitSensor*, HitSensor*);
+	void initForType(const JMapInfoIter &rIter, KaninaType);
+	
+	bool isPlayerBackward(f32) const;
+	bool isStatePossibleToAttack() const;
+	bool isStateBlink() const;
+
+	void appearItemTrample();
+	void doDamageFireBall(HitSensor *, HitSensor *);
+	void startRun();
+	void startRunAwayLevelSound();
+	
+	bool receiveTrample(HitSensor *, HitSensor *);
+	bool receiveFireBall(HitSensor *, HitSensor *);
+	bool receiveHipDrop(HitSensor *, HitSensor *);
+	bool receiveInvincibleAttack(HitSensor *, HitSensor *);
+
+	void exeAppear();
+	void exeWait();
+	void exeWalk();
+	void exeRunAway();
+	void exeRunAwayReboundDirection();
+	void exeRunAwayBreak();
+	void exeAttack();
+	void exeVauntAttackSuccess();
+	void exeHitWall();
+	void exeReboundEach();
+	void exeGuard();
+	void exeGuardEnd();
+	void exeDamageFireBall();
+	void exeDig();
+	void exeWaitUnderGround();
+	void exeFindPlayer();
+	void exeTurn();
+	void exeTurnEnd();
+	void exePointing();
+
+	bool tryAttack(HitSensor *, HitSensor *);
+	bool tryPushEach(HitSensor *, HitSensor *);
+	bool tryFindPlayer();
+	bool tryHitWall();
+	bool tryTurn();
+	bool tryPointing();
 
 	KaninaType mKaninaType; // _90
-	u32* _94;
+	ActorStateBaseInterface* _94; // ctor 0x801ACD60
 	JointRumbler* mJointRumbler; // _98
 	BenefitItemOneUp* mOneUp; // _9C
 	AnimationRandomPlayer* mAnimRandomPlayer; // _A0
 	YoshiLockOnTarget* mYoshiLockOnTarget; // _A4
 	TVec3f mOriginalPosition; // _A8
 	TQuat4f _B4;
-	s32 _C0; // ???
-	s32 _C4;
-	s32 _C8;
+	f32 _C0;
+	s32 mRunAwayBreakTime; // _C4
+	s32 mRunAwayTime; // _C8
 	f32 _CC;
-	f32 _D0;
-	f32 _D4;
-	f32 _D8;
-	f32 _DC;
-	f32 _E0;
-	f32 _E4;
-	s32 _E8;
-	s32 _EC;
+	TVec3f _D0;
+	TVec3f _DC;
+	s32 mWalkTimer; // _E8
+	s32 _EC; // Some kind of timer
 	s32 _F0;
-	bool mObjArg0; // _F4
+	bool mNoDig; // _F4
+};
+
+namespace NrvKanina {
+	NERVE(HostTypeAppear);
+	NERVE(HostTypeWait);
+	NERVE(HostTypeAttack);
+	NERVE(HostTypeVauntAttackSuccess);
+	NERVE(HostTypeGuard);
+	NERVE(HostTypeGuardEnd);
+	NERVE(HostTypeDamageFireBall);
+	NERVE(HostTypeDig);
+	NERVE(HostTypeWaitUnderGround);
+	NERVE(HostTypeFindPlayer);
+	NERVE(HostTypeRunAwayBreak);
+	NERVE(HostTypeReboundEach);
+	NERVE(HostTypeTurn);
+	NERVE(HostTypeTurnEnd);
+	NERVE(HostTypePointing);
+	NERVE(HostTypePointingEnd);
+	NERVE(HostTypeWalk);
+	NERVE(HostTypeRunAway);
+	NERVE(HostTypeRunAwayReboundDirection);
+	NERVE(HostTypeHitWall);
 };

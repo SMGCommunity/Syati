@@ -1,16 +1,6 @@
 #pragma once
 
-#include "syati.h"
-
-struct unk_8022CAE0 {
-    f32 _0;
-    f32 _4;
-    f32 _8;
-    f32 _C;
-    f32 _10;
-    f32 _14;
-    f32 _18;
-};
+#include "Game/LiveActor.h"
 
 class SupportTico : public LiveActor {
 public:
@@ -33,7 +23,7 @@ public:
     void requestHide();
     void requestShow();
 
-    unk_8022CAE0 *_90;
+    ActorPoseTQ *_90;
     LiveActorGroup *mRequestGroup; // _94
     u32 _98;
     u32 _9C;
