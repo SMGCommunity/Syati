@@ -159,6 +159,12 @@ namespace JGeometry {
         //void setZDir(f32 x, f32 y, f32 z);
         void setXYZDir(const TVec3f &rSrcX, const TVec3f &rSrcY, const TVec3f &rSrcZ);
 
+        void getEulerDegree(TVec3f& rDest) const {
+            TVec3f rot;
+            getEulerXYZ(rot);
+            rDest.set(rot.x * (180.0f / PI), rot.y * (180.0f / PI), rot.z * (180.0f / PI));
+        }
+
         void getEuler(TVec3f &rDest) const;
         void getEulerXYZ(TVec3f &rDest) const;
         void setEulerY(f32 val);

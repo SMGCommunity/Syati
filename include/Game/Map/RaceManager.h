@@ -9,7 +9,14 @@
 class AbstractRacer;
 class PlayerRacer;
 class AbstractAudience;
-class RaceLayout;
+
+class RaceLayout : public LayoutActor {
+public:
+    RaceLayout(const char*);
+    virtual ~RaceLayout();
+    virtual void init(const JMapInfoIter& rIter);
+    virtual void appear();
+};
 
 class RaceManager : public LiveActor {
 public:

@@ -23,6 +23,15 @@ namespace JGeometry {
         void getEuler(TVec3<f32> &) const;
         void setEuler(f32, f32, f32);
 
+        void setEulerZ(f32 _z) {
+            f32 s = sin(_z * 0.5f);
+            f32 c = cos(_z * 0.5f);
+            this->x = 0.0f;
+            this->y = 0.0f;
+            this->z = s;
+            this->w = c;
+        };
+        
         void setRotate(const TVec3<f32> &, f32);
         void setRotate(const TVec3<f32> &, const TVec3<f32> &);
         void setRotate(const TVec3<f32> &, const TVec3<f32> &, f32);
@@ -30,6 +39,14 @@ namespace JGeometry {
         /* Arithmetic and algebraic operations */
         void transform(TVec3<f32> &) const;
         void transform(const TVec3<f32> &, const TVec3<f32> &) const;
+
+        void mult(const TQuat4& q) {
+            PSQUATMultiply((Quaternion*)&q, (Quaternion*)this, (Quaternion*)this);
+        }
+
+        void mult(const TQuat4& q1, const TQuat4& q2) {
+            PSQUATMultiply(q1, q2, (Quaternion*)this);
+        }
 
         void rotate(const TVec3<f32> &) const;
 

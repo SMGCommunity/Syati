@@ -15,6 +15,7 @@ public:
     void setBinder(Binder *);
     void addEffect(const char *, LiveActor *);
     void registerEffect(const char *, Mtx *, const char *, const char *);
+    void registerSyncBckEffect(XanimePlayer*, const char*, const char*, s32, f32, f32, bool);
 
     void updateAttributeEffect();
     void stopEmitterOnClipped();

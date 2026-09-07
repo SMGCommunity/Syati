@@ -103,12 +103,13 @@ namespace MR {
 	bool getRailArg3NoInit(const LiveActor *, s32 *);
 	bool getRailArg1WithInit(const RailRider *, s32 *);
 	bool getRailPointArg0WithInit(const LiveActor *, s32, s32 *);
+	bool getRailPointArg1NoInit(const LiveActor *, s32, f32 *);
+	bool getRailPointArg1NoInit(const LiveActor *, s32, s32 *);
 	bool getRailPointArg2WithInit(const LiveActor *, s32, s32 *);
 	bool getRailPointArg0NoInit(const LiveActor *, s32, s32 *);
 	bool getRailPointArg4NoInit(const LiveActor *, s32, s32 *);
 	bool getRailPointArg6NoInit(const LiveActor *, s32, s32 *);
 	bool getRailPointArg7NoInit(const LiveActor *, s32, s32 *);
-	bool getRailPointArg1NoInit(const LiveActor *, s32, f32 *);
 	bool getCurrentRailPointArg0WithInit(const LiveActor *, s32 *);
 	bool getCurrentRailPointArg1WithInit(const LiveActor *, s32 *);
 	bool getCurrentRailPointArg3WithInit(const LiveActor *, s32 *);

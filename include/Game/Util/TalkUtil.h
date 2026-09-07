@@ -35,7 +35,7 @@ namespace MR {
     void registerKillFunc(TalkMessageCtrl *pTalkCtrl, const TalkMessageFuncBase &rTalkFunc);
     void setMessageArg(TalkMessageCtrl *pTalkCtrl, int arg);
 
-    TalkMessageCtrl* createTalkCtrl(LiveActor *pActor, const JMapInfoIter &rIter, const TVec3f &rOffset, MtxPtr pFollowMtx);
+    TalkMessageCtrl* createTalkCtrl(LiveActor *pActor, const JMapInfoIter &rIter, const char* pName, const TVec3f &rOffset, MtxPtr pFollowMtx);
     TalkMessageCtrl* createTalkCtrlDirect(LiveActor *pActor, const JMapInfoIter &rIter, const char *pLabel, const TVec3f &rOffset, MtxPtr pFollowMtx);
     TalkMessageCtrl* createTalkCtrlDirect(LiveActor *pActor, const char *pLabel, const TVec3f &rOffset, MtxPtr pFollowMtx);
     TalkMessageCtrl* createTalkCtrlDirectOnRootNodeAutomatic(LiveActor *pActor, const JMapInfoIter &rIter, const char *pLabel, const TVec3f &rOffset, MtxPtr pFollowMtx);
@@ -47,6 +47,10 @@ namespace MR {
     bool tryTalkForceMarioPuppetable(TalkMessageCtrl *pTalkCtrl);
     bool tryTalkForceAtEnd(TalkMessageCtrl *pTalkCtrl);
     bool tryTalkForceMarioPuppetableAtEnd(TalkMessageCtrl *pTalkCtrl);
+    bool tryTalkForceWithoutDemo(TalkMessageCtrl *pTalkCtrl);
+    bool tryTalkForceWithoutDemoMarioPuppetable(TalkMessageCtrl *pTalkCtrl);
+    bool tryTalkForceWithoutDemoAtEnd(TalkMessageCtrl *pTalkCtrl);
+    bool tryTalkForceWithoutDemoMarioPuppetableAtEnd(TalkMessageCtrl *pTalkCtrl);
     bool tryTalkWithoutDemo(TalkMessageCtrl *pTalkCtrl);
     bool tryTalkWithoutDemoMarioPuppetable(TalkMessageCtrl *pTalkCtrl);
     bool tryTalkWithoutDemoAtEnd(TalkMessageCtrl *pTalkCtrl);
