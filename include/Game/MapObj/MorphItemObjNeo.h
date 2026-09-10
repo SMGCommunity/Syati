@@ -35,6 +35,8 @@ public:
 	virtual void appearTransformation();
 	virtual void killTransformation();
 
+	void glowEffect(LiveActor *, int);
+
 	// class functions?
 
 	u16 _90;
