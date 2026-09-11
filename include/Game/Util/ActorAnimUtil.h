@@ -1,5 +1,6 @@
 #pragma once
 
+#include "JSystem/J3DGraphBase/J3DAnimation.h"
 #include "revolution.h"
 
 class LiveActor;
