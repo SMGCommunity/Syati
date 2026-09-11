@@ -7,6 +7,7 @@ class JMapInfoIter;
 class LiveActor;
 class TalkMessageCtrl;
 class TalkMessageFuncBase;
+class NPCActor;
 
 namespace MR {
     // I (SuperHackio) strongly believe that this class actually has a ton more variables and functions.
@@ -41,6 +42,7 @@ namespace MR {
     TalkMessageCtrl* createTalkCtrlDirectOnRootNodeAutomatic(LiveActor *pActor, const JMapInfoIter &rIter, const char *pLabel, const TVec3f &rOffset, MtxPtr pFollowMtx);
     TalkMessageCtrl* tryCreateTalkCtrlDirectOnRootNodeAutomatic(LiveActor *pActor, const JMapInfoIter &rIter, const char *pLabel, const TVec3f &rOffset, MtxPtr pFollowMtx);
 
+    bool tryStartTalkAction(NPCActor* pActor);
     bool tryTalkNearPlayer(TalkMessageCtrl *pTalkCtrl);
     bool tryTalkNearPlayerAtEnd(TalkMessageCtrl *pTalkCtrl);
     bool tryTalkForce(TalkMessageCtrl *pTalkCtrl);

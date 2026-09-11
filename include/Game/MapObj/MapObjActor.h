@@ -56,7 +56,7 @@ public:
 	const char* mObjName;						// _90
 	LodCtrl* mLodCtrl;							// _94
 	ModelObj* mBloomModel;						// _98
-	u32* _9C;
+	ModelObj* _9C;
 	u32* mProjmapEffectMtxSetter;				// _A0
 	MapPartsRailMover* mRailMover;				// _A4
 	MapPartsRotator* mRotator;					// _A8
@@ -87,7 +87,7 @@ namespace MapObjActorUtil {
 	// unknown function at 802CB810, possibly stopRailMover?
 	void pauseRotator(const MapObjActor *);
 	void resetRailMoverToInitPos(const MapObjActor *);
-	bool tryStartBreak(const MapObjActor*);
+	bool tryStartBreak(MapObjActor*);
 	bool isBreakStopped(const MapObjActor *);
 	void killBloomModel(MapObjActor *);
 	void appearBloomModel(MapObjActor *);
