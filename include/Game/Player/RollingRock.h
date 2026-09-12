@@ -32,3 +32,7 @@ public:
     f32 _120;
     f32 _124;
 };
+
+namespace NrvRollingRock {
+    NERVE(RollingRockNrvRolling);
+}
