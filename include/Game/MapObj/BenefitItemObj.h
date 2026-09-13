@@ -24,7 +24,7 @@ public:
     virtual void doRotateY();
     virtual void initEscape();
     virtual void doEscape();
-    virtual void appearGround();
+    virtual void appearGround(u32);
     virtual void appearThrowUp();
     virtual void appearThrowUpQuestionBox();
     virtual void doCatch();
