@@ -4,10 +4,11 @@
 #error "Kamek requires the CodeWarrior compiler!"
 #endif
 
-#include "revolution.h"
 #include "c_stdlib.h"
-#include "JSystem.h"
-#include "LMS.h"
 #include "Game.h"
-#include "nw4r.h"
+#include "JSystem.h"
 #include "kamek/hooks.h"
+#include "LMS.h"
+#include "math_types.h"
+#include "nw4r.h"
+#include "revolution.h"
