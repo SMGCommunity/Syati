@@ -1,13 +1,52 @@
 #pragma once
 
-#include "revolution.h"
+#include "revolution/sc.h"
+
+#define LANGUAGE_JAPANESE     (SC_LANG_JAPANESE)
+#define LANGUAGE_ENGLISH      (SC_LANG_ENGLISH)
+#define LANGUAGE_GERMAN       (SC_LANG_GERMAN)
+#define LANGUAGE_FRENCH       (SC_LANG_FRENCH)
+#define LANGUAGE_SPANISH      (SC_LANG_SPANISH)
+#define LANGUAGE_ITALIAN      (SC_LANG_ITALIAN)
+#define LANGUAGE_DUTCH        (SC_LANG_DUTCH)
+#define LANGUAGE_SIMP_CHINESE (SC_LANG_SIMP_CHINESE)
+#define LANGUAGE_TRAD_CHINESE (SC_LANG_TRAD_CHINESE)
+#define LANGUAGE_KOREAN       (SC_LANG_KOREAN)
+
+#define REGION_EU (0u)
+#define REGION_JP (1u)
+#define REGION_US (2u)
+#define REGION_CN (3u)
+#define REGION_KR (4u)
+#define REGION_AS (5u)
+
+#define MAKE_LOCALE(region, language) ((region << 4) | (language))
+#define GET_LANGUAGE_FROM_LOCALE(locale) (locale & 0xF);
+#define GET_REGION_FROM_LOCALE(locale) (locale >> 4);
+
+#define LANGUAGE_JP_JAPANESE     (MAKE_LOCALE(REGION_JP, LANGUAGE_JAPANESE))
+#define LANGUAGE_US_ENGLISH      (MAKE_LOCALE(REGION_US, LANGUAGE_ENGLISH))
+#define LANGUAGE_US_SPANISH      (MAKE_LOCALE(REGION_US, LANGUAGE_SPANISH))
+#define LANGUAGE_US_FRENCH       (MAKE_LOCALE(REGION_US, LANGUAGE_FRENCH))
+#define LANGUAGE_EU_ENGLISH      (MAKE_LOCALE(REGION_EU, LANGUAGE_ENGLISH))
+#define LANGUAGE_EU_SPANISH      (MAKE_LOCALE(REGION_EU, LANGUAGE_SPANISH))
+#define LANGUAGE_EU_FRENCH       (MAKE_LOCALE(REGION_EU, LANGUAGE_FRENCH))
+#define LANGUAGE_EU_GERMAN       (MAKE_LOCALE(REGION_EU, LANGUAGE_GERMAN))
+#define LANGUAGE_EU_ITALIAN      (MAKE_LOCALE(REGION_EU, LANGUAGE_ITALIAN))
+#define LANGUAGE_EU_DUTCH        (MAKE_LOCALE(REGION_EU, LANGUAGE_DUTCH))
+#define LANGUAGE_CN_SIMP_CHINESE (MAKE_LOCALE(REGION_CN, LANGUAGE_SIMP_CHINESE))
+#define LANGUAGE_CN_TRAD_CHINESE (MAKE_LOCALE(REGION_CN, LANGUAGE_TRAD_CHINESE))
+#define LANGUAGE_KR_KOREAN       (MAKE_LOCALE(REGION_KR, LANGUAGE_KOREAN))
+#define LANGUAGE_AS_TRAD_CHINESE (MAKE_LOCALE(REGION_AS, LANGUAGE_TRAD_CHINESE))
 
 namespace MR {
-	u8 getDecidedLanguageFromIPL();
-	int getLanguage();
-	u8 getLanguageFromIPL();
-	const char* getCurrentLanguagePrefix();
-	const char* getCurrentRegionPrefix();
-	u32 getLanguageNum();
-	const char* getLanguagePrefixByIndex(u32);
+    u8 getDecidedLanguageFromIPL();
+    int getLanguage();
+    u8 getLanguageFromIPL();
+
+    const char* getCurrentLanguagePrefix();
+    const char* getCurrentRegionPrefix();
+
+    u32 getLanguageNum();
+    const char* getLanguagePrefixByIndex(u32 index);
 };
