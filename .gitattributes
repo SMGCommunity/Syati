@@ -1,0 +1,16 @@
+.gitattributes eol=lf
+.gitignore eol=lf
+.gitmodules eol=lf
+
+*.py text eol=lf
+
+*.s text eol=lf
+*.h text eol=lf
+*.c text eol=lf
+*.hpp text eol=lf
+*.cpp text eol=lf
+*.inc text eol=lf
+
+*.txt text eol=lf
+*.md text eol=lf
+*.json text eol=lf
