@@ -1,8 +1,6 @@
 #pragma once
 
-#include "revolution.h"
-#include "JSystem.h"
-#include "Game/Util/Functor.h"
+#include "JSystem/JGeometry.h"
 #include "Game/Util/Color8.h"
 
 class BenefitItemLifeUp;
@@ -19,6 +17,8 @@ class StageSwitchCtrl;
 class WorldMapObjHolder;
 
 namespace MR {
+    class FunctorBase;
+
     bool isJudgedToClipFrustum(const TVec3f &rPosition, f32 radius);
     bool isJudgedToClipFrustum50m(const TVec3f &rPosition, f32 radius);
     bool isJudgedToClipFrustum300m(const TVec3f &rPosition, f32 radius);

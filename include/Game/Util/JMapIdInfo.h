@@ -1,7 +1,6 @@
 #pragma once
 
-#include "revolution.h"
-#include "JSystem.h"
+#include "revolution/types.h"
 
 /* FINISHED */
 

@@ -1,7 +1,6 @@
 #pragma once
 
-#include "revolution.h"
-#include "JSystem.h"
+#include "JSystem/JGeometry.h"
 
 class J3DModel;
 class J3DModelData;

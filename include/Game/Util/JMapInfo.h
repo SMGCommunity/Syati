@@ -1,6 +1,8 @@
 #pragma once
 
-#include "revolution.h"
+#include "revolution/types.h"
+
+class JMapInfoIter;
 
 struct JMapItem {
     u32 mHash;       // _0
@@ -17,8 +19,6 @@ struct JMapData {
     u32 mEntrySize;
     JMapItem mItems[]; // _10
 };
-
-class JMapInfoIter;
 
 class JMapInfo {
 public:

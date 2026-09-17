@@ -68,18 +68,18 @@
 #include "Game/Util/SupportPlayUtil.h"
 // "two unknown functions"
 // SwitchEventFunctorListener
-#include "Game/Util/SystemUtil.h"                     // unfinished
+#include "Game/Util/SystemUtil.h"                   // unfinished
 #include "Game/Util/TalkUtil.h"                     // unfinished
 
 #include "Game/Util/AreaObjUtil.h"                  // unfinished
 #include "Game/Util/BaseMatrixFollowTargetHolder.h" // unfinished
 #include "Game/Util/BothDirPtrList.h"
 #include "Game/Util/CollisionPartsFilter.h"
-// DirectDraw
+#include "Game/Util/DirectDraw.h"
 // DirectDrawUtil
 #include "Game/Util/FixedPosition.h"                // unfinished
 // GeometryBindUtil
-// IKJoint
+#include "Game/Util/IKJoint.h"
 #include "Game/Util/JMapIdInfo.h"
 #include "Game/Util/JMapInfo.h"                     // unfinished
 #include "Game/Util/JMapLinkInfo.h"

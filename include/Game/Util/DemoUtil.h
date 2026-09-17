@@ -1,7 +1,6 @@
 #pragma once
 
-#include "revolution.h"
-#include "Game/Util/Functor.h"
+#include "revolution/types.h"
 
 class LayoutActor;
 class LiveActor;
@@ -11,110 +10,112 @@ class TalkMessageCtrl;
 class NerveExecutor;
 
 namespace MR {
-	bool tryRegisterDemoCast(LiveActor *, const JMapInfoIter &);
-	void registerDemoActionFunctor(const LiveActor *, const MR::FunctorBase &, const char *);
-	void registerDemoActionNerve(const LiveActor *, const Nerve *, const char *);
-	bool tryRegisterDemoActionFunctor(const LiveActor *, const MR::FunctorBase &, const char *);
-	bool tryRegisterDemoActionNerve(const LiveActor *, const Nerve *, const char *);
-	bool tryRegisterDemoCast(LiveActor *, const char *, const JMapInfoIter &);
-	bool registerDemoCast(LiveActor *, const char *, const JMapInfoIter &);
-	bool initTalkAnimDemoCast(LiveActor *, const JMapInfoIter &, const char *, const char *);
-	bool registerDemoActionFunctorDirect(const LiveActor *, const MR::FunctorBase &, const char *, const char *);
+    class FunctorBase;
 
-	void tryRegisterDemoActionFunctorDirect(const LiveActor *, bool, const MR::FunctorBase &, const char *, const char *);
-	bool tryStartDemoRegistered(LiveActor *, const char *);
-	bool tryStartDemoRegisteredMarioPuppetable(LiveActor *, const char *);
-	void registerDemoSimpleCastAll(LiveActor *);
-	void registerDemoSimpleCastAll(LayoutActor *);
-	void registerDemoSimpleCastAll(NameObj *);
-	bool isDemoCast(const LiveActor *, const char *);
-	bool isRegisteredDemoActionAppear(const LiveActor *);
-	bool isRegisteredDemoActionNerve(const LiveActor *);
-	bool tryStartDemo(LiveActor *, const char *);
-	bool tryStartDemo(LayoutActor *, const char *);
+    bool tryRegisterDemoCast(LiveActor *, const JMapInfoIter &);
+    void registerDemoActionFunctor(const LiveActor *, const MR::FunctorBase &, const char *);
+    void registerDemoActionNerve(const LiveActor *, const Nerve *, const char *);
+    bool tryRegisterDemoActionFunctor(const LiveActor *, const MR::FunctorBase &, const char *);
+    bool tryRegisterDemoActionNerve(const LiveActor *, const Nerve *, const char *);
+    bool tryRegisterDemoCast(LiveActor *, const char *, const JMapInfoIter &);
+    bool registerDemoCast(LiveActor *, const char *, const JMapInfoIter &);
+    bool initTalkAnimDemoCast(LiveActor *, const JMapInfoIter &, const char *, const char *);
+    bool registerDemoActionFunctorDirect(const LiveActor *, const MR::FunctorBase &, const char *, const char *);
 
-	bool tryStartDemoWithoutCinemaFrame(LiveActor *, const char *);
+    void tryRegisterDemoActionFunctorDirect(const LiveActor *, bool, const MR::FunctorBase &, const char *, const char *);
+    bool tryStartDemoRegistered(LiveActor *, const char *);
+    bool tryStartDemoRegisteredMarioPuppetable(LiveActor *, const char *);
+    void registerDemoSimpleCastAll(LiveActor *);
+    void registerDemoSimpleCastAll(LayoutActor *);
+    void registerDemoSimpleCastAll(NameObj *);
+    bool isDemoCast(const LiveActor *, const char *);
+    bool isRegisteredDemoActionAppear(const LiveActor *);
+    bool isRegisteredDemoActionNerve(const LiveActor *);
+    bool tryStartDemo(LiveActor *, const char *);
+    bool tryStartDemo(LayoutActor *, const char *);
 
-	bool tryStartDemoMarioPuppetable(LiveActor *, const char *);
-	bool tryStartDemoMarioPuppetableWithoutCinemaFrame(LiveActor *, const char *);
+    bool tryStartDemoWithoutCinemaFrame(LiveActor *, const char *);
 
-	bool tryStartTimeKeepDemo(NameObj *, const char *, const char *);
+    bool tryStartDemoMarioPuppetable(LiveActor *, const char *);
+    bool tryStartDemoMarioPuppetableWithoutCinemaFrame(LiveActor *, const char *);
 
-	bool tryStartTimeKeepDemoMarioPuppetable(NameObj *, const char *, const char *);
-	bool tryStartTimeKeepDemoMarioPuppetable(LiveActor *, const char *, const char *);
+    bool tryStartTimeKeepDemo(NameObj *, const char *, const char *);
 
-	bool requestStartDemo(LiveActor *, const char *, const Nerve *, const Nerve *);
+    bool tryStartTimeKeepDemoMarioPuppetable(NameObj *, const char *, const char *);
+    bool tryStartTimeKeepDemoMarioPuppetable(LiveActor *, const char *, const char *);
 
-	bool requestStartDemoWithoutCinemaFrame(LiveActor *, const char *, const Nerve *, const Nerve *);
-	bool requestStartDemoWithoutCinemaFrame(LayoutActor *, const char *, const Nerve *, const Nerve *);
-	bool requestStartDemoMarioPuppetable(LiveActor *, const char *, const Nerve *, const Nerve *);
-	bool requestStartDemoMarioPuppetable(NerveExecutor *, LiveActor*, const char *, const Nerve *, const Nerve *);
+    bool requestStartDemo(LiveActor *, const char *, const Nerve *, const Nerve *);
 
-	bool requestStartTimeKeepDemo(NameObj *, const char *, const char *);
-	bool requestStartTimeKeepDemoMarioPuppetable(NameObj *, const char *, const char *);
+    bool requestStartDemoWithoutCinemaFrame(LiveActor *, const char *, const Nerve *, const Nerve *);
+    bool requestStartDemoWithoutCinemaFrame(LayoutActor *, const char *, const Nerve *, const Nerve *);
+    bool requestStartDemoMarioPuppetable(LiveActor *, const char *, const Nerve *, const Nerve *);
+    bool requestStartDemoMarioPuppetable(NerveExecutor *, LiveActor*, const char *, const Nerve *, const Nerve *);
 
-	bool requestStartDemoRegisteredMarioPuppetable(LiveActor *, const Nerve *, const Nerve *, const char *);
-	void endDemo(NameObj *, const char *);
-	void endDemoWaitCameraInterpolating(NameObj *, const char *);
+    bool requestStartTimeKeepDemo(NameObj *, const char *, const char *);
+    bool requestStartTimeKeepDemoMarioPuppetable(NameObj *, const char *, const char *);
 
-	void initDemoSheetTalkAnim(LiveActor *, JMapInfoIter const &, char const *, char const *, TalkMessageCtrl *, TVec3f, MtxPtr);
-	bool tryInitDemoSheetTalkAnim(LiveActor *, JMapInfoIter const &, char const *, char const *, TalkMessageCtrl *, TVec3f, MtxPtr);
+    bool requestStartDemoRegisteredMarioPuppetable(LiveActor *, const Nerve *, const Nerve *, const char *);
+    void endDemo(NameObj *, const char *);
+    void endDemoWaitCameraInterpolating(NameObj *, const char *);
 
-	bool isDemoExist(const char *);
-	bool isDemoActive();
-	bool isDemoActive(const char *);
-	bool canStartDemo();
-	bool isTimeKeepDemoActive();
-	bool isDemoActiveRegistered(const LiveActor *);
-	bool isDemoPartExist(const LiveActor *, const char *);
-	bool isDemoLastStep();
-	bool isDemoPartActive(const char *);
-	bool isDemoPartStep(const char *, s32);
-	bool isDemoPartFirstStep(const char *);
-	bool isDemoPartLastStep(const char *);
-	bool isDemoPartGreaterStep(const char *, s32);
-	s32 getDemoPartTotalStep(const char *);
-	f32 calcDemoPartStepRate(const char *);
-	s32 getDemoPartStep(const char *);
-	void pauseTimeKeepDemo(LiveActor *);
-	void resumeTimeKeepDemo(LiveActor *);
-	bool isPauseTimeKeepDemo(LiveActor *);
-	bool isPowerStarGetDemoActive();
+    void initDemoSheetTalkAnim(LiveActor *, JMapInfoIter const &, char const *, char const *, TalkMessageCtrl *, TVec3f, MtxPtr);
+    bool tryInitDemoSheetTalkAnim(LiveActor *, JMapInfoIter const &, char const *, char const *, TalkMessageCtrl *, TVec3f, MtxPtr);
 
-	const char* getCurrentDemoPartNameMain(const char *);
+    bool isDemoExist(const char *);
+    bool isDemoActive();
+    bool isDemoActive(const char *);
+    bool canStartDemo();
+    bool isTimeKeepDemoActive();
+    bool isDemoActiveRegistered(const LiveActor *);
+    bool isDemoPartExist(const LiveActor *, const char *);
+    bool isDemoLastStep();
+    bool isDemoPartActive(const char *);
+    bool isDemoPartStep(const char *, s32);
+    bool isDemoPartFirstStep(const char *);
+    bool isDemoPartLastStep(const char *);
+    bool isDemoPartGreaterStep(const char *, s32);
+    s32 getDemoPartTotalStep(const char *);
+    f32 calcDemoPartStepRate(const char *);
+    s32 getDemoPartStep(const char *);
+    void pauseTimeKeepDemo(LiveActor *);
+    void resumeTimeKeepDemo(LiveActor *);
+    bool isPauseTimeKeepDemo(LiveActor *);
+    bool isPowerStarGetDemoActive();
 
-	bool isSystemTalking();
-	bool isNormalTalking();
-	LiveActor* getTalkingActor();
+    const char* getCurrentDemoPartNameMain(const char *);
+
+    bool isSystemTalking();
+    bool isNormalTalking();
+    LiveActor* getTalkingActor();
 };
 
 namespace DemoStartInfo {
-	enum DemoType {
-		DEMOTYPE_0,
-		DEMOTYPE_1,
-	};
+    enum DemoType {
+        DEMOTYPE_0,
+        DEMOTYPE_1,
+    };
 
-	enum CinemaFrameType {
-		CINEMAFRAMETYPE_0,
-		CINEMAFRAMETYPE_1,
-	};
+    enum CinemaFrameType {
+        CINEMAFRAMETYPE_0,
+        CINEMAFRAMETYPE_1,
+    };
 
-	enum StarPointerType {
-		STARPOINTERTYPE_0,
-		STARPOINTERTYPE_1,
-		STARPOINTERTYPE_2,
-	};
+    enum StarPointerType {
+        STARPOINTERTYPE_0,
+        STARPOINTERTYPE_1,
+        STARPOINTERTYPE_2,
+    };
 
-	enum DeleteEffectType {
-		DELETEEFFECTYPE_0,
-		DELETEEFFECTYPE_1,
-	};
+    enum DeleteEffectType {
+        DELETEEFFECTYPE_0,
+        DELETEEFFECTYPE_1,
+    };
 }
 
 namespace DemoStartRequestUtil {
-	void startDemoSystem(LiveActor* pOwner, const char* demoName, s32 marioMode, DemoStartInfo::DemoType, DemoStartInfo::CinemaFrameType, DemoStartInfo::StarPointerType, DemoStartInfo::DeleteEffectType, const char*);
-	void startDemoSystem(LayoutActor* pOwner, const char* demoName, s32 marioMode, DemoStartInfo::DemoType, DemoStartInfo::CinemaFrameType, DemoStartInfo::StarPointerType, DemoStartInfo::DeleteEffectType, const char*);
-	void startDemoSystem(NameObj* pOwner, const char* demoName, s32 marioMode, DemoStartInfo::DemoType, DemoStartInfo::CinemaFrameType, DemoStartInfo::StarPointerType, DemoStartInfo::DeleteEffectType, const char*);
-	void requestStartDemo(LiveActor* pOwner, const char* demoName, const Nerve*, const Nerve*, s32 marioMode, DemoStartInfo::DemoType, DemoStartInfo::CinemaFrameType, DemoStartInfo::StarPointerType, DemoStartInfo::DeleteEffectType);
-	void requestStartDemo(LayoutActor* pOwner, const char* demoName, const Nerve*, const Nerve*, s32 marioMode, DemoStartInfo::DemoType, DemoStartInfo::CinemaFrameType, DemoStartInfo::StarPointerType, DemoStartInfo::DeleteEffectType);
+    void startDemoSystem(LiveActor* pOwner, const char* demoName, s32 marioMode, DemoStartInfo::DemoType, DemoStartInfo::CinemaFrameType, DemoStartInfo::StarPointerType, DemoStartInfo::DeleteEffectType, const char*);
+    void startDemoSystem(LayoutActor* pOwner, const char* demoName, s32 marioMode, DemoStartInfo::DemoType, DemoStartInfo::CinemaFrameType, DemoStartInfo::StarPointerType, DemoStartInfo::DeleteEffectType, const char*);
+    void startDemoSystem(NameObj* pOwner, const char* demoName, s32 marioMode, DemoStartInfo::DemoType, DemoStartInfo::CinemaFrameType, DemoStartInfo::StarPointerType, DemoStartInfo::DeleteEffectType, const char*);
+    void requestStartDemo(LiveActor* pOwner, const char* demoName, const Nerve*, const Nerve*, s32 marioMode, DemoStartInfo::DemoType, DemoStartInfo::CinemaFrameType, DemoStartInfo::StarPointerType, DemoStartInfo::DeleteEffectType);
+    void requestStartDemo(LayoutActor* pOwner, const char* demoName, const Nerve*, const Nerve*, s32 marioMode, DemoStartInfo::DemoType, DemoStartInfo::CinemaFrameType, DemoStartInfo::StarPointerType, DemoStartInfo::DeleteEffectType);
 };

@@ -1,14 +1,15 @@
 #pragma once
 
-#include "revolution.h"
-#include "JSystem.h"
+#include "revolution/types.h"
+
+class JKRHeap;
 
 namespace MR {
-	class FunctorBase {
-	public:
-		virtual void operator()() const = 0;
-		virtual FunctorBase* clone(JKRHeap *pHeap) const = 0;
-	};
+    class FunctorBase {
+    public:
+        virtual void operator()() const = 0;
+        virtual FunctorBase* clone(JKRHeap *pHeap) const = 0;
+    };
 
     template<typename T, typename U>
     class FunctorV0M : public FunctorBase {

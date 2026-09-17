@@ -1,19 +1,19 @@
 #pragma once
 
-#include "revolution.h"
+#include "revolution/types.h"
 
 /* FINISHED */
 
 class TriggerChecker {
 public:
-	TriggerChecker();
+    TriggerChecker();
 
-	void update(bool);
-	void setInput(bool);
-	bool getLevel() const;
-	bool getOnTrigger() const;
-	bool getOffTrigger() const;
+    void update(bool);
+    void setInput(bool);
+    bool getLevel() const;
+    bool getOnTrigger() const;
+    bool getOffTrigger() const;
 
-	bool mState;
-	bool mLevel;
+    bool mState;
+    bool mLevel;
 };

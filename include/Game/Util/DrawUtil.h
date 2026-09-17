@@ -1,8 +1,7 @@
 #pragma once
 
-#include "revolution/gx/GXStruct.h"
-#include "revolution.h"
 #include "JSystem/JGeometry.h"
+#include "revolution/gx/GXStruct.h"
 
 class J3DModelData;
 

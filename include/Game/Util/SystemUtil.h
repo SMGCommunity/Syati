@@ -1,16 +1,23 @@
 #pragma once
 
-#include "Game/Util/Functor.h"
-#include "Game/Util/JMapIdInfo.h"
-#include "Game/NameObj/NameObj.h"
-#include "Game/System/GameSystemObjHolder.h"
-#include "nw4r/ut/Font.h"
+#include "revolution/types.h"
 
+class NameObj;
+class JMapIdInfo;
+class GameSystemObjHolder;
 class ParticleResourceHolder;
+
+namespace nw4r {
+    namespace ut {
+        class Font;
+    }
+}
 
 typedef void (NameObj::*MethodFunc)();
 
 namespace MR {
+    class FunctorBase;
+
     bool isScreen16Per9();
 
     void setLayoutDefaultAllocator();

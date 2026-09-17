@@ -1,7 +1,7 @@
 #pragma once
 
-#include "revolution.h"
-#include "JSystem.h"
+#include "JSystem/JGeometry.h"
+#include "JSystem/J3DGraphBase/J3DGXColor.h"
 
 class ActorLightCtrl;
 struct BckCtrlData;

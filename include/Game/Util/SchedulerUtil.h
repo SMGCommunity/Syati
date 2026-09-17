@@ -1,5 +1,7 @@
 #pragma once
 
+#include "revolution/types.h"
+
 namespace MR {
     class ProhibitSchedulerAndInterrupts {
     public:

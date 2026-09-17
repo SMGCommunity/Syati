@@ -1,7 +1,9 @@
 #pragma once
 
-#include "revolution.h"
-#include "JSystem.h"
+#include "revolution/types.h"
+
+class JKRArchive;
+class JKRHeap;
 
 namespace MR {
     bool isFileExist(const char *, bool);

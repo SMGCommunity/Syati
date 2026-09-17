@@ -1,6 +1,6 @@
 #pragma once
 
-#include "revolution.h"
+#include "revolution/types.h"
 
 namespace MR {
     const wchar_t* getSystemMessageDirect(const char *pLabel);

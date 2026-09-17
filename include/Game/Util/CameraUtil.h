@@ -1,6 +1,5 @@
 #pragma once
 
-#include "revolution.h"
 #include "JSystem/JGeometry.h"
 
 class LiveActor;

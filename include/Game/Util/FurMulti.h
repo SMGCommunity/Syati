@@ -1,12 +1,13 @@
 #pragma once
 
-#include "Game/LiveActor.h"
-#include "JSystem/J3DGraphBase/J3DModel.h"
-#include "JSystem/JUtility/JUTTexture.h"
+#include "revolution/types.h"
 
 class FurCtrl;
 class FurBank;
 class FurParam;
+class J3DModel;
+class LiveActor;
+class ResTIMG;
 
 class FurMulti {
 public:
