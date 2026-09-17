@@ -45,6 +45,9 @@ typedef int BOOL;
 #define FALSE 0
 #endif
 
+#define ARRAY_SIZE(o) (s32)(sizeof(o) / sizeof(o[0]))
+#define ARRAY_SIZEU(o) (sizeof(o) / sizeof(o[0]))
+
 // 32-bit floating point 3D vector
 typedef struct {
 	f32 x, y, z;
