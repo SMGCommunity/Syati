@@ -15,8 +15,8 @@ public:
 
     s32 getRandomTime() const;
 
-    s32 mRandomTime;   // _A0
-    s32 _A4;           // useless timer
-    s32 mAverageTime;  // _A8
-    s32 mTimeDuration; // _AC
+    /* 0xA0 */ s32 mStep;
+    /* 0xA4 */ s32 mSeStep;
+    /* 0xA8 */ s32 mLifeTime;
+    /* 0xAC */ s32 mRandWidth;
 };

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "revolution.h"
 #include "Game/LiveActor/LiveActor.h"
 
 /* FINISHED */
@@ -16,7 +15,7 @@ namespace {
     };
 
     const EffectDataEntry* findDataElement(const char *pEffectName);
-};
+}
 
 class SimpleEffectObj : public LiveActor {
 public:
@@ -35,11 +34,11 @@ public:
     void setStateWait();
     void setStateMove();
 
-    const char* mObjName; // _90
-    TVec3f mClipping;     // _94
+    /* 0x90 */ const char* mObjName;
+    /* 0x94 */ TVec3f mClipping;
 };
 
 namespace NrvSimpleEffectObj {
     NERVE(HostTypeWait);
     NERVE(HostTypeMove);
-};
+}

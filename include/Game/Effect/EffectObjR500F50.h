@@ -1,6 +1,5 @@
 #pragma once
 
-#include "revolution.h"
 #include "Game/Effect/SimpleEffectObj.h"
 
 /* FINISHED */

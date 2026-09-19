@@ -3,6 +3,6 @@
 
 namespace MR {
     namespace Effect {
-        u32 getAutoEffectNum(const char *);
+        u32 getAutoEffectNum(const char *pName);
     }
 }

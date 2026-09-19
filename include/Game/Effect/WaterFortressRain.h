@@ -14,10 +14,10 @@ public:
     void exeRain();
     void exeRainSlow();
 
-    TMtx34f mRainEffectMtx; // _90
+    /* 0x90 */ TMtx34f mRainEffectMtx;
 };
 
 namespace NrvWaterFortressRain {
     NERVE(WaterFortressRainNrvRain);
     NERVE(WaterFortressRainNrvRainSlow);
-};
+}
