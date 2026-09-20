@@ -1,0 +1,93 @@
+# Symbol conversion info for Super Mario Galaxy 2
+# Specifies conversion from SB4P to SB4K
+
+# --- .text ------------------------------------------------
+offset,0x8047B110,0x10   # Game; initTextBoxPane__14LayoutCoreUtilFPQ34nw4r3lyt7TextBoxPCcUl
+offset,0x80492340,0x50   # Game; appear__9StaffRollFv
+offset,0x80494AA0,0x70   # Game; sub_80494AA0
+offset,0x804BD390,0x90   # Game; getLanguageNum__2MRFv
+offset,0x8054B3A0,0x100
+#add,0x805E7CE0,sub_805E7CE0
+offset,0x805E7BE0,0x110
+offset,0x805E8140,0x120
+offset,0x805E8DF0,0x1B0
+offset,0x805EA0C0,0x1D0  # WPADInit
+#add,0x805EA560,sub_805EA560
+offset,0x805EA390,0x300
+offset,0x805EAC60,0x480
+offset,0x805F08C0,0x490
+#add,0x805F1370,sub_805F1370
+offset,0x805F0EE0,0x4A0
+offset,0x805F3B00,0x4C0
+offset,0x805F43D0,0x4E0
+offset,0x805F46A0,0x4F0
+offset,0x805F6DC0,0x570
+
+# --- .ctors -----------------------------------------------
+offset,0x80643D20,0x580
+
+# --- .dtors -----------------------------------------------
+
+# --- .rodata ----------------------------------------------
+#add,0x8064D130,unk_8064D130
+offset,0x8064CBB0,0x590    # string "System_ResultGetPowerStar"
+offset,0x8064CF18,0x598    # cLanguages__22@unnamed@Language_cpp@
+offset,0x8064CF80,0x5A0    # sLayoutExt__26@unnamed@LayoutHolder_cpp@
+offset,0x8064DF38,0x5B0    # end of cStationedFileInfo__31@unnamed@StationedFileInfo_cpp@
+offset,0x8064E220,0x5A0    # start of ErrorMessageArchive
+offset,0x806599A0,-0x68C0  # end of ErrorMessageArchive
+
+# --- .data ------------------------------------------------
+offset,0x80661E80,-0x68C0
+delete,0x806F91FC         # string "TxtGalaxyName" was changed
+#add,0x806F293C,...        # string "TxtGalaxyNa"
+delete,0x806F920C         # string "TxtGalaxyNameU" was changed
+#add,0x806F2948,...        # string "TxtGalaxyNaU"
+offset,0x806F9220,-0x68C8
+#add,0x806FA54C,...        # string "AsTradChinese"
+offset,0x80700E18,-0x68B8
+offset,0x80700F00,-0x68C0
+#add,0x806FBBF0,...        # string "/LayoutData/TimeUp.arc"
+offset,0x807024B0,-0x68A8
+delete,0x807025C8         # string "/ObjectData/SaveIconBanner.arc" was changed
+offset,0x807025E8,-0x68C8
+#add,0x806FBE90,...        # string "/LayoutData/SaveIconBanner.arc"
+offset,0x80702758,-0x68A8
+offset,0x8070C560,-0x68A0
+offset,0x8070CB30,-0x689C
+offset,0x8070CB58,-0x6898
+offset,0x8070F500,-0x68A0
+offset,0x80725604,-0x6894
+offset,0x807256B8,-0x6898
+offset,0x807258A8,-0x6890
+
+# --- .bss -------------------------------------------------
+offset,0x8072DD80,-0x4E60
+
+# --- .sdata -----------------------------------------------
+offset,0x807D4A20,-0xAD560
+#add,0x80728454,...         # string "Kr"
+#add,0x80728458,...         # string "As"
+offset,0x807D59B8,-0xAD558
+#add,0x80728480,...         # string "As"
+offset,0x807D59D8,-0xAD550
+#add,0x807285CC,...         # string "As"
+#add,0x8072889C,...         # unknown KPAD data
+offset,0x807D5DEC,-0xAD548
+
+# --- .sbss ------------------------------------------------
+offset,0x807D6480,-0xAD560
+#add,0x8072E4E8,...
+offset,0x807DBA48,-0xAD558
+offset,0x807DBFE0,-0xAD540
+#add,0x8072ECB4,...
+offset,0x807DC1F4,-0xAD53C
+#add,0x8072ECD4,...
+offset,0x807DC210,-0xAD538
+
+# --- .sdata2 -----------------------------------------------
+offset,0x807DC3A0,-0xAD540
+offset,0x807E7880,-0xAD530
+
+# --- .sbss2 -----------------------------------------------
+offset,0x807E86C0,-0xAD540

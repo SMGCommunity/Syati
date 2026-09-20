@@ -1,0 +1,5 @@
+# Symbol conversion info for Super Mario Galaxy 2
+# Specifies conversion from SB4P to SB4J
+
+offset,0x806599A0,-0x5F20  # end of ErrorMessageArchive
+offset,0x8072DD80,-0x5F40  # start of .bss

@@ -1,0 +1,4 @@
+# Symbol conversion info for Super Mario Galaxy 2
+# Specifies conversion from SB4P to SB4E
+
+offset,0x806599A0,-0x5700  # end of ErrorMessageArchive
