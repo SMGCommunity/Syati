@@ -1,28 +1,22 @@
 # Syati
-**Syati** provides C++ headers and symbols for writing custom code injections in **Super Mario Galaxy 2**. With this, you can write code, compile code, link to existing functions and structures in the game and load the actual changes.
 
-# What is supplied
-Syati provides C++ headers, symbols and the CustomCode loader. Examples can be found [**here.**](https://github.com/SMGCommunity/Syati-Examples)
+**Syati** provides C++ headers, linker symbols, and a loader for writing and injecting custom code into **Super Mario Galaxy 2**. SMGCommunity comprises many [example applications](https://github.com/orgs/SMGCommunity/repositories) of Syati so be sure to check those out. To compile the code, it is recommended to use [SyatiModuleBuildTool](https://github.com/SMGCommunity/SyatiModuleBuildTool). [SyatiManager](https://github.com/SMGCommunity/SyatiManager) has a frontend that can help you link and manage modules into CustomCode binaries that can be loaded by the loader.
 
-# Future Plans
-Switching to a module system, so only specific code can be compiled at will.
+## Supported games
 
-# Requirements
-In order to use this toolkit, you need to prepare some software and skills:
+All five regional versions of SMG2 are supported. The following region targets exist:
 
-- The **CodeWarrior PPC EABI C/C++ Compiler**, preferrably application version 4.3.0.172. There is also a free version of that compiler, but you may have to modify the compiler options in the two build scripts.
+- ``SB4P``: Europe / Australia
+- ``SB4E``: Americas
+- ``SB4J``: Japan
+- ``SB4W``: Asia (Taiwan, Hong Kong)
+- ``SB4K``: Korea
+
+## Requirements
+
+The compiler and linker are not part of Syati and they must be provided by the user. Specifically, the following software and skills are needed to develop code for SMG2:
+
+- The **CodeWarrior PPC EABI C/C++ Compiler**, preferrably application version 4.3.0.172. There is also a free version of that compiler, but you may have to modify the compiler options in the build script.
 - A build of the [**Kamek**](https://github.com/Treeki/Kamek) linker.
-- Knowledge of **C** / **C++** / **PowerPC**.
-- **Python 3.7** or newer.
-
-# Setup
-Setup is easy. Put the CodeWarrior files (*mwcceppc.exe*, etc.) in ``deps/CodeWarrior`` and the Kamek files in ``deps/Kamek``.
-
-The following region targets exist:
-- **PAL**: European/Australian releases
-- **USA**: American releases
-- **JPN**: Japanese releases
-- **TWN**: Taiwanese releases
-- **KOR**: Korean releases
-
-The generated XML patches for Riivolution can be found in the *bin* folder.
+- Knowledge of **C**, **C++**, and **PowerPC**.
+- **Python 3.12** or newer for building the loader.

@@ -3,6 +3,9 @@
 .gitmodules eol=lf
 
 *.py text eol=lf
+*.pyd text eol=lf
+*.pyx text eol=lf
+*.sh text eol=lf
 
 *.s text eol=lf
 *.h text eol=lf

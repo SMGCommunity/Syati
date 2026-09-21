@@ -1,14 +1,18 @@
 deps/CodeWarrior/*
 deps/Kamek/*
 
-/.private
-/.vs
-/bin/
-/build/
+.idea
+.vs
+.venv
+.private
+__pycache__
+build
+bin
 
+.env
+*.env
 *.o
 *.d
-CustomCode*.bin
 *.dol
 *.elf
 *.map
