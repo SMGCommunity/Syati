@@ -1,6 +1,5 @@
 #pragma once
 
-#include "revolution.h"
 #include "Game/AreaObj/AreaObj.h"
 
 /* FINISHED */
@@ -12,7 +11,7 @@ public:
 	virtual ~DeathArea();
 	virtual void init(const JMapInfoIter &rIter);
 	virtual void movement();
-	virtual bool isInVolume(const TVec3f &mTranslation) const;
+	virtual bool isInVolume(const TVec3f &rPosition) const;
 	virtual const char* getManagerName() const;
 
 	s32 getDeathType() const;

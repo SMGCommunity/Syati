@@ -1,6 +1,5 @@
 #pragma once
 
-#include "revolution.h"
 #include "Game/AreaObj/AreaObj.h"
 #include "Game/Util/BaseMatrixFollowTargetHolder.h"
 
@@ -12,10 +11,10 @@ public:
 
 	virtual void update();
 
-	TMtx34f mFollowMtx;     // _14
-	AreaObj* mFollowerArea; // _44
+	/* 0x14 */ TPos3f mFollowMtx;
+	/* 0x44 */ AreaObj* mFollowerArea;
 };
 
 namespace MR {
 	bool addBaseMatrixFollowerAreaObj(AreaObj *pArea, const JMapInfoIter &rIter);
-};
+}

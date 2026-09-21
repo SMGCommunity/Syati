@@ -1,6 +1,5 @@
 #pragma once
 
-#include "revolution.h"
 #include "Game/AreaObj/AreaObj.h"
 
 /* FINISHED */
@@ -15,5 +14,5 @@ public:
 	
 	bool checkCondition() const;
 
-	s32 mCondition; // _48
+	/* 0x48 */ s32 mCondition;
 };

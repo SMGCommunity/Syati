@@ -1,15 +1,20 @@
 #pragma once
 
-#include "revolution.h"
-#include "Game/AreaObj/AreaObj.h"
+#include "Game/NameObj/NameObj.h"
 #include "Game/Util/Array.h"
+#include "JSystem/JGeometry.h"
 
 /* FINISHED */
 
+class AreaObj;
+class AreaObjMgr;
+
+typedef AreaObjMgr* (*ManagerCreatorFuncPtr)(s32, const char*);
+
 struct ManagerEntry {
-    const char* pManagerName; // _0
-	s32 mMaxAreas; // _4
-    AreaObjMgr* (*mCreationFunc)(s32, const char *); // _8
+    /* 0x0 */ const char* pManagerName;
+	/* 0x4 */ s32 mMaxAreas;
+    /* 0x8 */ ManagerCreatorFuncPtr mCreateFunc;
 };
 
 class AreaObjContainer : public NameObj {
@@ -21,7 +26,7 @@ public:
 	
 	AreaObjMgr* getManager2(const char *pName) const;
 	AreaObjMgr* getManager(const char *pName) const;
-	AreaObj* getAreaObj(const char *pName) const;
+	AreaObj* getAreaObj(const char *pName, const TVec3f &rPosition) const;
 	bool isExistAreaObj(const char *pName) const;
 
     template<typename T>
@@ -29,10 +34,10 @@ public:
 
 	static ManagerEntry cCreateTable[95];
 
-	MR::AssignableArray<AreaObjMgr*> mManagers; // _14
-	s32 mNumManagers;                           // _1C
+	/* 0x14 */ MR::AssignableArray<AreaObjMgr*> mManagers;
+	/* 0x1C */ u32 mNumManagers;
 };
 
 namespace MR {
 	AreaObjContainer* getAreaObjContainer();
-};
+}

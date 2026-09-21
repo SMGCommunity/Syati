@@ -8,17 +8,19 @@
 #include "Game/AreaObj/AudioEffectArea.h"
 #include "Game/AreaObj/BgmChangeArea.h"                // unfinished
 #include "Game/AreaObj/BgmVolumeFadeArea.h"            // unfinished
-#include "Game/AreaObj/BloomArea.h"                    // unfinished
+#include "Game/AreaObj/BloomArea.h"
 #include "Game/AreaObj/CancelBeeMorphArea.h"
 #include "Game/AreaObj/ClipDrawArea.h"
 // CollisionArea
-#include "Game/AreaObj/CubeCameraArea.h"
+#include "Game/AreaObj/CubeCamera.h"
 #include "Game/AreaObj/CumulativeTimerSwitchArea.h"
 #include "Game/AreaObj/DeathArea.h"
-#include "Game/AreaObj/GlaringLightAreaMgr.h"
+// DepthOfFieldArea
+#include "Game/AreaObj/GlaringLightArea.h"
 #include "Game/AreaObj/HazeCube.h"
 #include "Game/AreaObj/ImageEffectArea.h"
-#include "Game/AreaObj/LightArea.h"                    // unfinished
+#include "Game/AreaObj/LightArea.h"
+#include "Game/AreaObj/LightAreaHolder.h"
 #include "Game/AreaObj/MercatorTransformCube.h"        // unfinished
 #include "Game/AreaObj/MessageArea.h"
 #include "Game/AreaObj/MorphSwitchArea.h"

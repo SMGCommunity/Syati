@@ -1,6 +1,5 @@
 #pragma once
 
-#include "revolution.h"
 #include "Game/AreaObj/AreaObj.h"
 
 /* FINISHED */
@@ -12,17 +11,17 @@ public:
 	virtual ~CubeCameraArea();
 	virtual void init(const JMapInfoIter &rIter);
 	virtual void movement();
-	virtual bool isInVolume(const TVec3f &mTranslation) const;
+	virtual bool isInVolume(const TVec3f &rPosition) const;
 	virtual s32 getAreaPriority() const;
 	virtual const char* getManagerName() const;
 	virtual s32 getCategoryArg() const;
 
-	bool isValidCameeraID() const;
+	bool isValidCameraID() const;
 	u16 getCameraID() const;
 	void setCurrentCategory(s32 category);
 
-	u16 mCameraId; // _48
-	s32 mZoneId;   // _4C
+	/* 0x48 */ u16 mCameraId;
+	/* 0x4C */ s32 mZoneId;
 };
 
 class CubeCameraMgr : public AreaObjMgr {

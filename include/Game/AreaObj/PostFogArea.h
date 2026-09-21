@@ -1,6 +1,5 @@
 #pragma once
 
-#include "revolution.h"
 #include "Game/AreaObj/ImageEffectArea.h"
 
 /* FINISHED */

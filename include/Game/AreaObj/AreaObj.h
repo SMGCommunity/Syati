@@ -1,12 +1,12 @@
 #pragma once
 
-#include "revolution.h"
 #include "Game/NameObj.h"
-#include "Game/AreaObj/AreaForm.h"
-#include "Game/Map/StageSwitch.h"
 #include "Game/Util/Array.h"
 
 /* FINISHED */
+
+class AreaForm;
+class StageSwitchCtrl;
 
 class AreaObj : public NameObj {
 public:
@@ -15,7 +15,7 @@ public:
 
     virtual ~AreaObj();
     virtual void init(const JMapInfoIter &rIter);
-    virtual bool isInVolume(const TVec3f &rTranslation) const;
+    virtual bool isInVolume(const TVec3f &rPosition) const;
     virtual s32 getAreaPriority() const;
     virtual const char* getManagerName() const;
 
@@ -37,20 +37,20 @@ public:
     void setFollowMtx(const MtxPtr pFollowMtx);
     MtxPtr getFollowMtx() const;
 
-    AreaForm* mAreaForm;               // _14
-    int mAreaFormType;                 // _18
-    bool mValidate;                    // _1C
-    bool mFollowActorAlive;            // _1D
-    s32 mObjArg0;                      // _20
-    s32 mObjArg1;                      // _24
-    s32 mObjArg2;                      // _28
-    s32 mObjArg3;                      // _2C
-    s32 mObjArg4;                      // _30
-    s32 mObjArg5;                      // _34
-    s32 mObjArg6;                      // _38
-    s32 mObjArg7;                      // _3C
-    s32 mPriority;                     // _40
-    StageSwitchCtrl* mStageSwitchCtrl; // _44
+    /* 0x14 */ AreaForm* mAreaForm;
+    /* 0x18 */ int mFormType;
+    /* 0x1C */ bool mValidate;
+    /* 0x1D */ bool mFollowActorAlive;
+    /* 0x20 */ s32 mObjArg0;
+    /* 0x24 */ s32 mObjArg1;
+    /* 0x28 */ s32 mObjArg2;
+    /* 0x2C */ s32 mObjArg3;
+    /* 0x30 */ s32 mObjArg4;
+    /* 0x34 */ s32 mObjArg5;
+    /* 0x38 */ s32 mObjArg6;
+    /* 0x3C */ s32 mObjArg7;
+    /* 0x40 */ s32 mPriority;
+    /* 0x44 */ StageSwitchCtrl* mStageSwitchCtrl;
 };
 
 class AreaObjMgr : public NameObj {
@@ -60,9 +60,9 @@ public:
     virtual ~AreaObjMgr();
     
     void entry(AreaObj *pArea);
-    bool find_in(const TVec3f &rTranslation) const;
+    bool find_in(const TVec3f &rPosition) const;
     void requestMovementOnAll();
 
-    MR::Vector<MR::AssignableArray<AreaObj*> > mAreas; // 14
-    s32 mMaxAreasArg;                                  // 20
+    /* 0x14 */ MR::Vector<MR::AssignableArray<AreaObj*> > mAreas;
+    /* 0x20 */ s32 mMaxAreas;
 };

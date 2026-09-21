@@ -1,6 +1,5 @@
 #pragma once
 
-#include "revolution.h"
 #include "Game/AreaObj/AreaObj.h"
 
 /* FINISHED */
@@ -14,5 +13,5 @@ public:
 	virtual bool isInVolume(const TVec3f &rTranslation) const;
 	virtual const char* getManagerName() const;
 
-	f32 mCameraDistance; // _48
+	/* 0x48 */ f32 mDistance;
 };

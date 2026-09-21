@@ -1,7 +1,8 @@
 #pragma once
 
-#include "revolution.h"
 #include "Game/AreaObj/ImageEffectArea.h"
+
+/* FINISHED */
 
 class BloomArea : public ImageEffectArea {
 public:
@@ -11,8 +12,8 @@ public:
 	virtual void init(const JMapInfoIter &rIter);
 	virtual const char* getManagerName() const;
 
-	s8 _4C;
-	s8 _4D;
-	s32 _50;
-	s32 _54;
+    /* 0x4C */ u8 mThreshold;
+    /* 0x4D */ u8 mIntensity;
+    /* 0x50 */ s32 mIntensity1;
+    /* 0x54 */ s32 mIntensity2;
 };

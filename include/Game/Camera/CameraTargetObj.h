@@ -1,8 +1,9 @@
 #pragma once
 
-#include "Game/AreaObj/CubeCameraArea.h"
 #include "Game/NameObj/NameObj.h"
 #include "JSystem/JGeometry.h"
+
+class CubeCameraArea;
 
 class CameraTargetObj : public NameObj {
 public:
