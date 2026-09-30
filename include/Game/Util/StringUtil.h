@@ -22,7 +22,7 @@ namespace MR {
     wchar_t* addPictureFontCode(wchar_t *pDest, int pictureId);
     wchar_t* addNewLine(wchar_t *pDest);
 
-    const char* getBaseName(const char *pString);
+    const char* getBasename(const char *pString);
     void removeExtensionString(char *pDest, u32 length, const char *pSrc);
     void extractString(char *pDest, const char *pSrc, u32, u32);
     void convertUTF16ToASCII(char *pDest, const wchar_t *pSrc, s32 length);

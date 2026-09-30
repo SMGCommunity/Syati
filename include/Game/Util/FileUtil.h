@@ -17,4 +17,6 @@ namespace MR {
 
     void* receiveFile(const char *);
     JKRArchive* mountAsyncArchive(const char *);
+
+    JKRArchive* createAndAddArchive(void *pData, JKRHeap *pHeap, const char *pFilePath);
 };
