@@ -1,10 +1,8 @@
 #pragma once
 
-#include "revolution.h"
-#include "JSystem.h"
-#include "Game/Util/JMapInfo.h"
+#include "JSystem/JGeometry.h"
 
-/* FINISHED */
+class JMapInfoIter;
 
 enum AreaFormType {
 	AreaForm_Cube,
@@ -17,15 +15,15 @@ enum AreaFormType {
 class AreaForm {
 public:
 	virtual void init(const JMapInfoIter &rIter) = 0;
-	virtual bool isInVolume(const TVec3f &rTranslation) const = 0;
+	virtual bool isInVolume(const TVec3f &rPosition) const = 0;
 
-	MtxPtr mFollowMtx; // _4
+	MtxPtr mFollowMtx; // _4 TODO: Is this correct?
 };
 
 class AreaFormCube : public AreaForm {
 public:
 	virtual void init(const JMapInfoIter &rIter);
-	virtual bool isInVolume(const TVec3f &rTranslation) const;
+	virtual bool isInVolume(const TVec3f &rPosition) const;
 
 	void calcWorldPos(TVec3f *pPosition) const;
 	void calcWorldRotate(TVec3f *pRotation) const;
@@ -37,57 +35,57 @@ public:
 	void updateBoxParam();
 	void calcWorldMtx(MtxPtr pWorldMtx) const;
 
-	int mCentered;       // _8
-	TVec3f mTranslation; // _C
-	TVec3f mRotation;    // _18
-	TVec3f mScale;       // _24
-	TBox3f mLocalBox;    // _30
-	TMtx34f mWorldMtx;   // _48
+	/* 0x08 */ int mCentered;
+	/* 0x0C */ TVec3f mTranslation;
+	/* 0x18 */ TVec3f mRotation;
+	/* 0x24 */ TVec3f mScale;
+	/* 0x30 */ TBox3f mLocalBox;
+	/* 0x48 */ TPos3f mWorldMtx;
 };
 
 class AreaFormSphere : public AreaForm {
 public:
 	virtual void init(const JMapInfoIter &rIter);
-	virtual bool isInVolume(const TVec3f &rTranslation) const;
+	virtual bool isInVolume(const TVec3f &rPosition) const;
 
 	void calcUpVec(TVec3f *pUpVec) const;
 	void calcFrontUpVec(TVec3f *pFrontVec) const;
 	void calcPos(TVec3f *pPosition) const;
 	
-	TVec3f mTranslation; // _8
-	f32 mRadius;         // _14
-	TVec3f mUpVec;       // _18
-	TVec3f mFrontVec;    // _24
+	/* 0x08 */ TVec3f mTranslation;
+	/* 0x14 */ f32 mRadius;
+	/* 0x18 */ TVec3f mUpVec;
+	/* 0x24 */ TVec3f mFrontVec;
 };
 
 class AreaFormBowl : public AreaForm {
 public:
 	virtual void init(const JMapInfoIter &rIter);
-	virtual bool isInVolume(const TVec3f &rTranslation) const;
+	virtual bool isInVolume(const TVec3f &rPosition) const;
 
 	void calcUpVec(const TVec3f &rEulerRot);
 	
-	TVec3f mTranslation; // _8
-	TVec3f mUpVec;       // _14
-	f32 mRadius;         // _20
+	/* 0x08 */ TVec3f mTranslation;
+	/* 0x14 */ TVec3f mUpVec;
+	/* 0x20 */ f32 mRadius;
 };
 
 class AreaFormCylinder : public AreaForm {
 public:
 	virtual void init(const JMapInfoIter &rIter);
-	virtual bool isInVolume(const TVec3f &rTranslation) const;
+	virtual bool isInVolume(const TVec3f &rPosition) const;
 	
 	void calcPos(TVec3f *pPosition) const;
 	void calcCenterPos(TVec3f *pCenterPos) const;
 	void calcUpVec(TVec3f *pUpVec) const;
 	void calcDir(TVec3f &rEulerRot);
 	
-	TVec3f mTranslation; // _8
-	TVec3f mUpVec;       // _14
-	f32 mRadius;         // _20
-	f32 mHeight;         // _24
+	/* 0x08 */ TVec3f mTranslation;
+	/* 0x14 */ TVec3f mUpVec;
+	/* 0x20 */ f32 mRadius;
+	/* 0x24 */ f32 mHeight;
 };
 
 namespace MR {
 	AreaForm* createAreaForm(int shapeNo);
-};
+}

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "revolution.h"
 #include "Game/AreaObj/AreaObj.h"
 
 class SoundPlayArea : public AreaObj {
@@ -13,8 +12,8 @@ public:
 
 	void setupSoundPos();
 
-	TVec3f mSoundPos; // _48
-	bool _54;
-	bool _55;
-	u32* mSound; // _58
+	/* 0x48 */ TVec3f mSoundPos;
+	/* 0x54 */ bool _54;
+	/* 0x55 */ bool _55;
+	/* 0x58 */ u32* mSound;
 };

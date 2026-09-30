@@ -1,6 +1,5 @@
 #pragma once
 
-#include "revolution.h"
 #include "Game/AreaObj/AreaObj.h"
 
 /* FINISHED */
@@ -12,5 +11,5 @@ public:
 	virtual ~MessageArea();
 	virtual void init(const JMapInfoIter &rIter);
 
-	s32 mZoneId;
+	/* 0x48 */ s32 mZoneID;
 };

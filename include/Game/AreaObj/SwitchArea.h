@@ -18,6 +18,6 @@ public:
 	bool isUpdate() const;
 	bool checkPlayerDrillRush() const;
 
-	s32 mRiddleSound;   // _48
-	bool mRiddlePlayed; // _4C
+	/* 0x48 */ s32 mRiddleSound;
+	/* 0x4c */ bool mRiddlePlayed;
 };

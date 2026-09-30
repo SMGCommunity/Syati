@@ -86,3 +86,14 @@ public:
 namespace SpinDriverUtil {
     void setShadowAndClipping(LiveActor *, TVec3f *, f32, f32, f32 *);
 };
+
+namespace NrvSpinDriver {
+    NERVE(SpinDriverNrvTryDemo);
+    NERVE(SpinDriverNrvNonActive);
+    NERVE(SpinDriverNrvAppear);
+    NERVE(SpinDriverNrvWait);
+    NERVE(SpinDriverNrvCapture);
+    NERVE(SpinDriverNrvShootStart);
+    NERVE(SpinDriverNrvShoot);
+    NERVE(SpinDriverNrvCoolDown);
+};

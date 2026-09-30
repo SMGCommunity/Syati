@@ -1,8 +1,9 @@
 #pragma once
 
-#include "Game/AreaObj/CubeCameraArea.h"
 #include "Game/Camera/CameraTargetObj.h"
 #include "JSystem/JGeometry/TMatrix.h"
+
+class CubeCameraArea;
 
 class CameraTargetMtx : public CameraTargetObj {
 public:

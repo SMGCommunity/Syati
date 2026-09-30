@@ -5,6 +5,7 @@
 #include "Game/System/FileHolder.h"
 #include "Game/System/FileLoader.h"
 #include "Game/System/FileLoaderThread.h"
+#include "Game/System/FileRipper.h"
 #include "Game/System/GameEventFlagTable.h"
 #include "Game/System/GameSystem.h"
 #include "Game/System/GameSystemDataHolder.h"
