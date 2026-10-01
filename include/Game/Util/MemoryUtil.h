@@ -3,6 +3,7 @@
 #include "revolution/types.h"
 
 class JKRHeap;
+class JKRExpHeap;
 
 namespace MR {
     class CurrentHeapRestorer {
@@ -26,7 +27,7 @@ namespace MR {
     JKRHeap* getHeapGDDR3(const JKRHeap *);
     JKRHeap* becomeCurrentHeap(JKRHeap *);
     bool isEqualCurrentHeap(JKRHeap *);
-    //void adjustHeapSize(JKRExpHeap *);
+    void adjustHeapSize(JKRExpHeap *);
     u32 getFileCacheSizeForGalaxy(const char *pSceneName, const char *pStageName, s32 scenarioNum);
     bool tryGetHeapSizeExceptForGalaxy(u32 *pDest, const char *pFieldName, const char *pSceneName, const char *pStageName, s32 scenarioNum);
     bool isUseWorldMapHeapForGalaxy(const char *pSceneName, const char *pStageName, s32 scenarioNum);
