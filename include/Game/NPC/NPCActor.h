@@ -119,6 +119,14 @@ namespace NrvNPCActor {
 
 class NPCActorItem {
 public:
+    inline NPCActorItem(const char *pName) {
+        mName = pName;
+        _4 = "";
+        _8 = "";
+        _C = "";
+        _10 = "";
+    }
+
     inline NPCActorItem(const char *pName, const char* __4, const char* __8, const char *__C, const char* __10) {
         mName = pName;
         _4 = __4;

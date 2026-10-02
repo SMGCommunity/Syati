@@ -16,6 +16,7 @@ public:
 	virtual bool isReactionNerve() const;
 
 	void initMessage(const char *);
+	bool tryReaction();
 
 	u32 _164;
 	f32 _168;
