@@ -10,6 +10,7 @@ public:
 
 namespace MR {
 	void appearEventPowerStar(const char*, s32, const TVec3f *, bool, bool, bool);
+	s32 getEventPowerStarID(const char *);
 	void pauseCometTimer();
 	void resumeCometTimer();
 	void showCometTimer();
