@@ -90,5 +90,10 @@ namespace MR {
 
     // several unknown functions here...
 
+    void hideBubbleBeak(TalkMessageCtrl *pTalkCtrl);
+    void showBubbleBeak(TalkMessageCtrl *pTalkCtrl);
+
+    // several unknown functions here...
+
     bool isTalkStart(const TalkMessageCtrl *pTalkCtrl);
 };
