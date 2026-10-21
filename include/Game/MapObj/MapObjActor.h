@@ -13,6 +13,8 @@
 #include "Game/MapObj/MapParts/MapPartsRailRotator.h"
 #include "Game/MapObj/MapParts/MapPartsRotator.h"
 
+class ProjmapEffectMtxSetter;
+
 class MapObjActor : public LiveActor {
 public:
 	MapObjActor(const char *);
@@ -57,7 +59,7 @@ public:
 	LodCtrl* mLodCtrl;							// _94
 	ModelObj* mBloomModel;						// _98
 	ModelObj* _9C;
-	u32* mProjmapEffectMtxSetter;				// _A0
+	ProjmapEffectMtxSetter* mMatrixSetter;		// _A0
 	MapPartsRailMover* mRailMover;				// _A4
 	MapPartsRotator* mRotator;					// _A8
 	MapPartsRailRotator* mRailRotator;			// _AC

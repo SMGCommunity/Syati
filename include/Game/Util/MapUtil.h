@@ -107,6 +107,8 @@ namespace MR {
     bool isCodeSand(const Triangle *);
     Triangle* getCameraPolyFast(const TVec3f &, const TVec3f &, const HitSensor *);
     bool getFirstPolyOnLineBFast(const TVec3f &, const TVec3f &, TVec3f *, Triangle *);
+
+    bool calcMapGroundUpper(TVec3f*, const LiveActor*);
 };
 
 namespace Collision {
