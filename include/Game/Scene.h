@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Game/Scene/MultiSceneActor.h"
 #include "Game/Scene/Scene.h"
 #include "Game/Scene/SceneFunction.h"
 #include "Game/Scene/SceneNameObjListExecutor.h"
