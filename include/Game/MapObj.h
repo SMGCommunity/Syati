@@ -3,6 +3,7 @@
 #include "Game/MapObj/AssemblyBlock.h"
 #include "Game/MapObj/BenefitItemObj.h"
 #include "Game/MapObj/BenefitItemLifeUp.h"
+#include "Game/MapObj/BenefitItemOneUp.h"
 #include "Game/MapObj/BlackHole.h"
 #include "Game/MapObj/ChipBase.h"
 #include "Game/MapObj/ChipCounter.h"

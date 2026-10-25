@@ -164,6 +164,10 @@ namespace JGeometry {
             set(Stack);
         }
 
+        inline f32 distance(const TVec3& rOther) const {
+            return PSVECDistance(*this, rOther);
+        }
+
         T squared() const {
             return (this->x * this->x) + (this->y * this->y) + (this->z * this->z);
         }

@@ -12,10 +12,10 @@ public:
 	virtual void start();
 	virtual void updateHostTrans(TVec3f *pHostTrans) const;
 	virtual void updateHostVelocity(TVec3f *pHostVelocity) const;
-	virtual TVec3f* getCurrentVelocity() const;
+	virtual const TVec3f& getCurrentVelocity() const;
 
-	s32 _28;
+	const char* _28;
 	TVec3f _2C;
 	TVec3f _38;
-	f32 _44;
+	f32 mMoveConditionType;
 };

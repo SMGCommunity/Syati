@@ -22,7 +22,7 @@ public:
     void requestPointLight(const LiveActor*, const NameObj*, s32);
     void requestPointLightAtResultSequence(const LiveActor*);
     f32 getPowerStarWaitRotateSpeed();
-    void getBtpFrameCurrentStage(s32);
+    static s32 getBtpFrameCurrentStage(s32);
     void isCurrentStageKoopaVs3();
     void initShadowPowerStar(LiveActor*, bool);
     virtual void control();

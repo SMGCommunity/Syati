@@ -11,7 +11,7 @@ public:
 	virtual void init(const JMapInfoIter &rIter);
 	virtual void start();
 	virtual void updateHostTrans(TVec3f *pHostTrans) const;
-	virtual TVec3f* getCurrentVelocity() const;
+	virtual const TVec3f& getCurrentVelocity() const;
 
 	f32 _48;
 	f32 _4C;

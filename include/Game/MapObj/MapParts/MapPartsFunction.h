@@ -21,6 +21,7 @@ public:
 	s32 getStep() const;
 	bool isStep(s32) const;
 	bool isNerve(const Nerve *) const;
+	bool isFirstStep() const;
 	bool sendMsgToHost(u32);
 	f32 getSpeed() const;
 
