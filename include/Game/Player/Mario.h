@@ -5,6 +5,7 @@
 #include "Game/Player/MarioSwim.h"
 #include "Game/Player/MarioHang.h"
 #include "Game/Player/MarioWall.h"
+#include "Game/Player/MarioWait.h"
 
 class MarioActor;
 class MarioState;
@@ -36,7 +37,6 @@ class MarioStick;
 class MarioRabbit;
 class MarioSukekiyo;
 class MarioBury;
-class MarioWait;
 class MarioClimb;
 class MarioSkate;
 class MarioFoo;
