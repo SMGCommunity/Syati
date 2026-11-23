@@ -20,6 +20,5 @@ public:
     void createStartID(long, unsigned short);
 
     s8 mZoneID;     // _4
-    u8 _5[3];
     char* mName;    // _8
 };

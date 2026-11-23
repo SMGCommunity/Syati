@@ -13,6 +13,7 @@
 #include "Game/Player/MarioAccess.h"
 #include "Game/Player/MarioActor.h"
 #include "Game/Player/MarioAllModel.h"
+#include "Game/Player/MarioFireDance.h"
 #include "Game/Player/MarioHolder.h"
 #include "Game/Player/MarioLauncher.h"
 #include "Game/Player/MarioMessenger.h"
