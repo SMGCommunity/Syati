@@ -7,11 +7,17 @@
 class BinaryDataContentHeaderSerializer;
 class BinaryDataContentAccessor;
 
+#define SOME_SCENARIO_ACCESSOR_FLAG_POWER_STAR 1
+#define SOME_SCENARIO_ACCESSOR_FLAG_BRONZE_STAR 2
+#define SOME_SCENARIO_ACCESSOR_FLAG_ALREADY_VISITED 4
+#define SOME_SCENARIO_ACCESSOR_FLAG_GHOST_ATTACK 8
+
 class GameDataSomeScenarioAccessor {
 public:
 	GameDataSomeScenarioAccessor();
 
 	void resetAllData();
+	bool testFlag(u32 index) const;
 
 	s8 mMissNum; // _0
 	s32 mBestTime; // _4

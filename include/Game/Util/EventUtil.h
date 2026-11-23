@@ -135,7 +135,7 @@ namespace MR {
     const JMapIdInfo* getRestartMarioNo();
     void setRestartMarioNo(const JMapIdInfo &rIdInfo);
 
-    bool isGhostLuigiOpenInStage();
+    bool isGhostLuigiOpenInCurrentStage();
 
     // various PostmanEvent functions
 
