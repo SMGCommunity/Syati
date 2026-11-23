@@ -46,8 +46,8 @@ public:
 
 	CollectTico* mCollectTico; // 0x90
 	PartsModel* mItemBubble; // 0x94
-	TQuat4f _98; // 0x98
-	TVec3f _A8; // 0xA8
+	TQuat4f mRotateQuat; // 0x98
+	TVec3f mFrontVec; // 0xA8
 	TVec3f _B4; // 0xB4
 	TVec3f _C0; // 0xC0
 	TVec3f _CC; // 0xCC

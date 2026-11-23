@@ -1,6 +1,6 @@
 #pragma once
 
-#include "syati.h"
+#include "Game/Screen/CounterLayoutAppearer.h"
 #include "Game/Screen/CountUpPaneRumbler.h"
 
 class CoinCounter : public LayoutActor {

@@ -102,6 +102,7 @@ public:
 	void setPunchHitTimer(u8);
 	void tryReleaseBombTeresa();
 	void forceGameOver();
+	bool checkButtonType(u16 a0, bool a1) const;
 
 	void initFireMario();
 	void initBeeMario();

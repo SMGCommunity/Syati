@@ -10,15 +10,18 @@ class MarioAnimator;
 
 class MarioModule {
 public:
-	virtual f32 getStickX() const;
 	virtual f32 getStickY() const;
-	virtual f32 getStickP() const;
-	virtual bool checkTrgA() const;
-	virtual bool checkLvlA() const;
-	virtual bool checkTrgZ() const;
-	virtual bool checkLvlZ() const;
-	virtual bool checkPreLvlZ() const;
-	virtual bool isInputDisable() const;
+	virtual void addVelocity(const TVec3f &);
+	virtual void addVelocity(const TVec3f &, f32);
+
+	f32 getStickX() const;
+	f32 getStickP() const;
+	bool checkTrgA() const;
+	bool checkLvlA() const;
+	bool checkTrgZ() const;
+	bool checkLvlZ() const;
+	bool checkPreLvlZ() const;
+	bool isInputDisable() const;
 
     void changeAnimation(const char *, const char *);
     void changeAnimation(const char *, u32);
@@ -63,8 +66,6 @@ public:
 	HitSensor *getSensor(const Triangle *) const;
 	f32 marioAcos(f32) const;
 
-	void addVelocity(const TVec3f &);
-	void addVelocity(const TVec3f &, f32);
 	void addVelocityAfter(const TVec3f &);
 	void clearVelocity();
 	void cutGravityElementFromJumpVec(bool);

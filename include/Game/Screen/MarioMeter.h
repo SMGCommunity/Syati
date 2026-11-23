@@ -1,11 +1,10 @@
 #pragma once
 
-#include "syati.h"
-
-class MeterLayout;
-class SuddenDeathMeter;
+#include "Game/Screen/MeterLayout.h"
+#include "Game/Screen/SuddenDeathMeter.h"
 
 class MarioMeter : public NameObj {
+public:
     MarioMeter(const char*);
     virtual ~MarioMeter();
     virtual void init(const JMapInfoIter&);
