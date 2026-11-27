@@ -1,4 +1,6 @@
-#include "syati.h"
+#pragma once
+
+#include "Game/Screen/LayoutActor.h"
 
 class BombTimerLayout : public LayoutActor { 
 public:
